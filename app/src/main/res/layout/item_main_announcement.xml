@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:paddingTop="@dimen/globalPadding"
+    android:paddingStart="@dimen/globalPadding"
+    android:paddingEnd="@dimen/globalPadding"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/announcementImgPlaceholder"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:cardCornerRadius="10dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@color/colorAccent"/>
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@id/tvAnnouncementCategory"
+        android:layout_alignStart="@id/tvAnnouncementCategory"
+        android:layout_alignTop="@id/tvAnnouncementCategory"
+        android:layout_alignBottom="@id/tvAnnouncementCategory"
+        android:background="@drawable/btn_round_fill"/>
+
+    <TextView
+        android:id="@+id/tvAnnouncementCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dummyResearchCategory"
+        android:textSize="@dimen/smallText"
+        android:fontFamily="@font/rubik"
+        android:textColor="@color/white"
+        android:layout_alignParentEnd="true"
+        android:paddingStart="@dimen/smallPadding"
+        android:paddingEnd="@dimen/smallPadding"
+        android:paddingTop="@dimen/verySmallPadding"
+        android:paddingBottom="@dimen/verySmallPadding"
+        android:layout_marginEnd="@dimen/globalPadding"/>
+
+
+    <TextView
+        android:id="@+id/tvAnnouncementTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="121dp"
+        android:layout_toStartOf="@id/tvAnnouncementCategory"
+        android:layout_toEndOf="@id/announcementImgPlaceholder"
+        android:ellipsize="end"
+        android:lines="1"
+        android:paddingStart="@dimen/globalPadding"
+        android:paddingEnd="@dimen/globalPadding"
+        android:text="@string/researchTitle" />
+
+    <TextView
+        android:id="@+id/tvMosqueName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dummyMosqueName"
+        android:textSize="@dimen/smallText"
+        android:layout_toEndOf="@id/announcementImgPlaceholder"
+        android:layout_below="@id/tvAnnouncementTitle"
+        android:paddingStart="@dimen/globalPadding"
+        android:paddingEnd="@dimen/globalPadding"
+        android:drawablePadding="@dimen/verySmallPadding"
+        app:drawableStartCompat="@drawable/ic_location_12dp" />
+
+    <TextView
+        android:id="@+id/tvTimePassed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dummyTimePassed"
+        android:textSize="@dimen/smallText"
+        android:layout_alignParentEnd="true"
+        android:layout_alignBottom="@id/announcementImgPlaceholder"
+        android:paddingStart="@dimen/globalPadding"
+        android:layout_marginEnd="@dimen/globalMargin" />
+
+    <ImageView
+        android:visibility="gone"
+        android:contentDescription="@string/divider"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/gray"
+        android:layout_below="@id/announcementImgPlaceholder"
+        android:layout_marginTop="@dimen/globalMargin"/>
+
+</RelativeLayout>

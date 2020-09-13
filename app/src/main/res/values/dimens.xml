@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="logo_space">32dp</dimen>
+    <dimen name="splash_space">64dp</dimen>
+    <dimen name="space_introduction">32dp</dimen>
+    <dimen name="space_viewpager_dots">24dp</dimen>
+
+    <dimen name="smallText">10sp</dimen>
+    <dimen name="bodyText">16sp</dimen>
+    <dimen name="title">20sp</dimen>
+    <dimen name="listItem">16sp</dimen>
+    <dimen name="listItemSmaller">14sp</dimen>
+    <dimen name="mediumTitle">14sp</dimen>
+    <dimen name="errorText">12sp</dimen>
+    <dimen name="textButton">14sp</dimen>
+    <dimen name="paddingButton">18dp</dimen>
+    <dimen name="LoginText">16dp</dimen>
+    <dimen name="introItemDimen">300dp</dimen>
+    <dimen name="labelLogin">64dp</dimen>
+    <dimen name="appBarHeight">70dp</dimen>
+    <dimen name="appBarTitleSize">20sp</dimen>
+    <dimen name="globalPadding">16dp</dimen>
+    <dimen name="noPadding">0dp</dimen>
+    <dimen name="itemMainMosqueTextTopPadding">10dp</dimen>
+    <dimen name="mediumText">18sp</dimen>
+    <dimen name="globalMargin">16dp</dimen>
+    <dimen name="verySmallPadding">4dp</dimen>
+    <dimen name="subTitle">12sp</dimen>
+    <dimen name="bigTitle">18sp</dimen>
+    <dimen name="smallPadding">8dp</dimen>
+</resources>

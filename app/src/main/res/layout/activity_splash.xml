@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".ui.splash.SplashActivity">
+
+    <ImageView
+        android:alpha="0"
+        android:id="@+id/AppLogoBlock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/sobatmasjid"
+        android:src="@drawable/logo_sobat_masjid"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="@dimen/splash_space"/>
+
+    <RelativeLayout
+        android:alpha="0"
+        android:id="@+id/SponsorBlock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="@dimen/splash_space">
+
+        <TextView
+            android:id="@+id/tvSplashScreenText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/SplashScreenText"
+            android:textSize="@dimen/bodyText"
+            android:textColor="@color/colorAccent"
+            android:fontFamily="@font/rubik"
+            android:textStyle="bold"
+            android:layout_marginBottom="@dimen/logo_space"
+            android:layout_centerHorizontal="true"
+            />
+
+        <ImageView
+            android:id="@+id/logo_dmi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/sponsor"
+            android:src="@drawable/logo_dmi"
+            android:layout_below="@id/tvSplashScreenText"
+            />
+
+        <ImageView
+            android:id="@+id/logo_ybm_pln"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/sponsor"
+            android:src="@drawable/logo_ybm_pln"
+            android:layout_marginStart="@dimen/logo_space"
+            android:layout_toEndOf="@id/logo_dmi"
+            android:layout_below="@id/tvSplashScreenText"
+            android:layout_alignBottom="@id/logo_dmi"/>
+
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

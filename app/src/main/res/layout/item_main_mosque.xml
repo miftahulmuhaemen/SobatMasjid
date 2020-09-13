@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:id="@+id/box_item"
+    android:layout_width="300dp"
+    android:layout_height="200dp"
+    android:layout_marginEnd="8dp"
+    app:cardCornerRadius="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/img_item"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@android:color/holo_blue_dark"
+            android:scaleType="centerCrop"/>
+
+        <ImageView
+            android:id="@+id/bottom_layer"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:src="@color/white" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@id/tvResearchCategory"
+            android:layout_alignStart="@id/tvResearchCategory"
+            android:layout_alignTop="@id/tvResearchCategory"
+            android:layout_alignBottom="@id/tvResearchCategory"
+            android:background="@drawable/btn_round_fill"/>
+
+        <TextView
+            android:id="@+id/tvResearchCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dummyMosqueClassification"
+            android:textSize="@dimen/smallText"
+            android:fontFamily="@font/rubik"
+            android:textColor="@color/white"
+            android:layout_alignParentEnd="true"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="@dimen/globalPadding"/>
+
+        <TextView
+            android:id="@+id/tvMosqueType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tool:text="@string/dummyMosqueType"
+            android:fontFamily="@font/rubik"
+            android:textSize="@dimen/bodyText"
+            android:textColor="@color/colorAccent"
+            android:layout_alignTop="@id/bottom_layer"
+            android:paddingStart="@dimen/globalPadding"
+            android:paddingEnd="@dimen/noPadding"
+            android:paddingTop="@dimen/itemMainMosqueTextTopPadding"
+            />
+
+        <TextView
+            android:id="@+id/tvDistance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tool:text="@string/dummyMosqueDistance"
+            android:fontFamily="@font/rubik"
+            android:textSize="@dimen/smallText"
+            android:textColor="@color/colorAccent"
+            android:paddingStart="@dimen/noPadding"
+            android:paddingEnd="@dimen/globalPadding"
+            android:layout_alignParentEnd="true"
+            android:layout_alignBaseline="@id/tvMosqueType"
+            />
+
+        <TextView
+            android:id="@+id/tvMosqueName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dummyMosqueName"
+            android:fontFamily="@font/rubik"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/subTitle"
+            android:lines="1"
+            android:ellipsize="end"
+            android:paddingStart="@dimen/globalPadding"
+            android:paddingEnd="@dimen/globalPadding"
+            android:layout_below="@id/tvMosqueType"
+            />
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

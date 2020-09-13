@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/appBarHeight"
+        android:background="@color/colorPrimary"
+        android:fitsSystemWindows="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tvTitleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/appBarTitle"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/appBarTitleSize"
+                tools:ignore="RelativeOverlap" />
+
+            <ImageView
+                android:id="@+id/schedule"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="16dp"
+                android:paddingStart="@dimen/globalPadding"
+                android:paddingEnd="@dimen/globalPadding"
+                android:src="@drawable/ic_watch" />
+
+            <ImageView
+                android:id="@+id/notification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:paddingStart="@dimen/globalPadding"
+                android:paddingEnd="@dimen/globalPadding"
+                android:src="@drawable/ic_bell" />
+        </RelativeLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+        android:id="@+id/btnCurrentLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/appbar"
+        android:background="@color/gray"
+        android:drawablePadding="8dp"
+        android:padding="@dimen/globalPadding"
+        android:text="@string/dummyLocation"
+        android:textSize="@dimen/mediumText"
+        app:drawableLeftCompat="@drawable/ic_location_24dp" />
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnCurrentLocation"
+        android:layout_centerHorizontal="true">
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tvClosestMosque"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/globalPadding"
+                    android:text="@string/closestMosqueText"
+                    android:textSize="@dimen/mediumText" />
+
+                <TextView
+                    android:id="@+id/btnMosqueList"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/tvClosestMosque"
+                    android:layout_alignParentEnd="true"
+                    android:padding="@dimen/globalPadding"
+                    android:text="@string/forList"
+                    android:textSize="@dimen/mediumTitle" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvMosque"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvClosestMosque"
+                    android:clipToPadding="false"
+                    android:fadeScrollbars="true"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/verySmallPadding"
+                    android:paddingStart="@dimen/globalPadding"
+                    android:paddingEnd="@dimen/noPadding"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_main_mosque" />
+
+                <ImageView
+                    android:id="@+id/dividerMosque"
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:layout_below="@id/rvMosque"
+                    android:layout_marginTop="@dimen/globalMargin"
+                    android:background="@color/gray"
+                    android:contentDescription="@string/divider" />
+
+                <TextView
+                    android:id="@+id/tvRecentResearch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/dividerMosque"
+                    android:padding="@dimen/globalPadding"
+                    android:text="@string/recentResearch"
+                    android:textSize="@dimen/mediumText" />
+
+                <TextView
+                    android:id="@+id/btnResearchList"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/tvRecentResearch"
+                    android:layout_alignParentEnd="true"
+                    android:padding="@dimen/globalPadding"
+                    android:text="@string/forList"
+                    android:textSize="@dimen/mediumTitle" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvResearch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvRecentResearch"
+                    android:isScrollContainer="false"
+                    android:orientation="vertical"
+                    tools:itemCount="3"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_main_research" />
+
+                <ImageView
+                    android:id="@+id/dividerResearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:layout_below="@id/rvResearch"
+                    android:layout_marginTop="@dimen/globalMargin"
+                    android:background="@color/gray"
+                    android:contentDescription="@string/divider" />
+
+                <TextView
+                    android:id="@+id/tvFridayPrayer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/dividerResearch"
+                    android:padding="@dimen/globalPadding"
+                    android:text="@string/fridayPrayer"
+                    android:textSize="@dimen/mediumText" />
+
+                <TextView
+                    android:id="@+id/btnFridayPrayer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/tvFridayPrayer"
+                    android:layout_alignParentEnd="true"
+                    android:padding="@dimen/globalPadding"
+                    android:text="@string/forList"
+                    android:textSize="@dimen/mediumTitle" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvFridayPrayer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="220dp"
+                    android:layout_below="@id/tvFridayPrayer"
+                    android:clipToPadding="false"
+                    android:fadeScrollbars="true"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/verySmallPadding"
+                    android:paddingStart="@dimen/globalPadding"
+                    android:paddingEnd="@dimen/noPadding"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_main_friday_prayer" />
+
+                <ImageView
+                    android:id="@+id/dividerFridayPrayer"
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:layout_below="@id/rvFridayPrayer"
+                    android:layout_marginTop="@dimen/globalMargin"
+                    android:background="@color/gray"
+                    android:contentDescription="@string/divider" />
+
+                <TextView
+                    android:id="@+id/tvAnnouncement"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/dividerFridayPrayer"
+                    android:padding="@dimen/globalPadding"
+                    android:text="@string/announcement"
+                    android:textSize="@dimen/mediumText" />
+
+                <TextView
+                    android:id="@+id/btnAnnouncement"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/tvAnnouncement"
+                    android:layout_alignParentEnd="true"
+                    android:padding="@dimen/globalPadding"
+                    android:text="@string/forList"
+                    android:textSize="@dimen/mediumTitle" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvAnnouncement"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvAnnouncement"
+                    android:isScrollContainer="false"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="@dimen/globalMargin"
+                    tools:itemCount="3"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_main_announcement" />
+
+            </RelativeLayout>
+        </ScrollView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <!--    <RelativeLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:layout_below="@id/appbar">-->
+    <!--        <ImageView-->
+    <!--            android:id="@+id/network_down"-->
+    <!--            android:layout_width="100dp"-->
+    <!--            android:layout_height="100dp"-->
+    <!--            android:layout_centerInParent="true"-->
+    <!--            android:visibility="gone"-->
+    <!--            android:src="@drawable/ic_portable_wifi_off"/>-->
+    <!--        <ProgressBar-->
+    <!--            android:id="@+id/event_progressbar"-->
+    <!--            android:layout_width="80dp"-->
+    <!--            android:layout_height="80dp"-->
+    <!--            android:visibility="gone"-->
+    <!--            android:theme="@style/Theme.AppCompat.Light.NoActionBar"-->
+    <!--            android:layout_centerInParent="true"/>-->
+    <!--    </RelativeLayout>-->
+
+
+</RelativeLayout>
