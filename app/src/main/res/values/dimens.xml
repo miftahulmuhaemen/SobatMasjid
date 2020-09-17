@@ -28,4 +28,10 @@
     <dimen name="subTitle">12sp</dimen>
     <dimen name="bigTitle">18sp</dimen>
     <dimen name="smallPadding">8dp</dimen>
+    <dimen name="smallMargin">8dp</dimen>
+    <dimen name="subAppBarHeight">60dp</dimen>
+    <dimen name="imagePagerHeight">200dp</dimen>
+    <dimen name="btn_actionbar">70dp</dimen>
+    <dimen name="smallMargin">8dp</dimen>
+    <item name="lineSpaceGlobal" type="dimen" format="float">7.5dp</item>
 </resources>

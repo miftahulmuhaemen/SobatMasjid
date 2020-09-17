@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tool="http://schemas.android.com/tools"
     android:id="@+id/box_item"
@@ -13,7 +14,7 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/img_item"
+            android:id="@+id/imgMosque"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
@@ -157,20 +158,21 @@
             android:textColor="@color/colorAccent"
             android:paddingTop="@dimen/smallPadding"/>
 
+
         <TextView
             android:id="@+id/tvCreditIn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/tvCreditInText"
+            android:layout_marginTop="-3dp"
             android:fontFamily="@font/rubik"
-            android:paddingTop="@dimen/verySmallPadding"
             android:paddingStart="@dimen/globalPadding"
+            android:paddingTop="@dimen/verySmallPadding"
             android:paddingEnd="@dimen/noPadding"
             android:text="@string/dummyCredit"
-            android:textStyle="bold"
+            android:textColor="@color/colorAccent"
             android:textSize="@dimen/smallText"
-            android:textColor="@color/colorAccent"/>
-
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tvCreditOutText"

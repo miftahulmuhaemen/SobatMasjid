@@ -53,7 +53,7 @@
     <TextView
         android:id="@+id/btnCurrentLocation"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/subAppBarHeight"
         android:layout_below="@id/appbar"
         android:background="@color/gray"
         android:drawablePadding="8dp"
@@ -96,7 +96,7 @@
                     android:textSize="@dimen/mediumTitle" />
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rvMosque"
+                    android:id="@+id/recyclerview"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tvClosestMosque"
@@ -107,13 +107,13 @@
                     android:paddingStart="@dimen/globalPadding"
                     android:paddingEnd="@dimen/noPadding"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    tools:listitem="@layout/item_main_mosque" />
+                    tools:listitem="@layout/item_mosque_fit" />
 
                 <ImageView
                     android:id="@+id/dividerMosque"
                     android:layout_width="match_parent"
                     android:layout_height="4dp"
-                    android:layout_below="@id/rvMosque"
+                    android:layout_below="@id/recyclerview"
                     android:layout_marginTop="@dimen/globalMargin"
                     android:background="@color/gray"
                     android:contentDescription="@string/divider" />
@@ -146,7 +146,7 @@
                     android:orientation="vertical"
                     tools:itemCount="3"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    tools:listitem="@layout/item_main_research" />
+                    tools:listitem="@layout/item_research_wide" />
 
                 <ImageView
                     android:id="@+id/dividerResearch"
@@ -188,7 +188,7 @@
                     android:paddingStart="@dimen/globalPadding"
                     android:paddingEnd="@dimen/noPadding"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    tools:listitem="@layout/item_main_friday_prayer" />
+                    tools:listitem="@layout/item_friday_prayer_fit" />
 
                 <ImageView
                     android:id="@+id/dividerFridayPrayer"
@@ -228,7 +228,7 @@
                     android:layout_marginBottom="@dimen/globalMargin"
                     tools:itemCount="3"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    tools:listitem="@layout/item_main_announcement" />
+                    tools:listitem="@layout/item_announcement_wide" />
 
             </RelativeLayout>
         </ScrollView>

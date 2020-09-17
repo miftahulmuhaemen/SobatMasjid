@@ -24,7 +24,7 @@
         app:dampingRatio="0.5"
         app:dotsColor="@color/white"
         app:dotsStrokeColor="@color/white"
-        app:dotsCornerRadius="2dp"
+        app:dotsCornerRadius="10dp"
         app:dotsSize="16dp"
         app:dotsSpacing="6dp"
         app:dotsStrokeWidth="2dp"

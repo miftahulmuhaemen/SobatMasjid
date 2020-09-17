@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvCredit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/globalPadding"
+            android:text="@string/finance"
+            android:textSize="@dimen/mediumText" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCredit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvCredit"
+            android:isScrollContainer="false"
+            android:orientation="vertical"
+            tools:itemCount="3"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_friday_prayer_wide_credit" />
+
+        <TextView
+            android:id="@+id/tvOfficer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/globalPadding"
+            android:text="@string/fridayOfficer"
+            android:textSize="@dimen/mediumText"
+            android:layout_marginTop="@dimen/globalMargin"
+            android:layout_below="@id/rvCredit"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvOfficer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvOfficer"
+            android:isScrollContainer="false"
+            android:orientation="vertical"
+            tools:itemCount="3"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_friday_prayer_wide_friday_officer" />
+
+    </RelativeLayout>
+</ScrollView>

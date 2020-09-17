@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".ui.login.LoginActivity">
+
+    <TextView
+        android:id="@+id/tvBottomLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label"
+        android:textSize="@dimen/title"
+        android:textStyle="bold"
+        android:fontFamily="@font/montserrat"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_marginBottom="@dimen/LoginText"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/labelLogin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/AppLogoBlock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/sobatmasjid"
+            android:src="@drawable/ic_logo_sm_1"/>
+
+        <RelativeLayout
+            android:id="@+id/LoginBlock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_introduction">
+
+            <TextView
+                android:id="@+id/tvLoginText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/LoginText"
+                android:textSize="@dimen/bodyText"
+                android:fontFamily="@font/rubik"
+                android:textStyle="bold"
+                android:layout_marginBottom="@dimen/LoginText"
+                android:layout_centerHorizontal="true"
+                />
+
+            <TextView
+                android:id="@+id/btnFacebook"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:padding="16dp"
+                android:layout_marginEnd="@dimen/paddingButton"
+                android:background="@drawable/btn_round_fill"
+                android:text="@string/facebook"
+                android:fontFamily="@font/rubik"
+                android:textColor="@color/white"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:layout_below="@id/tvLoginText"
+                app:drawableLeftCompat="@drawable/ic_facebook" />
+
+            <TextView
+                android:id="@+id/btnGoogle"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:padding="16dp"
+                android:background="@drawable/btn_round_fill"
+                android:text="@string/google"
+                android:fontFamily="@font/rubik"
+                android:textColor="@color/white"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                app:drawableLeftCompat="@drawable/ic_google"
+                android:layout_toEndOf="@id/btnFacebook"
+                android:layout_alignBottom="@id/btnFacebook" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

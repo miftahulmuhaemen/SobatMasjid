@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/appBarHeight"
+        android:background="@color/colorPrimary"
+        android:fitsSystemWindows="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@id/searchView"
+                android:layout_alignEnd="@id/searchView"
+                android:layout_alignTop="@id/searchView"
+                android:layout_alignBottom="@id/searchView"
+                android:background="@drawable/btn_round_fill" />
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/searchView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true"
+                android:layout_toStartOf="@id/sobatMasjidLogo"
+                android:paddingTop="@dimen/verySmallPadding"
+                android:paddingBottom="@dimen/verySmallPadding"
+                android:layout_marginStart="@dimen/smallMargin"
+                app:searchIcon="@drawable/ic_search"
+                app:queryHint="@string/mosqueQueryHintSearch"
+                app:iconifiedByDefault="false"
+                app:queryBackground="@color/colorPrimaryDark"
+                />
+
+            <ImageView
+                android:id="@+id/sobatMasjidLogo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:paddingStart="@dimen/globalPadding"
+                android:paddingEnd="@dimen/globalPadding"
+                android:src="@drawable/ic_logo_sobatmasjid" />
+        </RelativeLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+        android:id="@+id/btnCurrentLocation"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/subAppBarHeight"
+        android:layout_below="@id/appbar"
+        android:background="@color/gray"
+        android:drawablePadding="8dp"
+        android:padding="@dimen/globalPadding"
+        android:text="@string/dummyLocation"
+        android:textSize="@dimen/mediumText"
+        app:drawableLeftCompat="@drawable/ic_location_24dp" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabsMosque"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/subAppBarHeight"
+        android:layout_below="@id/btnCurrentLocation"/>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/pagerMosque"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tabsMosque"/>
+
+</RelativeLayout>

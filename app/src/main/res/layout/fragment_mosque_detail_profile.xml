@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/globalPadding"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:id="@+id/tvMosqueName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/dummyMosqueName"
+        android:textSize="@dimen/title"
+        android:fontFamily="@font/rubik"
+        android:layout_marginBottom="@dimen/globalMargin"/>
+
+    <TextView
+        android:id="@+id/tvErectDateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/erectDateText"
+        android:fontFamily="@font/rubik"
+        android:textSize="@dimen/bodyText"
+        android:layout_marginBottom="@dimen/smallMargin"
+        android:layout_below="@id/tvMosqueName"
+        android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:id="@+id/tvErectDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/dummyErectDate"
+        android:fontFamily="@font/rubik"
+        android:textSize="@dimen/bodyText"
+        android:layout_marginBottom="@dimen/smallMargin"
+        android:layout_alignBaseline="@id/tvErectDateText"
+        android:layout_toEndOf="@id/dots"/>
+
+    <TextView
+        android:id="@+id/tvEmailText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/emailText"
+        android:fontFamily="@font/rubik"
+        android:textSize="@dimen/bodyText"
+        android:layout_marginBottom="@dimen/smallMargin"
+        android:layout_below="@id/tvErectDateText"
+        android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:id="@+id/tvEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/dummyEmail"
+        android:fontFamily="@font/rubik"
+        android:textSize="@dimen/bodyText"
+        android:layout_marginBottom="@dimen/smallMargin"
+        android:layout_alignBaseline="@id/tvEmailText"
+        android:layout_toEndOf="@id/dots"/>
+
+    <TextView
+        android:id="@+id/tvAddressText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/addressText"
+        android:fontFamily="@font/rubik"
+        android:textSize="@dimen/bodyText"
+        android:layout_marginBottom="@dimen/smallMargin"
+        android:layout_below="@id/tvEmailText"
+        android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:id="@+id/tvAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/dummyAddress"
+        android:fontFamily="@font/rubik"
+        android:textSize="@dimen/bodyText"
+        android:layout_marginBottom="@dimen/smallMargin"
+        android:layout_alignBaseline="@id/tvAddressText"
+        android:layout_toEndOf="@id/dots"/>
+
+    <TextView
+        android:id="@+id/dots"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text=":\n:\n:"
+        android:lineSpacingExtra="@dimen/lineSpaceGlobal"
+        android:fontFamily="@font/rubik"
+        android:textSize="@dimen/bodyText"
+        android:layout_marginStart="@dimen/smallMargin"
+        android:layout_toEndOf="@id/tvErectDateText"
+        android:layout_alignBottom="@id/tvAddressText"
+        android:layout_below="@id/tvMosqueName"/>
+
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/loremIpsum"
+        android:fontFamily="@font/rubik"
+        android:textSize="@dimen/bodyText"
+        android:layout_marginTop="@dimen/globalMargin"
+        android:layout_below="@id/tvAddress"/>
+
+</RelativeLayout>

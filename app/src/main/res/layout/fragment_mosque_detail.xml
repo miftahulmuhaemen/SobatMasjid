@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/imagePagerHeight"
+        android:fitsSystemWindows="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/imagePagerMosque"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
+                android:id="@+id/dotsImagePagerMosque"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/space_viewpager_dots"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                app:dampingRatio="0.5"
+                app:dotsColor="@color/white"
+                app:dotsStrokeColor="@color/white"
+                app:dotsCornerRadius="10dp"
+                app:dotsSize="16dp"
+                app:dotsSpacing="6dp"
+                app:dotsStrokeWidth="2dp"
+                app:stiffness="300"/>
+
+            <ImageView
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:paddingStart="@dimen/globalPadding"
+                android:paddingEnd="@dimen/globalPadding"
+                android:layout_marginTop="@dimen/globalMargin"
+                android:src="@drawable/ic_back_arrow_40dp" />
+
+        </RelativeLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:id="@+id/mosqueActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/gray"
+        android:layout_below="@id/appbar">
+
+        <TextView
+            android:id="@+id/tvMosqueName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dummyMosqueName"
+            android:textSize="@dimen/title"
+            android:fontFamily="@font/rubik"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/globalMargin"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/state_mosque_actionbar"
+            android:layout_alignEnd="@id/btnInfaq"
+            android:layout_alignStart="@id/btnInfaq"
+            android:layout_alignTop="@id/btnInfaq"
+            android:layout_alignBottom="@id/btnInfaq"/>
+
+        <TextView
+            android:id="@+id/btnInfaq"
+            android:layout_width="@dimen/btn_actionbar"
+            android:layout_height="wrap_content"
+            android:text="@string/actionbar_infaq"
+            android:textSize="@dimen/smallText"
+            android:textColor="@color/colorPrimaryDark"
+            android:fontFamily="@font/rubik"
+            android:gravity="center"
+            android:padding="@dimen/smallPadding"
+            android:layout_below="@id/tvMosqueName"
+            android:layout_centerHorizontal="true"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/state_mosque_actionbar"
+            android:layout_alignEnd="@id/btnFollow"
+            android:layout_alignStart="@id/btnFollow"
+            android:layout_alignTop="@id/btnFollow"
+            android:layout_alignBottom="@id/btnFollow"/>
+
+        <TextView
+            android:id="@+id/btnFollow"
+            android:layout_width="@dimen/btn_actionbar"
+            android:layout_height="wrap_content"
+            android:text="@string/actionbar_follow"
+            android:textSize="@dimen/smallText"
+            android:textColor="@color/colorPrimaryDark"
+            android:fontFamily="@font/rubik"
+            android:gravity="center"
+            android:padding="@dimen/smallPadding"
+            android:layout_marginEnd="@dimen/globalMargin"
+            android:layout_toStartOf="@id/btnInfaq"
+            android:layout_alignBaseline="@id/btnInfaq"
+            android:layout_centerHorizontal="true"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/state_mosque_actionbar"
+            android:layout_alignEnd="@id/btnVisit"
+            android:layout_alignStart="@id/btnVisit"
+            android:layout_alignTop="@id/btnVisit"
+            android:layout_alignBottom="@id/btnVisit"/>
+
+        <TextView
+            android:id="@+id/btnVisit"
+            android:layout_width="@dimen/btn_actionbar"
+            android:layout_height="wrap_content"
+            android:text="@string/actionbar_visit"
+            android:textSize="@dimen/smallText"
+            android:textColor="@color/colorPrimaryDark"
+            android:fontFamily="@font/rubik"
+            android:gravity="center"
+            android:padding="@dimen/smallPadding"
+            android:layout_marginStart="@dimen/globalMargin"
+            android:layout_toEndOf="@id/btnInfaq"
+            android:layout_alignBaseline="@id/btnInfaq"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabsMosque"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/subAppBarHeight"
+        android:layout_below="@id/mosqueActionBar"/>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/pagerMosque"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tabsMosque"/>
+
+</RelativeLayout>

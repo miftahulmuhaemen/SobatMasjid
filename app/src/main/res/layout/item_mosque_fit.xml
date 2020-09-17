@@ -13,7 +13,7 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/img_item"
+            android:id="@+id/imgMosque"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@android:color/holo_blue_dark"

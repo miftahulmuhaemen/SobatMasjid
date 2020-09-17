@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/globalPadding"
+    android:paddingTop="@dimen/globalPadding"
+    android:paddingEnd="@dimen/globalPadding">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:cardCornerRadius="10dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+            <TextView
+                android:id="@+id/tvDateDayMonth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:fontFamily="@font/rubik"
+                android:text="@string/dateDayMonth" />
+            <TextView
+                android:id="@+id/tvDateYear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="@dimen/subTitle"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/tvDateDayMonth"
+                android:fontFamily="@font/rubik"
+                android:text="@string/dateYear" />
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <TextView
+        android:id="@+id/tvCreditInText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_toEndOf="@id/card"
+        android:ellipsize="end"
+        android:lines="1"
+        android:fontFamily="@font/rubik"
+        android:paddingStart="@dimen/globalPadding"
+        android:paddingEnd="@dimen/globalPadding"
+        android:layout_marginTop="@dimen/smallMargin"
+        android:layout_marginBottom="@dimen/smallMargin"
+        android:text="@string/creditInPrefix" />
+
+    <TextView
+        android:id="@+id/tvCreditIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_toEndOf="@id/tvDots"
+        android:ellipsize="end"
+        android:lines="1"
+        android:fontFamily="@font/rubik"
+        android:paddingStart="@dimen/smallPadding"
+        android:paddingEnd="@dimen/globalPadding"
+        android:layout_marginTop="@dimen/smallMargin"
+        android:layout_marginBottom="@dimen/smallMargin"
+        android:text="@string/dummyCredit" />
+
+    <TextView
+        android:id="@+id/tvCreditOutText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_toEndOf="@id/card"
+        android:layout_below="@id/tvCreditInText"
+        android:ellipsize="end"
+        android:lines="1"
+        android:fontFamily="@font/rubik"
+        android:paddingStart="@dimen/globalPadding"
+        android:paddingEnd="@dimen/globalPadding"
+        android:layout_marginBottom="@dimen/smallMargin"
+        android:text="@string/creditOutPrefix" />
+
+    <TextView
+        android:id="@+id/tvCreditOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_toEndOf="@id/tvDots"
+        android:layout_below="@id/tvCreditInText"
+        android:ellipsize="end"
+        android:lines="1"
+        android:fontFamily="@font/rubik"
+        android:paddingStart="@dimen/smallPadding"
+        android:paddingEnd="@dimen/globalPadding"
+        android:layout_marginBottom="@dimen/smallMargin"
+        android:text="@string/dummyCredit" />
+
+    <TextView
+        android:id="@+id/tvCreditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_toEndOf="@id/card"
+        android:layout_below="@id/tvCreditOutText"
+        android:ellipsize="end"
+        android:lines="1"
+        android:textStyle="bold"
+        android:fontFamily="@font/rubik"
+        android:paddingStart="@dimen/globalPadding"
+        android:paddingEnd="@dimen/globalPadding"
+        android:layout_marginBottom="@dimen/smallMargin"
+        android:text="@string/creditPrefix" />
+
+    <TextView
+        android:id="@+id/tvCredit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_toEndOf="@id/tvDots"
+        android:layout_below="@id/tvCreditOutText"
+        android:ellipsize="end"
+        android:lines="1"
+        android:textStyle="bold"
+        android:fontFamily="@font/rubik"
+        android:paddingStart="@dimen/smallPadding"
+        android:paddingEnd="@dimen/globalPadding"
+        android:layout_marginBottom="@dimen/smallMargin"
+        android:text="@string/dummyCredit" />
+
+    <TextView
+        android:id="@+id/tvDots"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:lineSpacingExtra="7.5dp"
+        android:layout_alignTop="@id/tvCreditInText"
+        android:layout_alignBottom="@id/tvCreditText"
+        android:layout_toEndOf="@id/tvCreditOutText"
+        android:fontFamily="@font/rubik"
+        android:text=":\n:\n:"
+        android:textColor="@color/colorAccent" />
+
+</RelativeLayout>

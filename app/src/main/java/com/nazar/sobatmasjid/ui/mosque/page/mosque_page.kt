@@ -1,4 +1,4 @@
-package com.nazar.sobatmasjid.ui.mosque
+package com.nazar.sobatmasjid.ui.mosque.page
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -14,10 +14,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [MosqueFragment.newInstance] factory method to
+ * Use the [mosque_page.newInstance] factory method to
  * create an instance of this fragment.
  */
-class MosqueFragment : Fragment() {
+class mosque_page : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -35,7 +35,7 @@ class MosqueFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_mosque_list, container, false)
+        return inflater.inflate(R.layout.fragment_recyclerview, container, false)
     }
 
     companion object {
@@ -45,12 +45,12 @@ class MosqueFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment MosqueFragment.
+         * @return A new instance of fragment mosque_page.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            MosqueFragment().apply {
+            mosque_page().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
