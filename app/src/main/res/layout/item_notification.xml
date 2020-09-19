@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_marginStart="@dimen/globalMargin"
+    android:layout_marginEnd="@dimen/globalMargin"
+    android:layout_marginBottom="@dimen/smallMargin"
+    app:cardCornerRadius="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/globalPadding">
+
+        <TextView
+            android:id="@+id/tvNotification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/dummyNotification"
+            android:fontFamily="@font/rubik"
+            android:layout_toStartOf="@id/tvTimePassed"/>
+
+        <TextView
+            android:id="@+id/tvTimePassed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/smallText"
+            android:text="@string/dummyTimePassed"
+            android:fontFamily="@font/rubik"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="@dimen/smallMargin"
+            />
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

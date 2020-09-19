@@ -26,7 +26,7 @@
     <string name="closestMosqueText">Masjid Terdekat</string>
     <string name="forList">Selengkapnya</string>
     <string name="divider">divider</string>
-    <string name="dummyResearchDate">Selasa, 26 Februari 2020</string>
+    <string name="dummyFullDate">Selasa, 26 Februari 2020</string>
     <string name="dummyResearchTime">16.00 - 18.00 WITA</string>
     <string name="dummyResearchCategory">Kategori</string>
     <string name="dummyMosqueClassification">Raya</string>
@@ -62,4 +62,11 @@
     <string name="imam">Imam</string>
     <string name="finance">Keuangan</string>
     <string name="fridayOfficer">Petugas Jum\'at</string>
+    <string name="greetingOpener">Bissmillahirrahmanirrahim</string>
+    <string name="greetingMosqueFollow">Selamat data di Sobat Masjid. Ikuti Masjid untuk melihat informasi yang mereka bagikan.</string>
+    <string name="dummyNotification">You have received an invitation to interview for the job UI/UX Designer for Whisk SamsungNEXT</string>
+    <string name="notification">Notifikasi</string>
+    <string name="adhan">Waktu Shalat</string>
+    <string name="arabCalendar">13 Dzulhijjah 1441</string>
+    <string name="dummyAdhanLabel">Subuh</string>
 </resources>

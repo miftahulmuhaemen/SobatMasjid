@@ -87,7 +87,7 @@
         android:id="@+id/tvResearchDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/dummyResearchDate"
+        android:text="@string/dummyFullDate"
         android:textSize="@dimen/smallText"
         android:layout_toEndOf="@id/ustadzPhoto"
         android:layout_below="@id/tvMosqueName"

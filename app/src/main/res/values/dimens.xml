@@ -33,5 +33,8 @@
     <dimen name="imagePagerHeight">200dp</dimen>
     <dimen name="btn_actionbar">70dp</dimen>
     <dimen name="smallMargin">8dp</dimen>
+    <dimen name="greatMargin">64dp</dimen>
+    <dimen name="greetingMosqueFollowPadding">60dp</dimen>
+    <dimen name="cardRadius">10dp</dimen>
     <item name="lineSpaceGlobal" type="dimen" format="float">7.5dp</item>
 </resources>

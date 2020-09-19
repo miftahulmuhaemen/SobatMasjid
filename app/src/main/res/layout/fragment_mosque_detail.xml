@@ -69,7 +69,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/state_mosque_actionbar"
+            android:background="@drawable/state_mosque_detail_actionbar"
             android:layout_alignEnd="@id/btnInfaq"
             android:layout_alignStart="@id/btnInfaq"
             android:layout_alignTop="@id/btnInfaq"
@@ -91,7 +91,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/state_mosque_actionbar"
+            android:background="@drawable/state_mosque_detail_actionbar"
             android:layout_alignEnd="@id/btnFollow"
             android:layout_alignStart="@id/btnFollow"
             android:layout_alignTop="@id/btnFollow"
@@ -115,7 +115,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/state_mosque_actionbar"
+            android:background="@drawable/state_mosque_detail_actionbar"
             android:layout_alignEnd="@id/btnVisit"
             android:layout_alignStart="@id/btnVisit"
             android:layout_alignTop="@id/btnVisit"

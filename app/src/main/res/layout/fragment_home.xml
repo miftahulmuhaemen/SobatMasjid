@@ -62,7 +62,52 @@
         android:textSize="@dimen/mediumText"
         app:drawableLeftCompat="@drawable/ic_location_24dp" />
 
+    <LinearLayout
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_below="@id/btnCurrentLocation">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:text="@string/greetingOpener"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/title"
+            android:layout_marginTop="@dimen/greatMargin"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:text="@string/greetingMosqueFollow"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/subTitle"
+            android:paddingStart="@dimen/greetingMosqueFollowPadding"
+            android:paddingEnd="@dimen/greetingMosqueFollowPadding"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/globalMargin"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvMosqueGreeting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:fadeScrollbars="true"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/globalMargin"
+            android:paddingStart="@dimen/greetingMosqueFollowPadding"
+            android:paddingEnd="@dimen/noPadding"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_home_starter" />
+
+    </LinearLayout>
+
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:visibility="visible"
         android:id="@+id/swipe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -96,7 +141,7 @@
                     android:textSize="@dimen/mediumTitle" />
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recyclerview"
+                    android:id="@+id/rvMosque"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tvClosestMosque"
@@ -113,7 +158,7 @@
                     android:id="@+id/dividerMosque"
                     android:layout_width="match_parent"
                     android:layout_height="4dp"
-                    android:layout_below="@id/recyclerview"
+                    android:layout_below="@id/rvMosque"
                     android:layout_marginTop="@dimen/globalMargin"
                     android:background="@color/gray"
                     android:contentDescription="@string/divider" />

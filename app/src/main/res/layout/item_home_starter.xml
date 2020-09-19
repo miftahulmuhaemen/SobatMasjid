@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:id="@+id/box_item"
+    android:layout_width="200dp"
+    android:layout_height="250dp"
+    android:layout_margin="@dimen/globalMargin"
+    android:layout_marginBottom="@dimen/globalPadding"
+    app:cardCornerRadius="10dp">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_close"
+        android:layout_gravity="end"
+        android:layout_margin="@dimen/smallMargin"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardImg"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            app:cardCornerRadius="60dp">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@color/colorAccent"/>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/mosqueUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dummyMosqueName"
+            android:lines="1"
+            android:ellipsize="end"
+            android:paddingStart="@dimen/globalPadding"
+            android:paddingEnd="@dimen/globalPadding"
+            android:layout_below="@id/cardImg"
+            android:textSize="@dimen/subTitle"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/globalMargin"/>
+
+        <TextView
+            android:id="@+id/fullNameMosque"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dummyMosqueName"
+            android:textStyle="bold"
+            android:lines="1"
+            android:ellipsize="end"
+            android:paddingStart="@dimen/globalPadding"
+            android:paddingEnd="@dimen/globalPadding"
+            android:layout_below="@id/mosqueUsername"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/tvDistance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dummyMosqueDistance"
+            android:textSize="@dimen/subTitle"
+            android:paddingStart="@dimen/globalPadding"
+            android:paddingEnd="@dimen/globalPadding"
+            android:layout_below="@id/fullNameMosque"
+            android:layout_centerHorizontal="true"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/state_mosque_detail_actionbar"
+            android:layout_alignEnd="@id/btnFollow"
+            android:layout_alignStart="@id/btnFollow"
+            android:layout_alignTop="@id/btnFollow"
+            android:layout_alignBottom="@id/btnFollow"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/btnFollow"
+            android:layout_width="@dimen/btn_actionbar"
+            android:layout_height="wrap_content"
+            android:text="@string/actionbar_follow"
+            android:textSize="@dimen/smallText"
+            android:textColor="@color/colorPrimaryDark"
+            android:fontFamily="@font/rubik"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/globalMargin"
+            android:padding="@dimen/verySmallPadding"
+            android:layout_below="@id/tvDistance"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
