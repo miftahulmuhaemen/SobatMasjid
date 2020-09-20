@@ -57,7 +57,7 @@
         android:layout_below="@id/appbar">
 
         <TextView
-            android:id="@+id/tvMosqueName"
+            android:id="@+id/tvMosqueUsername"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/dummyMosqueName"
@@ -85,7 +85,7 @@
             android:fontFamily="@font/rubik"
             android:gravity="center"
             android:padding="@dimen/smallPadding"
-            android:layout_below="@id/tvMosqueName"
+            android:layout_below="@id/tvMosqueUsername"
             android:layout_centerHorizontal="true"/>
 
         <ImageView

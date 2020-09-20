@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.locationn.Location"></activity>
+        <activity android:name=".ui.filter.Filter"></activity>
+        <activity android:name=".ui.locationn.Location" />
         <activity android:name=".ui.adhan.Adhan" />
         <activity android:name=".ui.notification.Notification" />
         <activity android:name=".ui.introduction.IntroActivity" />

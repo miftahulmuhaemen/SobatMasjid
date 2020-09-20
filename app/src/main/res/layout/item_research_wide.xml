@@ -94,7 +94,7 @@
         android:paddingStart="@dimen/globalPadding"
         android:paddingEnd="@dimen/globalPadding"
         android:drawablePadding="@dimen/verySmallPadding"
-        app:drawableStartCompat="@drawable/ic_calendara_12dp" />
+        app:drawableStartCompat="@drawable/ic_calendar_12dp" />
 
 
     <TextView

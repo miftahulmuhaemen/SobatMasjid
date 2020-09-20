@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imgResearchBackground"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:minHeight="@dimen/imagePagerHeight"
+                    android:scaleType="centerCrop"
+                    android:alpha="0.2"
+                    android:src="@drawable/logo_ybm_pln" />
+
+                <ImageView
+                    android:id="@+id/imgResearch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:minHeight="@dimen/imagePagerHeight"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/logo_ybm_pln" />
+
+                <ImageView
+                    android:id="@+id/btnBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/globalMargin"
+                    android:paddingStart="@dimen/globalPadding"
+                    android:paddingEnd="@dimen/globalPadding"
+                    android:src="@drawable/ic_back_arrow_40dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@id/tvResearchCategory"
+                    android:layout_alignTop="@id/tvResearchCategory"
+                    android:layout_alignEnd="@id/tvResearchCategory"
+                    android:layout_alignBottom="@id/tvResearchCategory"
+                    android:background="@drawable/btn_round_fill" />
+
+                <TextView
+                    android:id="@+id/tvResearchCategory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/imgResearch"
+                    android:layout_alignParentEnd="true"
+                    android:layout_margin="@dimen/globalMargin"
+                    android:fontFamily="@font/rubik"
+                    android:paddingStart="@dimen/smallPadding"
+                    android:paddingTop="@dimen/verySmallPadding"
+                    android:paddingEnd="@dimen/smallPadding"
+                    android:paddingBottom="@dimen/verySmallPadding"
+                    android:text="@string/dummyResearchCategory"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/smallText" />
+
+            </RelativeLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/globalMargin">
+
+            <TextView
+                android:id="@+id/tvResearchTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/globalMargin"
+                android:layout_marginBottom="@dimen/globalMargin"
+                android:fontFamily="@font/rubik"
+                android:text="@string/researchTitle"
+                android:textSize="@dimen/title" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ustadzPhoto"
+                android:layout_width="80dp"
+                android:layout_height="105dp"
+                android:layout_below="@id/tvResearchTitle"
+                android:layout_alignStart="@id/tvResearchTitle"
+                app:cardCornerRadius="10dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@color/colorAccent" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/tvUstadzName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvResearchTitle"
+                android:layout_marginBottom="@dimen/smallMargin"
+                android:layout_toEndOf="@id/ustadzPhoto"
+                android:paddingStart="@dimen/globalPadding"
+                android:paddingEnd="@dimen/globalPadding"
+                android:text="@string/ustadzName" />
+
+            <TextView
+                android:id="@+id/tvMosqueName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvUstadzName"
+                android:layout_toEndOf="@id/ustadzPhoto"
+                android:drawablePadding="@dimen/verySmallPadding"
+                android:paddingStart="@dimen/globalPadding"
+                android:paddingEnd="@dimen/globalPadding"
+                android:text="@string/dummyMosqueName"
+                android:textSize="@dimen/subTitle"
+                app:drawableStartCompat="@drawable/ic_location_12dp" />
+
+            <TextView
+                android:id="@+id/tvResearchDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvMosqueName"
+                android:layout_toEndOf="@id/ustadzPhoto"
+                android:drawablePadding="@dimen/verySmallPadding"
+                android:paddingStart="@dimen/globalPadding"
+                android:paddingEnd="@dimen/globalPadding"
+                android:text="@string/dummyFullDate"
+                android:textSize="@dimen/subTitle"
+                app:drawableStartCompat="@drawable/ic_calendar_12dp" />
+
+            <TextView
+                android:id="@+id/tvResearchTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvResearchDate"
+                android:layout_toEndOf="@id/ustadzPhoto"
+                android:drawablePadding="@dimen/verySmallPadding"
+                android:paddingStart="@dimen/globalPadding"
+                android:paddingEnd="@dimen/globalPadding"
+                android:text="@string/dummyResearchTime"
+                android:textSize="@dimen/subTitle"
+                app:drawableStartCompat="@drawable/ic_time_12dp" />
+
+            <TextView
+                android:id="@+id/tvResearchGender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvResearchTime"
+                android:layout_toEndOf="@id/ustadzPhoto"
+                android:drawablePadding="@dimen/verySmallPadding"
+                android:paddingStart="@dimen/globalPadding"
+                android:paddingEnd="@dimen/globalPadding"
+                android:text="@string/dummyGender"
+                android:textSize="@dimen/subTitle"
+                app:drawableStartCompat="@drawable/ic_gender" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/globalPadding"
+            android:paddingEnd="@dimen/globalPadding">
+
+            <TextView
+                android:id="@+id/tvResearchNoteText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/globalPadding"
+                android:paddingEnd="@dimen/globalPadding"
+                android:text="@string/note"
+                android:textSize="@dimen/subTitle" />
+
+            <TextView
+                android:id="@+id/tvResearchNote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/tvResearchNoteText"
+                android:paddingStart="@dimen/noPadding"
+                android:paddingEnd="@dimen/globalPadding"
+                android:text="@string/loremIpsum"
+                android:textSize="@dimen/subTitle" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/globalPadding">
+
+            <Button
+                android:id="@+id/btnVisitLink"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="@dimen/globalMargin"
+                android:background="?attr/colorPrimaryDark"
+                android:fontFamily="@font/rubik"
+                android:padding="@dimen/paddingButton"
+                android:text="@string/register"
+                android:textColor="@color/white"
+                android:textSize="@dimen/bodyText"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+</ScrollView>

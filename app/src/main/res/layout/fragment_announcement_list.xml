@@ -19,14 +19,14 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignStart="@id/svMosque"
-                android:layout_alignEnd="@id/svMosque"
-                android:layout_alignTop="@id/svMosque"
-                android:layout_alignBottom="@id/svMosque"
+                android:layout_alignStart="@id/svAnnouncement"
+                android:layout_alignEnd="@id/svAnnouncement"
+                android:layout_alignTop="@id/svAnnouncement"
+                android:layout_alignBottom="@id/svAnnouncement"
                 android:background="@drawable/btn_round_fill" />
 
             <androidx.appcompat.widget.SearchView
-                android:id="@+id/svMosque"
+                android:id="@+id/svAnnouncement"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
@@ -34,10 +34,9 @@
                 android:layout_toStartOf="@id/sobatMasjidLogo"
                 android:paddingTop="@dimen/verySmallPadding"
                 android:paddingBottom="@dimen/verySmallPadding"
-
                 android:layout_marginStart="@dimen/globalMargin"
                 app:searchIcon="@drawable/ic_search"
-                app:queryHint="@string/mosqueQueryHintSearch"
+                app:queryHint="@string/researchQueryHintSearch"
                 app:iconifiedByDefault="false"
                 app:queryBackground="@color/colorPrimaryDark"
                 />
@@ -62,21 +61,21 @@
         android:layout_below="@id/appbar"
         android:background="@color/gray"
         android:drawablePadding="8dp"
-        android:padding="@dimen/globalPadding"
+        android:padding= "@dimen/globalPadding"
         android:text="@string/dummyLocation"
         android:textSize="@dimen/mediumText"
         app:drawableLeftCompat="@drawable/ic_location_24dp" />
 
     <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabsMosque"
+        android:id="@+id/tabsAnnouncement"
         android:layout_width="match_parent"
         android:layout_height="@dimen/subAppBarHeight"
         android:layout_below="@id/btnCurrentLocation"/>
 
     <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/pagerMosque"
+        android:id="@+id/pagerAnnouncement"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/tabsMosque"/>
+        android:layout_below="@id/tabsAnnouncement"/>
 
 </RelativeLayout>

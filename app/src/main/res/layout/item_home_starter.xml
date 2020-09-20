@@ -34,7 +34,7 @@
         </androidx.cardview.widget.CardView>
 
         <TextView
-            android:id="@+id/mosqueUsername"
+            android:id="@+id/tvMosqueUsername"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/dummyMosqueName"
@@ -48,7 +48,7 @@
             android:layout_marginTop="@dimen/globalMargin"/>
 
         <TextView
-            android:id="@+id/fullNameMosque"
+            android:id="@+id/tvFullNameMosque"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/dummyMosqueName"
@@ -57,7 +57,7 @@
             android:ellipsize="end"
             android:paddingStart="@dimen/globalPadding"
             android:paddingEnd="@dimen/globalPadding"
-            android:layout_below="@id/mosqueUsername"
+            android:layout_below="@id/tvMosqueUsername"
             android:layout_centerHorizontal="true"/>
 
         <TextView
@@ -68,7 +68,7 @@
             android:textSize="@dimen/subTitle"
             android:paddingStart="@dimen/globalPadding"
             android:paddingEnd="@dimen/globalPadding"
-            android:layout_below="@id/fullNameMosque"
+            android:layout_below="@id/tvFullNameMosque"
             android:layout_centerHorizontal="true"/>
 
         <ImageView

@@ -16,7 +16,6 @@
     <string name="mosque">Masjid</string>
     <string name="announcement">Pengumuman</string>
     <string name="profile">Profil</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="appBarTitle">sobatmasjid</string>
     <string name="dummyLocation">Lokasi Dummy</string>
@@ -43,7 +42,9 @@
     <string name="creditIn">Uang Masuk</string>
     <string name="creditOut">Uang Keluar</string>
     <string name="dummyTimePassed">1 jam lalu</string>
-    <string name="mosqueQueryHintSearch">Cari masjid yang mau dimakmurkan ...</string>
+    <string name="mosqueQueryHintSearch">Cari masjid yang mau dimakmurkan …</string>
+    <string name="researchQueryHintSearch">Cari kajian yang mau diikuti …</string>
+    <string name="announcementQueryHintSearch">Cari pengumuman penting …</string>
     <string name="actionbar_infaq">Berinfaq</string>
     <string name="actionbar_follow">Ikuti</string>
     <string name="actionbar_visit">Kunjungi</string>
@@ -54,9 +55,6 @@
     <string name="dummyEmail">emailmasjid@gmail.com</string>
     <string name="dummyAddress">Jl. Sekumpul Martapura Kelurahan Guntung Paikat</string>
     <string name="loremIpsum">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
-    <string name="creditInPrefix">Pemasukan</string>
-    <string name="creditOutPrefix">Pengeluaran</string>
-    <string name="creditPrefix">Total Saldo</string>
     <string name="dateDayMonth">08 Jun</string>
     <string name="dateYear">2020</string>
     <string name="imam">Imam</string>
@@ -69,4 +67,9 @@
     <string name="adhan">Waktu Shalat</string>
     <string name="arabCalendar">13 Dzulhijjah 1441</string>
     <string name="dummyAdhanLabel">Subuh</string>
+    <string name="filter">Filter Klasifikasi Masjid</string>
+    <string name="blank" />
+    <string name="dummyGender">Laki-laki</string>
+    <string name="note">Catatan :</string>
+    <string name="register">Hadir</string>
 </resources>
