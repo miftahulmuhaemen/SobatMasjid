@@ -34,7 +34,6 @@
                 android:layout_toStartOf="@id/sobatMasjidLogo"
                 android:paddingTop="@dimen/verySmallPadding"
                 android:paddingBottom="@dimen/verySmallPadding"
-
                 android:layout_marginStart="@dimen/globalMargin"
                 app:searchIcon="@drawable/ic_search"
                 app:queryHint="@string/mosqueQueryHintSearch"

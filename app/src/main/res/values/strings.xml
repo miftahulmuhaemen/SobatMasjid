@@ -72,4 +72,27 @@
     <string name="dummyGender">Laki-laki</string>
     <string name="note">Catatan :</string>
     <string name="register">Hadir</string>
+    <string name="following">Mengikuti</string>
+    <string name="followQueryHint">Cari yang diikuti ...</string>
+    <string name="statusProfile">Lengkapi Profil</string>
+    <string name="dummyPercentageValue">50%</string>
+    <string name="akun">Akun</string>
+    <string name="mosqueRegisterHelping">Bantu daftarkan Masjid</string>
+    <string name="rating">Beri rating untuk aplikasi</string>
+    <string name="supportBy">Didukung oleh</string>
+    <string name="change">Ubah</string>
+    <string name="cancel">Batal</string>
+    <string name="fullName">Nama Lengkap</string>
+    <string name="bornDate">Tanggal Lahir</string>
+    <string name="gender">Jenis Kelamin</string>
+    <string name="motto">Motto Hidup</string>
+    <string name="hypen">-</string>
+    <string name="profileClaim">Informasi berikut hanya dapat dilihat oleh sobat, kami tidak akan mempublikasikan.</string>
+    <string name="save">Simpan</string>
+    <string name="choose">Pilih</string>
+
+    <array name="gender">
+        <item>Laki-Laki</item>
+        <item>Perempuan</item>
+    </array>
 </resources>

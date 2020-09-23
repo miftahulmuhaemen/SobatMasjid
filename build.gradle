@@ -34,6 +34,7 @@ ext {
     recyclerViewVersion = '1.1.0'
     glideVersion = '4.10.0'
     constraintLayoutVersion = '1.1.3'
+    pickerUI = '1.0.1'
 
     junitVersion = '4.12'
     junitAndroidXVersion = '1.1.1'

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/btnClose"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_margin="@dimen/globalMargin"
+            android:src="@drawable/ic_close"/>
+
+        <TextView
+            android:id="@+id/btnActionChange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:fontFamily="@font/montserrat"
+            android:text="@string/choose"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/bodyText"
+            android:layout_margin="@dimen/globalMargin"
+            tools:ignore="RelativeOverlap" />
+
+        <TextView
+            android:id="@+id/tvTitleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/montserrat"
+            android:text="@string/bornDate"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/title"
+            android:layout_margin="@dimen/globalMargin"/>
+
+        <ImageView
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/gray"
+            android:layout_below="@id/tvTitleText"/>
+
+        <DatePicker
+            android:id="@+id/datePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/divider"
+            android:layout_centerHorizontal="true"
+            android:datePickerMode="spinner"
+            android:calendarViewShown="false" />
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

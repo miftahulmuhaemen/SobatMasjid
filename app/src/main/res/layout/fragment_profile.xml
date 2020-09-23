@@ -1,14 +1,216 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.profile.ProfileFragment">
+    android:layout_height="match_parent">
 
-    <!-- TODO: Update blank fragment layout -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/appBarHeight"
+        android:background="@color/colorPrimary"
+        android:fitsSystemWindows="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tvTitleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:paddingStart="@dimen/globalPadding"
+                android:paddingEnd="@dimen/noPadding"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/akun"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/title"
+                tools:ignore="RelativeOverlap" />
+
+
+        </RelativeLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:paddingTop="@dimen/globalPadding"
+        android:paddingStart="@dimen/globalPadding"
+        android:paddingEnd="@dimen/globalPadding">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/profilePhoto"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:cardCornerRadius="40dp">
+            <ImageView
+                android:id="@+id/imgProfilePhoto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@color/colorAccent"/>
+        </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:id="@+id/tvMosqueName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/profilePhoto"
+            android:layout_marginStart="-1dp"
+            android:layout_marginTop="0dp"
+            android:layout_toEndOf="@id/profilePhoto"
+            android:ellipsize="end"
+            android:lines="1"
+            android:paddingStart="@dimen/globalPadding"
+            android:paddingTop="@dimen/smallPadding"
+            android:paddingEnd="@dimen/globalPadding"
+            android:text="@string/dummyMosqueName"
+            android:fontFamily="@font/rubik"
+            android:textStyle="bold"
+            android:textSize="@dimen/title" />
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvMosqueName"
+            android:layout_marginStart="-1dp"
+            android:layout_marginTop="0dp"
+            android:layout_toEndOf="@id/profilePhoto"
+            android:ellipsize="end"
+            android:fontFamily="@font/rubik"
+            android:lines="1"
+            android:paddingStart="@dimen/globalPadding"
+            android:paddingEnd="@dimen/globalPadding"
+            android:text="@string/statusProfile"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/subTitle"
+            android:textStyle="bold" />
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/progressBarProfile"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_below="@id/tvStatus"
+            android:layout_alignStart="@id/tvStatus"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="-2dp"
+            android:max="100"
+            android:paddingStart="@dimen/globalPadding"
+            android:paddingEnd="@dimen/almostGreatPadding"
+            android:progress="50" />
+
+        <TextView
+            android:id="@+id/tvProgressBarPercentage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/progressBarProfile"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="0dp"
+            android:paddingStart="@dimen/noPadding"
+            android:paddingEnd="@dimen/globalPadding"
+            android:text="@string/dummyPercentageValue"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/smallText" />
+
+        <TextView
+            android:id="@+id/tvMotto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/statusProfile"
+            android:fontFamily="@font/rubik"
+            android:textSize="@dimen/subTitle"
+            android:textStyle="bold"
+            android:lines="1"
+            android:ellipsize="end"
+            android:paddingTop="@dimen/globalPadding"
+            android:paddingStart="@dimen/noPadding"
+            android:paddingEnd="@dimen/globalPadding"
+            android:layout_marginBottom="@dimen/globalMargin"
+            android:layout_below="@id/profilePhoto"/>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@color/gray"/>
+
+    <RelativeLayout
+        android:id="@+id/btnFollowing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/following"
+            android:textStyle="bold"
+            android:fontFamily="@font/rubik"
+            android:padding="@dimen/globalPadding"/>
+
+        <TextView
+            android:id="@+id/tvFollowerCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:paddingStart="@dimen/noPadding"
+            android:paddingEnd="@dimen/globalPadding"
+            android:layout_marginEnd="@dimen/globalMargin"
+            android:layout_centerVertical="true"
+            android:text="@string/dummyPercentageValue"
+            android:textColor="@color/colorPrimaryDark" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/gray"/>
+
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:text="@string/mosqueRegisterHelping"
+        android:textStyle="bold"
+        android:fontFamily="@font/rubik"
+        android:padding="@dimen/globalPadding"/>
 
-</FrameLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/gray"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/rating"
+        android:textStyle="bold"
+        android:fontFamily="@font/rubik"
+        android:padding="@dimen/globalPadding"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/gray"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/supportBy"
+        android:textStyle="bold"
+        android:fontFamily="@font/rubik"
+        android:padding="@dimen/globalPadding"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/gray"/>
+
+
+</LinearLayout>

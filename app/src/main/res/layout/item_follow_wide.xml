@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:paddingTop="@dimen/globalPadding"
+    android:paddingStart="@dimen/globalPadding"
+    android:paddingEnd="@dimen/globalPadding"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/ustadzPhoto"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:cardCornerRadius="253dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@color/colorAccent"/>
+    </androidx.cardview.widget.CardView>
+
+
+    <TextView
+        android:id="@+id/tvMosqueName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dummyMosqueName"
+        android:textSize="@dimen/title"
+        android:lines="1"
+        android:ellipsize="end"
+        android:layout_toEndOf="@id/ustadzPhoto"
+        android:layout_alignTop="@id/ustadzPhoto"
+        android:paddingStart="@dimen/globalPadding"
+        android:paddingEnd="@dimen/globalPadding"/>
+
+    <TextView
+        android:id="@+id/tvMosqueUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dummyMosqueName"
+        android:textSize="@dimen/subTitle"
+        android:lines="1"
+        android:ellipsize="end"
+        android:layout_toEndOf="@id/ustadzPhoto"
+        android:paddingStart="@dimen/globalPadding"
+        android:paddingEnd="@dimen/globalPadding"
+        android:layout_below="@id/tvMosqueName"/>
+
+
+</RelativeLayout>

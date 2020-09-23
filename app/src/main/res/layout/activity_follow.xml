@@ -1,0 +1,81 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/appBarHeight"
+        android:background="@color/colorPrimary"
+        android:fitsSystemWindows="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tvTitleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/btnBack"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/following"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/title"
+                tools:ignore="RelativeOverlap" />
+
+            <ImageView
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="16dp"
+                android:paddingStart="@dimen/globalPadding"
+                android:paddingEnd="@dimen/globalPadding"
+                android:src="@drawable/ic_back_arrow_40dp" />
+
+        </RelativeLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/svFollow"
+        android:layout_alignTop="@id/svFollow"
+        android:layout_alignEnd="@id/svFollow"
+        android:layout_alignBottom="@id/svFollow"
+        android:background="@drawable/btn_round_fill" />
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/svFollow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/appbar"
+        android:layout_marginStart="@dimen/globalMargin"
+        android:layout_marginTop="@dimen/globalMargin"
+        android:layout_marginEnd="@dimen/globalMargin"
+        android:paddingStart="@dimen/noPadding"
+        android:paddingEnd="@dimen/globalPadding"
+        app:iconifiedByDefault="false"
+        app:queryBackground="@color/colorPrimaryDark"
+        app:queryHint="@string/followQueryHint"
+        app:searchIcon="@drawable/ic_search" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvFollow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/svFollow"
+        android:layout_marginStart="@dimen/globalMargin"
+        android:layout_marginEnd="@dimen/globalMargin"
+        android:layout_marginTop="@dimen/globalMargin"
+        android:isScrollContainer="false"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_follow_wide" />
+
+</RelativeLayout>

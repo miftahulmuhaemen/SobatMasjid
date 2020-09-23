@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.filter.Filter"></activity>
+        <activity android:name=".ProfileEditActivity"></activity>
+        <activity android:name=".ui.follow.FollowActivity" />
+        <activity android:name=".ui.filter.Filter" />
         <activity android:name=".ui.locationn.Location" />
         <activity android:name=".ui.adhan.Adhan" />
         <activity android:name=".ui.notification.Notification" />
