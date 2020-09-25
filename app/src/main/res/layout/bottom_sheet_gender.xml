@@ -53,10 +53,8 @@
         <com.dpizarro.uipicker.library.picker.PickerUI
             android:id="@+id/picker_ui_view"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="200sp"
             android:layout_below="@id/divider"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/globalMargin"
             app:backgroundColor="#4cffa5"
             app:linesCenterColor="#3941ff"
             app:entries="@array/gender"

@@ -39,5 +39,5 @@
     <dimen name="almostGreatMargin">64dp</dimen>
     <dimen name="editTextProfileMargin">60dp</dimen>
     <dimen name="notificationButtonMargin">42dp</dimen>
-    <item name="lineSpaceGlobal" type="dimen" format="float">7.5dp</item>
+    <dimen name="lineSpaceGlobal">7.5dp</dimen>
 </resources>

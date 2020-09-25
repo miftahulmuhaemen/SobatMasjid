@@ -1,12 +1,12 @@
-package com.nazar.sobatmasjid.ui.filter
+package com.nazar.sobatmasjid.ui.notification
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.nazar.sobatmasjid.R
 
-class Filter : AppCompatActivity() {
+class NotificationActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_filter)
+        setContentView(R.layout.activity_notification)
     }
 }

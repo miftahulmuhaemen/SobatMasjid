@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "773938687530",
+    "firebase_url": "https://sobatmasjid-b3442.firebaseio.com",
+    "project_id": "sobatmasjid-b3442",
+    "storage_bucket": "sobatmasjid-b3442.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:773938687530:android:bc594b657c1e172a0a9d53",
+        "android_client_info": {
+          "package_name": "com.nazar.sobatmasjid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "773938687530-a54j2klvvan7nhcc7ddjnk7a5hsb94r4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nazar.sobatmasjid",
+            "certificate_hash": "b120712959079d18165179841104d012dc0df0e0"
+          }
+        },
+        {
+          "client_id": "773938687530-k5lhdgf3joq3ge3nug7gthmdoq1avkk6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZ61TAbNR62udLHqmui45MYD5UNsDpL1A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "773938687530-k5lhdgf3joq3ge3nug7gthmdoq1avkk6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

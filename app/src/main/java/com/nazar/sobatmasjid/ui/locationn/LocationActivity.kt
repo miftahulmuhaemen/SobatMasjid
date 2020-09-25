@@ -1,11 +1,12 @@
-package com.nazar.sobatmasjid.ui.notification
+package com.nazar.sobatmasjid.ui.locationn
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.nazar.sobatmasjid.R
 
-class Notification : AppCompatActivity() {
+class LocationActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_notification)
+        setContentView(R.layout.activity_location)
     }
 }
