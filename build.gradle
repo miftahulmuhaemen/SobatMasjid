@@ -51,6 +51,8 @@ ext {
 
     firebaseAnalytics = '17.5.0'
     firebaseAuth = '19.4.0'
+    firebaseUiAuth = '6.3.0'
+    facebookLogin = '5.15.3'
 
     viewPagerDotVersion = '4.1.2'
 

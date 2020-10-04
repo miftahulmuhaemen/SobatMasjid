@@ -71,5 +71,8 @@ dependencies {
     implementation "com.google.firebase:firebase-analytics:$firebaseAnalytics"
     implementation "com.google.firebase:firebase-auth:$firebaseAuth"
     implementation "androidx.multidex:multidex:$multidex_version"
+    implementation "com.firebaseui:firebase-ui-auth:$firebaseUiAuth"
+    implementation "com.facebook.android:facebook-login:$facebookLogin"
+
 
 }
