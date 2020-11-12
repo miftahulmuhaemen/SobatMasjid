@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 apply plugin: 'com.google.gms.google-services'
 
 android {
@@ -15,6 +16,9 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField("String", "IMAGE_URL", "\"https://pengurus.sobatmasjid.com/assets/foto/\"")
+        buildConfigField("String", "BASE_URL", "\"https://api-2.sobatmasjid.com/api-2/\"")
+        buildConfigField("String", "API_KEY", "\"sob123\"")
     }
 
     compileOptions {
@@ -64,8 +68,13 @@ dependencies {
     //network
     implementation "com.google.code.gson:gson:$gsonVersion"
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation("com.squareup.retrofit2:converter-moshi:$retrofitVersion")
     implementation "com.squareup.okhttp3:okhttp:$okhttpVersion"
     implementation "com.squareup.okhttp3:logging-interceptor:$okhttpVersion"
+
+    //room
+    implementation "androidx.room:room-runtime:$roomVersion"
+    kapt "androidx.room:room-compiler:$roomVersion"
 
     //firebase
     implementation "com.google.firebase:firebase-analytics:$firebaseAnalytics"
@@ -73,6 +82,5 @@ dependencies {
     implementation "androidx.multidex:multidex:$multidex_version"
     implementation "com.firebaseui:firebase-ui-auth:$firebaseUiAuth"
     implementation "com.facebook.android:facebook-login:$facebookLogin"
-
 
 }

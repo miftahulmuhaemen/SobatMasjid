@@ -6,11 +6,6 @@ import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.nazar.sobatmasjid.R
 
-
-/**
- * A [FragmentPagerAdapter] that returns a fragment corresponding to
- * one of the sections/tabs/pages.
- */
 class IntroPagerAdapter(fm: FragmentActivity) : FragmentStateAdapter(fm) {
 
     override fun createFragment(position: Int): Fragment = when (position) {
