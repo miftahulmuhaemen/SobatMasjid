@@ -33,18 +33,11 @@ class DataRepository private constructor(
             }
     }
 
-//    override fun postLogin(name: String, date: Date, email: String): LiveData<Resource<BlankResponse>> {
-//        return  object : NetworkOutboundResource<BlankResponse>(appExecutors){
-//            override fun createCall(): LiveData<ApiResponse<BlankResponse>> = remoteDataSource.postLogin(name, date, email)
-//        }.asLiveData()
-//    }
-
-    override fun getUser(email: String): LiveData<Resource<UserEntity>> {
+    override fun login(name: String, date: Date, email: String): LiveData<Resource<UserEntity>> {
         return object : NetworkBoundResource<UserEntity, UserResponse>(appExecutors) {
             override fun loadFromDB(): LiveData<UserEntity> = localDataSource.getUser()
 
-            override fun shouldFetch(data: UserEntity?): Boolean =
-                data == null
+            override fun shouldFetch(data: UserEntity?): Boolean = true
 
             override fun createCall(): LiveData<ApiResponse<UserResponse>> =
                 remoteDataSource.getUser(email)
@@ -59,6 +52,43 @@ class DataRepository private constructor(
                         data.gender,
                         data.numberFollow,
                         data.photo,
+                        data.idCity,
+                        data.nameCity,
+                        data.apiCode,
+                        data.motto
+                    )
+                    localDataSource.updateUser(user)
+                }
+            }
+        }.asLiveData()
+    }
+
+    override fun updateUserLocation(user: UserEntity){
+
+    }
+
+    override fun getUser(email: String): LiveData<Resource<UserEntity>> {
+        return object : NetworkBoundResource<UserEntity, UserResponse>(appExecutors) {
+            override fun loadFromDB(): LiveData<UserEntity> = localDataSource.getUser()
+
+            override fun shouldFetch(data: UserEntity?): Boolean = true
+
+            override fun createCall(): LiveData<ApiResponse<UserResponse>> =
+                remoteDataSource.getUser(email)
+
+            override fun saveCallResult(data: UserResponse?) {
+                if (data != null) {
+                    val user = UserEntity(
+                        data.id!!,
+                        data.name,
+                        data.bornData,
+                        data.email,
+                        data.gender,
+                        data.numberFollow,
+                        data.photo,
+                        data.idCity,
+                        data.nameCity,
+                        data.apiCode,
                         data.motto
                     )
                     localDataSource.updateUser(user)
@@ -104,6 +134,15 @@ class DataRepository private constructor(
                 localDataSource.insertFollowedMosques(mosques)
             }
         }.asLiveData()
+    }
+
+    override fun followMosque(id: Sdsstring, idMosque: String): LiveData<Boolean> {
+        /** NOT UPDATE CURRENT DATABASE **/
+        return remoteDataSource.followMosque(id.toInt(), idMosque.toInt())
+    }
+
+    override fun unFollowMosque(id: Stssdring, idMosque: String): LiveData<Boolean> {
+        return remoteDataSource.unFollowMosque(id.toInt(), idMosque.toInt())
     }
 
     override fun getMosqueRecommendations(
@@ -420,7 +459,7 @@ class DataRepository private constructor(
                         response.brochure,
                         response.link,
                         response.note,
-                        response.followed
+                        response.attend
                     )
                     localDataSource.insertResearchDetail(research)
                 }

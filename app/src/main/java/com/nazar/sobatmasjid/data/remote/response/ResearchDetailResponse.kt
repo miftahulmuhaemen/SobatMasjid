@@ -19,5 +19,5 @@ data class ResearchDetailResponse(
     @SerializedName("link") var link: String?,
     @SerializedName("note") var note: String?,
     @SerializedName("mosque-type") var mosqueType: String?,
-    @SerializedName("followed") var followed: Boolean?
+    @SerializedName("attend") var attend: Boolean?
 )

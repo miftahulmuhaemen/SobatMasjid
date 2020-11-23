@@ -3,7 +3,6 @@ package com.nazar.sobatmasjid.data.remote
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.nazar.sobatmasjid.api.RetrofitService
-import com.nazar.sobatmasjid.data.local.entity.AnnouncementEntity
 import com.nazar.sobatmasjid.data.remote.response.*
 import com.nazar.sobatmasjid.utils.EspressoIdlingResource
 import kotlinx.coroutines.GlobalScope
@@ -23,6 +22,28 @@ class RemoteDataSource private constructor(private val service: RetrofitService)
     }
 
     /** USER **/
+
+    fun login(name: String, date: Date, email: String) : LiveData<ApiResponse<UserResponse>> {
+        EspressoIdlingResource.increment()
+        val result = MutableLiveData<ApiResponse<UserResponse>>()
+        GlobalScope.launch {
+            val response = service.getUser(email)
+            val responseBody = response.body()?.data?.first()
+            try {
+                if(response.isSuccessful){
+                    if(responseBody != null)
+                        result.postValue(ApiResponse.success(responseBody))
+                    else
+                        result.postValue(ApiResponse.empty(response.message()))
+                } else
+                    result.value = ApiResponse.error(response.message())
+                EspressoIdlingResource.decrement()
+            } catch (e: Throwable) {
+                result.value = ApiResponse.error(e.toString())
+            }
+        }
+        return result
+    }
 
     fun getUser(email: String) : LiveData<ApiResponse<UserResponse>> {
         EspressoIdlingResource.increment()
@@ -68,24 +89,6 @@ class RemoteDataSource private constructor(private val service: RetrofitService)
         return result
     }
 
-    fun postLogin(name: String, date: Date, email: String) : LiveData<ApiResponse<BlankResponse>> {
-        EspressoIdlingResource.increment()
-        val result = MutableLiveData<ApiResponse<BlankResponse>>()
-        GlobalScope.launch {
-            val response = service.postLogin(name, date, email)
-            try {
-                if(response.isSuccessful){
-                    result.postValue(ApiResponse.empty(response.message()))
-                } else
-                    result.postValue(ApiResponse.error(response.message()))
-            } catch (e: Throwable) {
-                result.postValue(ApiResponse.error(e.toString()))
-            }
-            EspressoIdlingResource.decrement()
-        }
-        return result
-    }
-
     /** MOSQUE **/
 
     fun getMosqueRecommendations(latitude: Double, longitude: Double) : LiveData<ApiResponse<List<MosqueRecommendationResponse>>> {
@@ -110,11 +113,11 @@ class RemoteDataSource private constructor(private val service: RetrofitService)
         return result
     }
 
-    fun getMosques(latitude: Double, longitude: Double) : LiveData<ApiResponse<List<MosqueResponse>>> {
+    fun getMosques(idCity:Int, latitude: Double, longitude: Double) : LiveData<ApiResponse<List<MosqueResponse>>> {
         EspressoIdlingResource.increment()
         val result = MutableLiveData<ApiResponse<List<MosqueResponse>>>()
         GlobalScope.launch {
-            val response = service.getMosques(latitude, longitude)
+            val response = service.getMosques(idCity, latitude, longitude)
             val responseBody = response.body()?.mosque
             try {
                 if(response.isSuccessful){
@@ -150,6 +153,42 @@ class RemoteDataSource private constructor(private val service: RetrofitService)
             } catch (e: Throwable) {
                 result.value = ApiResponse.error(e.toString())
             }
+        }
+        return result
+    }
+
+    fun followMosque(id: Int, idMosque: Int) : LiveData<Boolean> {
+        EspressoIdlingResource.increment()
+        val result = MutableLiveData<Boolean>()
+        GlobalScope.launch {
+            val response = service.followMosque(id, idMosque)
+            try {
+                if(response.isSuccessful){
+                    result.postValue(true)
+                } else
+                    result.postValue(false)
+            } catch (e: Throwable) {
+                result.postValue(false)
+            }
+            EspressoIdlingResource.decrement()
+        }
+        return result
+    }
+
+    fun unFollowMosque(id: Int, idMosque: Int) : LiveData<Boolean> {
+        EspressoIdlingResource.increment()
+        val result = MutableLiveData<Boolean>()
+        GlobalScope.launch {
+            val response = service.unFollowMosque(id, idMosque)
+            try {
+                if(response.isSuccessful){
+                    result.postValue(true)
+                } else
+                    result.postValue(false)
+            } catch (e: Throwable) {
+                result.postValue(false)
+            }
+            EspressoIdlingResource.decrement()
         }
         return result
     }

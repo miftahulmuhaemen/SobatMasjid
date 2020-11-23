@@ -8,7 +8,11 @@ import java.util.*
 
 interface DataSource {
 
-//    fun postLogin(name: String, date: Date, email: String): LiveData<Resource<BlankResponse>>
+    fun followMosque(id: String, idMosque: String): LiveData<Boolean>
+
+    fun unFollowMosque(id: String, idMosque: String): LiveData<Boolean>
+
+
 
     fun getUser(email: String) : LiveData<Resource<UserEntity>>
 

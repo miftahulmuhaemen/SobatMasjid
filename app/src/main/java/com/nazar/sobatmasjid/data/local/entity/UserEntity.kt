@@ -30,6 +30,15 @@ data class UserEntity(
     @ColumnInfo(name = "photo")
     var photo: String?,
 
+    @ColumnInfo(name = "idCity")
+    var idCity: String?,
+
+    @ColumnInfo(name = "nameCity")
+    var nameCity: String?,
+
+    @ColumnInfo(name = "apiCode")
+    var apiCode: String?,
+
     @ColumnInfo(name = "motto")
     var motto: String?
 )
