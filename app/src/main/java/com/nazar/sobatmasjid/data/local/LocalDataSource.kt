@@ -18,11 +18,7 @@ class LocalDataSource private constructor(private val mLocalDao: LocalDao){
         }
     }
 
-    fun getUser() : LiveData<UserEntity> = mLocalDao.getUser()
-
-    fun updateUser(user: UserEntity){
-        mLocalDao.updateUser(user)
-    }
+    /** MOSQUE **/
 
     fun getMosqueRecommendations() : DataSource.Factory<Int, MosqueRecommendationEntity> = mLocalDao.getMosqueRecommendations()
 
@@ -36,7 +32,7 @@ class LocalDataSource private constructor(private val mLocalDao: LocalDao){
         mLocalDao.insertFollowedMosques(mosques)
     }
 
-    fun getMosques(city: String, name: String) : DataSource.Factory<Int, MosqueEntity> = mLocalDao.getMosques(city, name)
+    fun getMosques(idCity: String, name: String) : DataSource.Factory<Int, MosqueEntity> = mLocalDao.getMosques(idCity, name)
 
     fun insertMosques(mosques: List<MosqueEntity>){
         mLocalDao.insertMosques(mosques)
@@ -46,6 +42,11 @@ class LocalDataSource private constructor(private val mLocalDao: LocalDao){
 
     fun insertMosqueDetail(mosque: MosqueDetailEntity){
         mLocalDao.insertMosqueDetail(mosque)
+    }
+
+    fun setFollowMosque(mosque: MosqueDetailEntity, newState: Boolean){
+        mosque.followed = newState
+        mLocalDao.setFollowMosque(mosque)
     }
 
     fun getFinancesById(idMosque: String) : DataSource.Factory<Int, FinanceEntity> = mLocalDao.getFinances(idMosque)
@@ -60,9 +61,16 @@ class LocalDataSource private constructor(private val mLocalDao: LocalDao){
         mLocalDao.insertOfficers(officers)
     }
 
+    /** RESEARCH **/
+
     fun getResearches(city: String, title:String) : DataSource.Factory<Int, ResearchEntity> = mLocalDao.getResearches(city, title)
 
     fun getResearchDetail(id: String) : LiveData<ResearchDetailEntity> = mLocalDao.getResearchDetail(id)
+
+    fun setAttendResearch(research: ResearchDetailEntity, newState: Boolean){
+        research.attend = newState
+        mLocalDao.setAttendResearch(research)
+    }
 
     fun insertResearchDetail(research: ResearchDetailEntity){
         mLocalDao.insertResearchDetail(research)
@@ -74,11 +82,15 @@ class LocalDataSource private constructor(private val mLocalDao: LocalDao){
         mLocalDao.insertResearches(researches)
     }
 
+    /** FRIDAY PRAYER **/
+
     fun getFridayPrayers(city: String) : DataSource.Factory<Int, FridayPrayerEntity> = mLocalDao.getFridayPrayers(city)
 
     fun insertFridayPrayers(fridayPrayers: List<FridayPrayerEntity>){
         mLocalDao.insertFridayPrayers(fridayPrayers)
     }
+
+    /** ANNOUNCEMENT **/
 
     fun getAnnouncements(city: String, title:String) : DataSource.Factory<Int, AnnouncementEntity> = mLocalDao.getAnnouncements(city, title)
 
@@ -88,11 +100,15 @@ class LocalDataSource private constructor(private val mLocalDao: LocalDao){
         mLocalDao.insertAnnouncements(announcement)
     }
 
+    /** CITY **/
+
     fun getCities() : DataSource.Factory<Int, CityEntity> = mLocalDao.getCities()
 
     fun insertCities(city: List<CityEntity>){
         mLocalDao.insertCities(city)
     }
+
+    /** SHOLAT **/
 
     fun getSholatTimes() : DataSource.Factory<Int, SholatEntity> = mLocalDao.getSholatTimes()
 

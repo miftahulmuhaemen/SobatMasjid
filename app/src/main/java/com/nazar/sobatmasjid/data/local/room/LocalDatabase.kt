@@ -18,8 +18,7 @@ import com.nazar.sobatmasjid.data.local.entity.*
         MosqueRecommendationEntity::class,
         ResearchEntity::class,
         ResearchDetailEntity::class,
-        SholatEntity::class,
-        UserEntity::class
+        SholatEntity::class
     ], version = 1, exportSchema = false
 )
 abstract class LocalDatabase : RoomDatabase() {

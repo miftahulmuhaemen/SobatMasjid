@@ -4,16 +4,24 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.lifecycle.ViewModelProvider
 import com.firebase.ui.auth.AuthUI
 import com.google.firebase.auth.FirebaseAuth
 import com.nazar.sobatmasjid.R
+import com.nazar.sobatmasjid.preference.Preferences
 import com.nazar.sobatmasjid.ui.login.LoginActivity.Login.FACEBOOK_PROVIDER
 import com.nazar.sobatmasjid.ui.login.LoginActivity.Login.GOOGLE_PROVIDER
 import com.nazar.sobatmasjid.ui.login.LoginActivity.Login.RC_SIGN_IN
 import com.nazar.sobatmasjid.ui.main.MainActivity
+import com.nazar.sobatmasjid.viewmodel.ViewModelFactory
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity(), View.OnClickListener, FirebaseAuth.AuthStateListener {
+
+    private lateinit var viewModel : LoginViewModel
+    val preferences: Preferences by lazy {
+        Preferences(applicationContext)
+    }
 
     object Login {
         const val RC_SIGN_IN: Int = 1
@@ -32,6 +40,9 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, FirebaseAuth.Au
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+        val factory = ViewModelFactory.getInstance(this)
+        viewModel = ViewModelProvider(this, factory)[LoginViewModel::class.java]
     }
 
     override fun onClick(view: View?) {
@@ -48,11 +59,20 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, FirebaseAuth.Au
     }
 
     override fun onAuthStateChanged(state: FirebaseAuth) {
-        if(state.currentUser != null){
+
+        val user = state.currentUser
+
+        if(user != null){
             state.removeAuthStateListener(this)
-            intent = Intent(this, MainActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK )
-            startActivity(intent)
-            finish()
+
+            viewModel.userLogin(
+                user.displayName,
+                user.
+
+            )
+//            intent = Intent(this, MainActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK )
+//            startActivity(intent)
+//            finish()
         }
     }
 }

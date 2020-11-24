@@ -10,12 +10,6 @@ interface LocalDao {
 
     /** USER **/
 
-    @Query("SELECT * FROM user")
-    fun getUser(): LiveData<UserEntity>
-
-    @Update
-    fun updateUser(user: UserEntity)
-
     @Query("SELECT * FROM followedMosque")
     fun getFollowedMosques(): DataSource.Factory<Int, FollowedMosqueEntity>
 
@@ -30,8 +24,8 @@ interface LocalDao {
     @Update
     fun updateMosqueRecommendations(mosqueRecommendations: List<MosqueRecommendationEntity>)
 
-    @Query("SELECT * FROM mosque WHERE city = :city AND name LIKE :name")
-    fun getMosques(city: String, name:String): DataSource.Factory<Int, MosqueEntity>
+    @Query("SELECT * FROM mosque WHERE idCity = :idCity AND name LIKE :name")
+    fun getMosques(idCity: String, name:String): DataSource.Factory<Int, MosqueEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertMosques(mosques: List<MosqueEntity>)
@@ -41,6 +35,9 @@ interface LocalDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertMosqueDetail(mosque: MosqueDetailEntity)
+
+    @Update
+    fun setFollowMosque(mosque: MosqueDetailEntity)
 
     /** FINANCE **/
 
@@ -74,6 +71,9 @@ interface LocalDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertResearchDetail(research: ResearchDetailEntity)
+
+    @Update
+    fun setAttendResearch(research: ResearchDetailEntity)
 
     /** FRIDAY PRAYER **/
 

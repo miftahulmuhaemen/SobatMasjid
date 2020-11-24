@@ -54,6 +54,6 @@ data class ResearchDetailEntity(
     @ColumnInfo(name = "note")
     var note: String?,
 
-    @ColumnInfo(name = "followed")
-    var followed: Boolean?
+    @ColumnInfo(name = "attend")
+    var attend: Boolean?
 )

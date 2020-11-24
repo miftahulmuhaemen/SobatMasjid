@@ -12,6 +12,9 @@ data class MosqueEntity(
     @ColumnInfo(name = "id")
     var id: String,
 
+    @ColumnInfo(name = "idCity")
+    var idCity: String?,
+
     @ColumnInfo(name = "name")
     var name: String?,
 
@@ -32,9 +35,6 @@ data class MosqueEntity(
 
     @ColumnInfo(name = "classification")
     var classification: String?,
-
-    @ColumnInfo(name = "city")
-    var city: String?,
 
     @ColumnInfo(name = "photo")
     var photo: String?

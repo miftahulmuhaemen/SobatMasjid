@@ -99,8 +99,8 @@ interface RetrofitService {
 
     @GET("${BASE_URL}sholat/{apiCode}/{dateNow}?API-KEY=${API_KEY}")
     suspend fun getSholatTimes(
-        @Field("apiCode") apiCode: Int?,
-        @Field("dateNow") dateNow: Date?
+        @Path("apiCode") apiCode: Int?,
+        @Path("dateNow") dateNow: Date?
     ): Response<SholatListResponse>
 
     /** RESEARCH **/
@@ -114,7 +114,7 @@ interface RetrofitService {
 
     @GET("${BASE_URL}research/detail/{idResearch}?API-KEY=${API_KEY}&latitude={latitude}&longitude={longitude}&id-user={idUser}")
     suspend fun getResearchDetail(
-        @Field("idUser") idUser: Int?,
+        @Path("idUser") idUser: Int?,
         @Path("idResearch") idResearch: Int?,
         @Path("latitude") latitude: Double?,
         @Path("longitude") longitude: Double?
@@ -122,12 +122,12 @@ interface RetrofitService {
 
     @FormUrlEncoded
     @POST("${BASE_URL}research/attend")
-    suspend fun postAttendResearch(
+    suspend fun attendResearch(
+        @Field("id-user") idUser: Int?,
         @Field("id-research") idResearch: Int?,
         @Field("id-mosque") idMosque: Int?,
-        @Field("id-user") idUser: Int?,
         @Field("API-KEY") apiKey: String = API_KEY
-    )
+    ): Response<DefaultResponse>
 
     /** ANNOUNCEMENT **/
 
@@ -137,12 +137,5 @@ interface RetrofitService {
         @Path("longitude") longitude: Double?,
         @Path("idCity") idCity: Int?
     ): Response<AnnouncementListResponse>
-
-    @GET("${BASE_URL}announcement/detail/{idAnnouncement}?API-KEY=${API_KEY}&latitude={latitude}&longitude={longitude}")
-    suspend fun getAnnouncementDetail(
-        @Path("latitude") latitude: Double?,
-        @Path("longitude") longitude: Double?,
-        @Path("idAnnouncement") idAnnouncement: Int?
-    ): Response<AnnouncementDetailListResponse>
 
 }

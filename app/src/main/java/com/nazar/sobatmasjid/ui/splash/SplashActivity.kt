@@ -5,8 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.lifecycleScope
 import com.nazar.sobatmasjid.R
+import com.nazar.sobatmasjid.preference.Preferences
 import com.nazar.sobatmasjid.ui.introduction.IntroActivity
-import com.nazar.sobatmasjid.ui.login.LoginActivity
 import kotlinx.android.synthetic.main.activity_splash.*
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -14,6 +14,9 @@ import kotlinx.coroutines.launch
 class SplashActivity : AppCompatActivity() {
 
     private var shortAnimationDuration: Long = 0
+    val prefs: Preferences by lazy {
+        Preferences(applicationContext)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

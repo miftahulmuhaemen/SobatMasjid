@@ -33,69 +33,16 @@ class DataRepository private constructor(
             }
     }
 
-    override fun login(name: String, date: Date, email: String): LiveData<Resource<UserEntity>> {
-        return object : NetworkBoundResource<UserEntity, UserResponse>(appExecutors) {
-            override fun loadFromDB(): LiveData<UserEntity> = localDataSource.getUser()
+    /** USER **/
 
-            override fun shouldFetch(data: UserEntity?): Boolean = true
-
-            override fun createCall(): LiveData<ApiResponse<UserResponse>> =
-                remoteDataSource.getUser(email)
-
-            override fun saveCallResult(data: UserResponse?) {
-                if (data != null) {
-                    val user = UserEntity(
-                        data.id!!,
-                        data.name,
-                        data.bornData,
-                        data.email,
-                        data.gender,
-                        data.numberFollow,
-                        data.photo,
-                        data.idCity,
-                        data.nameCity,
-                        data.apiCode,
-                        data.motto
-                    )
-                    localDataSource.updateUser(user)
-                }
-            }
-        }.asLiveData()
-    }
-
-    override fun updateUserLocation(user: UserEntity){
-
-    }
-
-    override fun getUser(email: String): LiveData<Resource<UserEntity>> {
-        return object : NetworkBoundResource<UserEntity, UserResponse>(appExecutors) {
-            override fun loadFromDB(): LiveData<UserEntity> = localDataSource.getUser()
-
-            override fun shouldFetch(data: UserEntity?): Boolean = true
-
-            override fun createCall(): LiveData<ApiResponse<UserResponse>> =
-                remoteDataSource.getUser(email)
-
-            override fun saveCallResult(data: UserResponse?) {
-                if (data != null) {
-                    val user = UserEntity(
-                        data.id!!,
-                        data.name,
-                        data.bornData,
-                        data.email,
-                        data.gender,
-                        data.numberFollow,
-                        data.photo,
-                        data.idCity,
-                        data.nameCity,
-                        data.apiCode,
-                        data.motto
-                    )
-                    localDataSource.updateUser(user)
-                }
-            }
-        }.asLiveData()
-    }
+    override fun userLogin(
+        name: String,
+        date: Date,
+        email: String,
+        latitude: Double,
+        longitude: Double
+    ): LiveData<ApiResponse<UserResponse>> =
+        remoteDataSource.login(name, date, email, latitude, longitude)
 
     override fun getFollowedMosques(id: Int): LiveData<Resource<PagedList<FollowedMosqueEntity>>> {
         return object :
@@ -136,14 +83,7 @@ class DataRepository private constructor(
         }.asLiveData()
     }
 
-    override fun followMosque(id: Sdsstring, idMosque: String): LiveData<Boolean> {
-        /** NOT UPDATE CURRENT DATABASE **/
-        return remoteDataSource.followMosque(id.toInt(), idMosque.toInt())
-    }
-
-    override fun unFollowMosque(id: Stssdring, idMosque: String): LiveData<Boolean> {
-        return remoteDataSource.unFollowMosque(id.toInt(), idMosque.toInt())
-    }
+    /** MOSQUE **/
 
     override fun getMosqueRecommendations(
         latitude: Double,
@@ -194,7 +134,7 @@ class DataRepository private constructor(
     override fun getMosques(
         latitude: Double,
         longitude: Double,
-        city: String,
+        idCity: String,
         name: String
     ): LiveData<Resource<PagedList<MosqueEntity>>> {
         return object :
@@ -205,14 +145,14 @@ class DataRepository private constructor(
                     .setInitialLoadSizeHint(4)
                     .setPageSize(4)
                     .build()
-                return LivePagedListBuilder(localDataSource.getMosques(city, name), config).build()
+                return LivePagedListBuilder(localDataSource.getMosques(idCity, name), config).build()
             }
 
             override fun shouldFetch(data: PagedList<MosqueEntity>?): Boolean =
                 data == null || data.isEmpty()
 
             override fun createCall(): LiveData<ApiResponse<List<MosqueResponse>>> =
-                remoteDataSource.getMosques(latitude, longitude)
+                remoteDataSource.getMosques(idCity.toInt(), latitude, longitude)
 
             override fun saveCallResult(data: List<MosqueResponse>?) {
                 val mosques = ArrayList<MosqueEntity>()
@@ -238,20 +178,21 @@ class DataRepository private constructor(
     }
 
     override fun getMosqueDetail(
-        id: String,
+        idUser: String,
+        idMosque: String,
         latitude: Double,
         longitude: Double
     ): LiveData<Resource<MosqueDetailEntity>> {
         return object :
             NetworkBoundResource<MosqueDetailEntity, List<MosqueDetailResponse>>(appExecutors) {
             override fun loadFromDB(): LiveData<MosqueDetailEntity> =
-                localDataSource.getMosqueDetail(id)
+                localDataSource.getMosqueDetail(idMosque)
 
             override fun shouldFetch(data: MosqueDetailEntity?): Boolean =
                 data == null
 
             override fun createCall(): LiveData<ApiResponse<List<MosqueDetailResponse>>> =
-                remoteDataSource.getMosqueDetail(id.toInt(), latitude, longitude)
+                remoteDataSource.getMosqueDetail(idUser.toInt(), idMosque.toInt(), latitude, longitude)
 
             override fun saveCallResult(data: List<MosqueDetailResponse>?) {
                 for (response in data!!) {
@@ -354,6 +295,15 @@ class DataRepository private constructor(
         }.asLiveData()
     }
 
+    override fun setFollowMosque(mosque: MosqueDetailEntity, newState: Boolean) =
+        appExecutors.diskIO().execute { localDataSource.setFollowMosque(mosque, newState) }
+
+    override fun followMosque(idUser: String, idMosque: String): LiveData<Boolean> =
+        remoteDataSource.followMosque(idUser.toInt(), idMosque.toInt())
+
+    override fun unFollowMosque(idUser: String, idMosque: String): LiveData<Boolean> =
+        remoteDataSource.unFollowMosque(idUser.toInt(), idMosque.toInt())
+
     override fun getOfficersById(idMosque: String): LiveData<PagedList<OfficerEntity>> {
         val config = PagedList.Config.Builder()
             .setEnablePlaceholders(false)
@@ -372,10 +322,12 @@ class DataRepository private constructor(
         return LivePagedListBuilder(localDataSource.getFinancesById(idMosque), config).build()
     }
 
+    /** RESEARCH **/
+
     override fun getResearches(
         latitude: Double,
         longitude: Double,
-        city: String,
+        idCity: String,
         title: String
     ): LiveData<Resource<PagedList<ResearchEntity>>> {
         return object :
@@ -387,7 +339,7 @@ class DataRepository private constructor(
                     .setPageSize(4)
                     .build()
                 return LivePagedListBuilder(
-                    localDataSource.getResearches(city, title),
+                    localDataSource.getResearches(idCity, title),
                     config
                 ).build()
             }
@@ -396,7 +348,7 @@ class DataRepository private constructor(
                 data == null || data.isEmpty()
 
             override fun createCall(): LiveData<ApiResponse<List<ResearchResponse>>> =
-                remoteDataSource.getResearches(latitude, longitude)
+                remoteDataSource.getResearches(idCity.toInt(), latitude, longitude)
 
             override fun saveCallResult(data: List<ResearchResponse>?) {
                 val researches = ArrayList<ResearchEntity>()
@@ -425,7 +377,8 @@ class DataRepository private constructor(
     }
 
     override fun getResearchDetail(
-        id: String,
+        idUser: String,
+        idResearch: String,
         latitude: Double,
         longitude: Double
     ): LiveData<Resource<ResearchDetailEntity>> {
@@ -433,13 +386,13 @@ class DataRepository private constructor(
             NetworkBoundResource<ResearchDetailEntity, List<ResearchDetailResponse>>(appExecutors) {
 
             override fun loadFromDB(): LiveData<ResearchDetailEntity> =
-                localDataSource.getResearchDetail(id)
+                localDataSource.getResearchDetail(idResearch)
 
             override fun shouldFetch(data: ResearchDetailEntity?): Boolean =
                 data == null
 
             override fun createCall(): LiveData<ApiResponse<List<ResearchDetailResponse>>> =
-                remoteDataSource.getResearchDetail(id.toInt(), latitude, longitude)
+                remoteDataSource.getResearchDetail(idUser.toInt(), idResearch.toInt(), latitude, longitude)
 
             override fun saveCallResult(data: List<ResearchDetailResponse>?) {
                 for (response in data!!) {
@@ -468,6 +421,12 @@ class DataRepository private constructor(
         }.asLiveData()
     }
 
+    override fun attendResearch(idUser: String, idResearch: String, idMosque: String): LiveData<Boolean> =
+        remoteDataSource.attendResearch(idUser.toInt(), idResearch.toInt(), idMosque.toInt())
+
+    override fun setAttendResearch(research: ResearchDetailEntity, newState: Boolean) =
+        appExecutors.diskIO().execute { localDataSource.setAttendResearch(research, newState) }
+
     override fun getResearchesById(idMosque: String): LiveData<PagedList<ResearchEntity>> {
         val config = PagedList.Config.Builder()
             .setEnablePlaceholders(false)
@@ -477,10 +436,12 @@ class DataRepository private constructor(
         return LivePagedListBuilder(localDataSource.getResearchesById(idMosque), config).build()
     }
 
+    /** FRIDAY PRAYERS **/
+
     override fun getFridayPrayers(
         latitude: Double,
         longitude: Double,
-        city: String
+        idCity: String
     ): LiveData<Resource<PagedList<FridayPrayerEntity>>> {
         return object :
             NetworkBoundResource<PagedList<FridayPrayerEntity>, List<FridayPrayerResponse>>(
@@ -492,14 +453,14 @@ class DataRepository private constructor(
                     .setInitialLoadSizeHint(4)
                     .setPageSize(4)
                     .build()
-                return LivePagedListBuilder(localDataSource.getFridayPrayers(city), config).build()
+                return LivePagedListBuilder(localDataSource.getFridayPrayers(idCity), config).build()
             }
 
             override fun shouldFetch(data: PagedList<FridayPrayerEntity>?): Boolean =
                 data == null || data.isEmpty()
 
             override fun createCall(): LiveData<ApiResponse<List<FridayPrayerResponse>>> =
-                remoteDataSource.getFridayPrayers(latitude, longitude)
+                remoteDataSource.getFridayPrayers(idCity.toInt(), latitude, longitude)
 
             override fun saveCallResult(data: List<FridayPrayerResponse>?) {
                 val fridayPrayers = ArrayList<FridayPrayerEntity>()
@@ -524,10 +485,12 @@ class DataRepository private constructor(
         }.asLiveData()
     }
 
+    /** ANNOUNCEMENT **/
+
     override fun getAnnouncements(
         latitude: Double,
         longitude: Double,
-        city: String,
+        idCity: String,
         title: String
     ): LiveData<Resource<PagedList<AnnouncementEntity>>> {
         return object :
@@ -541,7 +504,7 @@ class DataRepository private constructor(
                     .setPageSize(4)
                     .build()
                 return LivePagedListBuilder(
-                    localDataSource.getAnnouncements(city, title),
+                    localDataSource.getAnnouncements(idCity, title),
                     config
                 ).build()
             }
@@ -550,7 +513,7 @@ class DataRepository private constructor(
                 data == null || data.isEmpty()
 
             override fun createCall(): LiveData<ApiResponse<List<AnnouncementResponse>>> =
-                remoteDataSource.getAnnouncements(latitude, longitude)
+                remoteDataSource.getAnnouncements(idCity.toInt(), latitude, longitude)
 
             override fun saveCallResult(data: List<AnnouncementResponse>?) {
                 val announcements = ArrayList<AnnouncementEntity>()
@@ -582,6 +545,8 @@ class DataRepository private constructor(
             .build()
         return LivePagedListBuilder(localDataSource.getAnnouncementsById(idMosque), config).build()
     }
+
+    /** CITY **/
 
     override fun getCities(): LiveData<Resource<PagedList<CityEntity>>> {
         return object :
@@ -618,6 +583,7 @@ class DataRepository private constructor(
         }.asLiveData()
     }
 
+    /** SHOLAT **/
 
     override fun getSholatTimes(
         apiCode: Int,
