@@ -10,6 +10,8 @@ import com.nazar.sobatmasjid.data.local.entity.*
     entities = [
         AnnouncementEntity::class,
         CityEntity::class,
+        FinanceEntity::class,
+        OfficerEntity::class,
         FollowedMosqueEntity::class,
         FridayPrayerEntity::class,
         LocationEntity::class,

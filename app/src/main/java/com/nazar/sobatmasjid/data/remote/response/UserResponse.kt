@@ -8,7 +8,7 @@ data class UserResponse(
     @SerializedName("api-code") var apiCode: String?,
     @SerializedName("name") var name: String?,
     @SerializedName("name-city") var nameCity: String?,
-    @SerializedName("born-date") var bornData: String?,
+    @SerializedName("born-date") var bornDate: String?,
     @SerializedName("email") var email: String?,
     @SerializedName("gender") var gender: String?,
     @SerializedName("motto") var motto: String?,

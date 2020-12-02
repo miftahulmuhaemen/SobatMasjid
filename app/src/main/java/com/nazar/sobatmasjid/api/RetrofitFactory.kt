@@ -1,5 +1,6 @@
 package com.nazar.sobatmasjid.api
 
+import com.nazar.sobatmasjid.BuildConfig
 import com.nazar.sobatmasjid.BuildConfig.BASE_URL
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -20,6 +21,7 @@ object RetrofitFactory {
     private fun makeOkHttpClient(): OkHttpClient {
         return OkHttpClient.Builder()
                 .addInterceptor(makeLoggingInterceptor())
+                .addInterceptor(BasicAuthInterceptor(BuildConfig.UN,BuildConfig.PW))
                 .connectTimeout(120, TimeUnit.SECONDS)
                 .readTimeout(120, TimeUnit.SECONDS)
                 .writeTimeout(90, TimeUnit.SECONDS)

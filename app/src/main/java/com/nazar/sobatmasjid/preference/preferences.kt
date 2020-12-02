@@ -3,11 +3,13 @@ package com.nazar.sobatmasjid.preference
 import android.content.Context
 import android.content.SharedPreferences
 import androidx.core.content.edit
+import com.nazar.sobatmasjid.data.remote.response.UserResponse
 
 class Preferences(context: Context){
 
     companion object {
         private const val PREFS_FILENAME = "SOBAT_MASJID_PREFS"
+        private const val KEY_FIRST_TIME = "KEY_FIRST_TIME"
         private const val KEY_ID_USER = "KEY_ID_USER"
         private const val KEY_ID_CITY = "KEY_ID_CITY"
         private const val KEY_NAME = "KEY_NAME"
@@ -63,4 +65,20 @@ class Preferences(context: Context){
         get() = sharedPrefs.getString(KEY_NAME_CITY, "") ?: ""
         set(value) = sharedPrefs.edit { putString(KEY_NAME_CITY, value) }
 
+    var isNotFirstTime: Boolean
+        get() = sharedPrefs.getBoolean(KEY_FIRST_TIME, false)
+        set(value) = sharedPrefs.edit { putBoolean(KEY_FIRST_TIME, value) }
+
+    fun setPreference(userResponse: UserResponse){
+        sharedPrefs.edit { putString(KEY_ID_USER, userResponse.id) }
+        sharedPrefs.edit { putString(KEY_ID_CITY, userResponse.idCity) }
+        sharedPrefs.edit { putString(KEY_NAME, userResponse.name) }
+        sharedPrefs.edit { putString(KEY_BORN_DATE, userResponse.bornDate) }
+        sharedPrefs.edit { putString(KEY_EMAIL, userResponse.email) }
+        sharedPrefs.edit { putString(KEY_GENDER, userResponse.gender) }
+        sharedPrefs.edit { putString(KEY_MOTTO, userResponse.motto) }
+        sharedPrefs.edit { putString(KEY_NUMBER_FOLLOW, userResponse.numberFollow) }
+        sharedPrefs.edit { putString(KEY_PHOTO_URL, userResponse.photo) }
+        sharedPrefs.edit { putString(KEY_NAME_CITY, userResponse.nameCity) }
+    }
 }

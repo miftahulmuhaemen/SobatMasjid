@@ -7,6 +7,7 @@ import androidx.lifecycle.lifecycleScope
 import com.nazar.sobatmasjid.R
 import com.nazar.sobatmasjid.preference.Preferences
 import com.nazar.sobatmasjid.ui.introduction.IntroActivity
+import com.nazar.sobatmasjid.ui.login.LoginActivity
 import kotlinx.android.synthetic.main.activity_splash.*
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -14,7 +15,7 @@ import kotlinx.coroutines.launch
 class SplashActivity : AppCompatActivity() {
 
     private var shortAnimationDuration: Long = 0
-    val prefs: Preferences by lazy {
+    private val preferences: Preferences by lazy {
         Preferences(applicationContext)
     }
 
@@ -25,7 +26,6 @@ class SplashActivity : AppCompatActivity() {
         shortAnimationDuration = resources.getInteger(android.R.integer.config_shortAnimTime).toLong()
 
         lifecycleScope.launch {
-
             AppLogoBlock.animate()
                 .alpha(1f)
                 .translationY(-AppLogoBlock.height.toFloat())
@@ -53,9 +53,15 @@ class SplashActivity : AppCompatActivity() {
 
             delay(1500)
 
-            intent = Intent(this@SplashActivity, IntroActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK )
-            startActivity(intent)
+            intent = if(!preferences.isNotFirstTime)
+                Intent(this@SplashActivity, IntroActivity::class.java)
+                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK )
+            else
+                Intent(this@SplashActivity, LoginActivity::class.java)
+                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK )
 
+            startActivity(intent)
+            finish()
         }
     }
 }

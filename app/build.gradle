@@ -19,6 +19,8 @@ android {
         buildConfigField("String", "IMAGE_URL", "\"https://pengurus.sobatmasjid.com/assets/foto/\"")
         buildConfigField("String", "BASE_URL", "\"https://api-2.sobatmasjid.com/api-2/\"")
         buildConfigField("String", "API_KEY", "\"sob123\"")
+        buildConfigField("String", "UN", "\"super\"")
+        buildConfigField("String", "PW", "\"1\"")
     }
 
     compileOptions {
@@ -68,6 +70,7 @@ dependencies {
     implementation "androidx.test.espresso:espresso-idling-resource:$idleResourceVersion"
 
     //network
+    implementation "com.google.android.gms:play-services-location:$googleServiceLocationVersion"
     implementation "com.google.code.gson:gson:$gsonVersion"
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
     implementation("com.squareup.retrofit2:converter-moshi:$retrofitVersion")
