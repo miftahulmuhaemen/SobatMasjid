@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tool="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="@dimen/globalPadding"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    tool:viewBindingIgnore="true">
 
-        <TextView
-            android:id="@+id/tvLocation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/dummyAdhanLabel"
-            android:textSize="@dimen/bodyText"
-            android:fontFamily="@font/rubik"/>
+    <TextView
+        android:id="@+id/tvLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/rubik"
+        android:text="@string/dummyAdhanLabel"
+        android:textSize="@dimen/bodyText" />
 
-    </RelativeLayout>
+</RelativeLayout>

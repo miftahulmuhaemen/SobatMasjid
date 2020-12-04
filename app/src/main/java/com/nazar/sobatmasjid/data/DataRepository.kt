@@ -327,7 +327,7 @@ class DataRepository private constructor(
     override fun getResearches(
         latitude: Double,
         longitude: Double,
-        idCity: String,
+        city: String,
         title: String
     ): LiveData<Resource<PagedList<ResearchEntity>>> {
         return object :
@@ -339,7 +339,7 @@ class DataRepository private constructor(
                     .setPageSize(4)
                     .build()
                 return LivePagedListBuilder(
-                    localDataSource.getResearches(idCity, title),
+                    localDataSource.getResearches(city, title),
                     config
                 ).build()
             }
@@ -348,7 +348,7 @@ class DataRepository private constructor(
                 data == null || data.isEmpty()
 
             override fun createCall(): LiveData<ApiResponse<List<ResearchResponse>>> =
-                remoteDataSource.getResearches(idCity.toInt(), latitude, longitude)
+                remoteDataSource.getResearches(city.toInt(), latitude, longitude)
 
             override fun saveCallResult(data: List<ResearchResponse>?) {
                 val researches = ArrayList<ResearchEntity>()

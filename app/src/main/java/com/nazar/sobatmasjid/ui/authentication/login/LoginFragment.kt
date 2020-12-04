@@ -1,38 +1,39 @@
-package com.nazar.sobatmasjid.ui.login
+package com.nazar.sobatmasjid.ui.authentication.login
 
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.firebase.ui.auth.AuthUI
 import com.google.firebase.auth.FirebaseAuth
-import com.nazar.sobatmasjid.R
 import com.nazar.sobatmasjid.data.remote.StatusResponse
 import com.nazar.sobatmasjid.data.service.model.LocationModel
+import com.nazar.sobatmasjid.databinding.FragmentLoginBinding
 import com.nazar.sobatmasjid.preference.Preferences
-import com.nazar.sobatmasjid.ui.login.LoginActivity.Login.FACEBOOK_PROVIDER
-import com.nazar.sobatmasjid.ui.login.LoginActivity.Login.GOOGLE_PROVIDER
-import com.nazar.sobatmasjid.ui.login.LoginActivity.Login.PERMISSION
-import com.nazar.sobatmasjid.ui.login.LoginActivity.Login.RC_SIGN_IN
+import com.nazar.sobatmasjid.ui.authentication.login.LoginFragment.Login.FACEBOOK_PROVIDER
+import com.nazar.sobatmasjid.ui.authentication.login.LoginFragment.Login.GOOGLE_PROVIDER
+import com.nazar.sobatmasjid.ui.authentication.login.LoginFragment.Login.PERMISSION
+import com.nazar.sobatmasjid.ui.authentication.login.LoginFragment.Login.RC_SIGN_IN
 import com.nazar.sobatmasjid.ui.main.MainActivity
 import com.nazar.sobatmasjid.utils.hasPermissions
 import com.nazar.sobatmasjid.viewmodel.ViewModelFactory
-import kotlinx.android.synthetic.main.activity_login.*
 import java.util.*
 
-class LoginActivity : AppCompatActivity(), View.OnClickListener, FirebaseAuth.AuthStateListener {
+class LoginFragment : Fragment(), View.OnClickListener, FirebaseAuth.AuthStateListener {
 
+    private lateinit var binding: FragmentLoginBinding
     private lateinit var viewModel: LoginViewModel
     private var location: Location = Location("currentPosition")
     private val preferences: Preferences by lazy {
-        Preferences(applicationContext)
+        Preferences(requireActivity().applicationContext)
     }
 
     object Login {
@@ -42,19 +43,19 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, FirebaseAuth.Au
         val FACEBOOK_PROVIDER = arrayListOf(AuthUI.IdpConfig.FacebookBuilder().build())
     }
 
-    override fun onStart() {
-        super.onStart()
-        btnGoogle.setOnClickListener(this)
-        btnFacebook.setOnClickListener(this)
-        FirebaseAuth.getInstance().addAuthStateListener(this)
-        onAuthStateChanged(FirebaseAuth.getInstance())
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        binding = FragmentLoginBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-        val factory = ViewModelFactory.getInstance(this)
+        val factory = ViewModelFactory.getInstance(requireContext())
         viewModel = ViewModelProvider(this, factory)[LoginViewModel::class.java]
 
         val permissions = arrayOf(
@@ -63,40 +64,31 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, FirebaseAuth.Au
             Manifest.permission.ACCESS_COARSE_LOCATION
         )
 
-        if (!hasPermissions(this, *permissions)) {
-            ActivityCompat.requestPermissions(this, permissions, PERMISSION)
+        if (!hasPermissions(requireContext(), *permissions)) {
+            requestPermissions(permissions, PERMISSION)
         } else {
-            viewModel.getLocation(this).observe(this, Observer<LocationModel> {
+            viewModel.getLocation(requireContext()).observe(viewLifecycleOwner, Observer<LocationModel> {
                 location.longitude = it?.longitude!!
                 location.latitude = it.latitude
-                pbLoading.visibility = View.GONE
+                binding.pbLoading.visibility = View.GONE
             })
         }
-    }
 
-    override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<out String>,
-        grantResults: IntArray
-    ) {
-        if ((grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
-            viewModel.getLocation(this).observe(this, Observer<LocationModel> {
-                location.longitude = it?.longitude!!
-                location.latitude = it.latitude
-                pbLoading.visibility = View.GONE
-            })
-        }
+        binding.btnGoogle.setOnClickListener(this)
+        binding.btnFacebook.setOnClickListener(this)
+        FirebaseAuth.getInstance().addAuthStateListener(this)
+        onAuthStateChanged(FirebaseAuth.getInstance())
     }
 
     override fun onClick(view: View?) {
         when (view) {
-            btnGoogle -> startActivityForResult(
+            binding.btnGoogle -> startActivityForResult(
                 AuthUI.getInstance().createSignInIntentBuilder()
                     .setAvailableProviders(GOOGLE_PROVIDER)
                     .setIsSmartLockEnabled(false)
                     .build(), RC_SIGN_IN
             )
-            btnFacebook -> startActivityForResult(
+            binding.btnFacebook -> startActivityForResult(
                 AuthUI.getInstance().createSignInIntentBuilder()
                     .setAvailableProviders(FACEBOOK_PROVIDER)
                     .setIsSmartLockEnabled(false)
@@ -111,36 +103,50 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, FirebaseAuth.Au
 
         if (user != null) {
             if (!location.latitude.isNaN()) {
-                pbLoading.visibility = View.VISIBLE
+                binding.pbLoading.visibility = View.VISIBLE
                 viewModel.userLogin(
                     user.displayName!!,
                     currentDate,
                     user.email!!,
                     location.latitude,
                     location.longitude
-                ).observe(this, Observer {
+                ).observe(viewLifecycleOwner, Observer {
                     when (it.status) {
                         StatusResponse.SUCCESS -> {
                             val userResponse = it.body!!
                             preferences.setPreference(userResponse)
                             state.removeAuthStateListener(this)
 
-                            intent = Intent(this, MainActivity::class.java)
+                            requireActivity().intent = Intent(requireActivity(), MainActivity::class.java)
                                 .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
-                            startActivity(intent)
-                            finish()
+                            startActivity(requireActivity().intent)
+                            requireActivity().finish()
                         }
                         StatusResponse.EMPTY -> {
-                            Toast.makeText(this, it.message, Toast.LENGTH_SHORT).show()
+                            Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
                         }
                         StatusResponse.ERROR -> {
-                            Toast.makeText(this, it.message, Toast.LENGTH_SHORT).show()
+                            Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
                         }
                     }
 
-                    pbLoading.visibility = View.GONE
+                    binding.pbLoading.visibility = View.GONE
                 })
             }
+        }
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        if ((grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
+            viewModel.getLocation(requireContext()).observe(viewLifecycleOwner, Observer<LocationModel> {
+                location.longitude = it?.longitude!!
+                location.latitude = it.latitude
+                binding.pbLoading.visibility = View.GONE
+            })
         }
     }
 }

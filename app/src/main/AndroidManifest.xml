@@ -22,10 +22,7 @@
         <activity android:name=".ui.locationn.LocationActivity" />
         <activity android:name=".ui.adhan.AdhanActivity" />
         <activity android:name=".ui.notification.NotificationActivity" />
-        <activity android:name=".ui.introduction.IntroActivity" />
-        <activity android:name=".ui.login.LoginActivity" >
-        </activity>
-        <activity android:name=".ui.splash.SplashActivity">
+        <activity android:name=".ui.authentication.AuthenticationActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

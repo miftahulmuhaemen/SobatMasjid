@@ -5,6 +5,8 @@
     android:paddingTop="@dimen/globalPadding"
     android:paddingStart="@dimen/globalPadding"
     android:paddingEnd="@dimen/globalPadding"
+    xmlns:tool="http://schemas.android.com/tools"
+    tool:viewBindingIgnore="true"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 

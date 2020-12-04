@@ -1,4 +1,4 @@
-package com.nazar.sobatmasjid.ui.introduction
+package com.nazar.sobatmasjid.ui.authentication.introduction
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
