@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph_main"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.nazar.sobatmasjid.ui.fragments.home.HomeFragment"
+        android:label="HomeFragment" />
+    <fragment
+        android:id="@+id/researchFragment"
+        android:name="com.nazar.sobatmasjid.ui.fragments.research.ResearchFragment"
+        android:label="ResearchFragment" />
+    <fragment
+        android:id="@+id/mosqueFragment"
+        android:name="com.nazar.sobatmasjid.ui.fragments.mosque.MosqueFragment"
+        android:label="MosqueFragment" />
+    <fragment
+        android:id="@+id/announcementFragment"
+        android:name="com.nazar.sobatmasjid.ui.fragments.announcement.AnnouncementFragment"
+        android:label="AnnouncementFragment" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.nazar.sobatmasjid.ui.fragments.profile.ProfileFragment"
+        android:label="ProfileFragment" />
+    <fragment
+        android:id="@+id/mosqueDetail"
+        android:name="com.nazar.sobatmasjid.ui.fragments.mosque.detail.MosqueDetailFragment"
+        android:label="MosqueDetail" />
+    <fragment
+        android:id="@+id/announcementDetailFragment"
+        android:name="com.nazar.sobatmasjid.ui.fragments.announcement.detail.AnnouncementDetailFragment"
+        android:label="AnnouncementDetailFragment" />
+    <fragment
+        android:id="@+id/researchDetail"
+        android:name="com.nazar.sobatmasjid.ui.fragments.research.detail.ResearchDetailFragment"
+        android:label="ResearchDetail" />
+</navigation>

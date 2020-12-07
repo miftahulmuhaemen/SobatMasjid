@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.nazar.sobatmasjid.data.DataRepository
 import com.nazar.sobatmasjid.di.Injection
-import com.nazar.sobatmasjid.ui.authentication.login.LoginViewModel
+import com.nazar.sobatmasjid.ui.fragments.login.LoginViewModel
 
 class ViewModelFactory  private constructor(private val dataRepository: DataRepository) : ViewModelProvider.NewInstanceFactory() {
 

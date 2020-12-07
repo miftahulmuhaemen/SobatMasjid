@@ -16,20 +16,14 @@
         android:name="androidx.multidex.MultiDexApplication"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".ui.profile.profileEdit.ProfileEditActivity"/>
-        <activity android:name=".ui.follow.FollowActivity" />
-        <activity android:name=".ui.filter.FilterActivity" />
-        <activity android:name=".ui.locationn.LocationActivity" />
-        <activity android:name=".ui.adhan.AdhanActivity" />
-        <activity android:name=".ui.notification.NotificationActivity" />
-        <activity android:name=".ui.authentication.AuthenticationActivity" >
+        <activity android:name=".ui.activities.authentication.AuthenticationActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.main.MainActivity" />
+        <activity android:name=".ui.activities.main.MainActivity" />
     </application>
 
 

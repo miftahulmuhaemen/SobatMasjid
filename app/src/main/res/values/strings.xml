@@ -73,7 +73,7 @@
     <string name="note">Catatan :</string>
     <string name="register">Hadir</string>
     <string name="following">Mengikuti</string>
-    <string name="followQueryHint">Cari yang diikuti ...</string>
+    <string name="followQueryHint">Cari yang diikuti …</string>
     <string name="statusProfile">Lengkapi Profil</string>
     <string name="dummyPercentageValue">50%</string>
     <string name="akun">Akun</string>
@@ -99,5 +99,6 @@
     <string name="facebook_app_id">2386837598291227</string>
     <string name="facebook_application_id">2386837598291227</string>
     <string name="fb_login_protocol_scheme">fb2386837598291227</string>
+    <string name="backButton">backButton</string>
 
 </resources>
