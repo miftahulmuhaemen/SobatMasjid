@@ -1,8 +1,9 @@
 package com.nazar.sobatmasjid.data.remote.response
 
 import com.google.gson.annotations.SerializedName
+import com.squareup.moshi.Json
 
 data class AnnouncementDetailListResponse(
-    @SerializedName("status") var status: Boolean?,
-    @SerializedName("data") var announcement: List<AnnouncementResponse>?
+    @field:Json(name = "status") var status: Boolean?,
+    @field:Json(name = "data") var announcement: List<AnnouncementResponse>?
 )

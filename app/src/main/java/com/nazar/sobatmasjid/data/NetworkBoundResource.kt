@@ -1,5 +1,6 @@
 package com.nazar.sobatmasjid.data
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import com.nazar.sobatmasjid.data.remote.StatusResponse
@@ -49,7 +50,9 @@ abstract class NetworkBoundResource<ResultType, RequestType>(private val mExecut
         result.addSource(apiResponse) { response ->
             result.removeSource(apiResponse)
             result.removeSource(dbSource)
+
             when (response.status) {
+
                 StatusResponse.SUCCESS ->
                     mExecutors.diskIO().execute {
                         saveCallResult(response.body)

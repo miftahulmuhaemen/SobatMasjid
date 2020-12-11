@@ -1,10 +1,11 @@
 package com.nazar.sobatmasjid.data.remote.response
 
 import com.google.gson.annotations.SerializedName
+import com.squareup.moshi.Json
 
 data class OfficerResponse(
-    @SerializedName("id-mosque") var idMosque: String?,
-    @SerializedName("date") var date: String?,
-    @SerializedName("khatib") var khatib: String?,
-    @SerializedName("muadzin") var muadzin: String?
+    @field:Json(name = "id-mosque") var idMosque: String?,
+    @field:Json(name = "date") var date: String?,
+    @field:Json(name = "khatib") var khatib: String?,
+    @field:Json(name = "muadzin") var muadzin: String?
 )

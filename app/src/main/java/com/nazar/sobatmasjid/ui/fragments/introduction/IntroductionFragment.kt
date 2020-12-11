@@ -1,5 +1,6 @@
 package com.nazar.sobatmasjid.ui.fragments.introduction
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +10,6 @@ import androidx.navigation.fragment.NavHostFragment
 import com.nazar.sobatmasjid.R
 import com.nazar.sobatmasjid.databinding.FragmentIntroBinding
 import com.nazar.sobatmasjid.preference.Preferences
-import com.nazar.sobatmasjid.ui.authentication.introduction.IntroductionFragmentDirections
 import kotlinx.android.synthetic.main.fragment_intro.*
 
 class IntroductionFragment : Fragment() {
@@ -20,6 +20,12 @@ class IntroductionFragment : Fragment() {
     }
     private val navHostController by lazy {
         (requireActivity().supportFragmentManager.findFragmentById(R.id.nav_host_authentication) as NavHostFragment).navController
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        if(preferences.isNotFirstTime)
+            navHostController.navigate(IntroductionFragmentDirections.actionIntroductionFragmentToLoginFragment())
     }
 
     override fun onCreateView(

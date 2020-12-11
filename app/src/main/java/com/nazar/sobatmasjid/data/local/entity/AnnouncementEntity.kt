@@ -34,5 +34,8 @@ data class AnnouncementEntity(
     var mosqueName: String?,
 
     @ColumnInfo(name = "mosqueType")
-    var mosqueType: String?
+    var mosqueType: String?,
+
+    @ColumnInfo(name = "isFollowedMosque")
+    var isFollowedMosque: Boolean?
 )

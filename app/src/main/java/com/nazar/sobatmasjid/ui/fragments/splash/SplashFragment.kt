@@ -10,7 +10,6 @@ import androidx.navigation.fragment.NavHostFragment
 import com.nazar.sobatmasjid.R
 import com.nazar.sobatmasjid.databinding.FragmentSplashBinding
 import com.nazar.sobatmasjid.preference.Preferences
-import com.nazar.sobatmasjid.ui.authentication.splash.SplashFragmentDirections
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 

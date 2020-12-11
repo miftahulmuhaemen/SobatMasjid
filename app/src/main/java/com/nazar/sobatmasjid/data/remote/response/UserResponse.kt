@@ -1,17 +1,17 @@
 package com.nazar.sobatmasjid.data.remote.response
 
-import com.google.gson.annotations.SerializedName
+import com.squareup.moshi.Json
 
 data class UserResponse(
-    @SerializedName("id-user") var id: String?,
-    @SerializedName("id-city") var idCity: String?,
-    @SerializedName("api-code") var apiCode: String?,
-    @SerializedName("name") var name: String?,
-    @SerializedName("name-city") var nameCity: String?,
-    @SerializedName("born-date") var bornDate: String?,
-    @SerializedName("email") var email: String?,
-    @SerializedName("gender") var gender: String?,
-    @SerializedName("motto") var motto: String?,
-    @SerializedName("number-follow") var numberFollow: String?,
-    @SerializedName("photo") var photo: String?
+    @field:Json(name = "id-user") var id: String?,
+    @field:Json(name = "id-city") var idCity: String?,
+    @field:Json(name = "api-code") var apiCode: String?,
+    @field:Json(name = "name") var name: String?,
+    @field:Json(name = "name-city") var nameCity: String?,
+    @field:Json(name = "born-date") var bornDate: String?,
+    @field:Json(name = "email") var email: String?,
+    @field:Json(name = "gender") var gender: String?,
+    @field:Json(name = "motto") var motto: String?,
+    @field:Json(name = "number-follow") var numberFollow: String?,
+    @field:Json(name = "photo") var photo: String?
 )

@@ -2,31 +2,31 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/home"
+        android:id="@+id/homeFragment"
         android:enabled="true"
         android:icon="@drawable/ic_home"
         android:menuCategory="secondary"
         android:title="@string/home" />
     <item
-        android:id="@+id/research"
+        android:id="@+id/researchFragment"
         android:enabled="true"
         android:icon="@drawable/ic_book_open"
         android:menuCategory="secondary"
         android:title="@string/research"/>
     <item
-        android:id="@+id/mosque"
+        android:id="@+id/mosqueFragment"
         android:enabled="true"
         android:icon="@drawable/ic_moon"
         android:menuCategory="secondary"
         android:title="@string/mosque"/>
     <item
-        android:id="@+id/announcement"
+        android:id="@+id/announcementFragment"
         android:enabled="true"
         android:icon="@drawable/ic_announcement_speaker"
         android:menuCategory="secondary"
         android:title="@string/announcement"/>
     <item
-        android:id="@+id/profile"
+        android:id="@+id/profileFragment"
         android:enabled="true"
         android:icon="@drawable/ic_user"
         android:menuCategory="secondary"

@@ -1,19 +1,20 @@
 package com.nazar.sobatmasjid.data.remote.response
 
 import com.google.gson.annotations.SerializedName
+import com.squareup.moshi.Json
 
 data class ResearchResponse(
-    @SerializedName("id-research") var id: String?,
-    @SerializedName("id-city") var idCity: String?,
-    @SerializedName("id-mosque") var idMosque: String?,
-    @SerializedName("title") var researchTitle: String?,
-    @SerializedName("research-type") var researchType: String?,
-    @SerializedName("date") var date: String?,
-    @SerializedName("start-time") var startTime: String?,
-    @SerializedName("end-time") var endTime: String?,
-    @SerializedName("research-category") var category: String?,
-    @SerializedName("ustadz-name") var ustadzName: String?,
-    @SerializedName("photo") var ustadzPhoto: String?,
-    @SerializedName("mosque-name") var mosqueName: String?,
-    @SerializedName("mosque-type") var mosqueType: String?
+    @field:Json(name = "id-research") var id: String?,
+    @field:Json(name = "id-city") var idCity: String?,
+    @field:Json(name = "id-mosque") var idMosque: String?,
+    @field:Json(name = "title") var researchTitle: String?,
+    @field:Json(name = "research-type") var researchType: String?,
+    @field:Json(name = "date") var date: String?,
+    @field:Json(name = "start-time") var startTime: String?,
+    @field:Json(name = "end-time") var endTime: String?,
+    @field:Json(name = "research-category") var category: String?,
+    @field:Json(name = "ustadz-name") var ustadzName: String?,
+    @field:Json(name = "photo") var ustadzPhoto: String?,
+    @field:Json(name = "mosque-name") var mosqueName: String?,
+    @field:Json(name = "mosque-type") var mosqueType: String?
 )

@@ -1,13 +1,13 @@
 package com.nazar.sobatmasjid.data.remote.response
 
-import com.google.gson.annotations.SerializedName
+import com.squareup.moshi.Json
 
 data class SholatResponse(
-    @SerializedName("imsak") var imsak: String?,
-    @SerializedName("shubuh") var shubuh: String?,
-    @SerializedName("dzuhur") var dzuhur: String?,
-    @SerializedName("ashar") var ashar: String?,
-    @SerializedName("maghrib") var maghrib: String?,
-    @SerializedName("isya") var isya: String?,
-    @SerializedName("date") var date: String?
+    @field:Json(name = "imsak") var imsak: String?,
+    @field:Json(name = "shubuh") var shubuh: String?,
+    @field:Json(name = "dzuhur") var dzuhur: String?,
+    @field:Json(name = "ashar") var ashar: String?,
+    @field:Json(name = "maghrib") var maghrib: String?,
+    @field:Json(name = "isya") var isya: String?,
+    @field:Json(name = "date") var date: String?
 )

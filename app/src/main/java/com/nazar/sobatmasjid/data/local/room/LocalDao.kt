@@ -21,7 +21,7 @@ interface LocalDao {
     @Query("SELECT * FROM mosqueRecommendation")
     fun getMosqueRecommendations(): DataSource.Factory<Int, MosqueRecommendationEntity>
 
-    @Update
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun updateMosqueRecommendations(mosqueRecommendations: List<MosqueRecommendationEntity>)
 
     @Query("SELECT * FROM mosque WHERE idCity = :idCity AND name LIKE :name")
@@ -60,6 +60,9 @@ interface LocalDao {
     @Query("SELECT * FROM research WHERE idCity = :city AND title LIKE :title")
     fun getResearches(city: String, title:String): DataSource.Factory<Int, ResearchEntity>
 
+    @Query("SELECT * FROM research WHERE isFollowedMosque = 1")
+    fun getResearchesByUser(): DataSource.Factory<Int, ResearchEntity>
+
     @Query("SELECT * FROM research WHERE idMosque = :idMosque")
     fun getResearchesById(idMosque: String): DataSource.Factory<Int, ResearchEntity>
 
@@ -87,6 +90,9 @@ interface LocalDao {
 
     @Query("SELECT * FROM announcement WHERE idCity = :city AND title LIKE :title")
     fun getAnnouncements(city: String, title:String): DataSource.Factory<Int, AnnouncementEntity>
+
+    @Query("SELECT * FROM announcement WHERE isFollowedMosque = 1")
+    fun getAnnouncementsByUser(): DataSource.Factory<Int, AnnouncementEntity>
 
     @Query("SELECT * FROM announcement WHERE idMosque = :idMosque")
     fun getAnnouncementsById(idMosque: String): DataSource.Factory<Int, AnnouncementEntity>

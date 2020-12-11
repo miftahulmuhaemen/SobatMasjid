@@ -11,9 +11,9 @@ interface RetrofitService {
 
     /** USER **/
 
-    @GET("${BASE_URL}user?API-KEY=${API_KEY}&email={email}")
+    @GET("${BASE_URL}user?API-KEY=${API_KEY}")
     suspend fun getUser(
-        @Path("email") email: String?
+        @Query("email") email: String?
     ): Response<UserListResponse>
 
     @GET("${BASE_URL}user/follow/{idUser}?API-KEY=${API_KEY}")
@@ -46,25 +46,25 @@ interface RetrofitService {
 
     /** MOSQUE **/
 
-    @GET("${BASE_URL}mosque/recommendation?API-KEY=${API_KEY}&latitude={latitude}&longitude={longitude}")
+    @GET("${BASE_URL}mosque/recommendation?API-KEY=${API_KEY}")
     suspend fun getMosqueRecommendations(
-        @Path("latitude") latitude: Double?,
-        @Path("longitude") longitude: Double?
+        @Query("latitude") latitude: Double?,
+        @Query("longitude") longitude: Double?
     ): Response<MosqueRecommendationListResponse>
 
-    @GET("${BASE_URL}mosque/?API-KEY=${API_KEY}&latitude={latitude}&longitude={longitude}&id-city={idCity}")
+    @GET("${BASE_URL}mosque/?API-KEY=${API_KEY}")
     suspend fun getMosques(
-        @Path("idCity") idCity: Int?,
-        @Path("latitude") latitude: Double?,
-        @Path("longitude") longitude: Double?
+        @Query("idCity") idCity: Int?,
+        @Query("latitude") latitude: Double?,
+        @Query("longitude") longitude: Double?
     ): Response<MosqueListResponse>
 
-    @GET("${BASE_URL}mosque/detail/{idMosque}?API-KEY=${API_KEY}&longitude={longitude}&id-user={idUser}")
+    @GET("${BASE_URL}mosque/detail/{idMosque}?API-KEY=${API_KEY}")
     suspend fun getMosqueDetail(
-        @Path("idUser") idUser: Int?,
+        @Query("idUser") idUser: Int?,
         @Path("idMosque") idMosque: Int?,
-        @Path("latitude") latitude: Double?,
-        @Path("longitude") longitude: Double?
+        @Query("latitude") latitude: Double?,
+        @Query("longitude") longitude: Double?
     ): Response<MosqueDetailListResponse>
 
     @FormUrlEncoded
@@ -83,11 +83,11 @@ interface RetrofitService {
 
     /** FRIDAY PRAYER **/
 
-    @GET("${BASE_URL}/friday_prayer/{idUser}?API-KEY=${API_KEY}&latitude={latitude}&longitude={longitude}")
+    @GET("${BASE_URL}/friday_prayer/{idUser}?API-KEY=${API_KEY}")
     suspend fun getFridayPrayers(
         @Path("idUser") idUser: Int?,
-        @Path("latitude") latitude: Double?,
-        @Path("longitude") longitude: Double?
+        @Query("latitude") latitude: Double?,
+        @Query("longitude") longitude: Double?
     ): Response<FridayPrayerListResponse>
 
     /** LOCATION **/
@@ -105,19 +105,26 @@ interface RetrofitService {
 
     /** RESEARCH **/
 
-    @GET("${BASE_URL}research/?API-KEY=${API_KEY}&latitude={latitude}&longitude={longitude}&id-city={idCity}")
+    @GET("${BASE_URL}research/?API-KEY=${API_KEY}")
     suspend fun getResearches(
-        @Path("latitude") latitude: Double?,
-        @Path("longitude") longitude: Double?,
-        @Path("idCity") idCity: Int?
+        @Query("latitude") latitude: Double?,
+        @Query("longitude") longitude: Double?,
+        @Query("idCity") idCity: Int?
     ): Response<ResearchListResponse>
 
-    @GET("${BASE_URL}research/detail/{idResearch}?API-KEY=${API_KEY}&latitude={latitude}&longitude={longitude}&id-user={idUser}")
-    suspend fun getResearchDetail(
+    @GET("${BASE_URL}research/{idUser}?API-KEY=${API_KEY}")
+    suspend fun getResearchesByUser(
         @Path("idUser") idUser: Int?,
+        @Query("latitude") latitude: Double?,
+        @Query("longitude") longitude: Double?
+    ): Response<ResearchListResponse>
+
+    @GET("${BASE_URL}research/detail/{idResearch}?API-KEY=${API_KEY}")
+    suspend fun getResearchDetail(
+        @Query("idUser") idUser: Int?,
         @Path("idResearch") idResearch: Int?,
-        @Path("latitude") latitude: Double?,
-        @Path("longitude") longitude: Double?
+        @Query("latitude") latitude: Double?,
+        @Query("longitude") longitude: Double?
     ): Response<ResearchDetailListResponse>
 
     @FormUrlEncoded
@@ -131,11 +138,18 @@ interface RetrofitService {
 
     /** ANNOUNCEMENT **/
 
-    @GET("${BASE_URL}announcement/?API-KEY=${API_KEY}&latitude={latitude}&longitude={longitude}&id-city={idCity}")
+    @GET("${BASE_URL}announcement/?API-KEY=${API_KEY}")
     suspend fun getAnnouncements(
-        @Path("latitude") latitude: Double?,
-        @Path("longitude") longitude: Double?,
-        @Path("idCity") idCity: Int?
+        @Query("latitude") latitude: Double?,
+        @Query("longitude") longitude: Double?,
+        @Query("idCity") idCity: Int?
+    ): Response<AnnouncementListResponse>
+
+    @GET("${BASE_URL}announcement/{idUser}?API-KEY=${API_KEY}")
+    suspend fun getAnnouncementsByUser(
+        @Path("idUser") idUser: Int?,
+        @Query("latitude") latitude: Double?,
+        @Query("longitude") longitude: Double?
     ): Response<AnnouncementListResponse>
 
 }

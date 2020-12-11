@@ -38,6 +38,8 @@ interface DataSource {
 
     fun getResearches(latitude: Double, longitude: Double, city: String, title: String) : LiveData<Resource<PagedList<ResearchEntity>>>
 
+    fun getResearchesByUser(idUser: String, latitude: Double, longitude: Double) : LiveData<Resource<PagedList<ResearchEntity>>>
+
     fun getResearchDetail(idUser: String, idResearch: String, latitude: Double, longitude: Double) : LiveData<Resource<ResearchDetailEntity>>
 
     fun getResearchesById(idMosque: String): LiveData<PagedList<ResearchEntity>>
@@ -48,11 +50,13 @@ interface DataSource {
 
     /** FRIDAY PRAYER **/
 
-    fun getFridayPrayers(latitude: Double, longitude: Double, city: String) : LiveData<Resource<PagedList<FridayPrayerEntity>>>
+    fun getFridayPrayers(idUser: String, idCity: String, latitude: Double, longitude: Double) : LiveData<Resource<PagedList<FridayPrayerEntity>>>
 
     /** ANNOUNCEMENT **/
 
-    fun getAnnouncements(latitude: Double, longitude: Double, city: String, title: String) : LiveData<Resource<PagedList<AnnouncementEntity>>>
+    fun getAnnouncements(latitude: Double, longitude: Double, idCity: String, title: String) : LiveData<Resource<PagedList<AnnouncementEntity>>>
+
+    fun getAnnouncementsByUser(idUser: String, latitude: Double, longitude: Double) : LiveData<Resource<PagedList<AnnouncementEntity>>>
 
     fun getAnnouncementsById(idMosque: String): LiveData<PagedList<AnnouncementEntity>>
 

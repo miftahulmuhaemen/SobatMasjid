@@ -9,8 +9,8 @@ import androidx.room.PrimaryKey
 data class FridayPrayerEntity(
     @PrimaryKey
     @NonNull
-    @ColumnInfo(name = "id")
-    var id: String,
+    @ColumnInfo(name = "idMosque")
+    var idMosque: String,
 
     @ColumnInfo(name = "idCity")
     var idCity: String?,

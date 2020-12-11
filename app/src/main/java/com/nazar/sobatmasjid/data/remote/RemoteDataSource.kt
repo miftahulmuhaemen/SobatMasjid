@@ -1,5 +1,6 @@
 package com.nazar.sobatmasjid.data.remote
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.nazar.sobatmasjid.api.RetrofitService
@@ -103,11 +104,14 @@ class RemoteDataSource private constructor(private val service: RetrofitService)
                         result.postValue(ApiResponse.success(responseBody))
                     else
                         result.postValue(ApiResponse.empty(response.message()))
+
+
+                    Log.d("LOG", responseBody.toString())
                 } else
-                    result.value = ApiResponse.error(response.message())
+                    result.postValue(ApiResponse.error(response.message()))
                 EspressoIdlingResource.decrement()
             } catch (e: Throwable) {
-                result.value = ApiResponse.error(e.toString())
+                result.postValue(ApiResponse.error(e.toString()))
             }
         }
         return result
@@ -217,6 +221,28 @@ class RemoteDataSource private constructor(private val service: RetrofitService)
         return result
     }
 
+    fun getResearchesByUser(idUser:Int, latitude: Double, longitude: Double) : LiveData<ApiResponse<List<ResearchResponse>>> {
+        EspressoIdlingResource.increment()
+        val result = MutableLiveData<ApiResponse<List<ResearchResponse>>>()
+        GlobalScope.launch {
+            val response = service.getResearchesByUser(idUser, latitude, longitude)
+            val responseBody = response.body()?.research
+            try {
+                if(response.isSuccessful){
+                    if(responseBody != null)
+                        result.postValue(ApiResponse.success(responseBody))
+                    else
+                        result.postValue(ApiResponse.empty(response.message()))
+                } else
+                    result.value = ApiResponse.error(response.message())
+                EspressoIdlingResource.decrement()
+            } catch (e: Throwable) {
+                result.value = ApiResponse.error(e.toString())
+            }
+        }
+        return result
+    }
+
     fun getResearchDetail(idUser:Int, idMosque:Int, latitude: Double, longitude: Double) : LiveData<ApiResponse<List<ResearchDetailResponse>>> {
         EspressoIdlingResource.increment()
         val result = MutableLiveData<ApiResponse<List<ResearchDetailResponse>>>()
@@ -288,6 +314,28 @@ class RemoteDataSource private constructor(private val service: RetrofitService)
         val result = MutableLiveData<ApiResponse<List<AnnouncementResponse>>>()
         GlobalScope.launch {
             val response = service.getAnnouncements(latitude, longitude, idCity)
+            val responseBody = response.body()?.announcement
+            try {
+                if(response.isSuccessful){
+                    if(responseBody != null)
+                        result.postValue(ApiResponse.success(responseBody))
+                    else
+                        result.postValue(ApiResponse.empty(response.message()))
+                } else
+                    result.value = ApiResponse.error(response.message())
+                EspressoIdlingResource.decrement()
+            } catch (e: Throwable) {
+                result.value = ApiResponse.error(e.toString())
+            }
+        }
+        return result
+    }
+
+    fun getAnnouncementsByUser(idUser: Int, latitude: Double, longitude: Double) : LiveData<ApiResponse<List<AnnouncementResponse>>> {
+        EspressoIdlingResource.increment()
+        val result = MutableLiveData<ApiResponse<List<AnnouncementResponse>>>()
+        GlobalScope.launch {
+            val response = service.getAnnouncementsByUser(idUser, latitude, longitude)
             val responseBody = response.body()?.announcement
             try {
                 if(response.isSuccessful){

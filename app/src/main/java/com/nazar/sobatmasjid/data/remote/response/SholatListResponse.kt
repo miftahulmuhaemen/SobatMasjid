@@ -1,8 +1,8 @@
 package com.nazar.sobatmasjid.data.remote.response
 
-import com.google.gson.annotations.SerializedName
+import com.squareup.moshi.Json
 
 data class SholatListResponse(
-    @SerializedName("status") var status: Boolean?,
-    @SerializedName("sholat-time") var data: List<SholatResponse>?
+    @field:Json(name = "status") var status: Boolean?,
+    @field:Json(name = "sholat-time") var data: List<SholatResponse>?
 )

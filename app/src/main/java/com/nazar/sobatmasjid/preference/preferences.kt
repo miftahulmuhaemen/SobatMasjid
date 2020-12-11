@@ -2,6 +2,7 @@ package com.nazar.sobatmasjid.preference
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.location.Location
 import androidx.core.content.edit
 import com.nazar.sobatmasjid.data.remote.response.UserResponse
 
@@ -20,6 +21,8 @@ class Preferences(context: Context){
         private const val KEY_NUMBER_FOLLOW = "KEY_NUMBER_FOLLOW"
         private const val KEY_PHOTO_URL = "KEY_PHOTO_URL"
         private const val KEY_NAME_CITY = "KEY_NAME_CITY"
+        private const val KEY_LATITUDE = "KEY_LATITUDE"
+        private const val KEY_LONGITUDE = "KEY_LONGITUDE"
     }
 
     private val sharedPrefs: SharedPreferences =
@@ -53,9 +56,9 @@ class Preferences(context: Context){
         get() = sharedPrefs.getString(KEY_MOTTO, "") ?: ""
         set(value) = sharedPrefs.edit { putString(KEY_MOTTO, value) }
 
-    var numberFollow: String
-        get() = sharedPrefs.getString(KEY_NUMBER_FOLLOW, "") ?: ""
-        set(value) = sharedPrefs.edit { putString(KEY_NUMBER_FOLLOW, value) }
+    var numberFollow: Int
+        get() = sharedPrefs.getInt(KEY_NUMBER_FOLLOW, 0)
+        set(value) = sharedPrefs.edit { putInt(KEY_NUMBER_FOLLOW, value) }
 
     var photoUrl: String
         get() = sharedPrefs.getString(KEY_PHOTO_URL, "") ?: ""
@@ -69,7 +72,15 @@ class Preferences(context: Context){
         get() = sharedPrefs.getBoolean(KEY_FIRST_TIME, false)
         set(value) = sharedPrefs.edit { putBoolean(KEY_FIRST_TIME, value) }
 
-    fun setPreference(userResponse: UserResponse){
+    var latitude: Double
+        get() = sharedPrefs.getString(KEY_LATITUDE, "")?.toDouble() ?: 0.0
+        set(value) = sharedPrefs.edit { putString(KEY_LATITUDE, value.toString()) }
+
+    var longitude: Double
+        get() = sharedPrefs.getString(KEY_LONGITUDE, "")?.toDouble() ?: 0.0
+        set(value) = sharedPrefs.edit { putString(KEY_LONGITUDE, value.toString()) }
+
+    fun setPreference(userResponse: UserResponse, location: Location){
         sharedPrefs.edit { putString(KEY_ID_USER, userResponse.id) }
         sharedPrefs.edit { putString(KEY_ID_CITY, userResponse.idCity) }
         sharedPrefs.edit { putString(KEY_NAME, userResponse.name) }
@@ -77,8 +88,10 @@ class Preferences(context: Context){
         sharedPrefs.edit { putString(KEY_EMAIL, userResponse.email) }
         sharedPrefs.edit { putString(KEY_GENDER, userResponse.gender) }
         sharedPrefs.edit { putString(KEY_MOTTO, userResponse.motto) }
-        sharedPrefs.edit { putString(KEY_NUMBER_FOLLOW, userResponse.numberFollow) }
+        sharedPrefs.edit { putInt(KEY_NUMBER_FOLLOW, userResponse.numberFollow?.toInt() ?: 0) }
         sharedPrefs.edit { putString(KEY_PHOTO_URL, userResponse.photo) }
         sharedPrefs.edit { putString(KEY_NAME_CITY, userResponse.nameCity) }
+        sharedPrefs.edit { putString(KEY_LATITUDE, location.latitude.toString()) }
+        sharedPrefs.edit { putString(KEY_LONGITUDE, location.longitude.toString()) }
     }
 }

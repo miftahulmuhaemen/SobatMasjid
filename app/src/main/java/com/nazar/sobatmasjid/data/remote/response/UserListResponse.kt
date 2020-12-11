@@ -1,8 +1,8 @@
 package com.nazar.sobatmasjid.data.remote.response
 
-import com.google.gson.annotations.SerializedName
+import com.squareup.moshi.Json
 
 data class UserListResponse(
-    @SerializedName("status") var status: Boolean?,
-    @SerializedName("data") var data: List<UserResponse>?
+    @field:Json(name = "status") var status: Boolean?,
+    @field:Json(name = "data") var data: List<UserResponse>?
 )

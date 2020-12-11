@@ -1,9 +1,10 @@
 package com.nazar.sobatmasjid.data.remote.response
 
 import com.google.gson.annotations.SerializedName
+import com.squareup.moshi.Json
 
 data class MosqueListResponse(
-    @SerializedName("status") var status: Boolean?,
-    @SerializedName("location") var location: List<LocationResponse>?,
-    @SerializedName("mosque") var mosque: List<MosqueResponse>?
+    @field:Json(name = "status") var status: Boolean?,
+    @field:Json(name = "location") var location: List<LocationResponse>?,
+    @field:Json(name = "mosque") var mosque: List<MosqueResponse>?
 )

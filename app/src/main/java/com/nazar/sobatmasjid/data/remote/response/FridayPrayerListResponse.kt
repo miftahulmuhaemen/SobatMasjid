@@ -1,8 +1,9 @@
 package com.nazar.sobatmasjid.data.remote.response
 
 import com.google.gson.annotations.SerializedName
+import com.squareup.moshi.Json
 
 data class FridayPrayerListResponse(
-    @SerializedName("status") var status: Boolean?,
-    @SerializedName("data") var data: List<FridayPrayerResponse>?
+    @field:Json(name = "status") var status: Boolean?,
+    @field:Json(name = "data") var data: List<FridayPrayerResponse>?
 )

@@ -100,5 +100,6 @@
     <string name="facebook_application_id">2386837598291227</string>
     <string name="fb_login_protocol_scheme">fb2386837598291227</string>
     <string name="backButton">backButton</string>
+    <string name="action_bar_followed">Diikuti</string>
 
 </resources>

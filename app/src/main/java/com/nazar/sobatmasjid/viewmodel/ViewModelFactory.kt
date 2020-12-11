@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.nazar.sobatmasjid.data.DataRepository
 import com.nazar.sobatmasjid.di.Injection
+import com.nazar.sobatmasjid.ui.fragments.home.HomeViewModel
 import com.nazar.sobatmasjid.ui.fragments.login.LoginViewModel
 
 class ViewModelFactory  private constructor(private val dataRepository: DataRepository) : ViewModelProvider.NewInstanceFactory() {
@@ -25,9 +26,9 @@ class ViewModelFactory  private constructor(private val dataRepository: DataRepo
             modelClass.isAssignableFrom(LoginViewModel::class.java) -> {
                 LoginViewModel(dataRepository) as T
             }
-//            modelClass.isAssignableFrom(MovieViewModel::class.java) -> {
-//                MovieViewModel(dataRepository) as T
-//            }
+            modelClass.isAssignableFrom(HomeViewModel::class.java) -> {
+                HomeViewModel(dataRepository) as T
+            }
 //            modelClass.isAssignableFrom(BookmarkedMovieViewModel::class.java) -> {
 //                BookmarkedMovieViewModel(dataRepository) as T
 //            }

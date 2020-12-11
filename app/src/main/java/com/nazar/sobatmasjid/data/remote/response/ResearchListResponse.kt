@@ -1,9 +1,10 @@
 package com.nazar.sobatmasjid.data.remote.response
 
 import com.google.gson.annotations.SerializedName
+import com.squareup.moshi.Json
 
 data class ResearchListResponse(
-    @SerializedName("status") var status: Boolean?,
-    @SerializedName("location") var location: List<LocationResponse>?,
-    @SerializedName("research") var research: List<ResearchResponse>?
+    @field:Json(name = "status") var status: Boolean?,
+    @field:Json(name = "location") var location: List<LocationResponse>?,
+    @field:Json(name = "research") var research: List<ResearchResponse>?
 )

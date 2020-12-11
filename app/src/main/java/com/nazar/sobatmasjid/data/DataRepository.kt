@@ -1,5 +1,6 @@
 package com.nazar.sobatmasjid.data
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
@@ -116,7 +117,7 @@ class DataRepository private constructor(
                 for (response in data!!) {
                     val mosque = MosqueRecommendationEntity(
                         response.id!!,
-                        response.name,
+                        response.mosqueName,
                         response.latitude,
                         response.longitude,
                         response.username,
@@ -159,6 +160,7 @@ class DataRepository private constructor(
                 for (response in data!!) {
                     val mosque = MosqueEntity(
                         response.id!!,
+                        response.idCity,
                         response.name,
                         response.latitude,
                         response.longitude,
@@ -166,11 +168,12 @@ class DataRepository private constructor(
                         response.distance,
                         response.type,
                         response.classification,
-                        response.idCity,
                         response.photo
                     )
                     mosques.add(mosque)
                 }
+
+                Log.d("LOG", mosques.toString())
                 localDataSource.insertMosques(mosques)
             }
 
@@ -240,7 +243,8 @@ class DataRepository private constructor(
                             responseResearch.ustadzName,
                             responseResearch.ustadzPhoto,
                             responseResearch.mosqueName,
-                            responseResearch.mosqueType
+                            responseResearch.mosqueType,
+                            null
                         )
                         researches.add(research)
                     }
@@ -255,7 +259,8 @@ class DataRepository private constructor(
                             responseAnnouncement.category,
                             responseAnnouncement.file,
                             responseAnnouncement.mosqueName,
-                            responseAnnouncement.mosqueType
+                            responseAnnouncement.mosqueType,
+                            null
                         )
                         announcements.add(announcement)
                     }
@@ -366,7 +371,60 @@ class DataRepository private constructor(
                         response.ustadzName,
                         response.ustadzPhoto,
                         response.mosqueName,
-                        response.mosqueType
+                        response.mosqueType,
+                        null
+                    )
+                    researches.add(research)
+                }
+                localDataSource.insertResearches(researches)
+            }
+
+        }.asLiveData()
+    }
+
+    override fun getResearchesByUser(
+        idUser: String,
+        latitude: Double,
+        longitude: Double
+    ): LiveData<Resource<PagedList<ResearchEntity>>> {
+        return object :
+            NetworkBoundResource<PagedList<ResearchEntity>, List<ResearchResponse>>(appExecutors) {
+            override fun loadFromDB(): LiveData<PagedList<ResearchEntity>> {
+                val config = PagedList.Config.Builder()
+                    .setEnablePlaceholders(false)
+                    .setInitialLoadSizeHint(4)
+                    .setPageSize(4)
+                    .build()
+                return LivePagedListBuilder(
+                    localDataSource.getResearchesByUser(),
+                    config
+                ).build()
+            }
+
+            override fun shouldFetch(data: PagedList<ResearchEntity>?): Boolean =
+                data == null || data.isEmpty()
+
+            override fun createCall(): LiveData<ApiResponse<List<ResearchResponse>>> =
+                remoteDataSource.getResearchesByUser(idUser.toInt(), latitude, longitude)
+
+            override fun saveCallResult(data: List<ResearchResponse>?) {
+                val researches = ArrayList<ResearchEntity>()
+                for (response in data!!) {
+                    val research = ResearchEntity(
+                        response.id!!,
+                        response.idMosque,
+                        response.idCity,
+                        response.researchTitle,
+                        response.researchType,
+                        response.date,
+                        response.startTime,
+                        response.endTime,
+                        response.category,
+                        response.ustadzName,
+                        response.ustadzPhoto,
+                        response.mosqueName,
+                        response.mosqueType,
+                        true
                     )
                     researches.add(research)
                 }
@@ -439,9 +497,10 @@ class DataRepository private constructor(
     /** FRIDAY PRAYERS **/
 
     override fun getFridayPrayers(
+        idUser: String,
+        idCity: String,
         latitude: Double,
-        longitude: Double,
-        idCity: String
+        longitude: Double
     ): LiveData<Resource<PagedList<FridayPrayerEntity>>> {
         return object :
             NetworkBoundResource<PagedList<FridayPrayerEntity>, List<FridayPrayerResponse>>(
@@ -460,13 +519,13 @@ class DataRepository private constructor(
                 data == null || data.isEmpty()
 
             override fun createCall(): LiveData<ApiResponse<List<FridayPrayerResponse>>> =
-                remoteDataSource.getFridayPrayers(idCity.toInt(), latitude, longitude)
+                remoteDataSource.getFridayPrayers(idUser.toInt(), latitude, longitude)
 
             override fun saveCallResult(data: List<FridayPrayerResponse>?) {
                 val fridayPrayers = ArrayList<FridayPrayerEntity>()
                 for (response in data!!) {
                     val fridayPrayer = FridayPrayerEntity(
-                        response.id!!,
+                        response.idMosque!!,
                         response.idCity,
                         response.mosqueName,
                         response.mosqueType,
@@ -527,7 +586,58 @@ class DataRepository private constructor(
                         response.category,
                         response.file,
                         response.mosqueName,
-                        response.mosqueType
+                        response.mosqueType,
+                        null
+                    )
+                    announcements.add(announcement)
+                }
+                localDataSource.insertAnnouncement(announcements)
+            }
+
+        }.asLiveData()
+    }
+
+    override fun getAnnouncementsByUser(
+        idUser: String,
+        latitude: Double,
+        longitude: Double
+    ): LiveData<Resource<PagedList<AnnouncementEntity>>> {
+        return object :
+            NetworkBoundResource<PagedList<AnnouncementEntity>, List<AnnouncementResponse>>(
+                appExecutors
+            ) {
+            override fun loadFromDB(): LiveData<PagedList<AnnouncementEntity>> {
+                val config = PagedList.Config.Builder()
+                    .setEnablePlaceholders(false)
+                    .setInitialLoadSizeHint(4)
+                    .setPageSize(4)
+                    .build()
+                return LivePagedListBuilder(
+                    localDataSource.getAnnouncementsByUser(),
+                    config
+                ).build()
+            }
+
+            override fun shouldFetch(data: PagedList<AnnouncementEntity>?): Boolean =
+                data == null || data.isEmpty()
+
+            override fun createCall(): LiveData<ApiResponse<List<AnnouncementResponse>>> =
+                remoteDataSource.getAnnouncementsByUser(idUser.toInt(), latitude, longitude)
+
+            override fun saveCallResult(data: List<AnnouncementResponse>?) {
+                val announcements = ArrayList<AnnouncementEntity>()
+                for (response in data!!) {
+                    val announcement = AnnouncementEntity(
+                        response.id!!,
+                        response.idMosque,
+                        response.idCity,
+                        response.title,
+                        response.date,
+                        response.category,
+                        response.file,
+                        response.mosqueName,
+                        response.mosqueType,
+                        true
                     )
                     announcements.add(announcement)
                 }

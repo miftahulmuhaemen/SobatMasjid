@@ -2,17 +2,26 @@ package com.nazar.sobatmasjid.ui.activities.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
 import com.nazar.sobatmasjid.R
+import com.nazar.sobatmasjid.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+
+    private lateinit var binding: ActivityMainBinding
+    private val navHostController by lazy {
+        (supportFragmentManager.findFragmentById(R.id.nav_host_main) as NavHostFragment).navController
     }
 
-    /**Keep in mind that when you perform fragment transactions, such as replace or remove one,
-    it's often appropriate to allow the user to navigate backward and "undo" the change. To allow the user
-    to navigate backward through the fragment transactions, you must call
-    addToBackStack() before you commit the FragmentTransaction.*/
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
+        binding.bottomNavigation.setupWithNavController(navHostController)
+        binding.bottomNavigation.setOnNavigationItemReselectedListener {
+            "Reselect blocked."
+        }
+    }
 }

@@ -1,11 +1,12 @@
 package com.nazar.sobatmasjid.data.remote.response
 
 import com.google.gson.annotations.SerializedName
+import com.squareup.moshi.Json
 
 data class CityResponse(
-    @SerializedName("id-city") var id: String?,
-    @SerializedName("name") var name: String?,
-    @SerializedName("latitude") var latitude: String?,
-    @SerializedName("longitude") var longitude: String?,
-    @SerializedName("api-code") var apiCode: String?
+    @field:Json(name = "id-city") var id: String?,
+    @field:Json(name = "name") var name: String?,
+    @field:Json(name = "latitude") var latitude: String?,
+    @field:Json(name = "longitude") var longitude: String?,
+    @field:Json(name = "api-code") var apiCode: String?
 )

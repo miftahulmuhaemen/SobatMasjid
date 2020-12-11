@@ -1,5 +1,6 @@
 package com.nazar.sobatmasjid.data.local
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.paging.DataSource
 import com.nazar.sobatmasjid.data.local.entity.*
@@ -65,6 +66,8 @@ class LocalDataSource private constructor(private val mLocalDao: LocalDao){
 
     fun getResearches(city: String, title:String) : DataSource.Factory<Int, ResearchEntity> = mLocalDao.getResearches(city, title)
 
+    fun getResearchesByUser() : DataSource.Factory<Int, ResearchEntity> = mLocalDao.getResearchesByUser()
+
     fun getResearchDetail(id: String) : LiveData<ResearchDetailEntity> = mLocalDao.getResearchDetail(id)
 
     fun setAttendResearch(research: ResearchDetailEntity, newState: Boolean){
@@ -93,6 +96,8 @@ class LocalDataSource private constructor(private val mLocalDao: LocalDao){
     /** ANNOUNCEMENT **/
 
     fun getAnnouncements(city: String, title:String) : DataSource.Factory<Int, AnnouncementEntity> = mLocalDao.getAnnouncements(city, title)
+
+    fun getAnnouncementsByUser() : DataSource.Factory<Int, AnnouncementEntity> = mLocalDao.getAnnouncementsByUser()
 
     fun getAnnouncementsById(idMosque: String) : DataSource.Factory<Int, AnnouncementEntity> = mLocalDao.getAnnouncementsById(idMosque)
 

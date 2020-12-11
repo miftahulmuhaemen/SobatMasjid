@@ -46,5 +46,8 @@ data class ResearchEntity(
     var mosqueName: String?,
 
     @ColumnInfo(name = "mosqueType")
-    var mosqueType: String?
+    var mosqueType: String?,
+
+    @ColumnInfo(name = "isFollowedMosque")
+    var isFollowedMosque: Boolean?
 )

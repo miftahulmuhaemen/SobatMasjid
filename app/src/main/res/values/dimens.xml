@@ -36,7 +36,7 @@
     <dimen name="cardRadius">10dp</dimen>
     <dimen name="almostGreatPadding">42dp</dimen>
     <dimen name="smallestMargin">4dp</dimen>
-    <dimen name="almostGreatMargin">64dp</dimen>
+    <dimen name="almostGreatMargin">32dp</dimen>
     <dimen name="editTextProfileMargin">60dp</dimen>
     <dimen name="notificationButtonMargin">42dp</dimen>
     <dimen name="lineSpaceGlobal">7.5dp</dimen>

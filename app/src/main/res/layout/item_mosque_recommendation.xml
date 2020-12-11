@@ -3,15 +3,16 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tool="http://schemas.android.com/tools"
-    tool:viewBindingIgnore="true"
     android:id="@+id/box_item"
     android:layout_width="200dp"
-    android:layout_height="250dp"
+    android:layout_height="wrap_content"
     android:layout_margin="@dimen/globalMargin"
     android:layout_marginBottom="@dimen/globalPadding"
     app:cardCornerRadius="10dp">
 
     <ImageView
+        android:id="@+id/btnDelete"
+        android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_close"
@@ -19,18 +20,21 @@
         android:layout_margin="@dimen/smallMargin"/>
 
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardImg"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/almostGreatMargin"
             app:cardCornerRadius="60dp">
             <ImageView
+                android:id="@+id/imgMosque"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:scaleType="centerCrop"
                 android:src="@color/colorAccent"/>
         </androidx.cardview.widget.CardView>
 
@@ -54,8 +58,9 @@
             android:layout_height="wrap_content"
             android:text="@string/dummyMosqueName"
             android:textStyle="bold"
-            android:lines="1"
+            android:lines="2"
             android:ellipsize="end"
+            android:gravity="center"
             android:paddingStart="@dimen/globalPadding"
             android:paddingEnd="@dimen/globalPadding"
             android:layout_below="@id/tvMosqueUsername"
@@ -93,6 +98,7 @@
             android:gravity="center"
             android:layout_marginTop="@dimen/globalMargin"
             android:padding="@dimen/verySmallPadding"
+            android:layout_marginBottom="@dimen/almostGreatMargin"
             android:layout_below="@id/tvDistance"
             android:layout_centerHorizontal="true"/>
 

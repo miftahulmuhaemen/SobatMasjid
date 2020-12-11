@@ -7,23 +7,64 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.nazar.sobatmasjid.ui.fragments.home.HomeFragment"
-        android:label="HomeFragment" />
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_mosqueDetail"
+            app:destination="@id/mosqueDetail" />
+        <action
+            android:id="@+id/action_homeFragment_to_announcementDetailFragment"
+            app:destination="@id/announcementDetailFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_researchDetail"
+            app:destination="@id/researchDetail" />
+        <action
+            android:id="@+id/action_homeFragment_to_adhanFragment"
+            app:destination="@id/adhanFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_locationFragment"
+            app:destination="@id/locationFragment" />
+    </fragment>
     <fragment
         android:id="@+id/researchFragment"
         android:name="com.nazar.sobatmasjid.ui.fragments.research.ResearchFragment"
-        android:label="ResearchFragment" />
+        android:label="ResearchFragment" >
+        <action
+            android:id="@+id/action_researchFragment_to_researchDetail"
+            app:destination="@id/researchDetail" />
+        <action
+            android:id="@+id/action_researchFragment_to_locationFragment"
+            app:destination="@id/locationFragment" />
+    </fragment>
     <fragment
         android:id="@+id/mosqueFragment"
         android:name="com.nazar.sobatmasjid.ui.fragments.mosque.MosqueFragment"
-        android:label="MosqueFragment" />
+        android:label="MosqueFragment" >
+        <action
+            android:id="@+id/action_mosqueFragment_to_mosqueDetail"
+            app:destination="@id/mosqueDetail" />
+        <action
+            android:id="@+id/action_mosqueFragment_to_locationFragment"
+            app:destination="@id/locationFragment" />
+    </fragment>
     <fragment
         android:id="@+id/announcementFragment"
         android:name="com.nazar.sobatmasjid.ui.fragments.announcement.AnnouncementFragment"
-        android:label="AnnouncementFragment" />
+        android:label="AnnouncementFragment" >
+        <action
+            android:id="@+id/action_announcementFragment_to_announcementDetailFragment"
+            app:destination="@id/announcementDetailFragment" />
+        <action
+            android:id="@+id/action_announcementFragment_to_locationFragment"
+            app:destination="@id/locationFragment" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.nazar.sobatmasjid.ui.fragments.profile.ProfileFragment"
-        android:label="ProfileFragment" />
+        android:label="ProfileFragment" >
+        <action
+            android:id="@+id/action_profileFragment_to_profileEditFragment"
+            app:destination="@id/profileEditFragment" />
+    </fragment>
     <fragment
         android:id="@+id/mosqueDetail"
         android:name="com.nazar.sobatmasjid.ui.fragments.mosque.detail.MosqueDetailFragment"
@@ -36,4 +77,16 @@
         android:id="@+id/researchDetail"
         android:name="com.nazar.sobatmasjid.ui.fragments.research.detail.ResearchDetailFragment"
         android:label="ResearchDetail" />
+    <fragment
+        android:id="@+id/adhanFragment"
+        android:name="com.nazar.sobatmasjid.ui.fragments.adhan.AdhanFragment"
+        android:label="AdhanFragment" />
+    <fragment
+        android:id="@+id/locationFragment"
+        android:name="com.nazar.sobatmasjid.ui.fragments.locationn.LocationFragment"
+        android:label="LocationFragment" />
+    <fragment
+        android:id="@+id/profileEditFragment"
+        android:name="com.nazar.sobatmasjid.ui.fragments.profile.edit.ProfileEditFragment"
+        android:label="ProfileEditFragment" />
 </navigation>
