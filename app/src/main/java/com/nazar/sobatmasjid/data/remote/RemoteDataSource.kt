@@ -130,10 +130,10 @@ class RemoteDataSource private constructor(private val service: RetrofitService)
                     else
                         result.postValue(ApiResponse.empty(response.message()))
                 } else
-                    result.value = ApiResponse.error(response.message())
+                    result.postValue(ApiResponse.empty(response.message()))
                 EspressoIdlingResource.decrement()
             } catch (e: Throwable) {
-                result.value = ApiResponse.error(e.toString())
+                result.postValue(ApiResponse.error(e.toString()))
             }
         }
         return result
@@ -298,10 +298,10 @@ class RemoteDataSource private constructor(private val service: RetrofitService)
                     else
                         result.postValue(ApiResponse.empty(response.message()))
                 } else
-                    result.value = ApiResponse.error(response.message())
+                    result.postValue(ApiResponse.error(response.message()))
                 EspressoIdlingResource.decrement()
             } catch (e: Throwable) {
-                result.value = ApiResponse.error(e.toString())
+                result.postValue(ApiResponse.error(e.toString()))
             }
         }
         return result

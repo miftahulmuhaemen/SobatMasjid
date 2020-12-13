@@ -498,7 +498,6 @@ class DataRepository private constructor(
 
     override fun getFridayPrayers(
         idUser: String,
-        idCity: String,
         latitude: Double,
         longitude: Double
     ): LiveData<Resource<PagedList<FridayPrayerEntity>>> {
@@ -512,7 +511,7 @@ class DataRepository private constructor(
                     .setInitialLoadSizeHint(4)
                     .setPageSize(4)
                     .build()
-                return LivePagedListBuilder(localDataSource.getFridayPrayers(idCity), config).build()
+                return LivePagedListBuilder(localDataSource.getFridayPrayers(), config).build()
             }
 
             override fun shouldFetch(data: PagedList<FridayPrayerEntity>?): Boolean =
@@ -658,7 +657,7 @@ class DataRepository private constructor(
 
     /** CITY **/
 
-    override fun getCities(): LiveData<Resource<PagedList<CityEntity>>> {
+    override fun getCities(query: String): LiveData<Resource<PagedList<CityEntity>>> {
         return object :
             NetworkBoundResource<PagedList<CityEntity>, List<CityResponse>>(appExecutors) {
             override fun loadFromDB(): LiveData<PagedList<CityEntity>> {
@@ -667,7 +666,7 @@ class DataRepository private constructor(
                     .setInitialLoadSizeHint(4)
                     .setPageSize(4)
                     .build()
-                return LivePagedListBuilder(localDataSource.getCities(), config).build()
+                return LivePagedListBuilder(localDataSource.getCities(query), config).build()
             }
 
             override fun shouldFetch(data: PagedList<CityEntity>?): Boolean =

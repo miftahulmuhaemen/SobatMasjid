@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import com.nazar.sobatmasjid.R
 import com.nazar.sobatmasjid.databinding.FragmentSplashBinding
 import com.nazar.sobatmasjid.preference.Preferences
@@ -17,12 +18,6 @@ class SplashFragment : Fragment() {
 
     private lateinit var binding: FragmentSplashBinding
     private var shortAnimationDuration: Long = 0
-    private val preferences: Preferences by lazy {
-        Preferences(requireActivity().applicationContext)
-    }
-    private val navHostController by lazy {
-        (requireActivity().supportFragmentManager.findFragmentById(R.id.nav_host_authentication) as NavHostFragment).navController
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -64,7 +59,7 @@ class SplashFragment : Fragment() {
 
             delay(1500)
 
-            navHostController.navigate(SplashFragmentDirections.actionSplashFragmentToIntroductionFragment())
+            findNavController().navigate(SplashFragmentDirections.actionSplashFragmentToIntroductionFragment())
         }
     }
 

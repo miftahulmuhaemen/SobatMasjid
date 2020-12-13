@@ -54,14 +54,14 @@ interface RetrofitService {
 
     @GET("${BASE_URL}mosque/?API-KEY=${API_KEY}")
     suspend fun getMosques(
-        @Query("idCity") idCity: Int?,
+        @Query("id-city") idCity: Int?,
         @Query("latitude") latitude: Double?,
         @Query("longitude") longitude: Double?
     ): Response<MosqueListResponse>
 
     @GET("${BASE_URL}mosque/detail/{idMosque}?API-KEY=${API_KEY}")
     suspend fun getMosqueDetail(
-        @Query("idUser") idUser: Int?,
+        @Query("id-user") idUser: Int?,
         @Path("idMosque") idMosque: Int?,
         @Query("latitude") latitude: Double?,
         @Query("longitude") longitude: Double?
@@ -70,8 +70,8 @@ interface RetrofitService {
     @FormUrlEncoded
     @POST("${BASE_URL}mosque/follow")
     suspend fun followMosque(
-        @Field("id-mosque") idMosque: Int?,
         @Field("id-user") idUser: Int?,
+        @Field("id-mosque") idMosque: Int?,
         @Field("API-KEY") apiKey: String = API_KEY
     ): Response<DefaultResponse>
 
@@ -83,7 +83,7 @@ interface RetrofitService {
 
     /** FRIDAY PRAYER **/
 
-    @GET("${BASE_URL}/friday_prayer/{idUser}?API-KEY=${API_KEY}")
+    @GET("${BASE_URL}/home/friday_prayer/{idUser}?API-KEY=${API_KEY}")
     suspend fun getFridayPrayers(
         @Path("idUser") idUser: Int?,
         @Query("latitude") latitude: Double?,
@@ -109,10 +109,10 @@ interface RetrofitService {
     suspend fun getResearches(
         @Query("latitude") latitude: Double?,
         @Query("longitude") longitude: Double?,
-        @Query("idCity") idCity: Int?
+        @Query("id-city") idCity: Int?
     ): Response<ResearchListResponse>
 
-    @GET("${BASE_URL}research/{idUser}?API-KEY=${API_KEY}")
+    @GET("${BASE_URL}/home/research/{idUser}?API-KEY=${API_KEY}")
     suspend fun getResearchesByUser(
         @Path("idUser") idUser: Int?,
         @Query("latitude") latitude: Double?,
@@ -121,7 +121,7 @@ interface RetrofitService {
 
     @GET("${BASE_URL}research/detail/{idResearch}?API-KEY=${API_KEY}")
     suspend fun getResearchDetail(
-        @Query("idUser") idUser: Int?,
+        @Query("id-user") idUser: Int?,
         @Path("idResearch") idResearch: Int?,
         @Query("latitude") latitude: Double?,
         @Query("longitude") longitude: Double?
@@ -142,10 +142,10 @@ interface RetrofitService {
     suspend fun getAnnouncements(
         @Query("latitude") latitude: Double?,
         @Query("longitude") longitude: Double?,
-        @Query("idCity") idCity: Int?
+        @Query("id-city") idCity: Int?
     ): Response<AnnouncementListResponse>
 
-    @GET("${BASE_URL}announcement/{idUser}?API-KEY=${API_KEY}")
+    @GET("${BASE_URL}/home/announcement/{idUser}?API-KEY=${API_KEY}")
     suspend fun getAnnouncementsByUser(
         @Path("idUser") idUser: Int?,
         @Query("latitude") latitude: Double?,

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import com.nazar.sobatmasjid.R
 import com.nazar.sobatmasjid.databinding.FragmentIntroBinding
 import com.nazar.sobatmasjid.preference.Preferences
@@ -18,14 +19,11 @@ class IntroductionFragment : Fragment() {
     private val preferences: Preferences by lazy {
         Preferences(requireActivity().applicationContext)
     }
-    private val navHostController by lazy {
-        (requireActivity().supportFragmentManager.findFragmentById(R.id.nav_host_authentication) as NavHostFragment).navController
-    }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
         if(preferences.isNotFirstTime)
-            navHostController.navigate(IntroductionFragmentDirections.actionIntroductionFragmentToLoginFragment())
+            findNavController().navigate(IntroductionFragmentDirections.actionIntroductionFragmentToLoginFragment())
     }
 
     override fun onCreateView(
@@ -47,7 +45,7 @@ class IntroductionFragment : Fragment() {
 
         btnLogin.setOnClickListener {
             preferences.isNotFirstTime = true
-            navHostController.navigate(IntroductionFragmentDirections.actionIntroductionFragmentToLoginFragment())
+            findNavController().navigate(IntroductionFragmentDirections.actionIntroductionFragmentToLoginFragment())
         }
     }
 }

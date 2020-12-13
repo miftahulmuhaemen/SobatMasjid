@@ -14,6 +14,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.firebase.ui.auth.AuthUI
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.nazar.sobatmasjid.data.remote.StatusResponse
 import com.nazar.sobatmasjid.data.service.model.LocationModel
@@ -33,6 +35,7 @@ class LoginFragment : Fragment(), View.OnClickListener, FirebaseAuth.AuthStateLi
     private lateinit var binding: FragmentLoginBinding
     private lateinit var viewModel: LoginViewModel
     private var location: Location = Location("currentPosition")
+    private var isLocationAvailable: Boolean = false
     private val preferences: Preferences by lazy {
         Preferences(requireActivity().applicationContext)
     }
@@ -55,30 +58,17 @@ class LoginFragment : Fragment(), View.OnClickListener, FirebaseAuth.AuthStateLi
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         val factory = ViewModelFactory.getInstance(requireContext())
         viewModel = ViewModelProvider(this, factory)[LoginViewModel::class.java]
-
         val permissions = arrayOf(
             Manifest.permission.INTERNET,
             Manifest.permission.ACCESS_FINE_LOCATION,
             Manifest.permission.ACCESS_COARSE_LOCATION
         )
-
-        if (!hasPermissions(requireContext(), *permissions)) {
+        if (!hasPermissions(requireContext(), *permissions))
             requestPermissions(permissions, PERMISSION)
-        } else {
-            viewModel.getLocation(requireContext()).observe(viewLifecycleOwner,  {
-                location.longitude = it?.longitude!!
-                location.latitude = it.latitude
-                binding.pbLoading.visibility = View.GONE
-            })
-        }
-
-        binding.btnGoogle.setOnClickListener(this)
-        binding.btnFacebook.setOnClickListener(this)
-        FirebaseAuth.getInstance().addAuthStateListener(this)
-        onAuthStateChanged(FirebaseAuth.getInstance())
+        else
+            getLocation()
     }
 
     override fun onClick(view: View?) {
@@ -101,9 +91,8 @@ class LoginFragment : Fragment(), View.OnClickListener, FirebaseAuth.AuthStateLi
     override fun onAuthStateChanged(state: FirebaseAuth) {
         val user = state.currentUser
         val currentDate = Calendar.getInstance().time
-
         if (user != null) {
-            if (!location.latitude.isNaN()) {
+            if (isLocationAvailable) {
                 binding.pbLoading.visibility = View.VISIBLE
                 viewModel.userLogin(
                     user.displayName!!,
@@ -115,7 +104,6 @@ class LoginFragment : Fragment(), View.OnClickListener, FirebaseAuth.AuthStateLi
                     when (it.status) {
                         StatusResponse.SUCCESS -> {
                             val userResponse = it.body!!
-                            Log.d("LOG", userResponse.toString())
                             preferences.setPreference(userResponse, location)
                             state.removeAuthStateListener(this)
 
@@ -131,11 +119,25 @@ class LoginFragment : Fragment(), View.OnClickListener, FirebaseAuth.AuthStateLi
                             Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
                         }
                     }
-
                     binding.pbLoading.visibility = View.GONE
                 })
             }
         }
+    }
+
+    private fun getLocation(){
+        viewModel.getLocation(requireContext()).observe(viewLifecycleOwner, {
+            location.longitude = it?.longitude!!
+            location.latitude = it.latitude
+
+            isLocationAvailable = true
+            binding.pbLoading.visibility = View.GONE
+
+            binding.btnGoogle.setOnClickListener(this)
+            binding.btnFacebook.setOnClickListener(this)
+            FirebaseAuth.getInstance().addAuthStateListener(this)
+            onAuthStateChanged(FirebaseAuth.getInstance())
+        })
     }
 
     override fun onRequestPermissionsResult(
@@ -143,12 +145,7 @@ class LoginFragment : Fragment(), View.OnClickListener, FirebaseAuth.AuthStateLi
         permissions: Array<out String>,
         grantResults: IntArray
     ) {
-        if ((grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
-            viewModel.getLocation(requireContext()).observe(viewLifecycleOwner, {
-                location.longitude = it?.longitude!!
-                location.latitude = it.latitude
-                binding.pbLoading.visibility = View.GONE
-            })
-        }
+        if ((grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED))
+            getLocation()
     }
 }

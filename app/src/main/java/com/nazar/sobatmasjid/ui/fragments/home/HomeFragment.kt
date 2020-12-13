@@ -1,3 +1,4 @@
+
 package com.nazar.sobatmasjid.ui.fragments.home
 
 import android.os.Bundle
@@ -7,16 +8,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nazar.sobatmasjid.R
 import com.nazar.sobatmasjid.databinding.FragmentHomeBinding
 import com.nazar.sobatmasjid.preference.Preferences
-import com.nazar.sobatmasjid.ui.adapters.AnnouncementAdapter
-import com.nazar.sobatmasjid.ui.adapters.MosqueFitAdapter
-import com.nazar.sobatmasjid.ui.adapters.MosqueRecommendationAdapter
-import com.nazar.sobatmasjid.ui.adapters.ResearchAdapter
+import com.nazar.sobatmasjid.ui.adapters.*
+import com.nazar.sobatmasjid.utils.extensions.setGone
+import com.nazar.sobatmasjid.utils.extensions.setVisible
 import com.nazar.sobatmasjid.viewmodel.ViewModelFactory
 import com.nazar.sobatmasjid.vo.Status
 
@@ -24,11 +26,9 @@ class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
     private lateinit var viewModel: HomeViewModel
+    private lateinit var mosqueFitAdapter: MosqueFitAdapter
     private val preferences: Preferences by lazy {
         Preferences(requireActivity().applicationContext)
-    }
-    private val navHostController by lazy {
-        (requireActivity().supportFragmentManager.findFragmentById(R.id.nav_host_main) as NavHostFragment).navController
     }
 
     override fun onCreateView(
@@ -46,14 +46,43 @@ class HomeFragment : Fragment() {
         viewModel = ViewModelProvider(this, factory)[HomeViewModel::class.java]
 
         if(preferences.numberFollow == 0)
-            setupFollowRecommendation()
+            setupDataByRecommendation()
         else {
-            setupHome()
+            binding.layoutMosqueRecommendation.setGone()
+            binding.layoutHome.setVisible()
+            setupDataByUser()
+            setupDataByLocation()
+            afterLocationDialogDismiss()
         }
 
+        binding.btnCurrentLocation.text = preferences.nameCity
+        binding.btnMosqueList.setOnClickListener { findNavController().navigate(R.id.mosqueFragment) }
+        binding.btnCurrentLocation.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_locationFragment)
+        }
     }
 
-    private fun setupFollowRecommendation(){
+    private fun afterLocationDialogDismiss(){
+        val navBackStackEntry = findNavController().getBackStackEntry(R.id.homeFragment)
+        val observer = LifecycleEventObserver { _, event ->
+            if (event == Lifecycle.Event.ON_RESUME
+                && navBackStackEntry.savedStateHandle.contains("key")) {
+                val result = navBackStackEntry.savedStateHandle.get<Boolean>("key")
+                if(result == true){
+                    setupDataByLocation()
+                    binding.btnCurrentLocation.text = preferences.nameCity
+                }
+            }
+        }
+        navBackStackEntry.lifecycle.addObserver(observer)
+        viewLifecycleOwner.lifecycle.addObserver(LifecycleEventObserver { _, event ->
+            if (event == Lifecycle.Event.ON_DESTROY) {
+                navBackStackEntry.lifecycle.removeObserver(observer)
+            }
+        })
+    }
+
+    private fun setupDataByRecommendation(){
         val mosqueRecommendationAdapter = MosqueRecommendationAdapter { position ->
             viewModel.followMosque(preferences.idUser, position)
             preferences.numberFollow = 1
@@ -82,29 +111,22 @@ class HomeFragment : Fragment() {
         })
     }
 
-
-    private fun setupHome(){
-
-        binding.layoutMosqueRecommendation.visibility = View.GONE
-        binding.layoutHome.visibility = View.VISIBLE
-
-        val mosqueFitAdapter = MosqueFitAdapter()
+    private fun setupDataByLocation(){
+        mosqueFitAdapter = MosqueFitAdapter()
         with(binding.rvMosque){
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-            setHasFixedSize(true)
             adapter = mosqueFitAdapter
         }
         viewModel.getMosques(
             preferences.latitude,
             preferences.longitude,
             preferences.idCity,
-            "Al-Istiqomah"
+            ""
         ).observe(viewLifecycleOwner, { mosques ->
             if(mosques != null){
                 when(mosques.status){
                     Status.LOADING -> {}
                     Status.SUCCESS -> {
-                        Log.d("LOG", mosques.toString())
                         mosqueFitAdapter.submitList(mosques.data)
                         mosqueFitAdapter.notifyDataSetChanged()
                     }
@@ -114,12 +136,23 @@ class HomeFragment : Fragment() {
                 }
             }
         })
+    }
 
+    private fun setupDataByUser(){
         val researchAdapter = ResearchAdapter()
         with(binding.rvResearch){
-            layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-            setHasFixedSize(true)
+            layoutManager = LinearLayoutManager(context)
             adapter = researchAdapter
+        }
+        val announcementAdapter = AnnouncementAdapter()
+        with(binding.rvAnnouncement){
+            layoutManager = LinearLayoutManager(context)
+            adapter = announcementAdapter
+        }
+        val fridayPrayerAdapter = FridayPrayerAdapter()
+        with(binding.rvFridayPrayer){
+            layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+            adapter = fridayPrayerAdapter
         }
         viewModel.getResearches(
             preferences.idUser,
@@ -139,13 +172,6 @@ class HomeFragment : Fragment() {
                 }
             }
         })
-
-        val announcementAdapter = AnnouncementAdapter()
-        with(binding.rvAnnouncement){
-            layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-            setHasFixedSize(true)
-            adapter = announcementAdapter
-        }
         viewModel.getAnnouncements(
             preferences.idUser,
             preferences.latitude,
@@ -156,7 +182,7 @@ class HomeFragment : Fragment() {
                     Status.LOADING -> {}
                     Status.SUCCESS -> {
                         announcementAdapter.submitList(announcements.data)
-                        researchAdapter.notifyDataSetChanged()
+                        announcementAdapter.notifyDataSetChanged()
                     }
                     Status.ERROR -> {
                         Toast.makeText(context, "Terjadi kesalahan", Toast.LENGTH_SHORT).show()
@@ -164,18 +190,24 @@ class HomeFragment : Fragment() {
                 }
             }
         })
-
-//        viewModel.getFridayPrayers(
-//            preferences.idCity,
-//            preferences.idUser,
-//            preferences.latitude,
-//            preferences.longitude
-//        ).observe(viewLifecycleOwner, { fridayPrayers ->
-//            if(fridayPrayers != null){
-//                when(fridayPrayers.status){
-//
-//                }
-//            }
-//        })
+        viewModel.getFridayPrayers(
+            preferences.idUser,
+            preferences.latitude,
+            preferences.longitude
+        ).observe(viewLifecycleOwner, { fridayPrayers ->
+            if(fridayPrayers != null){
+                when(fridayPrayers.status){
+                    Status.LOADING -> {}
+                    Status.SUCCESS -> {
+                        fridayPrayerAdapter.submitList(fridayPrayers.data)
+                        fridayPrayerAdapter.notifyDataSetChanged()
+                    }
+                    Status.ERROR -> {
+//                        Toast.makeText(context, "Terjadi kesalahan", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            }
+        })
     }
+
 }

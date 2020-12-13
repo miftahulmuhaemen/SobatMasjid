@@ -87,7 +87,7 @@ class LocalDataSource private constructor(private val mLocalDao: LocalDao){
 
     /** FRIDAY PRAYER **/
 
-    fun getFridayPrayers(city: String) : DataSource.Factory<Int, FridayPrayerEntity> = mLocalDao.getFridayPrayers(city)
+    fun getFridayPrayers() : DataSource.Factory<Int, FridayPrayerEntity> = mLocalDao.getFridayPrayers()
 
     fun insertFridayPrayers(fridayPrayers: List<FridayPrayerEntity>){
         mLocalDao.insertFridayPrayers(fridayPrayers)
@@ -107,7 +107,7 @@ class LocalDataSource private constructor(private val mLocalDao: LocalDao){
 
     /** CITY **/
 
-    fun getCities() : DataSource.Factory<Int, CityEntity> = mLocalDao.getCities()
+    fun getCities(query: String) : DataSource.Factory<Int, CityEntity> = mLocalDao.getCities(query)
 
     fun insertCities(city: List<CityEntity>){
         mLocalDao.insertCities(city)

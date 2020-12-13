@@ -21,9 +21,9 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginEnd="16dp"
+                android:contentDescription="@string/backButton"
                 android:paddingStart="@dimen/globalPadding"
                 android:paddingEnd="0dp"
-                android:contentDescription="@string/backButton"
                 android:src="@drawable/ic_back_arrow_40dp" />
 
             <androidx.appcompat.widget.SearchView
@@ -34,24 +34,23 @@
                 android:layout_toEndOf="@id/btnBack"
                 android:paddingTop="@dimen/verySmallPadding"
                 android:paddingBottom="@dimen/verySmallPadding"
-                app:searchIcon="@null"
-                app:searchHintIcon="@null"
-                app:queryHint="@string/mosqueQueryHintSearch"
                 app:iconifiedByDefault="false"
-                />
+                app:queryHint="@string/mosqueQueryHintSearch"
+                app:searchHintIcon="@null"
+                app:searchIcon="@null" />
 
         </RelativeLayout>
 
     </com.google.android.material.appbar.AppBarLayout>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvNotification"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/appbar"
-                android:isScrollContainer="false"
-                android:orientation="vertical"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:listitem="@layout/item_location" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvLocation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/appbar"
+        android:isScrollContainer="false"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_location" />
 
 </RelativeLayout>

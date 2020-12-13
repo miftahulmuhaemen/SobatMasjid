@@ -2,7 +2,9 @@ package com.nazar.sobatmasjid.ui.base
 
 import android.app.Dialog
 import android.os.Bundle
+import android.util.Log
 import android.view.Gravity
+import android.view.ViewGroup
 import android.view.WindowManager
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
@@ -11,6 +13,12 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
  */
 
 open class BaseBottomSheetFragment : BottomSheetDialogFragment() {
+
+    override fun onStart() {
+        super.onStart()
+        dialog?.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
+    }
+
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val dialog = super.onCreateDialog(savedInstanceState)
         if (dialog.window != null) {

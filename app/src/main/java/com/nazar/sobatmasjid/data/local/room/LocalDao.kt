@@ -24,7 +24,7 @@ interface LocalDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun updateMosqueRecommendations(mosqueRecommendations: List<MosqueRecommendationEntity>)
 
-    @Query("SELECT * FROM mosque WHERE idCity = :idCity AND name LIKE :name")
+    @Query("SELECT * FROM mosque WHERE idCity = :idCity AND name LIKE '%' || :name || '%' ")
     fun getMosques(idCity: String, name:String): DataSource.Factory<Int, MosqueEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
@@ -57,7 +57,7 @@ interface LocalDao {
 
     /** RESEARCH **/
 
-    @Query("SELECT * FROM research WHERE idCity = :city AND title LIKE :title")
+    @Query("SELECT * FROM research WHERE idCity = :city AND title LIKE '%' || :title || '%' ")
     fun getResearches(city: String, title:String): DataSource.Factory<Int, ResearchEntity>
 
     @Query("SELECT * FROM research WHERE isFollowedMosque = 1")
@@ -80,15 +80,15 @@ interface LocalDao {
 
     /** FRIDAY PRAYER **/
 
-    @Query("SELECT * FROM fridayPrayer WHERE idCity = :city")
-    fun getFridayPrayers(city: String): DataSource.Factory<Int, FridayPrayerEntity>
+    @Query("SELECT * FROM fridayPrayer")
+    fun getFridayPrayers(): DataSource.Factory<Int, FridayPrayerEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertFridayPrayers(fridayPrayers: List<FridayPrayerEntity>)
 
     /** ANNOUNCEMENT **/
 
-    @Query("SELECT * FROM announcement WHERE idCity = :city AND title LIKE :title")
+    @Query("SELECT * FROM announcement WHERE idCity = :city AND title LIKE '%' || :title || '%' ")
     fun getAnnouncements(city: String, title:String): DataSource.Factory<Int, AnnouncementEntity>
 
     @Query("SELECT * FROM announcement WHERE isFollowedMosque = 1")
@@ -102,8 +102,8 @@ interface LocalDao {
 
     /** LOCATION **/
 
-    @Query("SELECT * FROM city")
-    fun getCities(): DataSource.Factory<Int, CityEntity>
+    @Query("SELECT * FROM city WHERE name LIKE '%' || :query || '%' ")
+    fun getCities(query: String): DataSource.Factory<Int, CityEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertCities(cities: List<CityEntity>)

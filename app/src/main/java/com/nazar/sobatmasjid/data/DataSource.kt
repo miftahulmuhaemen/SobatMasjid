@@ -50,7 +50,7 @@ interface DataSource {
 
     /** FRIDAY PRAYER **/
 
-    fun getFridayPrayers(idUser: String, idCity: String, latitude: Double, longitude: Double) : LiveData<Resource<PagedList<FridayPrayerEntity>>>
+    fun getFridayPrayers(idUser: String, latitude: Double, longitude: Double) : LiveData<Resource<PagedList<FridayPrayerEntity>>>
 
     /** ANNOUNCEMENT **/
 
@@ -62,7 +62,7 @@ interface DataSource {
 
     /** CITY **/
 
-    fun getCities() : LiveData<Resource<PagedList<CityEntity>>>
+    fun getCities(query: String) : LiveData<Resource<PagedList<CityEntity>>>
 
     /** SHOLAT **/
 

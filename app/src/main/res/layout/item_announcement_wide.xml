@@ -6,7 +6,8 @@
     android:layout_height="wrap_content"
     android:paddingStart="@dimen/globalPadding"
     android:paddingTop="@dimen/globalPadding"
-    android:paddingEnd="@dimen/globalPadding">
+    android:paddingEnd="@dimen/globalPadding"
+    android:paddingBottom="@dimen/globalPadding">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card"
@@ -51,20 +52,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="1dp"
-        android:layout_marginEnd="121dp"
+        android:layout_marginEnd="@dimen/globalMargin"
         android:layout_toStartOf="@id/tvAnnouncementCategory"
         android:layout_toEndOf="@id/card"
         android:ellipsize="end"
-        android:lines="1"
+        android:maxLines="3"
         android:paddingStart="@dimen/globalPadding"
         android:paddingEnd="@dimen/globalPadding"
-        android:text="@string/researchTitle" />
+        android:text="Judul kajian Kajian" />
 
     <TextView
         android:id="@+id/tvMosqueName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tvAnnouncementTitle"
+        android:layout_toStartOf="@id/tvAnnouncementCategory"
+        android:layout_marginEnd="@dimen/globalMargin"
         android:layout_toEndOf="@id/card"
         android:drawablePadding="@dimen/verySmallPadding"
         android:paddingStart="@dimen/globalPadding"

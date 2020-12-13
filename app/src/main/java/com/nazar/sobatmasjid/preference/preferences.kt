@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.location.Location
 import androidx.core.content.edit
+import com.nazar.sobatmasjid.data.local.entity.CityEntity
 import com.nazar.sobatmasjid.data.remote.response.UserResponse
 
 class Preferences(context: Context){
@@ -21,6 +22,7 @@ class Preferences(context: Context){
         private const val KEY_NUMBER_FOLLOW = "KEY_NUMBER_FOLLOW"
         private const val KEY_PHOTO_URL = "KEY_PHOTO_URL"
         private const val KEY_NAME_CITY = "KEY_NAME_CITY"
+        private const val KEY_API_CODE = "KEY_API_CODE"
         private const val KEY_LATITUDE = "KEY_LATITUDE"
         private const val KEY_LONGITUDE = "KEY_LONGITUDE"
     }
@@ -68,6 +70,10 @@ class Preferences(context: Context){
         get() = sharedPrefs.getString(KEY_NAME_CITY, "") ?: ""
         set(value) = sharedPrefs.edit { putString(KEY_NAME_CITY, value) }
 
+    var apiCode: String
+        get() = sharedPrefs.getString(KEY_API_CODE, "") ?: ""
+        set(value) = sharedPrefs.edit { putString(KEY_API_CODE, value) }
+
     var isNotFirstTime: Boolean
         get() = sharedPrefs.getBoolean(KEY_FIRST_TIME, false)
         set(value) = sharedPrefs.edit { putBoolean(KEY_FIRST_TIME, value) }
@@ -91,7 +97,14 @@ class Preferences(context: Context){
         sharedPrefs.edit { putInt(KEY_NUMBER_FOLLOW, userResponse.numberFollow?.toInt() ?: 0) }
         sharedPrefs.edit { putString(KEY_PHOTO_URL, userResponse.photo) }
         sharedPrefs.edit { putString(KEY_NAME_CITY, userResponse.nameCity) }
+        sharedPrefs.edit { putString(KEY_API_CODE, userResponse.apiCode) }
         sharedPrefs.edit { putString(KEY_LATITUDE, location.latitude.toString()) }
         sharedPrefs.edit { putString(KEY_LONGITUDE, location.longitude.toString()) }
+    }
+
+    fun setCity(city: CityEntity){
+        sharedPrefs.edit { putString(KEY_ID_CITY, city.id) }
+        sharedPrefs.edit { putString(KEY_NAME_CITY, city.name) }
+        sharedPrefs.edit { putString(KEY_API_CODE, city.apiCode) }
     }
 }

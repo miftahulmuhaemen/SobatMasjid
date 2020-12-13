@@ -109,7 +109,7 @@
 
     </LinearLayout>
 
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    <LinearLayout
         android:visibility="gone"
         android:id="@+id/layoutHome"
         android:layout_width="wrap_content"
@@ -191,7 +191,6 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tvRecentResearch"
                     android:isScrollContainer="false"
-                    android:orientation="vertical"
                     tools:itemCount="3"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     tools:listitem="@layout/item_research_wide" />
@@ -280,8 +279,7 @@
 
             </RelativeLayout>
         </ScrollView>
-
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </LinearLayout>
 
     <!--    <RelativeLayout-->
     <!--        android:layout_width="match_parent"-->

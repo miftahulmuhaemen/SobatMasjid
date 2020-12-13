@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph_main"
     app:startDestination="@id/homeFragment">
 
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.nazar.sobatmasjid.ui.fragments.home.HomeFragment"
-        android:label="HomeFragment" >
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_mosqueDetail"
             app:destination="@id/mosqueDetail" />
@@ -81,9 +83,9 @@
         android:id="@+id/adhanFragment"
         android:name="com.nazar.sobatmasjid.ui.fragments.adhan.AdhanFragment"
         android:label="AdhanFragment" />
-    <fragment
+    <dialog
         android:id="@+id/locationFragment"
-        android:name="com.nazar.sobatmasjid.ui.fragments.locationn.LocationFragment"
+        android:name="com.nazar.sobatmasjid.ui.fragments.location.LocationFragment"
         android:label="LocationFragment" />
     <fragment
         android:id="@+id/profileEditFragment"
