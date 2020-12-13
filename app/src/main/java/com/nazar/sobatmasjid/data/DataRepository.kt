@@ -136,7 +136,9 @@ class DataRepository private constructor(
         latitude: Double,
         longitude: Double,
         idCity: String,
-        name: String
+        name: String,
+        type: List<String>,
+        classification: List<String>
     ): LiveData<Resource<PagedList<MosqueEntity>>> {
         return object :
             NetworkBoundResource<PagedList<MosqueEntity>, List<MosqueResponse>>(appExecutors) {
@@ -146,7 +148,7 @@ class DataRepository private constructor(
                     .setInitialLoadSizeHint(4)
                     .setPageSize(4)
                     .build()
-                return LivePagedListBuilder(localDataSource.getMosques(idCity, name), config).build()
+                return LivePagedListBuilder(localDataSource.getMosques(idCity, name, type, classification), config).build()
             }
 
             override fun shouldFetch(data: PagedList<MosqueEntity>?): Boolean =
@@ -166,14 +168,12 @@ class DataRepository private constructor(
                         response.longitude,
                         response.username,
                         response.distance,
-                        response.type,
-                        response.classification,
+                        response.type?.toLowerCase(Locale.getDefault()),
+                        response.classification?.toLowerCase(Locale.getDefault()),
                         response.photo
                     )
                     mosques.add(mosque)
                 }
-
-                Log.d("LOG", mosques.toString())
                 localDataSource.insertMosques(mosques)
             }
 
@@ -211,8 +211,8 @@ class DataRepository private constructor(
                         response.longitude,
                         response.username,
                         response.distance,
-                        response.type,
-                        response.classification,
+                        response.type?.toLowerCase(Locale.getDefault()),
+                        response.classification?.toLowerCase(Locale.getDefault())   ,
                         response.email,
                         response.description,
                         response.standingDate,
@@ -235,7 +235,7 @@ class DataRepository private constructor(
                             responseResearch.idMosque,
                             responseResearch.idCity,
                             responseResearch.researchTitle,
-                            responseResearch.researchType,
+                            responseResearch.researchType?.toLowerCase(Locale.getDefault()),
                             responseResearch.date,
                             responseResearch.startTime,
                             responseResearch.endTime,
@@ -256,7 +256,7 @@ class DataRepository private constructor(
                             responseAnnouncement.idCity,
                             responseAnnouncement.title,
                             responseAnnouncement.date,
-                            responseAnnouncement.category,
+                            responseAnnouncement.category?.toLowerCase(Locale.getDefault()),
                             responseAnnouncement.file,
                             responseAnnouncement.mosqueName,
                             responseAnnouncement.mosqueType,
@@ -363,7 +363,7 @@ class DataRepository private constructor(
                         response.idMosque,
                         response.idCity,
                         response.researchTitle,
-                        response.researchType,
+                        response.researchType?.toLowerCase(Locale.getDefault()),
                         response.date,
                         response.startTime,
                         response.endTime,
@@ -415,7 +415,7 @@ class DataRepository private constructor(
                         response.idMosque,
                         response.idCity,
                         response.researchTitle,
-                        response.researchType,
+                        response.researchType?.toLowerCase(Locale.getDefault()),
                         response.date,
                         response.startTime,
                         response.endTime,
@@ -458,7 +458,7 @@ class DataRepository private constructor(
                         response.id!!,
                         response.idMosque,
                         response.researchTitle,
-                        response.researchType,
+                        response.researchType?.toLowerCase(Locale.getDefault()),
                         response.researchDate,
                         response.startTime,
                         response.endTime,
@@ -582,7 +582,7 @@ class DataRepository private constructor(
                         response.idCity,
                         response.title,
                         response.date,
-                        response.category,
+                        response.category?.toLowerCase(Locale.getDefault()),
                         response.file,
                         response.mosqueName,
                         response.mosqueType,
@@ -632,7 +632,7 @@ class DataRepository private constructor(
                         response.idCity,
                         response.title,
                         response.date,
-                        response.category,
+                        response.category?.toLowerCase(Locale.getDefault()),
                         response.file,
                         response.mosqueName,
                         response.mosqueType,

@@ -30,6 +30,10 @@ class LocationFragment : BaseBottomSheetFragment() {
         Preferences(requireActivity().applicationContext)
     }
 
+    companion object {
+        const val KEY_ON_LOCATION_DIALOG_DISMISS = "DISMISS_LOCATION_DIALOG"
+    }
+
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val dialog = super.onCreateDialog(savedInstanceState) as BottomSheetDialog
         dialog.setOnShowListener {
@@ -58,7 +62,11 @@ class LocationFragment : BaseBottomSheetFragment() {
 
         locationAdapter = LocationAdapter {
             preferences.setCity(it)
-            findNavController().previousBackStackEntry?.savedStateHandle?.set("key", true)
+            /**
+             *
+             * SHAAARED MODEL KENAPA TIDAK DIPAKAI
+             * **/
+            findNavController().previousBackStackEntry?.savedStateHandle?.set(KEY_ON_LOCATION_DIALOG_DISMISS, it.name)
             dismiss()
         }
         with(binding.rvLocation) {
@@ -68,6 +76,10 @@ class LocationFragment : BaseBottomSheetFragment() {
         loadData("")
 
         binding.searchView.afterTextChanged { loadData(it) }
+        binding.searchView.setOnCloseListener {
+            loadData("")
+            false
+        }
         binding.btnBack.setOnClickListener { dismiss() }
     }
 

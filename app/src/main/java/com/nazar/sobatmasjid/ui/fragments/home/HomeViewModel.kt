@@ -24,9 +24,11 @@ class HomeViewModel(private val dataRepository: DataRepository) : ViewModel() {
         latitude: Double,
         longitude: Double,
         idCity: String,
-        name: String
+        name: String,
+        type: List<String>,
+        classification: List<String>
     ): LiveData<Resource<PagedList<MosqueEntity>>> =
-        dataRepository.getMosques(latitude, longitude, idCity, name)
+        dataRepository.getMosques(latitude, longitude, idCity, name, type, classification)
 
     fun getResearches(
         idUser: String,

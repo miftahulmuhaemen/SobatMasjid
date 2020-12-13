@@ -13,6 +13,7 @@ import com.nazar.sobatmasjid.R
 import com.nazar.sobatmasjid.data.local.entity.MosqueEntity
 import com.nazar.sobatmasjid.databinding.ItemMosqueFitBinding
 import com.nazar.sobatmasjid.databinding.ItemMosqueWideBinding
+import com.nazar.sobatmasjid.utils.extensions.setImageFromUrl
 
 
 class MosqueWideAdapter internal constructor() :
@@ -45,19 +46,11 @@ class MosqueWideAdapter internal constructor() :
     class MosqueViewHolder(private val binding: ItemMosqueWideBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(mosque: MosqueEntity) {
-
             binding.tvMosqueName.text = mosque.name
             binding.tvMosqueType.text = mosque.type
             binding.tvDistance.text = mosque.distance
             binding.tvResearchCategory.text = mosque.classification
-
-            Glide.with(binding.root)
-                .load(IMAGE_URL + mosque.photo)
-                .apply(
-                    RequestOptions.placeholderOf(R.drawable.ic_loading)
-                        .error(R.drawable.ic_error)
-                )
-                .into(binding.imgMosque)
+            binding.imgMosque.setImageFromUrl(mosque.photo.toString())
         }
     }
 }

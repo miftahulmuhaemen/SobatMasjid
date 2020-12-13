@@ -20,7 +20,7 @@ interface DataSource {
 
     fun getFollowedMosques(id: Int) : LiveData<Resource<PagedList<FollowedMosqueEntity>>>
 
-    fun getMosques(latitude: Double, longitude: Double, idCity: String, name: String) : LiveData<Resource<PagedList<MosqueEntity>>>
+    fun getMosques(latitude: Double, longitude: Double, idCity: String, name: String, type: List<String>, classification: List<String>) : LiveData<Resource<PagedList<MosqueEntity>>>
 
     fun getMosqueDetail(idUser: String, idMosque: String, latitude: Double, longitude: Double) : LiveData<Resource<MosqueDetailEntity>>
 

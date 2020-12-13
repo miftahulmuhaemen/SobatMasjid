@@ -8,6 +8,8 @@ import com.nazar.sobatmasjid.di.Injection
 import com.nazar.sobatmasjid.ui.fragments.home.HomeViewModel
 import com.nazar.sobatmasjid.ui.fragments.location.LocationViewModel
 import com.nazar.sobatmasjid.ui.fragments.login.LoginViewModel
+import com.nazar.sobatmasjid.ui.fragments.mosque.MosqueViewModel
+import com.nazar.sobatmasjid.ui.fragments.mosque.list.MosqueListViewModel
 
 class ViewModelFactory  private constructor(private val dataRepository: DataRepository) : ViewModelProvider.NewInstanceFactory() {
 
@@ -33,12 +35,12 @@ class ViewModelFactory  private constructor(private val dataRepository: DataRepo
             modelClass.isAssignableFrom(LocationViewModel::class.java) -> {
                 LocationViewModel(dataRepository) as T
             }
-//            modelClass.isAssignableFrom(TvViewModel::class.java) -> {
-//                TvViewModel(dataRepository) as T
-//            }
-//            modelClass.isAssignableFrom(BookmarkedTvViewModel::class.java) -> {
-//                BookmarkedTvViewModel(dataRepository) as T
-//            }
+            modelClass.isAssignableFrom(MosqueViewModel::class.java) -> {
+                MosqueViewModel(dataRepository) as T
+            }
+            modelClass.isAssignableFrom(MosqueListViewModel::class.java) -> {
+                MosqueListViewModel(dataRepository) as T
+            }
             else -> throw Throwable("Unknown ViewModel class: " + modelClass.name)
         }
     }

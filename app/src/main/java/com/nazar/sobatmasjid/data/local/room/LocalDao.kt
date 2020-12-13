@@ -24,8 +24,8 @@ interface LocalDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun updateMosqueRecommendations(mosqueRecommendations: List<MosqueRecommendationEntity>)
 
-    @Query("SELECT * FROM mosque WHERE idCity = :idCity AND name LIKE '%' || :name || '%' ")
-    fun getMosques(idCity: String, name:String): DataSource.Factory<Int, MosqueEntity>
+    @Query("SELECT * FROM mosque WHERE idCity = :idCity AND name LIKE '%' || :name || '%' AND type IN(:type) AND classification IN(:classification)")
+    fun getMosques(idCity: String, name:String, type: List<String>, classification: List<String>): DataSource.Factory<Int, MosqueEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertMosques(mosques: List<MosqueEntity>)

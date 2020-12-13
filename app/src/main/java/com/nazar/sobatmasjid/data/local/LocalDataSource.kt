@@ -33,7 +33,7 @@ class LocalDataSource private constructor(private val mLocalDao: LocalDao){
         mLocalDao.insertFollowedMosques(mosques)
     }
 
-    fun getMosques(idCity: String, name: String) : DataSource.Factory<Int, MosqueEntity> = mLocalDao.getMosques(idCity, name)
+    fun getMosques(idCity: String, name: String, type: List<String>, classification: List<String>) : DataSource.Factory<Int, MosqueEntity> = mLocalDao.getMosques(idCity, name, type, classification)
 
     fun insertMosques(mosques: List<MosqueEntity>){
         mLocalDao.insertMosques(mosques)

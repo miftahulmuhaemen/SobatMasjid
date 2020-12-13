@@ -96,6 +96,22 @@
         <item>Perempuan</item>
     </array>
 
+    <array name="mosque_type">
+        <item>masjid</item>
+        <item>musholla</item>
+    </array>
+
+    <array name="mosque_classification">
+        <item>negara</item>
+        <item>akbar</item>
+        <item>raya</item>
+        <item>agung</item>
+        <item>besar</item>
+        <item>jami</item>
+        <item>biasa</item>
+        <item>bersejarah</item>
+    </array>
+
     <string name="facebook_app_id">2386837598291227</string>
     <string name="facebook_application_id">2386837598291227</string>
     <string name="fb_login_protocol_scheme">fb2386837598291227</string>

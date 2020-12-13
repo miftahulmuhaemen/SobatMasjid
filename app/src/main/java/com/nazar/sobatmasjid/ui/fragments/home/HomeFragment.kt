@@ -17,6 +17,7 @@ import com.nazar.sobatmasjid.R
 import com.nazar.sobatmasjid.databinding.FragmentHomeBinding
 import com.nazar.sobatmasjid.preference.Preferences
 import com.nazar.sobatmasjid.ui.adapters.*
+import com.nazar.sobatmasjid.ui.fragments.location.LocationFragment.Companion.KEY_ON_LOCATION_DIALOG_DISMISS
 import com.nazar.sobatmasjid.utils.extensions.setGone
 import com.nazar.sobatmasjid.utils.extensions.setVisible
 import com.nazar.sobatmasjid.viewmodel.ViewModelFactory
@@ -66,9 +67,9 @@ class HomeFragment : Fragment() {
         val navBackStackEntry = findNavController().getBackStackEntry(R.id.homeFragment)
         val observer = LifecycleEventObserver { _, event ->
             if (event == Lifecycle.Event.ON_RESUME
-                && navBackStackEntry.savedStateHandle.contains("key")) {
-                val result = navBackStackEntry.savedStateHandle.get<Boolean>("key")
-                if(result == true){
+                && navBackStackEntry.savedStateHandle.contains(KEY_ON_LOCATION_DIALOG_DISMISS)) {
+                val result = navBackStackEntry.savedStateHandle.get<String>(KEY_ON_LOCATION_DIALOG_DISMISS)
+                if(!result.isNullOrBlank()){
                     setupDataByLocation()
                     binding.btnCurrentLocation.text = preferences.nameCity
                 }
@@ -113,6 +114,8 @@ class HomeFragment : Fragment() {
 
     private fun setupDataByLocation(){
         mosqueFitAdapter = MosqueFitAdapter()
+        val mosqueType = resources.getStringArray(R.array.mosque_type).toList()
+        val mosqueClassification = resources.getStringArray(R.array.mosque_classification).toList()
         with(binding.rvMosque){
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
             adapter = mosqueFitAdapter
@@ -121,7 +124,9 @@ class HomeFragment : Fragment() {
             preferences.latitude,
             preferences.longitude,
             preferences.idCity,
-            ""
+            "",
+            mosqueType,
+            mosqueClassification
         ).observe(viewLifecycleOwner, { mosques ->
             if(mosques != null){
                 when(mosques.status){
