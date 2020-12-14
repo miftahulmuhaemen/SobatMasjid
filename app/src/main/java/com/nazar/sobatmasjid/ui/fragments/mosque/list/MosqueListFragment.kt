@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nazar.sobatmasjid.R
 import com.nazar.sobatmasjid.databinding.FragmentRecyclerviewBinding
@@ -20,8 +21,9 @@ import com.nazar.sobatmasjid.vo.Status
 class MosqueListFragment : Fragment() {
 
     private lateinit var binding: FragmentRecyclerviewBinding
-    private lateinit var viewModel: MosqueListViewModel
-    private lateinit var sharedViewModel: MosqueViewModel
+    private lateinit var mosqueListViewModel: MosqueListViewModel
+    private lateinit var mosqueViewModel: MosqueViewModel
+    private lateinit var mosqueAdapter: MosqueWideAdapter
     private val preferences: Preferences by lazy {
         Preferences(requireActivity().applicationContext)
     }
@@ -41,9 +43,8 @@ class MosqueListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val factory = ViewModelFactory.getInstance(requireContext())
-        viewModel = ViewModelProvider(this, factory)[MosqueListViewModel::class.java]
-        sharedViewModel =
-            ViewModelProvider(requireParentFragment(), factory)[MosqueViewModel::class.java]
+        mosqueListViewModel = ViewModelProvider(this, factory)[MosqueListViewModel::class.java]
+        mosqueViewModel = ViewModelProvider(findNavController().currentBackStackEntry?.viewModelStore!!, factory)[MosqueViewModel::class.java]
 
         val type = requireArguments().getString(KEY_TYPE)
         mosqueType = if (!type.isNullOrBlank())
@@ -51,31 +52,32 @@ class MosqueListFragment : Fragment() {
         else
             resources.getStringArray(R.array.mosque_type).toList()
 
-        sharedViewModel.location.observe(viewLifecycleOwner, {
+        mosqueAdapter = MosqueWideAdapter()
+        with(binding.recyclerview) {
+            layoutManager = LinearLayoutManager(context)
+            adapter = mosqueAdapter
+        }
+
+        mosqueViewModel.location.observe(viewLifecycleOwner, {
             if (!it.isNullOrEmpty())
                 loadData(query, mosqueClassification)
         })
-        sharedViewModel.query.observe(viewLifecycleOwner, {
+        mosqueViewModel.query.observe(viewLifecycleOwner, {
             query = it
             if (!it.isNullOrEmpty())
                 loadData(it, mosqueClassification)
             else if (!mosqueClassification.isNullOrEmpty())
                 loadData("", mosqueClassification)
         })
-        sharedViewModel.classification.observe(viewLifecycleOwner, {
+        mosqueViewModel.classification.observe(viewLifecycleOwner, {
             mosqueClassification = it
-            loadData(query, it)
+            if(!it.isNullOrEmpty())
+                loadData(query, mosqueClassification)
         })
-
     }
 
     private fun loadData(query: String, classification: List<String>) {
-        val mosqueAdapter = MosqueWideAdapter()
-        with(binding.recyclerview) {
-            layoutManager = LinearLayoutManager(context)
-            adapter = mosqueAdapter
-        }
-        viewModel.getMosques(
+        mosqueListViewModel.getMosques(
             preferences.latitude,
             preferences.longitude,
             preferences.idCity,
@@ -85,8 +87,7 @@ class MosqueListFragment : Fragment() {
         ).observe(viewLifecycleOwner, { mosques ->
             if (mosques != null) {
                 when (mosques.status) {
-                    Status.LOADING -> {
-                    }
+                    Status.LOADING -> {                    }
                     Status.SUCCESS -> {
                         mosqueAdapter.submitList(mosques.data)
                         mosqueAdapter.notifyDataSetChanged()

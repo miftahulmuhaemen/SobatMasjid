@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.nazar.sobatmasjid.databinding.ItemFilterBinding
 
-class MosqueFilterAdapter(private val items: List<String>, private val statuses: List<Boolean>, private val listener: (item: String, status: Boolean) -> Unit) : RecyclerView.Adapter<MosqueFilterAdapter.MosqueFilterViewHolder>() {
+class MosqueFilterAdapter(private val items: List<String>, private val statuses: List<Boolean>, private val listener: (item: Int, status: Boolean) -> Unit) : RecyclerView.Adapter<MosqueFilterAdapter.MosqueFilterViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MosqueFilterViewHolder {
         val binding =
@@ -25,7 +25,7 @@ class MosqueFilterAdapter(private val items: List<String>, private val statuses:
             binding.tvNotification.text = item
             binding.cbNotification.isChecked = status
             binding.cbNotification.setOnCheckedChangeListener { _, status ->
-                listener(item, status)
+                listener(adapterPosition, status)
             }
         }
     }

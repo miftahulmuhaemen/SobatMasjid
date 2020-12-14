@@ -8,13 +8,10 @@ import android.view.ViewGroup
 import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
-import com.nazar.sobatmasjid.R
 import com.nazar.sobatmasjid.databinding.FragmentLocationBinding
-import com.nazar.sobatmasjid.preference.Preferences
 import com.nazar.sobatmasjid.ui.adapters.LocationAdapter
 import com.nazar.sobatmasjid.ui.base.BaseBottomSheetFragment
 import com.nazar.sobatmasjid.utils.extensions.afterTextChanged
@@ -24,15 +21,8 @@ import com.nazar.sobatmasjid.vo.Status
 class LocationFragment : BaseBottomSheetFragment() {
 
     private lateinit var binding: FragmentLocationBinding
-    private lateinit var viewModel: LocationViewModel
+    private lateinit var locationViewModel: LocationViewModel
     private lateinit var locationAdapter: LocationAdapter
-    private val preferences: Preferences by lazy {
-        Preferences(requireActivity().applicationContext)
-    }
-
-    companion object {
-        const val KEY_ON_LOCATION_DIALOG_DISMISS = "DISMISS_LOCATION_DIALOG"
-    }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val dialog = super.onCreateDialog(savedInstanceState) as BottomSheetDialog
@@ -58,15 +48,10 @@ class LocationFragment : BaseBottomSheetFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val factory = ViewModelFactory.getInstance(requireContext())
-        viewModel = ViewModelProvider(this, factory)[LocationViewModel::class.java]
+        locationViewModel = ViewModelProvider(requireActivity(), factory)[LocationViewModel::class.java]
 
         locationAdapter = LocationAdapter {
-            preferences.setCity(it)
-            /**
-             *
-             * SHAAARED MODEL KENAPA TIDAK DIPAKAI
-             * **/
-            findNavController().previousBackStackEntry?.savedStateHandle?.set(KEY_ON_LOCATION_DIALOG_DISMISS, it.name)
+            locationViewModel.location.value = it
             dismiss()
         }
         with(binding.rvLocation) {
@@ -84,7 +69,7 @@ class LocationFragment : BaseBottomSheetFragment() {
     }
 
     private fun loadData(query: String) {
-        viewModel.getCities(query).observe(viewLifecycleOwner, { cities ->
+        locationViewModel.getCities(query).observe(viewLifecycleOwner, { cities ->
             if (cities != null) {
                 when (cities.status) {
                     Status.LOADING -> {

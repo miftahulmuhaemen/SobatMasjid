@@ -47,6 +47,9 @@
         <action
             android:id="@+id/action_mosqueFragment_to_locationFragment"
             app:destination="@id/locationFragment" />
+        <action
+            android:id="@+id/action_mosqueFragment_to_mosqueFilterFragment"
+            app:destination="@id/mosqueFilterFragment" />
     </fragment>
     <fragment
         android:id="@+id/announcementFragment"
@@ -91,5 +94,9 @@
         android:id="@+id/profileEditFragment"
         android:name="com.nazar.sobatmasjid.ui.fragments.profile.edit.ProfileEditFragment"
         android:label="ProfileEditFragment" />
+    <dialog
+        android:id="@+id/mosqueFilterFragment"
+        android:name="com.nazar.sobatmasjid.ui.fragments.mosque.filter.MosqueFilterFragment"
+        android:label="MosqueFilterFragment" />
 
 </navigation>

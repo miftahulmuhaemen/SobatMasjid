@@ -1,25 +1,27 @@
 package com.nazar.sobatmasjid.ui.fragments.mosque
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.navGraphViewModels
 import com.nazar.sobatmasjid.R
 import com.nazar.sobatmasjid.databinding.FragmentMosqueBinding
 import com.nazar.sobatmasjid.preference.Preferences
-import com.nazar.sobatmasjid.ui.fragments.location.LocationFragment.Companion.KEY_ON_LOCATION_DIALOG_DISMISS
+import com.nazar.sobatmasjid.ui.base.BaseBottomTabFragment
+import com.nazar.sobatmasjid.ui.fragments.location.LocationViewModel
 import com.nazar.sobatmasjid.utils.extensions.afterTextChanged
 import com.nazar.sobatmasjid.viewmodel.ViewModelFactory
 
-class MosqueFragment : Fragment() {
+class MosqueFragment : BaseBottomTabFragment() {
 
     private lateinit var binding: FragmentMosqueBinding
-    private lateinit var viewModel: MosqueViewModel
+    private lateinit var mosqueViewModel: MosqueViewModel
+    private lateinit var locationViewModel: LocationViewModel
     private val preferences: Preferences by lazy {
         Preferences(requireActivity().applicationContext)
     }
@@ -34,42 +36,31 @@ class MosqueFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val factory = ViewModelFactory.getInstance(requireContext())
-        viewModel = ViewModelProvider(this, factory)[MosqueViewModel::class.java]
-        viewModel.classification.value = resources.getStringArray(R.array.mosque_classification).toList()
+        mosqueViewModel = ViewModelProvider(findNavController().currentBackStackEntry?.viewModelStore!!, factory)[MosqueViewModel::class.java]
+        locationViewModel = ViewModelProvider(requireActivity(), factory)[LocationViewModel::class.java]
+
+        mosqueViewModel.classification.postValue(resources.getStringArray(R.array.mosque_classification).toList())
+        locationViewModel.location.observe(viewLifecycleOwner, {
+            preferences.setCity(it)
+            binding.btnCurrentLocation.text = preferences.nameCity
+            mosqueViewModel.location.value = it.name
+        })
 
         val sectionsPagerAdapter = MosquePagerAdapter(requireContext(), childFragmentManager)
         binding.pagerMosque.adapter = sectionsPagerAdapter
         binding.tabsMosque.setupWithViewPager(binding.pagerMosque)
-        binding.svMosque.afterTextChanged { viewModel.query.value = it }
+        binding.svMosque.afterTextChanged { mosqueViewModel.query.value = it }
         binding.svMosque.setOnCloseListener {
-            viewModel.query.value = ""
+            mosqueViewModel.query.value = ""
             true
         }
         binding.btnCurrentLocation.text = preferences.nameCity
         binding.btnCurrentLocation.setOnClickListener {
-            findNavController().navigate(R.id.action_mosqueFragment_to_locationFragment)
+            navigateWithAction(MosqueFragmentDirections.actionMosqueFragmentToLocationFragment())
         }
-
-        afterLocationDialogDismiss()
-    }
-
-    private fun afterLocationDialogDismiss(){
-        val navBackStackEntry = findNavController().getBackStackEntry(R.id.mosqueFragment)
-        val observer = LifecycleEventObserver { _, event ->
-            if (event == Lifecycle.Event.ON_RESUME
-                && navBackStackEntry.savedStateHandle.contains(KEY_ON_LOCATION_DIALOG_DISMISS)) {
-                val result = navBackStackEntry.savedStateHandle.get<String>(KEY_ON_LOCATION_DIALOG_DISMISS)
-                if(!result.isNullOrBlank())
-                    viewModel.location.value = result
-                    binding.btnCurrentLocation.text = preferences.nameCity
-            }
+        binding.btnFilter.setOnClickListener {
+            navigateWithAction(MosqueFragmentDirections.actionMosqueFragmentToMosqueFilterFragment())
         }
-        navBackStackEntry.lifecycle.addObserver(observer)
-        viewLifecycleOwner.lifecycle.addObserver(LifecycleEventObserver { _, event ->
-            if (event == Lifecycle.Event.ON_DESTROY) {
-                navBackStackEntry.lifecycle.removeObserver(observer)
-            }
-        })
     }
 
 }
