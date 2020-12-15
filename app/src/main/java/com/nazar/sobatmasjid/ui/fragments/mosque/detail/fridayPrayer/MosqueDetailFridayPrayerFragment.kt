@@ -1,4 +1,4 @@
-package com.nazar.sobatmasjid.ui.fragments.mosque.detail.research
+package com.nazar.sobatmasjid.ui.fragments.mosque.detail.fridayPrayer
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,22 +9,25 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nazar.sobatmasjid.R
+import com.nazar.sobatmasjid.databinding.FragmentMosqueDetailFridayPrayerBinding
 import com.nazar.sobatmasjid.databinding.FragmentMosqueDetailProfileBinding
 import com.nazar.sobatmasjid.databinding.FragmentRecyclerviewBinding
-import com.nazar.sobatmasjid.ui.adapters.ResearchAdapter
+import com.nazar.sobatmasjid.ui.adapters.AnnouncementAdapter
+import com.nazar.sobatmasjid.ui.adapters.FinanceAdapter
+import com.nazar.sobatmasjid.ui.adapters.OfficerAdapter
 import com.nazar.sobatmasjid.ui.fragments.mosque.detail.MosqueDetailViewModel
 import com.nazar.sobatmasjid.viewmodel.ViewModelFactory
 
-class MosqueDetailResearchFragment : Fragment() {
+class MosqueDetailFridayPrayerFragment : Fragment() {
 
-    private lateinit var binding : FragmentRecyclerviewBinding
+    private lateinit var binding : FragmentMosqueDetailFridayPrayerBinding
     private lateinit var mosqueDetailViewModel: MosqueDetailViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentRecyclerviewBinding.inflate(inflater, container, false)
+        binding = FragmentMosqueDetailFridayPrayerBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -40,14 +43,24 @@ class MosqueDetailResearchFragment : Fragment() {
     }
 
     private fun init(id: String){
-        val researchAdapter = ResearchAdapter()
-        with(binding.recyclerview) {
+        val financeAdapter = FinanceAdapter()
+        with(binding.rvCredit) {
             layoutManager = LinearLayoutManager(context)
-            adapter = researchAdapter
+            adapter = financeAdapter
         }
-        mosqueDetailViewModel.getResearchesById(id).observe(viewLifecycleOwner, {
-            researchAdapter.submitList(it)
-            researchAdapter.notifyDataSetChanged()
+        mosqueDetailViewModel.getFinancesById(id).observe(viewLifecycleOwner, {
+            financeAdapter.submitList(it)
+            financeAdapter.notifyDataSetChanged()
+        })
+
+        val officerAdapter = OfficerAdapter()
+        with(binding.rvOfficer){
+            layoutManager = LinearLayoutManager(context)
+            adapter = officerAdapter
+        }
+        mosqueDetailViewModel.getOfficersById(id).observe(viewLifecycleOwner, {
+            officerAdapter.submitList(it)
+            officerAdapter.notifyDataSetChanged()
         })
     }
 }

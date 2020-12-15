@@ -3,15 +3,14 @@ package com.nazar.sobatmasjid.ui.adapters
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
-import com.nazar.sobatmasjid.BuildConfig.IMAGE_URL
-import com.nazar.sobatmasjid.R
 import com.nazar.sobatmasjid.data.local.entity.MosqueEntity
 import com.nazar.sobatmasjid.databinding.ItemMosqueFitBinding
+import com.nazar.sobatmasjid.ui.fragments.home.HomeFragmentDirections
+import com.nazar.sobatmasjid.ui.fragments.mosque.MosqueFragmentDirections
 import com.nazar.sobatmasjid.utils.extensions.setImageFromUrl
 
 
@@ -50,6 +49,13 @@ class MosqueFitAdapter internal constructor() :
             binding.tvDistance.text = mosque.distance
             binding.tvResearchCategory.text = mosque.classification
             binding.imgMosque.setImageFromUrl(mosque.photo.toString())
+            binding.root.setOnClickListener { view ->
+                view.findNavController().navigate(
+                    HomeFragmentDirections.actionHomeFragmentToMosqueDetail(
+                        mosque.id
+                    )
+                )
+            }
         }
     }
 }

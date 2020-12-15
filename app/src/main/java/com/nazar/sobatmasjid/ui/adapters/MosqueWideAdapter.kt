@@ -3,6 +3,7 @@ package com.nazar.sobatmasjid.ui.adapters
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -13,6 +14,7 @@ import com.nazar.sobatmasjid.R
 import com.nazar.sobatmasjid.data.local.entity.MosqueEntity
 import com.nazar.sobatmasjid.databinding.ItemMosqueFitBinding
 import com.nazar.sobatmasjid.databinding.ItemMosqueWideBinding
+import com.nazar.sobatmasjid.ui.fragments.mosque.MosqueFragmentDirections
 import com.nazar.sobatmasjid.utils.extensions.setImageFromUrl
 
 
@@ -51,6 +53,13 @@ class MosqueWideAdapter internal constructor() :
             binding.tvDistance.text = mosque.distance
             binding.tvResearchCategory.text = mosque.classification
             binding.imgMosque.setImageFromUrl(mosque.photo.toString())
+            binding.root.setOnClickListener { view ->
+                view.findNavController().navigate(
+                    MosqueFragmentDirections.actionMosqueFragmentToMosqueDetail(
+                        mosque.id
+                    )
+                )
+            }
         }
     }
 }

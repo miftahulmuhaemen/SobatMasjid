@@ -19,3 +19,13 @@ fun NavController.popBackStackAllInstances(destination: Int, inclusive: Boolean)
     }
     return popped
 }
+
+fun getListFromString(query: String?): List<String>{
+    val queryArray = query?.split(",")
+    val returnArray = mutableListOf<String>()
+    queryArray?.forEach {
+        if(it.isNotEmpty())
+            returnArray.add(it)
+    }
+    return returnArray
+}

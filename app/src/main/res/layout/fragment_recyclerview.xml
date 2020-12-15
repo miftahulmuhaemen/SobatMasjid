@@ -11,8 +11,8 @@
     android:clipToPadding="true"
     android:orientation="vertical"
     android:paddingStart="@dimen/globalPadding"
-    android:paddingTop="@dimen/globalPadding"
     android:paddingEnd="@dimen/globalPadding"
+    android:paddingTop="@dimen/globalPadding"
     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
     tools:listitem="@layout/item_mosque_wide">
 

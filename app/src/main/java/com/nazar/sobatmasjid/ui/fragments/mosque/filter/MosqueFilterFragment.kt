@@ -51,8 +51,10 @@ class MosqueFilterFragment: BaseBottomSheetFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         val factory = ViewModelFactory.getInstance(requireContext())
-        mosqueViewModel = ViewModelProvider(findNavController().previousBackStackEntry?.viewModelStore!!, factory)[MosqueViewModel::class.java]
+        val viewModelStore = findNavController().previousBackStackEntry?.viewModelStore!!
+        mosqueViewModel = ViewModelProvider(viewModelStore, factory)[MosqueViewModel::class.java]
 
         classifications = resources.getStringArray(R.array.mosque_classification).toMutableList()
         mosqueViewModel.classification.observe(viewLifecycleOwner, {

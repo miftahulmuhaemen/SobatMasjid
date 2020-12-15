@@ -50,7 +50,6 @@ class HomeFragment : BaseBottomTabFragment() {
         locationViewModel =
             ViewModelProvider(requireActivity(), factory)[LocationViewModel::class.java]
 
-
         if (preferences.numberFollow == 0)
             setupDataByRecommendation()
         else {

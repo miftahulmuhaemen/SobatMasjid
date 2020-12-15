@@ -29,17 +29,9 @@
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
                 android:fontFamily="@font/rubik"
-                android:text="@string/dateDayMonth" />
-            <TextView
-                android:id="@+id/tvDateYear"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:textSize="@dimen/subTitle"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@id/tvDateDayMonth"
-                android:fontFamily="@font/rubik"
-                android:text="@string/dateYear" />
+                android:gravity="center"
+                android:padding="@dimen/globalPadding"
+                android:text="20-20-2020" />
         </RelativeLayout>
 
     </androidx.cardview.widget.CardView>

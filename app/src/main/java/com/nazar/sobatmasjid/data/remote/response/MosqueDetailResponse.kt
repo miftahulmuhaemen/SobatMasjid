@@ -1,13 +1,12 @@
 package com.nazar.sobatmasjid.data.remote.response
 
-import com.google.gson.annotations.SerializedName
 import com.squareup.moshi.Json
 
 data class MosqueDetailResponse(
     @field:Json(name = "id-mosque") var id: String?,
     @field:Json(name = "id-city") var idCity: String?,
     @field:Json(name = "mosque-name") var name: String?,
-    @field:Json(name = "photo") var photo: String?,
+    @field:Json(name = "photo") var photo: List<String>?,
     @field:Json(name = "email") var email: String?,
     @field:Json(name = "description") var description: String?,
     @field:Json(name = "standing-date") var standingDate: String?,
@@ -30,5 +29,5 @@ data class MosqueDetailResponse(
     @field:Json(name = "announcement") var announcement: List<AnnouncementResponse>?,
     @field:Json(name = "officer") var officer: List<OfficerResponse>?,
     @field:Json(name = "finance") var finance: List<FinanceResponse>?,
-    @field:Json(name = "followed") var followed: Boolean = false
+    @field:Json(name = "followed") var followed: Int = 0
 )

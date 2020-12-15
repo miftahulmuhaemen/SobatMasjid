@@ -61,8 +61,8 @@ interface RetrofitService {
 
     @GET("${BASE_URL}mosque/detail/{idMosque}?API-KEY=${API_KEY}")
     suspend fun getMosqueDetail(
-        @Query("id-user") idUser: Int?,
         @Path("idMosque") idMosque: Int?,
+        @Query("id-user") idUser: Int?,
         @Query("latitude") latitude: Double?,
         @Query("longitude") longitude: Double?
     ): Response<MosqueDetailListResponse>
@@ -121,8 +121,8 @@ interface RetrofitService {
 
     @GET("${BASE_URL}research/detail/{idResearch}?API-KEY=${API_KEY}")
     suspend fun getResearchDetail(
-        @Query("id-user") idUser: Int?,
         @Path("idResearch") idResearch: Int?,
+        @Query("id-user") idUser: Int?,
         @Query("latitude") latitude: Double?,
         @Query("longitude") longitude: Double?
     ): Response<ResearchDetailListResponse>

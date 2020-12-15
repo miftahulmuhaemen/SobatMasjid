@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/btnClose"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="@dimen/globalMargin"
+        android:layout_marginTop="@dimen/globalMargin"
+        android:layout_marginEnd="@dimen/noPadding"
+        android:layout_marginBottom="@dimen/globalMargin"
+        android:src="@drawable/ic_close" />
+
+    <ImageView
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/btnClose"
+        android:background="@color/gray" />
+
+    <TextView
+        android:id="@+id/tvAccountText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/divider"
+        android:layout_marginTop="@dimen/globalMargin"
+        android:layout_toEndOf="@id/btnClose"
+        android:text="@string/account_number"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/mediumText" />
+
+    <TextView
+        android:id="@+id/tvAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvAccountText"
+        android:layout_marginTop="@dimen/smallMargin"
+        android:layout_marginEnd="@dimen/globalMargin"
+        android:layout_toEndOf="@id/btnClose"
+        android:text="No. Rekening"
+        android:textSize="@dimen/largeText" />
+
+
+    <TextView
+        android:id="@+id/tvOwnerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvAccount"
+        android:layout_marginTop="@dimen/globalMargin"
+        android:layout_toEndOf="@id/btnClose"
+        android:text="@string/owner_name"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/mediumText" />
+
+    <TextView
+        android:id="@+id/tvOwner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvOwnerText"
+        android:layout_marginTop="@dimen/smallMargin"
+        android:layout_marginEnd="@dimen/globalMargin"
+        android:layout_toEndOf="@id/btnClose"
+        android:text="No. Rekening"
+        android:textSize="@dimen/largeText" />
+
+    <TextView
+        android:id="@+id/tvBankText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvOwner"
+        android:layout_marginTop="@dimen/globalMargin"
+        android:layout_toEndOf="@id/btnClose"
+        android:text="@string/bank_name"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/mediumText" />
+
+    <TextView
+        android:id="@+id/tvBank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvBankText"
+        android:layout_marginTop="@dimen/smallMargin"
+        android:layout_marginEnd="@dimen/globalMargin"
+        android:layout_toEndOf="@id/btnClose"
+        android:text="No. Rekening"
+        android:textSize="@dimen/largeText" />
+
+    <TextView
+        android:id="@+id/tvQrisText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvBank"
+        android:layout_marginTop="@dimen/globalMargin"
+        android:layout_toEndOf="@id/btnClose"
+        android:text="@string/qris"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/mediumText" />
+
+    <ImageView
+        android:id="@+id/imgQris"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tvQrisText"
+        android:layout_marginTop="@dimen/globalMargin"
+        android:layout_marginEnd="@dimen/globalMargin"
+        android:layout_marginBottom="@dimen/globalMargin"
+        android:layout_toEndOf="@id/btnClose" />
+
+</RelativeLayout>

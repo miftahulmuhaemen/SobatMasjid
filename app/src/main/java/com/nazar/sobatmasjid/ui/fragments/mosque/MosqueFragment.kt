@@ -1,19 +1,17 @@
 package com.nazar.sobatmasjid.ui.fragments.mosque
 
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.navGraphViewModels
 import com.nazar.sobatmasjid.R
 import com.nazar.sobatmasjid.databinding.FragmentMosqueBinding
 import com.nazar.sobatmasjid.preference.Preferences
 import com.nazar.sobatmasjid.ui.base.BaseBottomTabFragment
 import com.nazar.sobatmasjid.ui.fragments.location.LocationViewModel
+import com.nazar.sobatmasjid.ui.pager.MosquePager
 import com.nazar.sobatmasjid.utils.extensions.afterTextChanged
 import com.nazar.sobatmasjid.viewmodel.ViewModelFactory
 
@@ -35,8 +33,11 @@ class MosqueFragment : BaseBottomTabFragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
         val factory = ViewModelFactory.getInstance(requireContext())
-        mosqueViewModel = ViewModelProvider(findNavController().currentBackStackEntry?.viewModelStore!!, factory)[MosqueViewModel::class.java]
+        val viewModelStore = findNavController().currentBackStackEntry?.viewModelStore!!
+        mosqueViewModel = ViewModelProvider(viewModelStore, factory)[MosqueViewModel::class.java]
         locationViewModel = ViewModelProvider(requireActivity(), factory)[LocationViewModel::class.java]
 
         mosqueViewModel.classification.postValue(resources.getStringArray(R.array.mosque_classification).toList())
@@ -46,7 +47,7 @@ class MosqueFragment : BaseBottomTabFragment() {
             mosqueViewModel.location.value = it.name
         })
 
-        val sectionsPagerAdapter = MosquePagerAdapter(requireContext(), childFragmentManager)
+        val sectionsPagerAdapter = MosquePager(requireContext(), childFragmentManager)
         binding.pagerMosque.adapter = sectionsPagerAdapter
         binding.tabsMosque.setupWithViewPager(binding.pagerMosque)
         binding.svMosque.afterTextChanged { mosqueViewModel.query.value = it }

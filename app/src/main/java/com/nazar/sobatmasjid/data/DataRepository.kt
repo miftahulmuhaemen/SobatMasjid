@@ -168,8 +168,8 @@ class DataRepository private constructor(
                         response.longitude,
                         response.username,
                         response.distance,
-                        response.type?.toLowerCase(Locale.getDefault()),
-                        response.classification?.toLowerCase(Locale.getDefault()),
+                        response.type,
+                        response.classification,
                         response.photo
                     )
                     mosques.add(mosque)
@@ -181,8 +181,8 @@ class DataRepository private constructor(
     }
 
     override fun getMosqueDetail(
-        idUser: String,
         idMosque: String,
+        idUser: String,
         latitude: Double,
         longitude: Double
     ): LiveData<Resource<MosqueDetailEntity>> {
@@ -195,7 +195,7 @@ class DataRepository private constructor(
                 data == null
 
             override fun createCall(): LiveData<ApiResponse<List<MosqueDetailResponse>>> =
-                remoteDataSource.getMosqueDetail(idUser.toInt(), idMosque.toInt(), latitude, longitude)
+                remoteDataSource.getMosqueDetail(idMosque.toInt(), idUser.toInt(), latitude, longitude)
 
             override fun saveCallResult(data: List<MosqueDetailResponse>?) {
                 for (response in data!!) {
@@ -204,6 +204,11 @@ class DataRepository private constructor(
                     val officers = ArrayList<OfficerEntity>()
                     val finances = ArrayList<FinanceEntity>()
 
+                    var photos = ""
+                    response.photo?.forEach {
+                        photos += "$it,"
+                    }
+
                     val mosque = MosqueDetailEntity(
                         response.id!!,
                         response.name,
@@ -211,8 +216,8 @@ class DataRepository private constructor(
                         response.longitude,
                         response.username,
                         response.distance,
-                        response.type?.toLowerCase(Locale.getDefault()),
-                        response.classification?.toLowerCase(Locale.getDefault())   ,
+                        response.type,
+                        response.classification,
                         response.email,
                         response.description,
                         response.standingDate,
@@ -225,8 +230,8 @@ class DataRepository private constructor(
                         response.subDistrict,
                         response.idCity,
                         response.province,
-                        response.photo,
-                        response.followed
+                        photos,
+                        response.followed != 0
                     )
 
                     for (responseResearch in response.research!!) {
@@ -235,7 +240,7 @@ class DataRepository private constructor(
                             responseResearch.idMosque,
                             responseResearch.idCity,
                             responseResearch.researchTitle,
-                            responseResearch.researchType?.toLowerCase(Locale.getDefault()),
+                            responseResearch.researchType,
                             responseResearch.date,
                             responseResearch.startTime,
                             responseResearch.endTime,
@@ -256,7 +261,7 @@ class DataRepository private constructor(
                             responseAnnouncement.idCity,
                             responseAnnouncement.title,
                             responseAnnouncement.date,
-                            responseAnnouncement.category?.toLowerCase(Locale.getDefault()),
+                            responseAnnouncement.category,
                             responseAnnouncement.file,
                             responseAnnouncement.mosqueName,
                             responseAnnouncement.mosqueType,
@@ -363,7 +368,7 @@ class DataRepository private constructor(
                         response.idMosque,
                         response.idCity,
                         response.researchTitle,
-                        response.researchType?.toLowerCase(Locale.getDefault()),
+                        response.researchType,
                         response.date,
                         response.startTime,
                         response.endTime,
@@ -415,7 +420,7 @@ class DataRepository private constructor(
                         response.idMosque,
                         response.idCity,
                         response.researchTitle,
-                        response.researchType?.toLowerCase(Locale.getDefault()),
+                        response.researchType,
                         response.date,
                         response.startTime,
                         response.endTime,
@@ -435,8 +440,8 @@ class DataRepository private constructor(
     }
 
     override fun getResearchDetail(
-        idUser: String,
         idResearch: String,
+        idUser: String,
         latitude: Double,
         longitude: Double
     ): LiveData<Resource<ResearchDetailEntity>> {
@@ -450,7 +455,7 @@ class DataRepository private constructor(
                 data == null
 
             override fun createCall(): LiveData<ApiResponse<List<ResearchDetailResponse>>> =
-                remoteDataSource.getResearchDetail(idUser.toInt(), idResearch.toInt(), latitude, longitude)
+                remoteDataSource.getResearchDetail(idResearch.toInt(), idUser.toInt(), latitude, longitude)
 
             override fun saveCallResult(data: List<ResearchDetailResponse>?) {
                 for (response in data!!) {
@@ -458,7 +463,7 @@ class DataRepository private constructor(
                         response.id!!,
                         response.idMosque,
                         response.researchTitle,
-                        response.researchType?.toLowerCase(Locale.getDefault()),
+                        response.researchType,
                         response.researchDate,
                         response.startTime,
                         response.endTime,
@@ -582,7 +587,7 @@ class DataRepository private constructor(
                         response.idCity,
                         response.title,
                         response.date,
-                        response.category?.toLowerCase(Locale.getDefault()),
+                        response.category,
                         response.file,
                         response.mosqueName,
                         response.mosqueType,
@@ -632,7 +637,7 @@ class DataRepository private constructor(
                         response.idCity,
                         response.title,
                         response.date,
-                        response.category?.toLowerCase(Locale.getDefault()),
+                        response.category,
                         response.file,
                         response.mosqueName,
                         response.mosqueType,

@@ -10,7 +10,8 @@ fun ImageView.setImageFromUrl(imageUrl: String) {
     Glide.with(this.context)
         .load(imageUrl)
         .apply(
-            RequestOptions.placeholderOf(R.drawable.ic_loading)
+            RequestOptions
+                .placeholderOf(R.drawable.ic_loading)
                 .error(R.drawable.ic_error)
         )
         .into(this)

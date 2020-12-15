@@ -40,4 +40,5 @@
     <dimen name="editTextProfileMargin">60dp</dimen>
     <dimen name="notificationButtonMargin">42dp</dimen>
     <dimen name="lineSpaceGlobal">7.5dp</dimen>
+    <dimen name="largeText">20sp</dimen>
 </resources>

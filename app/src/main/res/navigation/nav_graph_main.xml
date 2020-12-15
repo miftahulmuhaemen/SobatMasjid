@@ -73,7 +73,16 @@
     <fragment
         android:id="@+id/mosqueDetail"
         android:name="com.nazar.sobatmasjid.ui.fragments.mosque.detail.MosqueDetailFragment"
-        android:label="MosqueDetail" />
+        android:label="{id}">
+        <argument
+            android:name="id"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+        <action
+            android:id="@+id/action_mosqueDetail_to_mosqueDetailInfaqFragment"
+            app:destination="@id/mosqueDetailInfaqFragment" />
+    </fragment>
     <fragment
         android:id="@+id/announcementDetailFragment"
         android:name="com.nazar.sobatmasjid.ui.fragments.announcement.detail.AnnouncementDetailFragment"
@@ -98,5 +107,8 @@
         android:id="@+id/mosqueFilterFragment"
         android:name="com.nazar.sobatmasjid.ui.fragments.mosque.filter.MosqueFilterFragment"
         android:label="MosqueFilterFragment" />
-
+    <dialog
+        android:id="@+id/mosqueDetailInfaqFragment"
+        android:name="com.nazar.sobatmasjid.ui.fragments.mosque.detail.infaq.MosqueDetailInfaqFragment"
+        android:label="MosqueDetailInfaqFragment"/>
 </navigation>

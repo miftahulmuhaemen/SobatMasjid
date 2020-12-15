@@ -13,7 +13,7 @@ import com.nazar.sobatmasjid.R
 import com.nazar.sobatmasjid.databinding.FragmentRecyclerviewBinding
 import com.nazar.sobatmasjid.preference.Preferences
 import com.nazar.sobatmasjid.ui.adapters.MosqueWideAdapter
-import com.nazar.sobatmasjid.ui.fragments.mosque.MosquePagerAdapter.Companion.KEY_TYPE
+import com.nazar.sobatmasjid.ui.pager.MosquePager.Companion.KEY_TYPE
 import com.nazar.sobatmasjid.ui.fragments.mosque.MosqueViewModel
 import com.nazar.sobatmasjid.viewmodel.ViewModelFactory
 import com.nazar.sobatmasjid.vo.Status
@@ -43,8 +43,9 @@ class MosqueListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val factory = ViewModelFactory.getInstance(requireContext())
+        val viewModelStore = findNavController().currentBackStackEntry?.viewModelStore!!
         mosqueListViewModel = ViewModelProvider(this, factory)[MosqueListViewModel::class.java]
-        mosqueViewModel = ViewModelProvider(findNavController().currentBackStackEntry?.viewModelStore!!, factory)[MosqueViewModel::class.java]
+        mosqueViewModel = ViewModelProvider(viewModelStore, factory)[MosqueViewModel::class.java]
 
         val type = requireArguments().getString(KEY_TYPE)
         mosqueType = if (!type.isNullOrBlank())
@@ -58,6 +59,10 @@ class MosqueListFragment : Fragment() {
             adapter = mosqueAdapter
         }
 
+        setupObserver()
+    }
+
+    private fun setupObserver(){
         mosqueViewModel.location.observe(viewLifecycleOwner, {
             if (!it.isNullOrEmpty())
                 loadData(query, mosqueClassification)

@@ -59,10 +59,10 @@ class RemoteDataSource private constructor(private val service: RetrofitService)
                     else
                         result.postValue(ApiResponse.empty(response.message()))
                 } else
-                    result.value = ApiResponse.error(response.message())
+                    result.postValue(ApiResponse.empty(response.message()))
                 EspressoIdlingResource.decrement()
             } catch (e: Throwable) {
-                result.value = ApiResponse.error(e.toString())
+                result.postValue(ApiResponse.error(e.toString()))
             }
         }
         return result
@@ -81,10 +81,10 @@ class RemoteDataSource private constructor(private val service: RetrofitService)
                     else
                         result.postValue(ApiResponse.empty(response.message()))
                 } else
-                    result.value = ApiResponse.error(response.message())
+                    result.postValue(ApiResponse.empty(response.message()))
                 EspressoIdlingResource.decrement()
             } catch (e: Throwable) {
-                result.value = ApiResponse.error(e.toString())
+                result.postValue(ApiResponse.error(e.toString()))
             }
         }
         return result
@@ -104,9 +104,6 @@ class RemoteDataSource private constructor(private val service: RetrofitService)
                         result.postValue(ApiResponse.success(responseBody))
                     else
                         result.postValue(ApiResponse.empty(response.message()))
-
-
-                    Log.d("LOG", responseBody.toString())
                 } else
                     result.postValue(ApiResponse.error(response.message()))
                 EspressoIdlingResource.decrement()
@@ -139,11 +136,11 @@ class RemoteDataSource private constructor(private val service: RetrofitService)
         return result
     }
 
-    fun getMosqueDetail(idUser:Int, idMosque:Int, latitude: Double, longitude: Double) : LiveData<ApiResponse<List<MosqueDetailResponse>>> {
+    fun getMosqueDetail(idMosque:Int, idUser:Int, latitude: Double, longitude: Double) : LiveData<ApiResponse<List<MosqueDetailResponse>>> {
         EspressoIdlingResource.increment()
         val result = MutableLiveData<ApiResponse<List<MosqueDetailResponse>>>()
         GlobalScope.launch {
-            val response = service.getMosqueDetail(idUser, idMosque, latitude, longitude)
+            val response = service.getMosqueDetail(idMosque, idUser, latitude, longitude)
             val responseBody = response.body()?.mosque
             try {
                 if(response.isSuccessful){
@@ -152,10 +149,10 @@ class RemoteDataSource private constructor(private val service: RetrofitService)
                     else
                         result.postValue(ApiResponse.empty(response.message()))
                 } else
-                    result.value = ApiResponse.error(response.message())
+                    result.postValue(ApiResponse.empty(response.message()))
                 EspressoIdlingResource.decrement()
             } catch (e: Throwable) {
-                result.value = ApiResponse.error(e.toString())
+                result.postValue(ApiResponse.error(e.toString()))
             }
         }
         return result
@@ -212,10 +209,10 @@ class RemoteDataSource private constructor(private val service: RetrofitService)
                     else
                         result.postValue(ApiResponse.empty(response.message()))
                 } else
-                    result.value = ApiResponse.error(response.message())
+                    result.postValue(ApiResponse.empty(response.message()))
                 EspressoIdlingResource.decrement()
             } catch (e: Throwable) {
-                result.value = ApiResponse.error(e.toString())
+                result.postValue(ApiResponse.error(e.toString()))
             }
         }
         return result
@@ -234,20 +231,20 @@ class RemoteDataSource private constructor(private val service: RetrofitService)
                     else
                         result.postValue(ApiResponse.empty(response.message()))
                 } else
-                    result.value = ApiResponse.error(response.message())
+                    result.postValue(ApiResponse.empty(response.message()))
                 EspressoIdlingResource.decrement()
             } catch (e: Throwable) {
-                result.value = ApiResponse.error(e.toString())
+                result.postValue(ApiResponse.error(e.toString()))
             }
         }
         return result
     }
 
-    fun getResearchDetail(idUser:Int, idMosque:Int, latitude: Double, longitude: Double) : LiveData<ApiResponse<List<ResearchDetailResponse>>> {
+    fun getResearchDetail(idMosque:Int, idUser:Int, latitude: Double, longitude: Double) : LiveData<ApiResponse<List<ResearchDetailResponse>>> {
         EspressoIdlingResource.increment()
         val result = MutableLiveData<ApiResponse<List<ResearchDetailResponse>>>()
         GlobalScope.launch {
-            val response = service.getResearchDetail(idUser, idMosque, latitude, longitude)
+            val response = service.getResearchDetail(idMosque, idUser, latitude, longitude)
             val responseBody = response.body()?.data
             try {
                 if(response.isSuccessful){
@@ -256,10 +253,10 @@ class RemoteDataSource private constructor(private val service: RetrofitService)
                     else
                         result.postValue(ApiResponse.empty(response.message()))
                 } else
-                    result.value = ApiResponse.error(response.message())
+                    result.postValue(ApiResponse.empty(response.message()))
                 EspressoIdlingResource.decrement()
             } catch (e: Throwable) {
-                result.value = ApiResponse.error(e.toString())
+                result.postValue(ApiResponse.error(e.toString()))
             }
         }
         return result
@@ -322,10 +319,10 @@ class RemoteDataSource private constructor(private val service: RetrofitService)
                     else
                         result.postValue(ApiResponse.empty(response.message()))
                 } else
-                    result.value = ApiResponse.error(response.message())
+                    result.postValue(ApiResponse.error(response.message()))
                 EspressoIdlingResource.decrement()
             } catch (e: Throwable) {
-                result.value = ApiResponse.error(e.toString())
+                result.postValue(ApiResponse.error(e.toString()))
             }
         }
         return result
@@ -344,10 +341,10 @@ class RemoteDataSource private constructor(private val service: RetrofitService)
                     else
                         result.postValue(ApiResponse.empty(response.message()))
                 } else
-                    result.value = ApiResponse.error(response.message())
+                    result.postValue(ApiResponse.error(response.message()))
                 EspressoIdlingResource.decrement()
             } catch (e: Throwable) {
-                result.value = ApiResponse.error(e.toString())
+                result.postValue(ApiResponse.error(e.toString()))
             }
         }
         return result
@@ -368,10 +365,10 @@ class RemoteDataSource private constructor(private val service: RetrofitService)
                     else
                         result.postValue(ApiResponse.empty(response.message()))
                 } else
-                    result.value = ApiResponse.error(response.message())
+                    result.postValue(ApiResponse.error(response.message()))
                 EspressoIdlingResource.decrement()
             } catch (e: Throwable) {
-                result.value = ApiResponse.error(e.toString())
+                result.postValue(ApiResponse.error(e.toString()))
             }
         }
         return result
@@ -392,10 +389,10 @@ class RemoteDataSource private constructor(private val service: RetrofitService)
                     else
                         result.postValue(ApiResponse.empty(response.message()))
                 } else
-                    result.value = ApiResponse.error(response.message())
+                    result.postValue(ApiResponse.error(response.message()))
                 EspressoIdlingResource.decrement()
             } catch (e: Throwable) {
-                result.value = ApiResponse.error(e.toString())
+                result.postValue(ApiResponse.error(e.toString()))
             }
         }
         return result

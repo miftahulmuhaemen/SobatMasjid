@@ -97,19 +97,19 @@
     </array>
 
     <array name="mosque_type">
-        <item>masjid</item>
-        <item>musholla</item>
+        <item>Masjid</item>
+        <item>Musholla</item>
     </array>
 
     <array name="mosque_classification">
-        <item>negara</item>
-        <item>akbar</item>
-        <item>raya</item>
-        <item>agung</item>
-        <item>besar</item>
-        <item>jami</item>
-        <item>biasa</item>
-        <item>bersejarah</item>
+        <item>Negara</item>
+        <item>Akbar</item>
+        <item>Raya</item>
+        <item>Agung</item>
+        <item>Besar</item>
+        <item>Jami</item>
+        <item>Biasa</item>
+        <item>Bersejarah</item>
     </array>
 
     <string name="facebook_app_id">2386837598291227</string>
@@ -117,5 +117,9 @@
     <string name="fb_login_protocol_scheme">fb2386837598291227</string>
     <string name="backButton">backButton</string>
     <string name="action_bar_followed">Diikuti</string>
+    <string name="qris">QRIS</string>
+    <string name="bank_name">Nama Bank</string>
+    <string name="owner_name">Nama Pemilik</string>
+    <string name="account_number">No. Rekening</string>
 
 </resources>

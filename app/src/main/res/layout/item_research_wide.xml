@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout android:layout_height="wrap_content"
     android:layout_width="match_parent"
-    android:paddingTop="@dimen/globalPadding"
-    android:paddingStart="@dimen/globalPadding"
-    android:paddingEnd="@dimen/globalPadding"
+    android:paddingBottom="@dimen/globalPadding"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
@@ -41,8 +39,7 @@
         android:paddingEnd="@dimen/smallPadding"
         android:paddingTop="@dimen/verySmallPadding"
         android:paddingBottom="@dimen/verySmallPadding"
-        android:layout_marginTop="@dimen/smallPadding"
-        android:layout_marginEnd="@dimen/globalPadding"/>
+        android:layout_marginTop="@dimen/smallPadding"/>
 
     <TextView
         android:id="@+id/tvResearchTitle"

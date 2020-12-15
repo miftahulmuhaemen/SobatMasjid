@@ -9,6 +9,7 @@ import com.nazar.sobatmasjid.ui.fragments.home.HomeViewModel
 import com.nazar.sobatmasjid.ui.fragments.location.LocationViewModel
 import com.nazar.sobatmasjid.ui.fragments.login.LoginViewModel
 import com.nazar.sobatmasjid.ui.fragments.mosque.MosqueViewModel
+import com.nazar.sobatmasjid.ui.fragments.mosque.detail.MosqueDetailViewModel
 import com.nazar.sobatmasjid.ui.fragments.mosque.list.MosqueListViewModel
 
 class ViewModelFactory  private constructor(private val dataRepository: DataRepository) : ViewModelProvider.NewInstanceFactory() {
@@ -40,6 +41,9 @@ class ViewModelFactory  private constructor(private val dataRepository: DataRepo
             }
             modelClass.isAssignableFrom(MosqueListViewModel::class.java) -> {
                 MosqueListViewModel(dataRepository) as T
+            }
+            modelClass.isAssignableFrom(MosqueDetailViewModel::class.java) -> {
+                MosqueDetailViewModel(dataRepository) as T
             }
             else -> throw Throwable("Unknown ViewModel class: " + modelClass.name)
         }
