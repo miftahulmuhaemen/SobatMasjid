@@ -60,8 +60,7 @@ class MosqueDetailFragment : Fragment() {
             ).observe(viewLifecycleOwner, { mosque ->
                 if (mosque != null) {
                     when (mosque.status) {
-                        Status.LOADING -> {
-                        }
+                        Status.LOADING -> {}
                         Status.SUCCESS -> {
                             if (mosque.data != null)
                                 with(mosque.data) {

@@ -1,6 +1,5 @@
 package com.nazar.sobatmasjid.data
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
@@ -148,7 +147,14 @@ class DataRepository private constructor(
                     .setInitialLoadSizeHint(4)
                     .setPageSize(4)
                     .build()
-                return LivePagedListBuilder(localDataSource.getMosques(idCity, name, type, classification), config).build()
+                return LivePagedListBuilder(
+                    localDataSource.getMosques(
+                        idCity,
+                        name,
+                        type,
+                        classification
+                    ), config
+                ).build()
             }
 
             override fun shouldFetch(data: PagedList<MosqueEntity>?): Boolean =
@@ -195,7 +201,12 @@ class DataRepository private constructor(
                 data == null
 
             override fun createCall(): LiveData<ApiResponse<List<MosqueDetailResponse>>> =
-                remoteDataSource.getMosqueDetail(idMosque.toInt(), idUser.toInt(), latitude, longitude)
+                remoteDataSource.getMosqueDetail(
+                    idMosque.toInt(),
+                    idUser.toInt(),
+                    latitude,
+                    longitude
+                )
 
             override fun saveCallResult(data: List<MosqueDetailResponse>?) {
                 for (response in data!!) {
@@ -234,64 +245,72 @@ class DataRepository private constructor(
                         response.followed != 0
                     )
 
-                    for (responseResearch in response.research!!) {
-                        val research = ResearchEntity(
-                            responseResearch.id!!,
-                            responseResearch.idMosque,
-                            responseResearch.idCity,
-                            responseResearch.researchTitle,
-                            responseResearch.researchType,
-                            responseResearch.date,
-                            responseResearch.startTime,
-                            responseResearch.endTime,
-                            responseResearch.category,
-                            responseResearch.ustadzName,
-                            responseResearch.ustadzPhoto,
-                            responseResearch.mosqueName,
-                            responseResearch.mosqueType,
-                            null
-                        )
-                        researches.add(research)
-                    }
+                    val itemsResearches = response.research
+                    if (itemsResearches != null)
+                        for (responseResearch in itemsResearches) {
+                            val research = ResearchEntity(
+                                responseResearch.id!!,
+                                responseResearch.idMosque,
+                                responseResearch.idCity,
+                                responseResearch.researchTitle,
+                                responseResearch.researchType,
+                                responseResearch.date,
+                                responseResearch.startTime,
+                                responseResearch.endTime,
+                                responseResearch.category,
+                                responseResearch.ustadzName,
+                                responseResearch.ustadzPhoto,
+                                responseResearch.mosqueName,
+                                responseResearch.mosqueType,
+                                null
+                            )
+                            researches.add(research)
+                        }
 
-                    for (responseAnnouncement in response.announcement!!) {
-                        val announcement = AnnouncementEntity(
-                            responseAnnouncement.id!!,
-                            responseAnnouncement.idMosque,
-                            responseAnnouncement.idCity,
-                            responseAnnouncement.title,
-                            responseAnnouncement.date,
-                            responseAnnouncement.category,
-                            responseAnnouncement.file,
-                            responseAnnouncement.mosqueName,
-                            responseAnnouncement.mosqueType,
-                            null
-                        )
-                        announcements.add(announcement)
-                    }
+                    val itemAnnouncements = response.announcement
+                    if (itemAnnouncements != null)
+                        for (responseAnnouncement in itemAnnouncements) {
+                            val announcement = AnnouncementEntity(
+                                responseAnnouncement.id!!,
+                                responseAnnouncement.idMosque,
+                                responseAnnouncement.idCity,
+                                responseAnnouncement.title,
+                                responseAnnouncement.date,
+                                responseAnnouncement.category,
+                                responseAnnouncement.file,
+                                responseAnnouncement.mosqueName,
+                                responseAnnouncement.mosqueType,
+                                null
+                            )
+                            announcements.add(announcement)
+                        }
 
-                    for (responseOfficer in response.officer!!) {
-                        val officer = OfficerEntity(
-                            0,
-                            responseOfficer.idMosque,
-                            responseOfficer.date,
-                            responseOfficer.khatib,
-                            responseOfficer.muadzin
-                        )
-                        officers.add(officer)
-                    }
+                    val itemOfficers = response.officer
+                    if (itemOfficers != null)
+                        for (responseOfficer in itemOfficers) {
+                            val officer = OfficerEntity(
+                                0,
+                                responseOfficer.idMosque,
+                                responseOfficer.date,
+                                responseOfficer.khatib,
+                                responseOfficer.muadzin
+                            )
+                            officers.add(officer)
+                        }
 
-                    for (responseFinance in response.finance!!) {
-                        val finance = FinanceEntity(
-                            responseFinance.id,
-                            responseFinance.idMosque,
-                            responseFinance.date,
-                            responseFinance.creditIn,
-                            responseFinance.creditOut,
-                            responseFinance.creditText
-                        )
-                        finances.add(finance)
-                    }
+                    val itemFinances = response.finance
+                    if (itemFinances != null)
+                        for (responseFinance in itemFinances) {
+                            val finance = FinanceEntity(
+                                responseFinance.id,
+                                responseFinance.idMosque,
+                                responseFinance.date,
+                                responseFinance.creditIn,
+                                responseFinance.creditOut,
+                                responseFinance.creditText
+                            )
+                            finances.add(finance)
+                        }
 
                     localDataSource.insertMosqueDetail(mosque)
                     localDataSource.insertResearches(researches)
@@ -455,7 +474,12 @@ class DataRepository private constructor(
                 data == null
 
             override fun createCall(): LiveData<ApiResponse<List<ResearchDetailResponse>>> =
-                remoteDataSource.getResearchDetail(idResearch.toInt(), idUser.toInt(), latitude, longitude)
+                remoteDataSource.getResearchDetail(
+                    idResearch.toInt(),
+                    idUser.toInt(),
+                    latitude,
+                    longitude
+                )
 
             override fun saveCallResult(data: List<ResearchDetailResponse>?) {
                 for (response in data!!) {
@@ -484,7 +508,11 @@ class DataRepository private constructor(
         }.asLiveData()
     }
 
-    override fun attendResearch(idUser: String, idResearch: String, idMosque: String): LiveData<Boolean> =
+    override fun attendResearch(
+        idUser: String,
+        idResearch: String,
+        idMosque: String
+    ): LiveData<Boolean> =
         remoteDataSource.attendResearch(idUser.toInt(), idResearch.toInt(), idMosque.toInt())
 
     override fun setAttendResearch(research: ResearchDetailEntity, newState: Boolean) =
