@@ -102,6 +102,12 @@
         <item>Akhwat</item>
     </array>
 
+    <array name="announcement_category">
+        <item>Semua</item>
+        <item>Barang Hilang</item>
+        <item>kegiatan</item>
+    </array>
+
     <array name="mosque_classification">
         <item>Negara</item>
         <item>Akbar</item>

@@ -54,11 +54,13 @@ interface DataSource {
 
     /** ANNOUNCEMENT **/
 
-    fun getAnnouncements(latitude: Double, longitude: Double, idCity: String, title: String) : LiveData<Resource<PagedList<AnnouncementEntity>>>
+    fun getAnnouncements(latitude: Double, longitude: Double, idCity: String, title: String, category: List<String>) : LiveData<Resource<PagedList<AnnouncementEntity>>>
 
     fun getAnnouncementsByUser(idUser: String, latitude: Double, longitude: Double) : LiveData<Resource<PagedList<AnnouncementEntity>>>
 
-    fun getAnnouncementsById(idMosque: String): LiveData<PagedList<AnnouncementEntity>>
+    fun getAnnouncementsByIdMosque(idMosque: String): LiveData<PagedList<AnnouncementEntity>>
+
+    fun getAnnouncementByIdAnnouncement(id: String): LiveData<AnnouncementEntity>
 
     /** CITY **/
 

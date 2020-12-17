@@ -94,11 +94,13 @@ class LocalDataSource private constructor(private val mLocalDao: LocalDao){
 
     /** ANNOUNCEMENT **/
 
-    fun getAnnouncements(city: String, title:String) : DataSource.Factory<Int, AnnouncementEntity> = mLocalDao.getAnnouncements(city, title)
+    fun getAnnouncements(city: String, title:String, category: List<String>) : DataSource.Factory<Int, AnnouncementEntity> = mLocalDao.getAnnouncements(city, title, category)
 
     fun getAnnouncementsByUser() : DataSource.Factory<Int, AnnouncementEntity> = mLocalDao.getAnnouncementsByUser()
 
-    fun getAnnouncementsById(idMosque: String) : DataSource.Factory<Int, AnnouncementEntity> = mLocalDao.getAnnouncementsById(idMosque)
+    fun getAnnouncementsByIdMosque(idMosque: String) : DataSource.Factory<Int, AnnouncementEntity> = mLocalDao.getAnnouncementsByIdMosque(idMosque)
+
+    fun getAnnouncementsByIdAnnouncement(id: String) : LiveData<AnnouncementEntity> = mLocalDao.getAnnouncementByIdAnnouncement(id)
 
     fun insertAnnouncement(announcement: List<AnnouncementEntity>){
         mLocalDao.insertAnnouncements(announcement)

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imgAnnouncementBackground"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:minHeight="@dimen/imagePagerHeight"
+                    android:scaleType="centerCrop"
+                    android:alpha="0.2"
+                    android:src="@drawable/logo_ybm_pln" />
+
+                <ImageView
+                    android:id="@+id/imgAnnouncement"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:minHeight="@dimen/imagePagerHeight"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/logo_ybm_pln" />
+
+                <ImageView
+                    android:id="@+id/btnBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/globalMargin"
+                    android:paddingStart="@dimen/globalPadding"
+                    android:paddingEnd="@dimen/globalPadding"
+                    android:src="@drawable/ic_back_arrow_40dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@id/tvAnnouncementCategory"
+                    android:layout_alignTop="@id/tvAnnouncementCategory"
+                    android:layout_alignEnd="@id/tvAnnouncementCategory"
+                    android:layout_alignBottom="@id/tvAnnouncementCategory"
+                    android:background="@drawable/btn_round_fill" />
+
+                <TextView
+                    android:id="@+id/tvAnnouncementCategory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/imgResearch"
+                    android:layout_alignParentEnd="true"
+                    android:layout_margin="@dimen/globalMargin"
+                    android:fontFamily="@font/rubik"
+                    android:paddingStart="@dimen/smallPadding"
+                    android:paddingTop="@dimen/verySmallPadding"
+                    android:paddingEnd="@dimen/smallPadding"
+                    android:paddingBottom="@dimen/verySmallPadding"
+                    android:text="@string/dummyResearchCategory"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/smallText" />
+
+            </RelativeLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/globalMargin">
+
+            <TextView
+                android:id="@+id/tvAnnouncementTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/globalMargin"
+                android:layout_marginBottom="@dimen/globalMargin"
+                android:fontFamily="@font/rubik"
+                android:text="@string/researchTitle"
+                android:textSize="@dimen/title" />
+
+
+            <TextView
+                android:id="@+id/tvMosqueName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvAnnouncementDate"
+                android:drawablePadding="@dimen/verySmallPadding"
+                android:paddingStart="@dimen/globalPadding"
+                android:paddingEnd="@dimen/globalPadding"
+                android:text="@string/dummyMosqueName"
+                android:textSize="@dimen/subTitle"
+                app:drawableStartCompat="@drawable/ic_location_12dp" />
+
+            <TextView
+                android:id="@+id/tvAnnouncementDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvAnnouncementTitle"
+                android:drawablePadding="@dimen/verySmallPadding"
+                android:paddingStart="@dimen/globalPadding"
+                android:paddingEnd="@dimen/globalPadding"
+                android:text="@string/dummyFullDate"
+                android:textSize="@dimen/subTitle"
+                app:drawableStartCompat="@drawable/ic_calendar_12dp" />
+
+
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>

@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nazar.sobatmasjid.databinding.FragmentRecyclerviewBinding
 import com.nazar.sobatmasjid.ui.adapters.AnnouncementAdapter
+import com.nazar.sobatmasjid.ui.fragments.mosque.detail.MosqueDetailFragmentDirections
 import com.nazar.sobatmasjid.ui.fragments.mosque.detail.MosqueDetailViewModel
 import com.nazar.sobatmasjid.viewmodel.ViewModelFactory
 
@@ -37,7 +38,9 @@ class MosqueDetailAnnouncementFragment : Fragment() {
     }
 
     private fun init(id: String){
-        val announcementAdapter = AnnouncementAdapter()
+        val announcementAdapter = AnnouncementAdapter {
+            findNavController().navigate(MosqueDetailFragmentDirections.actionMosqueDetailToAnnouncementDetailFragment(it))
+        }
         with(binding.recyclerview) {
             layoutManager = LinearLayoutManager(context)
             adapter = announcementAdapter

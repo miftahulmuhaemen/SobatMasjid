@@ -31,7 +31,7 @@ class MosqueDetailViewModel(private val dataRepository: DataRepository) : ViewMo
 
     fun getResearchesById(idMosque: String): LiveData<PagedList<ResearchEntity>> = dataRepository.getResearchesById(idMosque)
 
-    fun getAnnouncementsById(idMosque: String): LiveData<PagedList<AnnouncementEntity>> = dataRepository.getAnnouncementsById(idMosque)
+    fun getAnnouncementsById(idMosque: String): LiveData<PagedList<AnnouncementEntity>> = dataRepository.getAnnouncementsByIdMosque(idMosque)
 
     fun getOfficersById(idMosque: String): LiveData<PagedList<OfficerEntity>> = dataRepository.getOfficersById(idMosque)
 

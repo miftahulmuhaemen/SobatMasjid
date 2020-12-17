@@ -88,14 +88,17 @@ interface LocalDao {
 
     /** ANNOUNCEMENT **/
 
-    @Query("SELECT * FROM announcement WHERE idCity = :city AND title LIKE '%' || :title || '%' ")
-    fun getAnnouncements(city: String, title:String): DataSource.Factory<Int, AnnouncementEntity>
+    @Query("SELECT * FROM announcement WHERE idCity = :city AND title LIKE '%' || :title || '%' AND category IN(:category) ")
+    fun getAnnouncements(city: String, title:String, category: List<String>): DataSource.Factory<Int, AnnouncementEntity>
 
     @Query("SELECT * FROM announcement WHERE isFollowedMosque = 1")
     fun getAnnouncementsByUser(): DataSource.Factory<Int, AnnouncementEntity>
 
     @Query("SELECT * FROM announcement WHERE idMosque = :idMosque")
-    fun getAnnouncementsById(idMosque: String): DataSource.Factory<Int, AnnouncementEntity>
+    fun getAnnouncementsByIdMosque(idMosque: String): DataSource.Factory<Int, AnnouncementEntity>
+
+    @Query("SELECT * FROM announcement WHERE id = :id")
+    fun getAnnouncementByIdAnnouncement(id: String): LiveData<AnnouncementEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertAnnouncements(announcements: List<AnnouncementEntity>)

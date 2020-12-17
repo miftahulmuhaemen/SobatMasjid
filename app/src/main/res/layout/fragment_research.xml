@@ -68,6 +68,7 @@
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabsResearch"
+        android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="@dimen/subAppBarHeight"
         android:layout_below="@id/btnCurrentLocation"/>

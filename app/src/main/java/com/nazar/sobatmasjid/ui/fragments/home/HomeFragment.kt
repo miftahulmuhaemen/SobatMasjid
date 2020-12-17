@@ -85,7 +85,9 @@ class HomeFragment : BaseBottomTabFragment() {
             layoutManager = LinearLayoutManager(context)
             adapter = researchAdapter
         }
-        announcementAdapter = AnnouncementAdapter()
+        announcementAdapter = AnnouncementAdapter {
+            navigateWithAction(HomeFragmentDirections.actionHomeFragmentToAnnouncementDetailFragment(it))
+        }
         with(binding.rvAnnouncement) {
             layoutManager = LinearLayoutManager(context)
             adapter = announcementAdapter

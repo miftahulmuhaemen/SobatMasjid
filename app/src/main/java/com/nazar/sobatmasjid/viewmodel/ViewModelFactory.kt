@@ -5,6 +5,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.nazar.sobatmasjid.data.DataRepository
 import com.nazar.sobatmasjid.di.Injection
+import com.nazar.sobatmasjid.ui.fragments.announcement.AnnouncementViewModel
+import com.nazar.sobatmasjid.ui.fragments.announcement.detail.AnnouncementDetailViewModel
+import com.nazar.sobatmasjid.ui.fragments.announcement.list.AnnouncementListViewModel
 import com.nazar.sobatmasjid.ui.fragments.home.HomeViewModel
 import com.nazar.sobatmasjid.ui.fragments.location.LocationViewModel
 import com.nazar.sobatmasjid.ui.fragments.login.LoginViewModel
@@ -56,6 +59,15 @@ class ViewModelFactory  private constructor(private val dataRepository: DataRepo
             }
             modelClass.isAssignableFrom(ResearchDetailViewModel::class.java) -> {
                 ResearchDetailViewModel(dataRepository) as T
+            }
+            modelClass.isAssignableFrom(AnnouncementViewModel::class.java) -> {
+                AnnouncementViewModel(dataRepository) as T
+            }
+            modelClass.isAssignableFrom(AnnouncementListViewModel::class.java) -> {
+                AnnouncementListViewModel(dataRepository) as T
+            }
+            modelClass.isAssignableFrom(AnnouncementDetailViewModel::class.java) -> {
+                AnnouncementDetailViewModel(dataRepository) as T
             }
             else -> throw Throwable("Unknown ViewModel class: " + modelClass.name)
         }

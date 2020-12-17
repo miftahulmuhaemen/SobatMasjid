@@ -582,7 +582,8 @@ class DataRepository private constructor(
         latitude: Double,
         longitude: Double,
         idCity: String,
-        title: String
+        title: String,
+        category: List<String>
     ): LiveData<Resource<PagedList<AnnouncementEntity>>> {
         return object :
             NetworkBoundResource<PagedList<AnnouncementEntity>, List<AnnouncementResponse>>(
@@ -595,7 +596,7 @@ class DataRepository private constructor(
                     .setPageSize(4)
                     .build()
                 return LivePagedListBuilder(
-                    localDataSource.getAnnouncements(idCity, title),
+                    localDataSource.getAnnouncements(idCity, title, category),
                     config
                 ).build()
             }
@@ -679,14 +680,16 @@ class DataRepository private constructor(
         }.asLiveData()
     }
 
-    override fun getAnnouncementsById(idMosque: String): LiveData<PagedList<AnnouncementEntity>> {
+    override fun getAnnouncementsByIdMosque(idMosque: String): LiveData<PagedList<AnnouncementEntity>> {
         val config = PagedList.Config.Builder()
             .setEnablePlaceholders(false)
             .setInitialLoadSizeHint(4)
             .setPageSize(4)
             .build()
-        return LivePagedListBuilder(localDataSource.getAnnouncementsById(idMosque), config).build()
+        return LivePagedListBuilder(localDataSource.getAnnouncementsByIdMosque(idMosque), config).build()
     }
+
+    override fun getAnnouncementByIdAnnouncement(id: String): LiveData<AnnouncementEntity> = localDataSource.getAnnouncementsByIdAnnouncement(id)
 
     /** CITY **/
 
