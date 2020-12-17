@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.nazar.sobatmasjid.data.local.entity.MosqueEntity
 import com.nazar.sobatmasjid.databinding.ItemMosqueFitBinding
 import com.nazar.sobatmasjid.ui.fragments.home.HomeFragmentDirections
-import com.nazar.sobatmasjid.ui.fragments.mosque.MosqueFragmentDirections
 import com.nazar.sobatmasjid.utils.extensions.setImageFromUrl
 
 

@@ -1,6 +1,5 @@
 package com.nazar.sobatmasjid.data.remote
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.nazar.sobatmasjid.api.RetrofitService
@@ -240,11 +239,11 @@ class RemoteDataSource private constructor(private val service: RetrofitService)
         return result
     }
 
-    fun getResearchDetail(idMosque:Int, idUser:Int, latitude: Double, longitude: Double) : LiveData<ApiResponse<List<ResearchDetailResponse>>> {
+    fun getResearchDetail(idResearch:Int, idUser:Int, latitude: Double, longitude: Double) : LiveData<ApiResponse<List<ResearchDetailResponse>>> {
         EspressoIdlingResource.increment()
         val result = MutableLiveData<ApiResponse<List<ResearchDetailResponse>>>()
         GlobalScope.launch {
-            val response = service.getResearchDetail(idMosque, idUser, latitude, longitude)
+            val response = service.getResearchDetail(idResearch, idUser, latitude, longitude)
             val responseBody = response.body()?.data
             try {
                 if(response.isSuccessful){

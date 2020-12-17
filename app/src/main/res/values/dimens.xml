@@ -7,11 +7,7 @@
     <dimen name="smallText">10sp</dimen>
     <dimen name="bodyText">16sp</dimen>
     <dimen name="title">20sp</dimen>
-    <dimen name="listItem">16sp</dimen>
-    <dimen name="listItemSmaller">14sp</dimen>
     <dimen name="mediumTitle">14sp</dimen>
-    <dimen name="errorText">12sp</dimen>
-    <dimen name="textButton">14sp</dimen>
     <dimen name="paddingButton">18dp</dimen>
     <dimen name="LoginText">16dp</dimen>
     <dimen name="introItemDimen">300dp</dimen>
@@ -31,11 +27,8 @@
     <dimen name="subAppBarHeight">60dp</dimen>
     <dimen name="imagePagerHeight">200dp</dimen>
     <dimen name="btn_actionbar">70dp</dimen>
-    <dimen name="greatMargin">64dp</dimen>
     <dimen name="greetingMosqueFollowPadding">60dp</dimen>
-    <dimen name="cardRadius">10dp</dimen>
     <dimen name="almostGreatPadding">42dp</dimen>
-    <dimen name="smallestMargin">4dp</dimen>
     <dimen name="almostGreatMargin">32dp</dimen>
     <dimen name="editTextProfileMargin">60dp</dimen>
     <dimen name="notificationButtonMargin">42dp</dimen>

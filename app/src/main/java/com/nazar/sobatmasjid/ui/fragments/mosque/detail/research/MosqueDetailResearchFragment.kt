@@ -1,17 +1,16 @@
 package com.nazar.sobatmasjid.ui.fragments.mosque.detail.research
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.nazar.sobatmasjid.R
-import com.nazar.sobatmasjid.databinding.FragmentMosqueDetailProfileBinding
 import com.nazar.sobatmasjid.databinding.FragmentRecyclerviewBinding
 import com.nazar.sobatmasjid.ui.adapters.ResearchAdapter
+import com.nazar.sobatmasjid.ui.fragments.mosque.detail.MosqueDetailFragmentDirections
 import com.nazar.sobatmasjid.ui.fragments.mosque.detail.MosqueDetailViewModel
 import com.nazar.sobatmasjid.viewmodel.ViewModelFactory
 
@@ -40,7 +39,9 @@ class MosqueDetailResearchFragment : Fragment() {
     }
 
     private fun init(id: String){
-        val researchAdapter = ResearchAdapter()
+        val researchAdapter = ResearchAdapter {
+            findNavController().navigate(MosqueDetailFragmentDirections.actionMosqueDetailToResearchDetail(it))
+        }
         with(binding.recyclerview) {
             layoutManager = LinearLayoutManager(context)
             adapter = researchAdapter

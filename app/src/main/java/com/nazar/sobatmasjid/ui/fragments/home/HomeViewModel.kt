@@ -1,12 +1,10 @@
 package com.nazar.sobatmasjid.ui.fragments.home
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.paging.PagedList
 import com.nazar.sobatmasjid.data.DataRepository
 import com.nazar.sobatmasjid.data.local.entity.*
-import com.nazar.sobatmasjid.preference.Preferences
 import com.nazar.sobatmasjid.vo.Resource
 
 class HomeViewModel(private val dataRepository: DataRepository) : ViewModel() {

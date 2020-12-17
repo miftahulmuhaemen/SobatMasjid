@@ -2,7 +2,6 @@ package com.nazar.sobatmasjid.ui.base
 
 import android.app.Dialog
 import android.os.Bundle
-import android.util.Log
 import android.view.Gravity
 import android.view.ViewGroup
 import android.view.WindowManager

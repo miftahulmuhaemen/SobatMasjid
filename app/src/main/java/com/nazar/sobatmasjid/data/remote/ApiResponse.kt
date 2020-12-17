@@ -1,8 +1,6 @@
 package com.nazar.sobatmasjid.data.remote
 
-import com.nazar.sobatmasjid.data.remote.StatusResponse.EMPTY
-import com.nazar.sobatmasjid.data.remote.StatusResponse.ERROR
-import com.nazar.sobatmasjid.data.remote.StatusResponse.SUCCESS
+import com.nazar.sobatmasjid.data.remote.StatusResponse.*
 
 class ApiResponse<T>(val status: StatusResponse, val body: T?, val message: String?) {
     companion object {

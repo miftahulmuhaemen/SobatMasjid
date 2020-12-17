@@ -1,16 +1,12 @@
 package com.nazar.sobatmasjid.ui.pager
 
-import android.content.Context
-import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import com.nazar.sobatmasjid.R
 import com.nazar.sobatmasjid.ui.fragments.mosque.detail.announcement.MosqueDetailAnnouncementFragment
 import com.nazar.sobatmasjid.ui.fragments.mosque.detail.fridayPrayer.MosqueDetailFridayPrayerFragment
 import com.nazar.sobatmasjid.ui.fragments.mosque.detail.profile.MosqueDetailProfileFragment
 import com.nazar.sobatmasjid.ui.fragments.mosque.detail.research.MosqueDetailResearchFragment
-import com.nazar.sobatmasjid.ui.fragments.mosque.list.MosqueListFragment
 
 class MosqueDetailPager(fm: FragmentManager) : FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT)   {
 

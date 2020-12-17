@@ -10,7 +10,6 @@ import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.nazar.sobatmasjid.databinding.FragmentInfaqBinding
-import com.nazar.sobatmasjid.ui.base.BaseBottomSheetFragment
 import com.nazar.sobatmasjid.ui.fragments.mosque.detail.MosqueDetailViewModel
 import com.nazar.sobatmasjid.utils.extensions.setImageFromUrl
 import com.nazar.sobatmasjid.viewmodel.ViewModelFactory

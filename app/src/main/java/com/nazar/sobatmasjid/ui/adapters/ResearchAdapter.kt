@@ -1,32 +1,36 @@
 package com.nazar.sobatmasjid.ui.adapters
 
 import android.annotation.SuppressLint
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.fragment.app.findFragment
+import androidx.navigation.findNavController
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
-import com.nazar.sobatmasjid.BuildConfig.IMAGE_URL
-import com.nazar.sobatmasjid.R
-import com.nazar.sobatmasjid.data.local.entity.MosqueEntity
 import com.nazar.sobatmasjid.data.local.entity.ResearchEntity
-import com.nazar.sobatmasjid.databinding.ItemMosqueFitBinding
 import com.nazar.sobatmasjid.databinding.ItemResearchWideBinding
+import com.nazar.sobatmasjid.ui.fragments.research.ResearchFragmentDirections
 import com.nazar.sobatmasjid.utils.extensions.setImageFromUrl
 
-class ResearchAdapter internal constructor() :
+class ResearchAdapter internal constructor(private val listener: (id: String) -> Unit) :
     PagedListAdapter<ResearchEntity, ResearchAdapter.ResearchViewHolder>(DIFF_CALLBACK) {
 
     companion object {
         private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<ResearchEntity>() {
-            override fun areItemsTheSame(oldItem: ResearchEntity, newItem: ResearchEntity): Boolean {
+            override fun areItemsTheSame(
+                oldItem: ResearchEntity,
+                newItem: ResearchEntity
+            ): Boolean {
                 return oldItem.id == newItem.id
             }
 
             @SuppressLint("DiffUtilEquals")
-            override fun areContentsTheSame(oldItem: ResearchEntity, newItem: ResearchEntity): Boolean {
+            override fun areContentsTheSame(
+                oldItem: ResearchEntity,
+                newItem: ResearchEntity
+            ): Boolean {
                 return oldItem == newItem
             }
         }
@@ -43,7 +47,7 @@ class ResearchAdapter internal constructor() :
         holder.bind(research)
     }
 
-    class ResearchViewHolder(private val binding: ItemResearchWideBinding) :
+    inner class ResearchViewHolder(private val binding: ItemResearchWideBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(research: ResearchEntity) {
             binding.tvMosqueName.text = research.mosqueName
@@ -53,6 +57,9 @@ class ResearchAdapter internal constructor() :
             binding.tvResearchTime.text = research.startTime
             binding.tvUstadzName.text = research.ustadzName
             binding.ustadzPhoto.setImageFromUrl(research.ustadzPhoto.toString())
+            binding.root.setOnClickListener {
+                listener(research.id)
+            }
         }
     }
 }

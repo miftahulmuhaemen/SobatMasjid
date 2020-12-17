@@ -127,7 +127,6 @@ class DataRepository private constructor(
                 }
                 localDataSource.updateMosqueRecommendations(mosques)
             }
-
         }.asLiveData()
     }
 
@@ -357,7 +356,8 @@ class DataRepository private constructor(
         latitude: Double,
         longitude: Double,
         city: String,
-        title: String
+        title: String,
+        type: List<String>
     ): LiveData<Resource<PagedList<ResearchEntity>>> {
         return object :
             NetworkBoundResource<PagedList<ResearchEntity>, List<ResearchResponse>>(appExecutors) {
@@ -368,7 +368,7 @@ class DataRepository private constructor(
                     .setPageSize(4)
                     .build()
                 return LivePagedListBuilder(
-                    localDataSource.getResearches(city, title),
+                    localDataSource.getResearches(city, title, type),
                     config
                 ).build()
             }
@@ -459,8 +459,8 @@ class DataRepository private constructor(
     }
 
     override fun getResearchDetail(
-        idResearch: String,
         idUser: String,
+        idResearch: String,
         latitude: Double,
         longitude: Double
     ): LiveData<Resource<ResearchDetailEntity>> {
@@ -499,7 +499,7 @@ class DataRepository private constructor(
                         response.brochure,
                         response.link,
                         response.note,
-                        response.attend
+                        response.attend != 0
                     )
                     localDataSource.insertResearchDetail(research)
                 }

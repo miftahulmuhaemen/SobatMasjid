@@ -7,12 +7,7 @@ import androidx.navigation.findNavController
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
-import com.nazar.sobatmasjid.BuildConfig.IMAGE_URL
-import com.nazar.sobatmasjid.R
 import com.nazar.sobatmasjid.data.local.entity.MosqueEntity
-import com.nazar.sobatmasjid.databinding.ItemMosqueFitBinding
 import com.nazar.sobatmasjid.databinding.ItemMosqueWideBinding
 import com.nazar.sobatmasjid.ui.fragments.mosque.MosqueFragmentDirections
 import com.nazar.sobatmasjid.utils.extensions.setImageFromUrl

@@ -1,10 +1,9 @@
 package com.nazar.sobatmasjid.data
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
-import com.nazar.sobatmasjid.data.remote.StatusResponse
 import com.nazar.sobatmasjid.data.remote.ApiResponse
+import com.nazar.sobatmasjid.data.remote.StatusResponse
 import com.nazar.sobatmasjid.utils.AppExecutors
 import com.nazar.sobatmasjid.vo.Resource
 

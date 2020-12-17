@@ -1,6 +1,5 @@
 package com.nazar.sobatmasjid.data.local
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.paging.DataSource
 import com.nazar.sobatmasjid.data.local.entity.*
@@ -64,7 +63,7 @@ class LocalDataSource private constructor(private val mLocalDao: LocalDao){
 
     /** RESEARCH **/
 
-    fun getResearches(city: String, title:String) : DataSource.Factory<Int, ResearchEntity> = mLocalDao.getResearches(city, title)
+    fun getResearches(city: String, title:String, type: List<String>) : DataSource.Factory<Int, ResearchEntity> = mLocalDao.getResearches(city, title, type)
 
     fun getResearchesByUser() : DataSource.Factory<Int, ResearchEntity> = mLocalDao.getResearchesByUser()
 

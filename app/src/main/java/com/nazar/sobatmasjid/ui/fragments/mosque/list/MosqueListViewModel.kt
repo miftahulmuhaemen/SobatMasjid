@@ -3,7 +3,6 @@ package com.nazar.sobatmasjid.ui.fragments.mosque.list
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.paging.PagedList
-import com.nazar.sobatmasjid.R
 import com.nazar.sobatmasjid.data.DataRepository
 import com.nazar.sobatmasjid.data.local.entity.MosqueEntity
 import com.nazar.sobatmasjid.vo.Resource

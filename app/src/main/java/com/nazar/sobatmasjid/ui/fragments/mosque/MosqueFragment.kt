@@ -34,25 +34,22 @@ class MosqueFragment : BaseBottomTabFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         val factory = ViewModelFactory.getInstance(requireContext())
         val viewModelStore = findNavController().currentBackStackEntry?.viewModelStore!!
         mosqueViewModel = ViewModelProvider(viewModelStore, factory)[MosqueViewModel::class.java]
         locationViewModel = ViewModelProvider(requireActivity(), factory)[LocationViewModel::class.java]
-
-        mosqueViewModel.classification.postValue(resources.getStringArray(R.array.mosque_classification).toList())
         locationViewModel.location.observe(viewLifecycleOwner, {
             preferences.setCity(it)
             binding.btnCurrentLocation.text = preferences.nameCity
-            mosqueViewModel.location.value = it.name
         })
-
         val sectionsPagerAdapter = MosquePager(requireContext(), childFragmentManager)
+        val classification = resources.getStringArray(R.array.mosque_classification).toList()
+        mosqueViewModel.setClassification(classification)
         binding.pagerMosque.adapter = sectionsPagerAdapter
         binding.tabsMosque.setupWithViewPager(binding.pagerMosque)
-        binding.svMosque.afterTextChanged { mosqueViewModel.query.value = it }
+        binding.svMosque.afterTextChanged { mosqueViewModel.setQuery(it) }
         binding.svMosque.setOnCloseListener {
-            mosqueViewModel.query.value = ""
+            mosqueViewModel.setQuery("")
             true
         }
         binding.btnCurrentLocation.text = preferences.nameCity

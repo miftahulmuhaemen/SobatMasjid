@@ -6,10 +6,6 @@ import android.view.ViewGroup
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
-import com.nazar.sobatmasjid.BuildConfig.IMAGE_URL
-import com.nazar.sobatmasjid.R
 import com.nazar.sobatmasjid.data.local.entity.AnnouncementEntity
 import com.nazar.sobatmasjid.databinding.ItemAnnouncementWideBinding
 import com.nazar.sobatmasjid.utils.extensions.setImageFromUrl

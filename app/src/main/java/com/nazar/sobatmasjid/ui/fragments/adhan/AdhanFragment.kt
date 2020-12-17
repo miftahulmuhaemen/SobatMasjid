@@ -1,20 +1,16 @@
 package com.nazar.sobatmasjid.ui.fragments.adhan
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.nazar.sobatmasjid.R
 import com.nazar.sobatmasjid.databinding.FragmentAdhanBinding
 
 class AdhanFragment : Fragment() {
 
     private lateinit var binding: FragmentAdhanBinding
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

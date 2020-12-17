@@ -1,18 +1,14 @@
 package com.nazar.sobatmasjid.ui.fragments.mosque.detail.fridayPrayer
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.nazar.sobatmasjid.R
 import com.nazar.sobatmasjid.databinding.FragmentMosqueDetailFridayPrayerBinding
-import com.nazar.sobatmasjid.databinding.FragmentMosqueDetailProfileBinding
-import com.nazar.sobatmasjid.databinding.FragmentRecyclerviewBinding
-import com.nazar.sobatmasjid.ui.adapters.AnnouncementAdapter
 import com.nazar.sobatmasjid.ui.adapters.FinanceAdapter
 import com.nazar.sobatmasjid.ui.adapters.OfficerAdapter
 import com.nazar.sobatmasjid.ui.fragments.mosque.detail.MosqueDetailViewModel

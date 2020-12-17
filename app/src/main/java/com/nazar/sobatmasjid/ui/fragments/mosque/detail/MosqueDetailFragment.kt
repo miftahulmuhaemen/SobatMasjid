@@ -5,7 +5,6 @@ import android.content.Intent
 import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -69,7 +68,7 @@ class MosqueDetailFragment : Fragment() {
                                 }
                         }
                         Status.ERROR -> {
-                            Toast.makeText(context, "Terjadi kesalahan", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(context, getString(R.string.notification_warning), Toast.LENGTH_SHORT).show()
                         }
                     }
                 }
@@ -122,12 +121,12 @@ class MosqueDetailFragment : Fragment() {
             binding.btnFollowBackground.background =
                 ResourcesCompat.getDrawable(resources, R.drawable.btn_rectangle_round_fill, null)
             binding.btnFollow.setTextColor(Color.WHITE)
-            binding.btnFollow.text = "Diikuti"
+            binding.btnFollow.text = getString(R.string.followed)
         } else {
             binding.btnFollowBackground.background =
                 ResourcesCompat.getDrawable(resources, R.drawable.btn_rectangle_round, null)
             binding.btnFollow.setTextColor(Color.BLACK)
-            binding.btnFollow.text = "Ikuti"
+            binding.btnFollow.text = getString(R.string.follow)
         }
     }
 

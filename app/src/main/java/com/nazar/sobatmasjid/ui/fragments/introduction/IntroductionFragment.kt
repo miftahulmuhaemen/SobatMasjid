@@ -6,9 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
-import com.nazar.sobatmasjid.R
 import com.nazar.sobatmasjid.databinding.FragmentIntroBinding
 import com.nazar.sobatmasjid.preference.Preferences
 import kotlinx.android.synthetic.main.fragment_intro.*

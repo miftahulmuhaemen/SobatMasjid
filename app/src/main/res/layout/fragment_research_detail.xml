@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/white"
     android:fillViewport="true">
 
     <LinearLayout
@@ -92,7 +93,7 @@
                 android:textSize="@dimen/title" />
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/ustadzPhoto"
+                android:id="@+id/cvUstadz"
                 android:layout_width="80dp"
                 android:layout_height="105dp"
                 android:layout_below="@id/tvResearchTitle"
@@ -100,6 +101,7 @@
                 app:cardCornerRadius="10dp">
 
                 <ImageView
+                    android:id="@+id/imgUstadzPhoto"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:src="@color/colorAccent" />
@@ -111,7 +113,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvResearchTitle"
                 android:layout_marginBottom="@dimen/smallMargin"
-                android:layout_toEndOf="@id/ustadzPhoto"
+                android:layout_toEndOf="@id/cvUstadz"
                 android:paddingStart="@dimen/globalPadding"
                 android:paddingEnd="@dimen/globalPadding"
                 android:text="@string/ustadzName" />
@@ -121,7 +123,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvUstadzName"
-                android:layout_toEndOf="@id/ustadzPhoto"
+                android:layout_toEndOf="@id/cvUstadz"
                 android:drawablePadding="@dimen/verySmallPadding"
                 android:paddingStart="@dimen/globalPadding"
                 android:paddingEnd="@dimen/globalPadding"
@@ -134,7 +136,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvMosqueName"
-                android:layout_toEndOf="@id/ustadzPhoto"
+                android:layout_toEndOf="@id/cvUstadz"
                 android:drawablePadding="@dimen/verySmallPadding"
                 android:paddingStart="@dimen/globalPadding"
                 android:paddingEnd="@dimen/globalPadding"
@@ -147,7 +149,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvResearchDate"
-                android:layout_toEndOf="@id/ustadzPhoto"
+                android:layout_toEndOf="@id/cvUstadz"
                 android:drawablePadding="@dimen/verySmallPadding"
                 android:paddingStart="@dimen/globalPadding"
                 android:paddingEnd="@dimen/globalPadding"
@@ -160,7 +162,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvResearchTime"
-                android:layout_toEndOf="@id/ustadzPhoto"
+                android:layout_toEndOf="@id/cvUstadz"
                 android:drawablePadding="@dimen/verySmallPadding"
                 android:paddingStart="@dimen/globalPadding"
                 android:paddingEnd="@dimen/globalPadding"
@@ -208,7 +210,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:layout_margin="@dimen/globalMargin"
+                android:layout_marginTop="@dimen/globalMargin"
+                android:layout_marginBottom="18dp"
                 android:background="?attr/colorPrimaryDark"
                 android:fontFamily="@font/rubik"
                 android:padding="@dimen/paddingButton"

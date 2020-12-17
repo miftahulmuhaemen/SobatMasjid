@@ -36,7 +36,7 @@ interface DataSource {
 
     /** RESEARCH **/
 
-    fun getResearches(latitude: Double, longitude: Double, city: String, title: String) : LiveData<Resource<PagedList<ResearchEntity>>>
+    fun getResearches(latitude: Double, longitude: Double, city: String, title: String, type: List<String>) : LiveData<Resource<PagedList<ResearchEntity>>>
 
     fun getResearchesByUser(idUser: String, latitude: Double, longitude: Double) : LiveData<Resource<PagedList<ResearchEntity>>>
 

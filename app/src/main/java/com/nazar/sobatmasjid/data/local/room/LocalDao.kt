@@ -57,8 +57,8 @@ interface LocalDao {
 
     /** RESEARCH **/
 
-    @Query("SELECT * FROM research WHERE idCity = :city AND title LIKE '%' || :title || '%' ")
-    fun getResearches(city: String, title:String): DataSource.Factory<Int, ResearchEntity>
+    @Query("SELECT * FROM research WHERE idCity = :city AND title LIKE '%' || :title || '%' AND researchType IN(:type)")
+    fun getResearches(city: String, title:String, type: List<String>): DataSource.Factory<Int, ResearchEntity>
 
     @Query("SELECT * FROM research WHERE isFollowedMosque = 1")
     fun getResearchesByUser(): DataSource.Factory<Int, ResearchEntity>

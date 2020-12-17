@@ -11,8 +11,8 @@ fun ImageView.setImageFromUrl(imageUrl: String) {
         .load(imageUrl)
         .apply(
             RequestOptions
-                .placeholderOf(R.drawable.ic_loading)
-                .error(R.drawable.ic_error)
+                .placeholderOf(R.drawable.logo_sobat_masjid)
+                .error(R.drawable.logo_sobat_masjid)
         )
         .into(this)
 }

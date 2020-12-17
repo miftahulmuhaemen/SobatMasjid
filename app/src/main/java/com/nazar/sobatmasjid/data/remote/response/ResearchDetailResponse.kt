@@ -1,6 +1,5 @@
 package com.nazar.sobatmasjid.data.remote.response
 
-import com.google.gson.annotations.SerializedName
 import com.squareup.moshi.Json
 
 data class ResearchDetailResponse(
@@ -20,5 +19,5 @@ data class ResearchDetailResponse(
     @field:Json(name = "link") var link: String?,
     @field:Json(name = "note") var note: String?,
     @field:Json(name = "mosque-type") var mosqueType: String?,
-    @field:Json(name = "attend") var attend: Boolean?
+    @field:Json(name = "attend") var attend: Int = 0
 )

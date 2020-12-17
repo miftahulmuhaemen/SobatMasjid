@@ -82,15 +82,33 @@
         <action
             android:id="@+id/action_mosqueDetail_to_mosqueDetailInfaqFragment"
             app:destination="@id/mosqueDetailInfaqFragment" />
+        <action
+            android:id="@+id/action_mosqueDetail_to_researchDetail"
+            app:destination="@id/researchDetail" />
+        <action
+            android:id="@+id/action_mosqueDetail_to_announcementDetailFragment"
+            app:destination="@id/announcementDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/announcementDetailFragment"
         android:name="com.nazar.sobatmasjid.ui.fragments.announcement.detail.AnnouncementDetailFragment"
-        android:label="AnnouncementDetailFragment" />
+        android:label="AnnouncementDetailFragment">
+        <argument
+            android:name="id"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+    </fragment>
     <fragment
         android:id="@+id/researchDetail"
         android:name="com.nazar.sobatmasjid.ui.fragments.research.detail.ResearchDetailFragment"
-        android:label="ResearchDetail" />
+        android:label="{id}">
+        <argument
+            android:name="id"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+    </fragment>
     <fragment
         android:id="@+id/adhanFragment"
         android:name="com.nazar.sobatmasjid.ui.fragments.adhan.AdhanFragment"

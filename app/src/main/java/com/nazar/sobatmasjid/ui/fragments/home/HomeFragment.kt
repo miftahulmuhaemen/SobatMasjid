@@ -5,9 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nazar.sobatmasjid.R
 import com.nazar.sobatmasjid.databinding.FragmentHomeBinding
@@ -80,7 +78,9 @@ class HomeFragment : BaseBottomTabFragment() {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
             adapter = mosqueFitAdapter
         }
-        researchAdapter = ResearchAdapter()
+        researchAdapter = ResearchAdapter {
+            navigateWithAction(HomeFragmentDirections.actionHomeFragmentToResearchDetail(it))
+        }
         with(binding.rvResearch) {
             layoutManager = LinearLayoutManager(context)
             adapter = researchAdapter
@@ -120,7 +120,7 @@ class HomeFragment : BaseBottomTabFragment() {
                         mosqueRecommendationAdapter.notifyDataSetChanged()
                     }
                     Status.ERROR -> {
-                        Toast.makeText(context, "Terjadi kesalahan", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context, getString(R.string.notification_warning), Toast.LENGTH_SHORT).show()
                     }
                 }
             }
@@ -147,7 +147,7 @@ class HomeFragment : BaseBottomTabFragment() {
                         mosqueFitAdapter.notifyDataSetChanged()
                     }
                     Status.ERROR -> {
-                        Toast.makeText(context, "Terjadi kesalahan", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context, getString(R.string.notification_warning), Toast.LENGTH_SHORT).show()
                     }
                 }
             }
@@ -169,7 +169,7 @@ class HomeFragment : BaseBottomTabFragment() {
                         researchAdapter.notifyDataSetChanged()
                     }
                     Status.ERROR -> {
-                        Toast.makeText(context, "Terjadi kesalahan", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context, getString(R.string.notification_warning), Toast.LENGTH_SHORT).show()
                     }
                 }
             }
@@ -188,7 +188,7 @@ class HomeFragment : BaseBottomTabFragment() {
                         announcementAdapter.notifyDataSetChanged()
                     }
                     Status.ERROR -> {
-                        Toast.makeText(context, "Terjadi kesalahan", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context, getString(R.string.notification_warning), Toast.LENGTH_SHORT).show()
                     }
                 }
             }
@@ -207,7 +207,7 @@ class HomeFragment : BaseBottomTabFragment() {
                         fridayPrayerAdapter.notifyDataSetChanged()
                     }
                     Status.ERROR -> {
-//                        Toast.makeText(context, "Terjadi kesalahan", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context, getString(R.string.notification_warning), Toast.LENGTH_SHORT).show()
                     }
                 }
             }

@@ -1,8 +1,6 @@
 package com.nazar.sobatmasjid.vo
 
-import com.nazar.sobatmasjid.vo.Status.ERROR
-import com.nazar.sobatmasjid.vo.Status.LOADING
-import com.nazar.sobatmasjid.vo.Status.SUCCESS
+import com.nazar.sobatmasjid.vo.Status.*
 
 data class Resource<T>(val status: Status, val data: T?, val message: String?) {
     companion object {

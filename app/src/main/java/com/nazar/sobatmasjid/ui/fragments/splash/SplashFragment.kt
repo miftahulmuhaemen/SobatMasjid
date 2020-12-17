@@ -6,11 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
-import com.nazar.sobatmasjid.R
 import com.nazar.sobatmasjid.databinding.FragmentSplashBinding
-import com.nazar.sobatmasjid.preference.Preferences
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 

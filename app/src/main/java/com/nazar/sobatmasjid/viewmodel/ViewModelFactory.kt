@@ -11,6 +11,9 @@ import com.nazar.sobatmasjid.ui.fragments.login.LoginViewModel
 import com.nazar.sobatmasjid.ui.fragments.mosque.MosqueViewModel
 import com.nazar.sobatmasjid.ui.fragments.mosque.detail.MosqueDetailViewModel
 import com.nazar.sobatmasjid.ui.fragments.mosque.list.MosqueListViewModel
+import com.nazar.sobatmasjid.ui.fragments.research.ResearchViewModel
+import com.nazar.sobatmasjid.ui.fragments.research.detail.ResearchDetailViewModel
+import com.nazar.sobatmasjid.ui.fragments.research.list.ResearchListViewModel
 
 class ViewModelFactory  private constructor(private val dataRepository: DataRepository) : ViewModelProvider.NewInstanceFactory() {
 
@@ -44,6 +47,15 @@ class ViewModelFactory  private constructor(private val dataRepository: DataRepo
             }
             modelClass.isAssignableFrom(MosqueDetailViewModel::class.java) -> {
                 MosqueDetailViewModel(dataRepository) as T
+            }
+            modelClass.isAssignableFrom(ResearchViewModel::class.java) -> {
+                ResearchViewModel(dataRepository) as T
+            }
+            modelClass.isAssignableFrom(ResearchListViewModel::class.java) -> {
+                ResearchListViewModel(dataRepository) as T
+            }
+            modelClass.isAssignableFrom(ResearchDetailViewModel::class.java) -> {
+                ResearchDetailViewModel(dataRepository) as T
             }
             else -> throw Throwable("Unknown ViewModel class: " + modelClass.name)
         }

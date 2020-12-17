@@ -72,7 +72,7 @@
         android:layout_height="@dimen/subAppBarHeight"
         android:layout_below="@id/btnCurrentLocation"/>
 
-    <androidx.viewpager2.widget.ViewPager2
+    <androidx.viewpager.widget.ViewPager
         android:id="@+id/pagerResearch"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

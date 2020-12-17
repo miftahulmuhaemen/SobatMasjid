@@ -16,7 +16,6 @@
     <string name="mosque">Masjid</string>
     <string name="announcement">Pengumuman</string>
     <string name="profile">Profil</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="appBarTitle">sobatmasjid</string>
     <string name="dummyLocation">Lokasi Dummy</string>
     <string name="dummyMosqueName">Nama Masjid</string>
@@ -44,7 +43,6 @@
     <string name="dummyTimePassed">1 jam lalu</string>
     <string name="mosqueQueryHintSearch">Cari masjid yang mau dimakmurkan …</string>
     <string name="researchQueryHintSearch">Cari kajian yang mau diikuti …</string>
-    <string name="announcementQueryHintSearch">Cari pengumuman penting …</string>
     <string name="actionbar_infaq">Berinfaq</string>
     <string name="actionbar_follow">Ikuti</string>
     <string name="actionbar_visit">Kunjungi</string>
@@ -56,7 +54,6 @@
     <string name="dummyAddress">Jl. Sekumpul Martapura Kelurahan Guntung Paikat</string>
     <string name="loremIpsum">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
     <string name="dateDayMonth">08 Jun</string>
-    <string name="dateYear">2020</string>
     <string name="imam">Imam</string>
     <string name="finance">Keuangan</string>
     <string name="fridayOfficer">Petugas Jum\'at</string>
@@ -68,10 +65,10 @@
     <string name="arabCalendar">13 Dzulhijjah 1441</string>
     <string name="dummyAdhanLabel">Subuh</string>
     <string name="filter">Filter Klasifikasi Masjid</string>
-    <string name="blank" />
     <string name="dummyGender">Laki-laki</string>
     <string name="note">Catatan :</string>
     <string name="register">Hadir</string>
+    <string name="follow">Ikuti</string>
     <string name="following">Mengikuti</string>
     <string name="followQueryHint">Cari yang diikuti …</string>
     <string name="statusProfile">Lengkapi Profil</string>
@@ -89,16 +86,20 @@
     <string name="hypen">-</string>
     <string name="profileClaim">Informasi berikut hanya dapat dilihat oleh sobat, kami tidak akan mempublikasikan.</string>
     <string name="save">Simpan</string>
-    <string name="choose">Pilih</string>
-
-    <array name="gender">
-        <item>Laki-Laki</item>
-        <item>Perempuan</item>
-    </array>
+    <string name="all">Semua</string>
+    <string name="notification_warning">"Terjadi kesalahan"</string>
 
     <array name="mosque_type">
+        <item>Semua</item>
         <item>Masjid</item>
         <item>Musholla</item>
+    </array>
+
+    <array name="research_type">
+        <item>Semua</item>
+        <item>Umum</item>
+        <item>Ikhwan</item>
+        <item>Akhwat</item>
     </array>
 
     <array name="mosque_classification">
@@ -112,14 +113,13 @@
         <item>Bersejarah</item>
     </array>
 
-    <string name="facebook_app_id">2386837598291227</string>
-    <string name="facebook_application_id">2386837598291227</string>
-    <string name="fb_login_protocol_scheme">fb2386837598291227</string>
     <string name="backButton">backButton</string>
     <string name="action_bar_followed">Diikuti</string>
     <string name="qris">QRIS</string>
     <string name="bank_name">Nama Bank</string>
     <string name="owner_name">Nama Pemilik</string>
     <string name="account_number">No. Rekening</string>
+    <string name="followed">Diikuti</string>
+    <string name="attended">Dihadiri</string>
 
 </resources>

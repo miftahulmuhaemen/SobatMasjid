@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "773938687530-bp97i967ta4d06543a98pq8j7cqt73e4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nazar.sobatmasjid",
+            "certificate_hash": "4c22602dd8b9b061c424dbdaf7dc7e9566011f65"
+          }
+        },
+        {
           "client_id": "773938687530-k5lhdgf3joq3ge3nug7gthmdoq1avkk6.apps.googleusercontent.com",
           "client_type": 3
         }

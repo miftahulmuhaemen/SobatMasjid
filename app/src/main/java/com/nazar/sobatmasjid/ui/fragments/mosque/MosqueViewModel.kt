@@ -7,5 +7,12 @@ import com.nazar.sobatmasjid.data.DataRepository
 class MosqueViewModel(private val dataRepository: DataRepository) : ViewModel() {
     var query: MutableLiveData<String> = MutableLiveData()
     var classification: MutableLiveData<List<String>> = MutableLiveData()
-    var location: MutableLiveData<String> = MutableLiveData()
+
+    fun setQuery(query: String){
+        this.query.value = query
+    }
+
+    fun setClassification(classification: List<String>){
+        this.classification.value = classification
+    }
 }

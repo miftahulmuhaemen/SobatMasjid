@@ -2,7 +2,6 @@ package com.nazar.sobatmasjid.ui.fragments.introduction
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
-import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.nazar.sobatmasjid.R
 

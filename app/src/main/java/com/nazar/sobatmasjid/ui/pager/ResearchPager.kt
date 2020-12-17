@@ -6,18 +6,18 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.nazar.sobatmasjid.R
-import com.nazar.sobatmasjid.ui.fragments.mosque.list.MosqueListFragment
+import com.nazar.sobatmasjid.ui.fragments.research.list.ResearchListFragment
 
-class MosquePager(private val context: Context, fm: FragmentManager) : FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT)   {
+class ResearchPager(private val context: Context, fm: FragmentManager) : FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT)   {
 
-    private val tabTitles: Array<String> = context.resources.getStringArray(R.array.mosque_type)
+    private val tabTitles: Array<String> = context.resources.getStringArray(R.array.research_type)
 
     companion object {
         const val KEY_TYPE = "KEY_TYPE"
     }
 
     override fun getItem(position: Int): Fragment {
-        val fragment = MosqueListFragment()
+        val fragment = ResearchListFragment()
         val bundle = Bundle()
             bundle.putString(KEY_TYPE, tabTitles[position])
         fragment.arguments = bundle

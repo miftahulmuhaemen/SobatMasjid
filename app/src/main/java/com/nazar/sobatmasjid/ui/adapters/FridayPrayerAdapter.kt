@@ -1,18 +1,13 @@
 package com.nazar.sobatmasjid.ui.adapters
 
 import android.annotation.SuppressLint
-import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.nazar.sobatmasjid.R
 import com.nazar.sobatmasjid.data.local.entity.FridayPrayerEntity
-import com.nazar.sobatmasjid.data.local.entity.MosqueRecommendationEntity
 import com.nazar.sobatmasjid.databinding.ItemFridayPrayerFitBinding
-import com.nazar.sobatmasjid.databinding.ItemMosqueRecommendationBinding
-import com.nazar.sobatmasjid.utils.extensions.setImageFromUrl
 
 class FridayPrayerAdapter internal constructor() :
     PagedListAdapter<FridayPrayerEntity, FridayPrayerAdapter.FridayPrayerViewHolder>(DIFF_CALLBACK) {

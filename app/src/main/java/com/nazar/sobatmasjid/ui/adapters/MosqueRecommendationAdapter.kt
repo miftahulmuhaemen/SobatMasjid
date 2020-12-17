@@ -2,24 +2,14 @@ package com.nazar.sobatmasjid.ui.adapters
 
 import android.annotation.SuppressLint
 import android.graphics.Color
-import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelStore
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
-import com.nazar.sobatmasjid.BuildConfig.IMAGE_URL
 import com.nazar.sobatmasjid.R
 import com.nazar.sobatmasjid.data.local.entity.MosqueRecommendationEntity
 import com.nazar.sobatmasjid.databinding.ItemMosqueRecommendationBinding
-import com.nazar.sobatmasjid.preference.Preferences
-import com.nazar.sobatmasjid.ui.fragments.home.HomeViewModel
 import com.nazar.sobatmasjid.utils.extensions.setImageFromUrl
 
 class MosqueRecommendationAdapter internal constructor(private val listener: (id: String) -> Unit) :

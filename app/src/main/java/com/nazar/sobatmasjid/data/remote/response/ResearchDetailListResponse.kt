@@ -1,9 +1,8 @@
 package com.nazar.sobatmasjid.data.remote.response
 
-import com.google.gson.annotations.SerializedName
 import com.squareup.moshi.Json
 
 data class ResearchDetailListResponse(
     @field:Json(name = "status") var status: Boolean?,
-    @field:Json(name = "data") var data: List<ResearchDetailResponse>?
+    @field:Json(name = "research") var data: List<ResearchDetailResponse>?
 )
