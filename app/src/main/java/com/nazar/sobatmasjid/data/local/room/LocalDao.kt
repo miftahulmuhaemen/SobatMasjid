@@ -114,9 +114,9 @@ interface LocalDao {
     /** SHOLAT **/
 
     @Query("SELECT * FROM sholat")
-    fun getSholatTimes(): DataSource.Factory<Int, SholatEntity>
+    fun getSholatTimes(): LiveData<SholatEntity>
 
-    @Update
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertSholatTimes(sholatTimes: List<SholatEntity>)
 
 }

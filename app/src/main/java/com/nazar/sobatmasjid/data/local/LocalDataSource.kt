@@ -116,7 +116,7 @@ class LocalDataSource private constructor(private val mLocalDao: LocalDao){
 
     /** SHOLAT **/
 
-    fun getSholatTimes() : DataSource.Factory<Int, SholatEntity> = mLocalDao.getSholatTimes()
+    fun getSholatTimes() : LiveData<SholatEntity> = mLocalDao.getSholatTimes()
 
     fun insertSholatTimes(sholatTimes: List<SholatEntity>){
         mLocalDao.insertSholatTimes(sholatTimes)

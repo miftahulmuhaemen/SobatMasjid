@@ -65,4 +65,6 @@ ext {
     roomVersion = '2.2.5'
 
     googleServiceLocationVersion = '17.1.0'
+
+    coreDesugar = '1.1.1'
 }

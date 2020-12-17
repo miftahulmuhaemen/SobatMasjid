@@ -1,5 +1,6 @@
 package com.nazar.sobatmasjid.data
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
@@ -733,20 +734,14 @@ class DataRepository private constructor(
     override fun getSholatTimes(
         apiCode: Int,
         dateNow: Date
-    ): LiveData<Resource<PagedList<SholatEntity>>> {
+    ): LiveData<Resource<SholatEntity>> {
         return object :
-            NetworkBoundResource<PagedList<SholatEntity>, List<SholatResponse>>(appExecutors) {
-            override fun loadFromDB(): LiveData<PagedList<SholatEntity>> {
-                val config = PagedList.Config.Builder()
-                    .setEnablePlaceholders(false)
-                    .setInitialLoadSizeHint(4)
-                    .setPageSize(4)
-                    .build()
-                return LivePagedListBuilder(localDataSource.getSholatTimes(), config).build()
-            }
+            NetworkBoundResource<SholatEntity, List<SholatResponse>>(appExecutors) {
+            override fun loadFromDB(): LiveData<SholatEntity> =
+                localDataSource.getSholatTimes()
 
-            override fun shouldFetch(data: PagedList<SholatEntity>?): Boolean =
-                data == null || data.isEmpty()
+            override fun shouldFetch(data: SholatEntity?): Boolean =
+                true
 
             override fun createCall(): LiveData<ApiResponse<List<SholatResponse>>> =
                 remoteDataSource.getSholatTimes(apiCode, dateNow)

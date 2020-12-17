@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.nazar.sobatmasjid.data.DataRepository
 import com.nazar.sobatmasjid.di.Injection
+import com.nazar.sobatmasjid.ui.fragments.adhan.AdhanViewModel
 import com.nazar.sobatmasjid.ui.fragments.announcement.AnnouncementViewModel
 import com.nazar.sobatmasjid.ui.fragments.announcement.detail.AnnouncementDetailViewModel
 import com.nazar.sobatmasjid.ui.fragments.announcement.list.AnnouncementListViewModel
@@ -41,6 +42,9 @@ class ViewModelFactory  private constructor(private val dataRepository: DataRepo
             }
             modelClass.isAssignableFrom(LocationViewModel::class.java) -> {
                 LocationViewModel(dataRepository) as T
+            }
+            modelClass.isAssignableFrom(AdhanViewModel::class.java) -> {
+                AdhanViewModel(dataRepository) as T
             }
             modelClass.isAssignableFrom(MosqueViewModel::class.java) -> {
                 MosqueViewModel(dataRepository) as T

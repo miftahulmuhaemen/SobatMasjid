@@ -53,50 +53,190 @@
         android:textSize="@dimen/mediumText"
         app:drawableLeftCompat="@drawable/ic_location_24dp" />
 
-<androidx.cardview.widget.CardView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_below="@id/btnCurrentLocation"
-    android:layout_margin="@dimen/smallMargin">
-
-    <LinearLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="@dimen/globalPadding"
-        android:gravity="center_horizontal">
+        android:layout_height="match_parent"
+        android:layout_below="@id/btnCurrentLocation"
+        android:layout_margin="@dimen/smallMargin">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/rubik"
-            android:text="@string/dummyFullDate"
-            android:textColor="@color/colorAccent"
-            android:textSize="@dimen/title"
-            tools:ignore="RelativeOverlap" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/rubik"
-            android:text="@string/arabCalendar"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="@dimen/subTitle"
-            android:layout_marginBottom="@dimen/globalMargin"
-            tools:ignore="RelativeOverlap" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvNotification"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:isScrollContainer="false"
+            android:gravity="center_horizontal"
             android:orientation="vertical"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/item_adhan" />
+            android:padding="@dimen/globalPadding">
 
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/rubik"
+                android:text="@string/dummyFullDate"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/title"
+                tools:ignore="RelativeOverlap" />
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/tvDateArabic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/globalMargin"
+                android:fontFamily="@font/rubik"
+                android:text="@string/arabCalendar"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/subTitle"
+                tools:ignore="RelativeOverlap" />
 
-</androidx.cardview.widget.CardView>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/globalPadding">
+
+                <TextView
+                    android:id="@+id/tvImsak"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/rubik"
+                    android:text="@string/imsak"
+                    android:textSize="@dimen/bodyText" />
+
+                <TextView
+                    android:id="@+id/tvImsakTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="@dimen/smallMargin"
+                    android:fontFamily="@font/rubik"
+                    android:text="@string/dummyResearchTime"
+                    android:textSize="@dimen/bodyText" />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/globalPadding">
+
+                <TextView
+                    android:id="@+id/tvSubuh"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/rubik"
+                    android:text="@string/subuh"
+                    android:textSize="@dimen/bodyText" />
+
+                <TextView
+                    android:id="@+id/tvSubuhTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="@dimen/smallMargin"
+                    android:fontFamily="@font/rubik"
+                    android:text="@string/dummyResearchTime"
+                    android:textSize="@dimen/bodyText" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/globalPadding">
+
+                <TextView
+                    android:id="@+id/tvDzuhur"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/rubik"
+                    android:text="@string/dzuhur"
+                    android:textSize="@dimen/bodyText" />
+
+                <TextView
+                    android:id="@+id/tvDzuhurTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="@dimen/smallMargin"
+                    android:fontFamily="@font/rubik"
+                    android:text="@string/dummyResearchTime"
+                    android:textSize="@dimen/bodyText" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/globalPadding">
+
+                <TextView
+                    android:id="@+id/tvAshar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/rubik"
+                    android:text="@string/ashar"
+                    android:textSize="@dimen/bodyText" />
+
+                <TextView
+                    android:id="@+id/tvAsharTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="@dimen/smallMargin"
+                    android:fontFamily="@font/rubik"
+                    android:text="@string/dummyResearchTime"
+                    android:textSize="@dimen/bodyText" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/globalPadding">
+
+                <TextView
+                    android:id="@+id/tvMaghrib"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/rubik"
+                    android:text="@string/maghrib"
+                    android:textSize="@dimen/bodyText" />
+
+                <TextView
+                    android:id="@+id/tvMaghribTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="@dimen/smallMargin"
+                    android:fontFamily="@font/rubik"
+                    android:text="@string/dummyResearchTime"
+                    android:textSize="@dimen/bodyText" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/globalPadding">
+
+                <TextView
+                    android:id="@+id/tvIsya"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/rubik"
+                    android:text="@string/isya"
+                    android:textSize="@dimen/bodyText" />
+
+                <TextView
+                    android:id="@+id/tvIsyaTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="@dimen/smallMargin"
+                    android:fontFamily="@font/rubik"
+                    android:text="@string/dummyResearchTime"
+                    android:textSize="@dimen/bodyText" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
 
 </RelativeLayout>

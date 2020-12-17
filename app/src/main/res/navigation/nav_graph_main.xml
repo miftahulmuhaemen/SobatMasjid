@@ -109,10 +109,14 @@
             app:nullable="true"
             android:defaultValue="@null"/>
     </fragment>
-    <fragment
+    <dialog
         android:id="@+id/adhanFragment"
         android:name="com.nazar.sobatmasjid.ui.fragments.adhan.AdhanFragment"
-        android:label="AdhanFragment" />
+        android:label="AdhanFragment" >
+        <action
+            android:id="@+id/action_adhanFragment_to_locationFragment"
+            app:destination="@id/locationFragment" />
+    </dialog>
     <dialog
         android:id="@+id/locationFragment"
         android:name="com.nazar.sobatmasjid.ui.fragments.location.LocationFragment"

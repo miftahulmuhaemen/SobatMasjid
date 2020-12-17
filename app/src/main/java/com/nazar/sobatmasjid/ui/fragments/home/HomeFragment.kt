@@ -67,8 +67,13 @@ class HomeFragment : BaseBottomTabFragment() {
 
         binding.btnCurrentLocation.text = preferences.nameCity
         binding.btnMosqueList.setOnClickListener { navigate(R.id.mosqueFragment) }
+        binding.btnAnnouncement.setOnClickListener { navigate(R.id.announcementFragment) }
+        binding.btnResearchList.setOnClickListener { navigate(R.id.researchFragment) }
         binding.btnCurrentLocation.setOnClickListener {
             navigateWithAction(HomeFragmentDirections.actionHomeFragmentToLocationFragment())
+        }
+        binding.btnAdhan.setOnClickListener {
+            navigateWithAction(HomeFragmentDirections.actionHomeFragmentToAdhanFragment())
         }
     }
 

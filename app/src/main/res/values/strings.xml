@@ -127,5 +127,11 @@
     <string name="account_number">No. Rekening</string>
     <string name="followed">Diikuti</string>
     <string name="attended">Dihadiri</string>
+    <string name="imsak">Imsak</string>
+    <string name="subuh">Subuh</string>
+    <string name="dzuhur">Dzuhur</string>
+    <string name="ashar">Ashar</string>
+    <string name="maghrib">Maghrib</string>
+    <string name="isya">Isya</string>
 
 </resources>

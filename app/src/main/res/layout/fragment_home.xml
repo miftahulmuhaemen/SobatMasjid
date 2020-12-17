@@ -30,7 +30,7 @@
                 tools:ignore="RelativeOverlap" />
 
             <ImageView
-                android:id="@+id/schedule"
+                android:id="@+id/btnAdhan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
@@ -41,6 +41,7 @@
 
             <ImageView
                 android:id="@+id/notification"
+                android:visibility="invisible"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
@@ -216,20 +217,10 @@
                     android:text="@string/fridayPrayer"
                     android:textSize="@dimen/mediumText" />
 
-                <TextView
-                    android:id="@+id/btnFridayPrayer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignBottom="@id/tvFridayPrayer"
-                    android:layout_alignParentEnd="true"
-                    android:padding="@dimen/globalPadding"
-                    android:text="@string/forList"
-                    android:textSize="@dimen/mediumTitle" />
-
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rvFridayPrayer"
                     android:layout_width="wrap_content"
-                    android:layout_height="220dp"
+                    android:layout_height="wrap_content"
                     android:layout_below="@id/tvFridayPrayer"
                     android:clipToPadding="false"
                     android:fadeScrollbars="true"

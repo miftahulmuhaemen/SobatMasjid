@@ -68,5 +68,5 @@ interface DataSource {
 
     /** SHOLAT **/
 
-    fun getSholatTimes(apiCode: Int, dateNow: Date) : LiveData<Resource<PagedList<SholatEntity>>>
+    fun getSholatTimes(apiCode: Int, dateNow: Date) : LiveData<Resource<SholatEntity>>
 }
