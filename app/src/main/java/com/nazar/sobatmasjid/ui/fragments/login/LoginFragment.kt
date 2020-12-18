@@ -24,6 +24,8 @@ import com.nazar.sobatmasjid.ui.fragments.login.LoginFragment.Login.PERMISSION
 import com.nazar.sobatmasjid.ui.fragments.login.LoginFragment.Login.RC_SIGN_IN
 import com.nazar.sobatmasjid.utils.hasPermissions
 import com.nazar.sobatmasjid.viewmodel.ViewModelFactory
+import java.sql.Date
+import java.time.LocalDate
 import java.util.*
 
 class LoginFragment : Fragment(), View.OnClickListener, FirebaseAuth.AuthStateListener {
@@ -86,13 +88,13 @@ class LoginFragment : Fragment(), View.OnClickListener, FirebaseAuth.AuthStateLi
 
     override fun onAuthStateChanged(state: FirebaseAuth) {
         val user = state.currentUser
-        val currentDate = Calendar.getInstance().time
+        val date = Date.valueOf(LocalDate.now().toString())
         if (user != null) {
             if (isLocationAvailable) {
                 binding.pbLoading.visibility = View.VISIBLE
                 viewModel.userLogin(
                     user.displayName!!,
-                    currentDate,
+                    date,
                     user.email!!,
                     location.latitude,
                     location.longitude

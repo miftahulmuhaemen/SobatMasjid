@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
+    android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -56,7 +57,7 @@
 
 
         <TextView
-            android:id="@+id/tvMosqueName"
+            android:id="@+id/tvUsername"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignTop="@id/profilePhoto"
@@ -77,7 +78,7 @@
             android:id="@+id/tvStatus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/tvMosqueName"
+            android:layout_below="@id/tvUsername"
             android:layout_marginStart="-1dp"
             android:layout_marginTop="0dp"
             android:layout_toEndOf="@id/profilePhoto"
@@ -142,11 +143,11 @@
         android:background="@color/gray"/>
 
     <RelativeLayout
-        android:id="@+id/btnFollowing"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         
         <TextView
+            android:id="@+id/btnFollowing"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/following"
@@ -174,6 +175,7 @@
         android:background="@color/gray"/>
 
     <TextView
+        android:id="@+id/btnMosqueRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/mosqueRegisterHelping"
@@ -187,6 +189,7 @@
         android:background="@color/gray"/>
 
     <TextView
+        android:id="@+id/btnRating"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/rating"
@@ -200,6 +203,7 @@
         android:background="@color/gray"/>
 
     <TextView
+        android:id="@+id/btnSupportedBy"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/supportBy"
@@ -212,5 +216,13 @@
         android:layout_height="2dp"
         android:background="@color/gray"/>
 
+    <TextView
+        android:id="@+id/btnLogout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/logout"
+        android:textStyle="bold"
+        android:fontFamily="@font/rubik"
+        android:padding="@dimen/globalPadding"/>
 
 </LinearLayout>
