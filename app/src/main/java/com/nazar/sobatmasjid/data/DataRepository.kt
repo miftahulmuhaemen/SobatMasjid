@@ -48,7 +48,7 @@ class DataRepository private constructor(
     override fun updateUser(
         idUser: String,
         requestBody: RequestBody
-    ): LiveData<ApiResponse<Boolean>> =
+    ): LiveData<ApiResponse<UserResponse>> =
         remoteDataSource.updateUser(idUser.toInt(), requestBody)
 
     override fun getFollowedMosques(

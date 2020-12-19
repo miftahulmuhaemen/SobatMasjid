@@ -102,6 +102,20 @@ class Preferences(context: Context){
         sharedPrefs.edit { putString(KEY_LONGITUDE, location.longitude.toString()) }
     }
 
+    fun setPreferenceUserOnly(userResponse: UserResponse){
+        sharedPrefs.edit { putString(KEY_ID_USER, userResponse.id) }
+        sharedPrefs.edit { putString(KEY_ID_CITY, userResponse.idCity) }
+        sharedPrefs.edit { putString(KEY_NAME, userResponse.name) }
+        sharedPrefs.edit { putString(KEY_BORN_DATE, userResponse.bornDate) }
+        sharedPrefs.edit { putString(KEY_EMAIL, userResponse.email) }
+        sharedPrefs.edit { putString(KEY_GENDER, userResponse.gender) }
+        sharedPrefs.edit { putString(KEY_MOTTO, userResponse.motto) }
+        sharedPrefs.edit { putInt(KEY_NUMBER_FOLLOW, userResponse.numberFollow?.toInt() ?: 0) }
+        sharedPrefs.edit { putString(KEY_PHOTO_URL, userResponse.photo) }
+        sharedPrefs.edit { putString(KEY_NAME_CITY, userResponse.nameCity) }
+        sharedPrefs.edit { putString(KEY_API_CODE, userResponse.apiCode) }
+    }
+
     fun setCity(city: CityEntity){
         sharedPrefs.edit { putString(KEY_ID_CITY, city.id) }
         sharedPrefs.edit { putString(KEY_NAME_CITY, city.name) }

@@ -41,8 +41,10 @@ class ProfileViewModel(private val dataRepository: DataRepository) : ViewModel()
         bornDate: String,
         email: String,
         gender: String,
-        motto: String
-    ): LiveData<ApiResponse<Boolean>> {
+        motto: String,
+        latitude: Double,
+        longitude: Double
+    ): LiveData<ApiResponse<UserResponse>> {
         val builder: MultipartBody.Builder = MultipartBody.Builder().setType(MultipartBody.FORM)
         builder
             .addFormDataPart("id-user", idUser)
@@ -51,6 +53,8 @@ class ProfileViewModel(private val dataRepository: DataRepository) : ViewModel()
             .addFormDataPart("email", email)
             .addFormDataPart("gender", gender)
             .addFormDataPart("motto", motto)
+            .addFormDataPart("latitude", latitude.toString())
+            .addFormDataPart("longitude", longitude.toString())
             .addFormDataPart("API-KEY", API_KEY)
         if (photo != null)
             builder.addFormDataPart(

@@ -288,7 +288,7 @@
             android:layout_marginStart="@dimen/notificationButtonMargin"
             android:layout_marginTop="@dimen/globalMargin"
             android:layout_marginEnd="@dimen/notificationButtonMargin"
-            android:background="?attr/colorPrimaryDark"
+            android:background="@color/colorPrimaryDark"
             android:fontFamily="@font/rubik"
             android:padding="@dimen/paddingButton"
             android:text="@string/save"

@@ -12,11 +12,6 @@ interface RetrofitService {
 
     /** USER **/
 
-    @GET("${BASE_URL}user?API-KEY=${API_KEY}")
-    suspend fun getUser(
-        @Query("email") email: String?
-    ): Response<UserListResponse>
-
     @GET("${BASE_URL}user/follow/{idUser}?API-KEY=${API_KEY}")
     suspend fun getFollowedMosques(
         @Path("idUser") idUser: Int?
@@ -37,7 +32,7 @@ interface RetrofitService {
     suspend fun postUpdateProfile(
         @Path("idUser") idUser: Int?,
         @Body requestBody: RequestBody
-    ): Response<DefaultResponse>
+    ): Response<UserListResponse>
 
     /** MOSQUE **/
 

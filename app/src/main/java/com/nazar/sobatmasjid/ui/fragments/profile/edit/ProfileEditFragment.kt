@@ -3,6 +3,7 @@ package com.nazar.sobatmasjid.ui.fragments.profile.edit
 import android.annotation.SuppressLint
 import android.app.Activity.RESULT_OK
 import android.app.Dialog
+import android.location.Location
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -65,7 +66,7 @@ class ProfileEditFragment : BaseBottomSheetFragment(), View.OnClickListener {
         super.onViewCreated(view, savedInstanceState)
 
         val factory = ViewModelFactory.getInstance(requireContext())
-        val viewModelStore = findNavController().currentBackStackEntry?.viewModelStore!!
+        val viewModelStore = findNavController().previousBackStackEntry?.viewModelStore!!
         profileViewModel =
             ViewModelProvider(viewModelStore, factory)[ProfileViewModel::class.java]
 
@@ -138,31 +139,37 @@ class ProfileEditFragment : BaseBottomSheetFragment(), View.OnClickListener {
             }
             binding.btnSave -> {
                 profileViewModel.updateUser(
-                        preferences.idUser,
-                        imageFile,
-                        edtName.text.toString(),
-                        edtBornDate.text.toString(),
-                        preferences.email,
-                        edtGender.text.toString(),
-                        edtMotto.text.toString()
-                    ).observe(viewLifecycleOwner, {
-                        when (it.status) {
-                            StatusResponse.SUCCESS -> {
-//                                profileViewModel.setUser()
-                            }
-                            StatusResponse.EMPTY -> {
-                                Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT)
-                                    .show()
-                            }
-                            StatusResponse.ERROR -> {
-                                Toast.makeText(
-                                    requireContext(),
-                                    getString(R.string.notification_warning),
-                                    Toast.LENGTH_SHORT
-                                ).show()
-                            }
+                    preferences.idUser,
+                    imageFile,
+                    edtName.text.toString(),
+                    edtBornDate.text.toString(),
+                    preferences.email,
+                    edtGender.text.toString(),
+                    edtMotto.text.toString(),
+                    preferences.latitude,
+                    preferences.longitude
+                ).observe(viewLifecycleOwner, { user ->
+                    when (user.status) {
+                        StatusResponse.SUCCESS -> {
+                            if (user.body != null)
+                                with(user.body) {
+                                    profileViewModel.setUser(this)
+                                }
+                            dismiss()
                         }
-                    })
+                        StatusResponse.EMPTY -> {
+                            Toast.makeText(requireContext(), user.message, Toast.LENGTH_SHORT)
+                                .show()
+                        }
+                        StatusResponse.ERROR -> {
+                            Toast.makeText(
+                                requireContext(),
+                                getString(R.string.notification_warning),
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                    }
+                })
             }
         }
     }
@@ -182,6 +189,7 @@ class ProfileEditFragment : BaseBottomSheetFragment(), View.OnClickListener {
         binding.edtName.isEnabled = status
         binding.edtMotto.isEnabled = status
         binding.btnSave.isEnabled = status
+        binding.btnSave
         binding.btnBornDateChange.visibility = state
         binding.btnGenderChange.visibility = state
         binding.btnImageChange.visibility = state

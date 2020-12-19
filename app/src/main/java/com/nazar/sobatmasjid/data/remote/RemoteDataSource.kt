@@ -49,12 +49,12 @@ class RemoteDataSource private constructor(private val service: RetrofitService)
     fun updateUser(
         idUser: Int,
         requestBody: RequestBody
-    ) : LiveData<ApiResponse<Boolean>> {
+    ) : LiveData<ApiResponse<UserResponse>> {
         EspressoIdlingResource.increment()
-        val result = MutableLiveData<ApiResponse<Boolean>>()
+        val result = MutableLiveData<ApiResponse<UserResponse>>()
         GlobalScope.launch {
             val response = service.postUpdateProfile(idUser, requestBody)
-            val responseBody = response.body()?.status
+            val responseBody = response.body()?.data?.first()
             try {
                 if(response.isSuccessful){
                     if(responseBody != null)

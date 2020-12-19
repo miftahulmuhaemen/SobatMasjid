@@ -24,7 +24,7 @@ interface DataSource {
     fun updateUser(
         idUser: String,
         requestBody: RequestBody
-    ): LiveData<ApiResponse<Boolean>>
+    ): LiveData<ApiResponse<UserResponse>>
 
     /** MOSQUE **/
 

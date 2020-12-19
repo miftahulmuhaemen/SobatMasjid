@@ -3,6 +3,7 @@ package com.nazar.sobatmasjid.ui.fragments.profile
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,7 +17,7 @@ import com.nazar.sobatmasjid.ui.base.BaseBottomTabFragment
 import com.nazar.sobatmasjid.utils.extensions.setImageFromUrl
 import com.nazar.sobatmasjid.viewmodel.ViewModelFactory
 
-class ProfileFragment : BaseBottomTabFragment() {
+class ProfileFragment : BaseBottomTabFragment(), View.OnClickListener {
 
     private lateinit var binding : FragmentProfileBinding
     private lateinit var profileViewModel: ProfileViewModel
@@ -41,35 +42,35 @@ class ProfileFragment : BaseBottomTabFragment() {
         profileViewModel =
             ViewModelProvider(viewModelStore, factory)[ProfileViewModel::class.java]
         profileViewModel.changedUser.observe(viewLifecycleOwner, {
-
+            Log.d("LOG", it.toString())
+            preferences.setPreferenceUserOnly(it)
+            init()
         })
 
         init()
+    }
 
-        binding.btnFollowing.setOnClickListener {
-            navigateWithAction(ProfileFragmentDirections.actionProfileFragmentToFollowedMosqueFragment())
-        }
-        binding.btnMosqueRegister.setOnClickListener {
-
-        }
-        binding.btnRating.setOnClickListener {
-
-        }
-        binding.btnSupportedBy.setOnClickListener {
-
-        }
-        binding.btnLogout.setOnClickListener {
-            AuthUI.getInstance()
-                .signOut(requireActivity())
-                .addOnCompleteListener {
-                    requireActivity().intent = Intent(requireActivity(), AuthenticationActivity::class.java)
-                        .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
-                    startActivity(requireActivity().intent)
-                    requireActivity().finish()
-                }
-        }
-        binding.btnEditProfile.setOnClickListener {
-            navigateWithAction(ProfileFragmentDirections.actionProfileFragmentToProfileEditFragment())
+    override fun onClick(view: View?) {
+        when(view){
+            binding.btnEditProfile -> {
+                navigateWithAction(ProfileFragmentDirections.actionProfileFragmentToProfileEditFragment())
+            }
+            binding.btnFollowing -> {
+                navigateWithAction(ProfileFragmentDirections.actionProfileFragmentToFollowedMosqueFragment())
+            }
+            binding.btnMosqueRegister -> {}
+            binding.btnRating -> {}
+            binding.btnSupportedBy -> {}
+            binding.btnLogout -> {
+                AuthUI.getInstance()
+                    .signOut(requireActivity())
+                    .addOnCompleteListener {
+                        requireActivity().intent = Intent(requireActivity(), AuthenticationActivity::class.java)
+                            .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                        startActivity(requireActivity().intent)
+                        requireActivity().finish()
+                    }
+            }
         }
     }
 
@@ -81,6 +82,12 @@ class ProfileFragment : BaseBottomTabFragment() {
         binding.tvFollowerCount.text = preferences.numberFollow.toString()
         binding.progressBarProfile.progress = fillingProfileProgress()
         binding.tvProgressBarPercentage.text = "${fillingProfileProgress()}%"
+        binding.btnEditProfile.setOnClickListener(this)
+        binding.btnFollowing .setOnClickListener(this)
+        binding.btnMosqueRegister .setOnClickListener(this)
+        binding.btnRating.setOnClickListener(this)
+        binding.btnSupportedBy.setOnClickListener(this)
+        binding.btnLogout.setOnClickListener(this)
     }
 
     private fun fillingProfileProgress(): Int {
