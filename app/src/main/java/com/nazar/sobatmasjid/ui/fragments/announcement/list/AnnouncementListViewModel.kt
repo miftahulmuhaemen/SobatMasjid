@@ -5,7 +5,6 @@ import androidx.lifecycle.ViewModel
 import androidx.paging.PagedList
 import com.nazar.sobatmasjid.data.DataRepository
 import com.nazar.sobatmasjid.data.local.entity.AnnouncementEntity
-import com.nazar.sobatmasjid.data.local.entity.ResearchEntity
 import com.nazar.sobatmasjid.vo.Resource
 
 class AnnouncementListViewModel (private val dataRepository: DataRepository) : ViewModel() {

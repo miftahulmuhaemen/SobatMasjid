@@ -1,17 +1,13 @@
 package com.nazar.sobatmasjid.ui.adapters
 
 import android.annotation.SuppressLint
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.fragment.app.findFragment
-import androidx.navigation.findNavController
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.nazar.sobatmasjid.data.local.entity.ResearchEntity
 import com.nazar.sobatmasjid.databinding.ItemResearchWideBinding
-import com.nazar.sobatmasjid.ui.fragments.research.ResearchFragmentDirections
 import com.nazar.sobatmasjid.utils.extensions.setImageFromUrl
 
 class ResearchAdapter internal constructor(private val listener: (id: String) -> Unit) :

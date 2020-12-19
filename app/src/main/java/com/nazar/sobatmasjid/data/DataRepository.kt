@@ -11,7 +11,6 @@ import com.nazar.sobatmasjid.data.remote.response.*
 import com.nazar.sobatmasjid.utils.AppExecutors
 import com.nazar.sobatmasjid.vo.Resource
 import okhttp3.RequestBody
-import retrofit2.http.Part
 import java.util.*
 import kotlin.collections.ArrayList
 

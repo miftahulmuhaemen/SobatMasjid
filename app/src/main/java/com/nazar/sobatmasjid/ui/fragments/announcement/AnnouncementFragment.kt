@@ -5,15 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
-import com.nazar.sobatmasjid.R
 import com.nazar.sobatmasjid.databinding.FragmentAnnouncementBinding
 import com.nazar.sobatmasjid.preference.Preferences
 import com.nazar.sobatmasjid.ui.base.BaseBottomTabFragment
 import com.nazar.sobatmasjid.ui.fragments.location.LocationViewModel
 import com.nazar.sobatmasjid.ui.fragments.research.ResearchFragmentDirections
-import com.nazar.sobatmasjid.ui.fragments.research.ResearchViewModel
 import com.nazar.sobatmasjid.ui.pager.AnnouncementPager
-import com.nazar.sobatmasjid.ui.pager.ResearchPager
 import com.nazar.sobatmasjid.utils.extensions.afterTextChanged
 import com.nazar.sobatmasjid.viewmodel.ViewModelFactory
 

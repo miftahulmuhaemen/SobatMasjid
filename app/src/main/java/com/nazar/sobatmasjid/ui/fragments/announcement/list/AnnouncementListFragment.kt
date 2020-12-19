@@ -20,7 +20,6 @@ import com.nazar.sobatmasjid.ui.fragments.location.LocationViewModel
 import com.nazar.sobatmasjid.ui.pager.AnnouncementPager.Companion.KEY_TYPE
 import com.nazar.sobatmasjid.viewmodel.ViewModelFactory
 import com.nazar.sobatmasjid.vo.Status
-import java.util.*
 
 class AnnouncementListFragment : Fragment() {
 

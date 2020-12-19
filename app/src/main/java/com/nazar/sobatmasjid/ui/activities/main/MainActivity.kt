@@ -1,11 +1,8 @@
 package com.nazar.sobatmasjid.ui.activities.main
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.nazar.sobatmasjid.R
 import com.nazar.sobatmasjid.databinding.ActivityMainBinding

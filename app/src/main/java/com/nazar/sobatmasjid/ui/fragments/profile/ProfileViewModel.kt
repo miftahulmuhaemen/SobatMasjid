@@ -1,7 +1,5 @@
 package com.nazar.sobatmasjid.ui.fragments.profile
 
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -14,11 +12,8 @@ import com.nazar.sobatmasjid.data.remote.response.UserResponse
 import com.nazar.sobatmasjid.vo.Resource
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.MultipartBody
-import okhttp3.RequestBody
 import okhttp3.RequestBody.Companion.asRequestBody
-import java.io.ByteArrayOutputStream
 import java.io.File
-import java.util.*
 
 
 class ProfileViewModel(private val dataRepository: DataRepository) : ViewModel() {

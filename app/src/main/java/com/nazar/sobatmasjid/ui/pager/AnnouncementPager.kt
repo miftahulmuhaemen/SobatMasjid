@@ -7,8 +7,6 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.nazar.sobatmasjid.R
 import com.nazar.sobatmasjid.ui.fragments.announcement.list.AnnouncementListFragment
-import com.nazar.sobatmasjid.ui.fragments.research.list.ResearchListFragment
-import java.util.*
 
 class AnnouncementPager(private val context: Context, fm: FragmentManager) : FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT)   {
 

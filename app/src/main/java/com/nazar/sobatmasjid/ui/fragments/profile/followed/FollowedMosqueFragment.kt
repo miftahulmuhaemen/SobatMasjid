@@ -15,9 +15,7 @@ import com.nazar.sobatmasjid.R
 import com.nazar.sobatmasjid.databinding.FragmentFollowedMosqueBinding
 import com.nazar.sobatmasjid.preference.Preferences
 import com.nazar.sobatmasjid.ui.adapters.FollowedMosqueAdapter
-import com.nazar.sobatmasjid.ui.adapters.LocationAdapter
 import com.nazar.sobatmasjid.ui.base.BaseBottomSheetFragment
-import com.nazar.sobatmasjid.ui.fragments.location.LocationViewModel
 import com.nazar.sobatmasjid.utils.extensions.afterTextChanged
 import com.nazar.sobatmasjid.viewmodel.ViewModelFactory
 import com.nazar.sobatmasjid.vo.Status

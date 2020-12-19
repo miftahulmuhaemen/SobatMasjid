@@ -8,8 +8,6 @@ import com.nazar.sobatmasjid.utils.EspressoIdlingResource
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import okhttp3.RequestBody
-import retrofit2.http.Part
-import retrofit2.http.Path
 import java.util.*
 
 class RemoteDataSource private constructor(private val service: RetrofitService) {

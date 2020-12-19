@@ -1,11 +1,9 @@
 package com.nazar.sobatmasjid.ui.fragments.profile.followed
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.paging.PagedList
 import com.nazar.sobatmasjid.data.DataRepository
-import com.nazar.sobatmasjid.data.local.entity.CityEntity
 import com.nazar.sobatmasjid.data.local.entity.FollowedMosqueEntity
 import com.nazar.sobatmasjid.vo.Resource
 

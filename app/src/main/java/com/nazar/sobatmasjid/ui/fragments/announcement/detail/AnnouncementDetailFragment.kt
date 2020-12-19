@@ -4,19 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
-import com.nazar.sobatmasjid.R
 import com.nazar.sobatmasjid.databinding.FragmentAnnouncementDetailBinding
-import com.nazar.sobatmasjid.preference.Preferences
-import com.nazar.sobatmasjid.ui.fragments.announcement.AnnouncementViewModel
-import com.nazar.sobatmasjid.ui.fragments.research.detail.ResearchDetailFragmentArgs
-import com.nazar.sobatmasjid.ui.fragments.research.detail.ResearchDetailViewModel
 import com.nazar.sobatmasjid.utils.extensions.setImageFromUrl
 import com.nazar.sobatmasjid.viewmodel.ViewModelFactory
-import com.nazar.sobatmasjid.vo.Status
 
 class AnnouncementDetailFragment : Fragment() {
 
