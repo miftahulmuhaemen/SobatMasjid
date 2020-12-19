@@ -102,9 +102,6 @@ class AnnouncementListFragment : Fragment() {
                     Status.LOADING -> {
                     }
                     Status.SUCCESS -> {
-                        Log.d("LOGI", query)
-                        Log.d("LOGI", announcements.data.toString())
-                        Log.d("LOGI", announcementCategory.toString())
                         announcementAdapter.submitList(announcements.data)
                         announcementAdapter.notifyDataSetChanged()
                     }
