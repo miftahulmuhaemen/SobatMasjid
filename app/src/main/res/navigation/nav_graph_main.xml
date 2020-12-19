@@ -69,6 +69,9 @@
         <action
             android:id="@+id/action_profileFragment_to_profileEditFragment"
             app:destination="@id/profileEditFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_followedMosqueFragment"
+            app:destination="@id/followedMosqueFragment" />
     </fragment>
     <fragment
         android:id="@+id/mosqueDetail"
@@ -121,10 +124,17 @@
         android:id="@+id/locationFragment"
         android:name="com.nazar.sobatmasjid.ui.fragments.location.LocationFragment"
         android:label="LocationFragment" />
-    <fragment
+    <dialog
         android:id="@+id/profileEditFragment"
         android:name="com.nazar.sobatmasjid.ui.fragments.profile.edit.ProfileEditFragment"
-        android:label="ProfileEditFragment" />
+        android:label="ProfileEditFragment" >
+        <action
+            android:id="@+id/action_profileEditFragment_to_calendarProfileFragment"
+            app:destination="@id/calendarProfileFragment" />
+        <action
+            android:id="@+id/action_profileEditFragment_to_genderProfileFragment"
+            app:destination="@id/genderProfileFragment" />
+    </dialog>
     <dialog
         android:id="@+id/mosqueFilterFragment"
         android:name="com.nazar.sobatmasjid.ui.fragments.mosque.filter.MosqueFilterFragment"
@@ -133,4 +143,16 @@
         android:id="@+id/mosqueDetailInfaqFragment"
         android:name="com.nazar.sobatmasjid.ui.fragments.mosque.detail.infaq.MosqueDetailInfaqFragment"
         android:label="MosqueDetailInfaqFragment"/>
+    <dialog
+        android:id="@+id/followedMosqueFragment"
+        android:name="com.nazar.sobatmasjid.ui.fragments.profile.followed.FollowedMosqueFragment"
+        android:label="FollowedMosqueFragment" />
+    <dialog
+        android:id="@+id/calendarProfileFragment"
+        android:name="com.nazar.sobatmasjid.ui.fragments.profile.edit.calendar.CalendarProfileFragment"
+        android:label="CalendarProfileFragment" />
+    <dialog
+        android:id="@+id/genderProfileFragment"
+        android:name="com.nazar.sobatmasjid.ui.fragments.profile.edit.gender.GenderProfileFragment"
+        android:label="GenderProfileFragment" />
 </navigation>

@@ -10,8 +10,8 @@ interface LocalDao {
 
     /** USER **/
 
-    @Query("SELECT * FROM followedMosque")
-    fun getFollowedMosques(): DataSource.Factory<Int, FollowedMosqueEntity>
+    @Query("SELECT * FROM followedMosque WHERE name LIKE '%' || :name || '%' ")
+    fun getFollowedMosques(name: String): DataSource.Factory<Int, FollowedMosqueEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertFollowedMosques(followedMosques: List<FollowedMosqueEntity>)

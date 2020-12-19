@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.nazar.sobatmasjid.R
 import com.nazar.sobatmasjid.databinding.FragmentLocationBinding
 import com.nazar.sobatmasjid.ui.adapters.LocationAdapter
 import com.nazar.sobatmasjid.ui.base.BaseBottomSheetFragment
@@ -79,7 +80,7 @@ class LocationFragment : BaseBottomSheetFragment() {
                         locationAdapter.notifyDataSetChanged()
                     }
                     Status.ERROR -> {
-                        Toast.makeText(context, "Terjadi kesalahan", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context, getString(R.string.notification_warning), Toast.LENGTH_SHORT).show()
                     }
                 }
             }

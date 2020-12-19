@@ -15,8 +15,10 @@
         android:layout_height="50dp"
         app:cardCornerRadius="253dp">
         <ImageView
+            android:id="@+id/imgUstadzPhoto"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:scaleType="centerCrop"
             android:src="@color/colorAccent"/>
     </androidx.cardview.widget.CardView>
 

@@ -1,6 +1,7 @@
 package com.nazar.sobatmasjid.ui.fragments.announcement.list
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -60,7 +61,7 @@ class AnnouncementListFragment : Fragment() {
                     requireContext().resources.getStringArray(R.array.announcement_category).toList()
                 }
                 else -> {
-                    listOf(type.toLowerCase(Locale.getDefault()))
+                    listOf(type)
                 }
             }
 
@@ -102,6 +103,9 @@ class AnnouncementListFragment : Fragment() {
                     Status.LOADING -> {
                     }
                     Status.SUCCESS -> {
+                        Log.d("LOGI", query)
+                        Log.d("LOGI", announcements.data.toString())
+                        Log.d("LOGI", announcementCategory.toString())
                         announcementAdapter.submitList(announcements.data)
                         announcementAdapter.notifyDataSetChanged()
                     }

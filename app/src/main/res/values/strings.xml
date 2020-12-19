@@ -105,7 +105,7 @@
     <array name="announcement_category">
         <item>Semua</item>
         <item>Barang Hilang</item>
-        <item>kegiatan</item>
+        <item>Kegiatan</item>
     </array>
 
     <array name="mosque_classification">
@@ -138,4 +138,6 @@
     <string name="facebook_app_id">2386837598291227</string>
     <string name="facebook_application_id">2386837598291227</string>
     <string name="fb_login_protocol_scheme">fb2386837598291227</string>
+    <string name="male">Laki-Laki</string>
+    <string name="female">Perempuan</string>
 </resources>

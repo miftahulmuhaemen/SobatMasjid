@@ -1,6 +1,5 @@
 package com.nazar.sobatmasjid.data
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
@@ -11,6 +10,8 @@ import com.nazar.sobatmasjid.data.remote.RemoteDataSource
 import com.nazar.sobatmasjid.data.remote.response.*
 import com.nazar.sobatmasjid.utils.AppExecutors
 import com.nazar.sobatmasjid.vo.Resource
+import okhttp3.RequestBody
+import retrofit2.http.Part
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -45,7 +46,16 @@ class DataRepository private constructor(
     ): LiveData<ApiResponse<UserResponse>> =
         remoteDataSource.login(name, date, email, latitude, longitude)
 
-    override fun getFollowedMosques(id: Int): LiveData<Resource<PagedList<FollowedMosqueEntity>>> {
+    override fun updateUser(
+        idUser: String,
+        requestBody: RequestBody
+    ): LiveData<ApiResponse<Boolean>> =
+        remoteDataSource.updateUser(idUser.toInt(), requestBody)
+
+    override fun getFollowedMosques(
+        id: String,
+        name: String
+    ): LiveData<Resource<PagedList<FollowedMosqueEntity>>> {
         return object :
             NetworkBoundResource<PagedList<FollowedMosqueEntity>, List<FollowedMosqueResponse>>(
                 appExecutors
@@ -57,7 +67,7 @@ class DataRepository private constructor(
                     .setPageSize(4)
                     .build()
                 return LivePagedListBuilder(
-                    localDataSource.getFollowedMosques(),
+                    localDataSource.getFollowedMosques(name),
                     config
                 ).build()
             }
@@ -66,7 +76,7 @@ class DataRepository private constructor(
                 data == null || data.isEmpty()
 
             override fun createCall(): LiveData<ApiResponse<List<FollowedMosqueResponse>>> =
-                remoteDataSource.getFollowedMosque(id)
+                remoteDataSource.getFollowedMosque(id.toInt())
 
             override fun saveCallResult(data: List<FollowedMosqueResponse>?) {
                 val mosques = ArrayList<FollowedMosqueEntity>()
@@ -687,10 +697,14 @@ class DataRepository private constructor(
             .setInitialLoadSizeHint(4)
             .setPageSize(4)
             .build()
-        return LivePagedListBuilder(localDataSource.getAnnouncementsByIdMosque(idMosque), config).build()
+        return LivePagedListBuilder(
+            localDataSource.getAnnouncementsByIdMosque(idMosque),
+            config
+        ).build()
     }
 
-    override fun getAnnouncementByIdAnnouncement(id: String): LiveData<AnnouncementEntity> = localDataSource.getAnnouncementsByIdAnnouncement(id)
+    override fun getAnnouncementByIdAnnouncement(id: String): LiveData<AnnouncementEntity> =
+        localDataSource.getAnnouncementsByIdAnnouncement(id)
 
     /** CITY **/
 

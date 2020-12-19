@@ -2,6 +2,8 @@ package com.nazar.sobatmasjid.utils
 
 import android.content.Context
 import android.content.pm.PackageManager
+import android.graphics.drawable.Drawable
+import android.widget.TextView
 import androidx.core.app.ActivityCompat
 import androidx.navigation.NavController
 
@@ -18,6 +20,10 @@ fun NavController.popBackStackAllInstances(destination: Int, inclusive: Boolean)
         }
     }
     return popped
+}
+
+fun TextView.setLeftDrawable(drawable: Drawable?){
+    this.setCompoundDrawablesWithIntrinsicBounds(drawable, null, null, null)
 }
 
 fun getListFromString(query: String?): List<String>{

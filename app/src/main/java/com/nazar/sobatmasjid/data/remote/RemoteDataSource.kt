@@ -7,6 +7,9 @@ import com.nazar.sobatmasjid.data.remote.response.*
 import com.nazar.sobatmasjid.utils.EspressoIdlingResource
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import okhttp3.RequestBody
+import retrofit2.http.Part
+import retrofit2.http.Path
 import java.util.*
 
 class RemoteDataSource private constructor(private val service: RetrofitService) {
@@ -45,12 +48,15 @@ class RemoteDataSource private constructor(private val service: RetrofitService)
         return result
     }
 
-    fun getUser(email: String) : LiveData<ApiResponse<UserResponse>> {
+    fun updateUser(
+        idUser: Int,
+        requestBody: RequestBody
+    ) : LiveData<ApiResponse<Boolean>> {
         EspressoIdlingResource.increment()
-        val result = MutableLiveData<ApiResponse<UserResponse>>()
+        val result = MutableLiveData<ApiResponse<Boolean>>()
         GlobalScope.launch {
-            val response = service.getUser(email)
-            val responseBody = response.body()?.data?.first()
+            val response = service.postUpdateProfile(idUser, requestBody)
+            val responseBody = response.body()?.status
             try {
                 if(response.isSuccessful){
                     if(responseBody != null)
@@ -58,7 +64,7 @@ class RemoteDataSource private constructor(private val service: RetrofitService)
                     else
                         result.postValue(ApiResponse.empty(response.message()))
                 } else
-                    result.postValue(ApiResponse.empty(response.message()))
+                    result.postValue(ApiResponse.error(response.message()))
                 EspressoIdlingResource.decrement()
             } catch (e: Throwable) {
                 result.postValue(ApiResponse.error(e.toString()))

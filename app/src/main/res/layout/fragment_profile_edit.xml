@@ -1,282 +1,301 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appbar"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/appBarHeight"
-        android:background="@color/colorPrimary"
-        android:fitsSystemWindows="true">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/appBarHeight"
+            android:background="@color/colorPrimary"
+            android:fitsSystemWindows="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tvTitleText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@id/btnBack"
+                    android:fontFamily="@font/montserrat"
+                    android:text="@string/notification"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/title"
+                    tools:ignore="RelativeOverlap" />
+
+                <TextView
+                    android:id="@+id/btnActionChange"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/smallMargin"
+                    android:fontFamily="@font/montserrat"
+                    android:paddingStart="@dimen/noPadding"
+                    android:paddingEnd="@dimen/globalPadding"
+                    android:text="@string/change"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/bodyText"
+                    tools:ignore="RelativeOverlap" />
+
+                <ImageView
+                    android:id="@+id/btnBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="16dp"
+                    android:paddingStart="@dimen/globalPadding"
+                    android:paddingEnd="@dimen/globalPadding"
+                    android:src="@drawable/ic_back_arrow_40dp" />
+
+            </RelativeLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
 
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/globalMargin"
+            android:layout_marginBottom="@dimen/globalMargin"
+            android:paddingTop="@dimen/globalPadding">
 
-            <TextView
-                android:id="@+id/tvTitleText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_toEndOf="@id/btnBack"
-                android:fontFamily="@font/montserrat"
-                android:text="@string/notification"
-                android:textColor="@color/colorAccent"
-                android:textSize="@dimen/title"
-                tools:ignore="RelativeOverlap" />
+            <androidx.cardview.widget.CardView
+                android:id="@+id/profilePhoto"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:cardCornerRadius="50dp">
 
-            <TextView
-                android:id="@+id/btnActionChange"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_alignParentEnd="true"
-                android:fontFamily="@font/montserrat"
-                android:text="@string/cancel"
-                android:textColor="@color/colorAccent"
-                android:textSize="@dimen/bodyText"
-                android:layout_marginEnd="@dimen/smallMargin"
-                android:paddingStart="@dimen/noPadding"
-                android:paddingEnd="@dimen/globalPadding"
-                tools:ignore="RelativeOverlap" />
+                <ImageView
+                    android:id="@+id/imgProfilePhoto"
+                    android:scaleType="centerCrop"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@color/colorAccent" />
+            </androidx.cardview.widget.CardView>
 
-            <ImageView
-                android:id="@+id/btnBack"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginEnd="16dp"
-                android:paddingStart="@dimen/globalPadding"
-                android:paddingEnd="@dimen/globalPadding"
-                android:src="@drawable/ic_back_arrow_40dp" />
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnImageChange"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignEnd="@id/profilePhoto"
+                android:layout_alignBottom="@id/profilePhoto"
+                android:visibility="invisible"
+                app:cardCornerRadius="15dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimaryDark"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_camera" />
+            </androidx.cardview.widget.CardView>
 
         </RelativeLayout>
 
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="@dimen/globalPadding"
-        android:layout_marginTop="@dimen/globalMargin"
-        android:layout_marginBottom="@dimen/globalMargin"
-        android:layout_gravity="center">
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/profilePhoto"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            app:cardCornerRadius="50dp">
-            <ImageView
-                android:id="@+id/imgProfilePhoto"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@color/colorAccent"/>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_alignEnd="@id/profilePhoto"
-            android:layout_alignBottom="@id/profilePhoto"
-            app:cardCornerRadius="15dp">
-
-            <ImageView
-                android:id="@+id/btnChangeProfilePhoto"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/colorPrimaryDark"
-                android:scaleType="centerInside"
-                android:src="@drawable/ic_camera" />
-        </androidx.cardview.widget.CardView>
-
-    </RelativeLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/rubik"
-        android:layout_marginTop="@dimen/smallMargin"
-        android:paddingStart="@dimen/almostGreatPadding"
-        android:paddingEnd="@dimen/noPadding"
-        android:text="@string/fullName"
-        android:textColor="@color/colorPrimaryDark"
-        android:textStyle="bold"
-        android:drawablePadding="@dimen/smallPadding"
-        app:drawableStartCompat="@drawable/ic_circle_check_full" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:enabled="false"
-        android:text="@string/ustadzName"
-        android:paddingTop="1dp"
-        android:textColor="@color/colorAccent"
-        android:background="@android:color/transparent"
-        android:layout_marginEnd="@dimen/almostGreatMargin"
-        android:layout_marginStart="@dimen/editTextProfileMargin"/>
-
-    <ImageView
-        android:visibility="invisible"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_marginStart="@dimen/editTextProfileMargin"
-        android:layout_marginEnd="@dimen/almostGreatMargin"
-        android:background="@color/gray"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/rubik"
-        android:layout_marginTop="@dimen/smallMargin"
-        android:paddingStart="@dimen/almostGreatPadding"
-        android:paddingEnd="@dimen/noPadding"
-        android:text="@string/bornDate"
-        android:textColor="@color/colorPrimaryDark"
-        android:textStyle="bold"
-        android:drawablePadding="@dimen/smallPadding"
-        app:drawableStartCompat="@drawable/ic_circle_check_full" />
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/almostGreatMargin"
-        android:layout_marginStart="@dimen/editTextProfileMargin">
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/smallMargin"
+            android:drawablePadding="@dimen/smallPadding"
+            android:fontFamily="@font/rubik"
+            android:paddingStart="@dimen/almostGreatPadding"
+            android:paddingEnd="@dimen/noPadding"
+            android:text="@string/fullName"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            app:drawableStartCompat="@drawable/ic_circle_check_full" />
 
         <EditText
+            android:id="@+id/edtName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/editTextProfileMargin"
+            android:layout_marginEnd="@dimen/almostGreatMargin"
+            android:lines="1"
+            android:background="@android:color/transparent"
             android:enabled="false"
-            android:text="@string/bornDate"
             android:paddingTop="1dp"
-            android:textColor="@color/colorAccent"
-            android:background="@android:color/transparent"/>
+            android:text="@string/ustadzName"
+            android:textColor="@color/colorAccent" />
 
         <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:src="@drawable/ic_calendar_12dp"
-            android:layout_centerVertical="true"
-            android:layout_alignParentEnd="true"/>
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginStart="@dimen/editTextProfileMargin"
+            android:layout_marginEnd="@dimen/almostGreatMargin"
+            android:background="@color/gray"
+            android:visibility="invisible" />
 
-    </RelativeLayout>
+        <TextView
+            android:id="@+id/tvBornDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/smallMargin"
+            android:drawablePadding="@dimen/smallPadding"
+            android:fontFamily="@font/rubik"
+            android:paddingStart="@dimen/almostGreatPadding"
+            android:paddingEnd="@dimen/noPadding"
+            android:text="@string/bornDate"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            app:drawableStartCompat="@drawable/ic_circle_check_full" />
 
-
-    <ImageView
-        android:visibility="invisible"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_marginStart="@dimen/editTextProfileMargin"
-        android:layout_marginEnd="@dimen/almostGreatMargin"
-        android:background="@color/gray"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/rubik"
-        android:layout_marginTop="@dimen/smallMargin"
-        android:paddingStart="@dimen/almostGreatPadding"
-        android:paddingEnd="@dimen/noPadding"
-        android:text="@string/gender"
-        android:textColor="@color/colorPrimaryDark"
-        android:textStyle="bold"
-        android:drawablePadding="@dimen/smallPadding"
-        app:drawableStartCompat="@drawable/ic_circle_check_full_gray" />
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/almostGreatMargin"
-        android:layout_marginStart="@dimen/editTextProfileMargin">
-
-        <EditText
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/editTextProfileMargin"
+            android:layout_marginEnd="@dimen/almostGreatMargin">
+
+            <EditText
+                android:id="@+id/edtBornDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:enabled="false"
+                android:paddingTop="1dp"
+                android:text="@string/bornDate"
+                android:textColor="@color/colorAccent" />
+
+            <ImageView
+                android:id="@+id/btnBornDateChange"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_calendar_12dp" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginStart="@dimen/editTextProfileMargin"
+            android:layout_marginEnd="@dimen/almostGreatMargin"
+            android:background="@color/gray"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/tvGender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/smallMargin"
+            android:drawablePadding="@dimen/smallPadding"
+            android:fontFamily="@font/rubik"
+            android:paddingStart="@dimen/almostGreatPadding"
+            android:paddingEnd="@dimen/noPadding"
+            android:text="@string/gender"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            app:drawableStartCompat="@drawable/ic_circle_check_full_gray" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/editTextProfileMargin"
+            android:layout_marginEnd="@dimen/almostGreatMargin">
+
+            <EditText
+                android:id="@+id/edtGender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:enabled="false"
+                android:paddingTop="1dp"
+                android:text="@string/hypen"
+                android:textColor="@color/colorAccent" />
+
+            <ImageView
+                android:id="@+id/btnGenderChange"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_arrow_forward" />
+        </RelativeLayout>
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginStart="@dimen/editTextProfileMargin"
+            android:layout_marginEnd="@dimen/almostGreatMargin"
+            android:background="@color/gray"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/tvMotto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/smallMargin"
+            android:drawablePadding="@dimen/smallPadding"
+            android:fontFamily="@font/rubik"
+            android:paddingStart="@dimen/almostGreatPadding"
+            android:paddingEnd="@dimen/noPadding"
+            android:text="@string/motto"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            app:drawableStartCompat="@drawable/ic_circle_check_full_gray" />
+
+        <EditText
+            android:id="@+id/edtMotto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/editTextProfileMargin"
+            android:layout_marginEnd="@dimen/almostGreatMargin"
+            android:autofillHints="@string/change"
+            android:background="@android:color/transparent"
             android:enabled="false"
+            android:inputType="text"
+            android:lines="2"
             android:paddingTop="1dp"
             android:text="@string/hypen"
-            android:textColor="@color/colorAccent"
-            android:background="@android:color/transparent"/>
+            android:textColor="@color/colorAccent" />
 
         <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:src="@drawable/ic_arrow_forward"
-            android:layout_centerVertical="true"
-            android:layout_alignParentEnd="true"/>
-    </RelativeLayout>
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginStart="@dimen/editTextProfileMargin"
+            android:layout_marginEnd="@dimen/almostGreatMargin"
+            android:background="@color/gray"
+            android:visibility="invisible" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/editTextProfileMargin"
+            android:layout_marginEnd="@dimen/almostGreatMargin"
+            android:background="@android:color/transparent"
+            android:enabled="false"
+            android:paddingTop="@dimen/globalPadding"
+            android:text="@string/profileClaim"
+            android:textColor="@color/colorAccent" />
 
-    <ImageView
-        android:visibility="invisible"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_marginStart="@dimen/editTextProfileMargin"
-        android:layout_marginEnd="@dimen/almostGreatMargin"
-        android:background="@color/gray"/>
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/notificationButtonMargin"
+            android:layout_marginTop="@dimen/globalMargin"
+            android:layout_marginEnd="@dimen/notificationButtonMargin"
+            android:background="?attr/colorPrimaryDark"
+            android:fontFamily="@font/rubik"
+            android:padding="@dimen/paddingButton"
+            android:text="@string/save"
+            android:textColor="@color/white"
+            android:textSize="@dimen/bodyText"
+            android:textStyle="bold"
+            android:visibility="invisible" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/smallMargin"
-        android:drawablePadding="@dimen/smallPadding"
-        android:fontFamily="@font/rubik"
-        android:paddingStart="@dimen/almostGreatPadding"
-        android:paddingEnd="@dimen/noPadding"
-        android:text="@string/motto"
-        android:textColor="@color/colorPrimaryDark"
-        android:textStyle="bold"
-        app:drawableStartCompat="@drawable/ic_circle_check_full_gray" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:enabled="false"
-        android:paddingTop="1dp"
-        android:lines="2"
-        android:text="@string/hypen"
-        android:textColor="@color/colorAccent"
-        android:background="@android:color/transparent"
-        android:inputType="text"
-        android:autofillHints="@string/change"
-        android:layout_marginEnd="@dimen/almostGreatMargin"
-        android:layout_marginStart="@dimen/editTextProfileMargin"/>
-
-    <ImageView
-        android:visibility="invisible"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_marginStart="@dimen/editTextProfileMargin"
-        android:layout_marginEnd="@dimen/almostGreatMargin"
-        android:background="@color/gray"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:enabled="false"
-        android:paddingTop="@dimen/globalPadding"
-        android:text="@string/profileClaim"
-        android:textColor="@color/colorAccent"
-        android:background="@android:color/transparent"
-        android:layout_marginEnd="@dimen/almostGreatMargin"
-        android:layout_marginStart="@dimen/editTextProfileMargin"/>
-
-    <Button
-        android:id="@+id/btnVisitLink"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?attr/colorPrimaryDark"
-        android:fontFamily="@font/rubik"
-        android:text="@string/save"
-        android:textColor="@color/white"
-        android:textSize="@dimen/bodyText"
-        android:textStyle="bold"
-        android:padding="@dimen/paddingButton"
-        android:layout_marginTop="@dimen/globalMargin"
-        android:layout_marginStart="@dimen/notificationButtonMargin"
-        android:layout_marginEnd="@dimen/notificationButtonMargin"/>
-
-</LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

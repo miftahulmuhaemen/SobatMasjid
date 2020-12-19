@@ -3,6 +3,7 @@ package com.nazar.sobatmasjid.api
 import com.nazar.sobatmasjid.BuildConfig.API_KEY
 import com.nazar.sobatmasjid.BuildConfig.BASE_URL
 import com.nazar.sobatmasjid.data.remote.response.*
+import okhttp3.RequestBody
 import retrofit2.Response
 import retrofit2.http.*
 import java.util.*
@@ -32,17 +33,11 @@ interface RetrofitService {
         @Field("API-KEY") apiKey: String = API_KEY
     ): Response<UserListResponse>
 
-//    @FormUrlEncoded
-//    @POST("${BASE_URL}user/{idUser}")
-//    suspend fun postUpdateProfile(
-//        @Path("idUser") idUser: Int?,
-//        @Field("name") idResearch: Int?,
-//        @Field("born-date") idMosque: Int?,
-//        @Field("email") idUser: Int?,
-//        @Field("gender") idUser: Int?,
-//        @Field("photo") idUser: Int?,
-//        @Field("motto") idUser: String?
-//    )
+    @POST("${BASE_URL}user/{idUser}")
+    suspend fun postUpdateProfile(
+        @Path("idUser") idUser: Int?,
+        @Body requestBody: RequestBody
+    ): Response<DefaultResponse>
 
     /** MOSQUE **/
 
