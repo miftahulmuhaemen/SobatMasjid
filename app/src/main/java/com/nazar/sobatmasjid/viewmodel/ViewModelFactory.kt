@@ -15,7 +15,7 @@ import com.nazar.sobatmasjid.ui.fragments.login.LoginViewModel
 import com.nazar.sobatmasjid.ui.fragments.mosque.MosqueViewModel
 import com.nazar.sobatmasjid.ui.fragments.mosque.detail.MosqueDetailViewModel
 import com.nazar.sobatmasjid.ui.fragments.mosque.list.MosqueListViewModel
-import com.nazar.sobatmasjid.ui.fragments.profile.edit.ProfileEditViewModel
+import com.nazar.sobatmasjid.ui.fragments.profile.ProfileViewModel
 import com.nazar.sobatmasjid.ui.fragments.profile.followed.FollowedMosqueViewModel
 import com.nazar.sobatmasjid.ui.fragments.research.ResearchViewModel
 import com.nazar.sobatmasjid.ui.fragments.research.detail.ResearchDetailViewModel
@@ -78,8 +78,8 @@ class ViewModelFactory  private constructor(private val dataRepository: DataRepo
             modelClass.isAssignableFrom(FollowedMosqueViewModel::class.java) -> {
                 FollowedMosqueViewModel(dataRepository) as T
             }
-            modelClass.isAssignableFrom(ProfileEditViewModel::class.java) -> {
-                ProfileEditViewModel(dataRepository) as T
+            modelClass.isAssignableFrom(ProfileViewModel::class.java) -> {
+                ProfileViewModel(dataRepository) as T
             }
             else -> throw Throwable("Unknown ViewModel class: " + modelClass.name)
         }

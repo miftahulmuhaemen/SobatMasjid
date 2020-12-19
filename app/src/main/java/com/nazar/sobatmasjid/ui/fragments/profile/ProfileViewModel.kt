@@ -1,4 +1,4 @@
-package com.nazar.sobatmasjid.ui.fragments.profile.edit
+package com.nazar.sobatmasjid.ui.fragments.profile
 
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -10,6 +10,7 @@ import com.nazar.sobatmasjid.BuildConfig.API_KEY
 import com.nazar.sobatmasjid.data.DataRepository
 import com.nazar.sobatmasjid.data.local.entity.FollowedMosqueEntity
 import com.nazar.sobatmasjid.data.remote.ApiResponse
+import com.nazar.sobatmasjid.data.remote.response.UserResponse
 import com.nazar.sobatmasjid.vo.Resource
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.MultipartBody
@@ -20,26 +21,27 @@ import java.io.File
 import java.util.*
 
 
-class ProfileEditViewModel(private val dataRepository: DataRepository) : ViewModel() {
+class ProfileViewModel(private val dataRepository: DataRepository) : ViewModel() {
+    var changedUser: MutableLiveData<UserResponse> = MutableLiveData()
     var bornDate: MutableLiveData<String> = MutableLiveData()
     var gender: MutableLiveData<String> = MutableLiveData()
     fun setBornDate(data: String) {
         bornDate.value = data
     }
-
     fun setGender(data: String) {
         gender.value = data
     }
-
+    fun setUser(userResponse: UserResponse){
+        changedUser.value = userResponse
+    }
     fun getFollowedMosques(
         id: String,
         query: String
     ): LiveData<Resource<PagedList<FollowedMosqueEntity>>> =
         dataRepository.getFollowedMosques(id, query)
-
     fun updateUser(
         idUser: String,
-        photo: File,
+        photo: File?,
         name: String,
         bornDate: String,
         email: String,
@@ -47,14 +49,20 @@ class ProfileEditViewModel(private val dataRepository: DataRepository) : ViewMod
         motto: String
     ): LiveData<ApiResponse<Boolean>> {
         val builder: MultipartBody.Builder = MultipartBody.Builder().setType(MultipartBody.FORM)
-        builder.addFormDataPart("id-user", idUser)
+        builder
+            .addFormDataPart("id-user", idUser)
             .addFormDataPart("name", name)
             .addFormDataPart("born-date", bornDate)
             .addFormDataPart("email", email)
             .addFormDataPart("gender", gender)
             .addFormDataPart("motto", motto)
             .addFormDataPart("API-KEY", API_KEY)
-            .addFormDataPart("photo", photo.name, photo.asRequestBody("image/jpeg".toMediaType()))
+        if (photo != null)
+            builder.addFormDataPart(
+                "photo",
+                photo.name,
+                photo.asRequestBody("image/jpeg".toMediaType())
+            )
         val requestBody = builder.build()
         return dataRepository.updateUser(idUser, requestBody)
     }

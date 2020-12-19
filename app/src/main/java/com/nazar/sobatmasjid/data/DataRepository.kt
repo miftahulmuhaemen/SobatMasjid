@@ -73,7 +73,7 @@ class DataRepository private constructor(
             }
 
             override fun shouldFetch(data: PagedList<FollowedMosqueEntity>?): Boolean =
-                data == null || data.isEmpty()
+                true
 
             override fun createCall(): LiveData<ApiResponse<List<FollowedMosqueResponse>>> =
                 remoteDataSource.getFollowedMosque(id.toInt())

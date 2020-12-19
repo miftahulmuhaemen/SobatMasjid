@@ -26,7 +26,6 @@ import com.nazar.sobatmasjid.utils.hasPermissions
 import com.nazar.sobatmasjid.viewmodel.ViewModelFactory
 import java.sql.Date
 import java.time.LocalDate
-import java.util.*
 
 class LoginFragment : Fragment(), View.OnClickListener, FirebaseAuth.AuthStateListener {
 

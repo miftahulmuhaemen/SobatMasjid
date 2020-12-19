@@ -19,6 +19,7 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven { url "https://jitpack.io" }
     }
 }
 
@@ -67,4 +68,8 @@ ext {
     googleServiceLocationVersion = '17.1.0'
 
     coreDesugar = '1.1.1'
+
+    inlineActivityResult = '1.0.4'
+    legacySupport = '1.0.0'
+    imagePicker = '1.7.5'
 }

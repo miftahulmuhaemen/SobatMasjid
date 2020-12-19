@@ -58,6 +58,8 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
     implementation "androidx.navigation:navigation-dynamic-features-fragment:$nav_version"
+    implementation "androidx.legacy:legacy-support-v4:$legacySupport"
+    implementation "com.github.florent37:inline-activity-result-kotlin:$inlineActivityResult"
 
     //ui
     implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
@@ -65,7 +67,7 @@ dependencies {
     implementation "com.google.android.material:material:$materialVersion"
     implementation "com.github.bumptech.glide:glide:$glideVersion"
     implementation "com.tbuonomo.andrui:viewpagerdotsindicator:$viewPagerDotVersion"
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation "com.github.dhaval2404:imagepicker:$imagePicker"
 
     //testing
     testImplementation "junit:junit:$junitVersion"

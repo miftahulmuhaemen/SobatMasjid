@@ -1,7 +1,6 @@
 package com.nazar.sobatmasjid.ui.fragments.profile.edit.calendar
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,14 +8,14 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.nazar.sobatmasjid.databinding.FragmentCalendarBinding
-import com.nazar.sobatmasjid.ui.fragments.profile.edit.ProfileEditViewModel
+import com.nazar.sobatmasjid.ui.fragments.profile.ProfileViewModel
 import com.nazar.sobatmasjid.viewmodel.ViewModelFactory
 
 
 class CalendarProfileFragment : BottomSheetDialogFragment() {
 
     private lateinit var binding: FragmentCalendarBinding
-    private lateinit var profileEditViewModel: ProfileEditViewModel
+    private lateinit var profileViewModel: ProfileViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -32,14 +31,14 @@ class CalendarProfileFragment : BottomSheetDialogFragment() {
 
         val factory = ViewModelFactory.getInstance(requireContext())
         val viewModelStore = findNavController().previousBackStackEntry?.viewModelStore!!
-        profileEditViewModel = ViewModelProvider(viewModelStore, factory)[ProfileEditViewModel::class.java]
+        profileViewModel = ViewModelProvider(viewModelStore, factory)[ProfileViewModel::class.java]
         binding.btnClose.setOnClickListener { dismiss() }
         binding.btnActionChange.setOnClickListener {
             val year = binding.datePicker.year
             val month = binding.datePicker.month
             val day = binding.datePicker.dayOfMonth
             val calendar = "$year-$month-$day"
-            profileEditViewModel.setBornDate(calendar)
+            profileViewModel.setBornDate(calendar)
             dismiss()
         }
     }

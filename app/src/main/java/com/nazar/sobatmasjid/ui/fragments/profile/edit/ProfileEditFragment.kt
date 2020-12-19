@@ -1,15 +1,9 @@
 package com.nazar.sobatmasjid.ui.fragments.profile.edit
 
-import android.R.attr.fragment
 import android.annotation.SuppressLint
 import android.app.Activity.RESULT_OK
 import android.app.Dialog
-import android.content.Intent
-import android.graphics.drawable.Drawable
-import android.net.Uri
 import android.os.Bundle
-import android.os.Environment
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,9 +14,7 @@ import android.widget.Toast
 import androidx.core.content.res.ResourcesCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.gif.GifDrawable
-import com.bumptech.glide.request.target.SimpleTarget
+import com.github.dhaval2404.imagepicker.ImagePicker
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.nazar.sobatmasjid.R
@@ -30,6 +22,7 @@ import com.nazar.sobatmasjid.data.remote.StatusResponse
 import com.nazar.sobatmasjid.databinding.FragmentProfileEditBinding
 import com.nazar.sobatmasjid.preference.Preferences
 import com.nazar.sobatmasjid.ui.base.BaseBottomSheetFragment
+import com.nazar.sobatmasjid.ui.fragments.profile.ProfileViewModel
 import com.nazar.sobatmasjid.utils.extensions.setImageFromUri
 import com.nazar.sobatmasjid.utils.extensions.setImageFromUrl
 import com.nazar.sobatmasjid.utils.setLeftDrawable
@@ -41,15 +34,11 @@ import java.io.File
 class ProfileEditFragment : BaseBottomSheetFragment(), View.OnClickListener {
 
     private lateinit var binding: FragmentProfileEditBinding
-    private lateinit var profileEditViewModel: ProfileEditViewModel
+    private lateinit var profileViewModel: ProfileViewModel
     private var isEditing: Boolean = false
-    private var imageUri: Uri? = null
+    private var imageFile: File? = null
     private val preferences: Preferences by lazy {
         Preferences(requireActivity().applicationContext)
-    }
-
-    companion object {
-        const val REQUEST_IMAGE_GET = 1
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
@@ -77,17 +66,17 @@ class ProfileEditFragment : BaseBottomSheetFragment(), View.OnClickListener {
 
         val factory = ViewModelFactory.getInstance(requireContext())
         val viewModelStore = findNavController().currentBackStackEntry?.viewModelStore!!
-        profileEditViewModel =
-            ViewModelProvider(viewModelStore, factory)[ProfileEditViewModel::class.java]
+        profileViewModel =
+            ViewModelProvider(viewModelStore, factory)[ProfileViewModel::class.java]
 
         init()
 
-        profileEditViewModel.bornDate.observe(viewLifecycleOwner, {
+        profileViewModel.bornDate.observe(viewLifecycleOwner, {
             if (isEditing) {
                 binding.edtBornDate.setText(it)
             }
         })
-        profileEditViewModel.gender.observe(viewLifecycleOwner, {
+        profileViewModel.gender.observe(viewLifecycleOwner, {
             if (isEditing) {
                 binding.edtGender.setText(it)
             }
@@ -127,52 +116,53 @@ class ProfileEditFragment : BaseBottomSheetFragment(), View.OnClickListener {
                 findNavController().navigate(R.id.genderProfileFragment)
             }
             binding.btnImageChange -> {
-                val intent = Intent(Intent.ACTION_GET_CONTENT).apply {
-                    type = "image/*"
-                }
-                if (intent.resolveActivity(requireActivity().packageManager) != null) {
-                    startActivityForResult(intent, REQUEST_IMAGE_GET)
-                } else {
-                    Toast.makeText(
-                        requireContext(),
-                        getString(R.string.notification_warning),
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-            }
-            binding.btnSave -> {
-                val file = File(imageUri?.path!!, "")
-                val files = Uri.parse(imageUri.toString())
-
-
-//                val requestBody = file.asRequestBody("image/jpeg".toMediaType())
-//                val date = Date.valueOf(edtBornDate.text.toString())
-//                val gender = edtGender.text.toString()[0]
-                profileEditViewModel.updateUser(
-                    preferences.idUser,
-                    file,
-                    edtName.text.toString(),
-                    edtBornDate.text.toString(),
-                    preferences.email,
-                    edtGender.text.toString(),
-                    edtMotto.text.toString()
-                ).observe(viewLifecycleOwner, {
-                    when (it.status) {
-                        StatusResponse.SUCCESS -> {
-                            Log.d("LOGI", it.body.toString())
-                        }
-                        StatusResponse.EMPTY -> {
-                            Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
-                        }
-                        StatusResponse.ERROR -> {
-                            Toast.makeText(
-                                requireContext(),
-                                getString(R.string.notification_warning),
-                                Toast.LENGTH_SHORT
-                            ).show()
+                ImagePicker.with(this)
+                    .compress(1024)
+                    .maxResultSize(1080, 1080)
+                    .start { resultCode, data ->
+                        when (resultCode) {
+                            RESULT_OK -> {
+                                val fileUri = data?.data
+                                binding.imgProfilePhoto.setImageFromUri(fileUri!!)
+                                imageFile = ImagePicker.getFile(data)!!
+                            }
+                            ImagePicker.RESULT_ERROR -> {
+                                Toast.makeText(
+                                    context,
+                                    ImagePicker.getError(data),
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
                         }
                     }
-                })
+            }
+            binding.btnSave -> {
+                profileViewModel.updateUser(
+                        preferences.idUser,
+                        imageFile,
+                        edtName.text.toString(),
+                        edtBornDate.text.toString(),
+                        preferences.email,
+                        edtGender.text.toString(),
+                        edtMotto.text.toString()
+                    ).observe(viewLifecycleOwner, {
+                        when (it.status) {
+                            StatusResponse.SUCCESS -> {
+//                                profileViewModel.setUser()
+                            }
+                            StatusResponse.EMPTY -> {
+                                Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT)
+                                    .show()
+                            }
+                            StatusResponse.ERROR -> {
+                                Toast.makeText(
+                                    requireContext(),
+                                    getString(R.string.notification_warning),
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
+                        }
+                    })
             }
         }
     }
@@ -229,8 +219,8 @@ class ProfileEditFragment : BaseBottomSheetFragment(), View.OnClickListener {
             )
         }
         binding.imgProfilePhoto.setImageFromUrl(preferences.photoUrl)
-        profileEditViewModel.setBornDate(preferences.bornDate)
-        profileEditViewModel.setGender(preferences.gender)
+        profileViewModel.setBornDate(preferences.bornDate)
+        profileViewModel.setGender(preferences.gender)
     }
 
     private fun attachDrawable(textView: TextView, editView: EditText, text: String) {
@@ -243,16 +233,6 @@ class ProfileEditFragment : BaseBottomSheetFragment(), View.OnClickListener {
         else
             textView.setLeftDrawable(incorrectMark)
         editView.setText(text)
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == REQUEST_IMAGE_GET && resultCode == RESULT_OK && data != null && data.data != null) {
-            imageUri = data.data
-            if (imageUri != null) {
-                binding.imgProfilePhoto.setImageFromUri(imageUri!!)
-            }
-        }
     }
 
 }
