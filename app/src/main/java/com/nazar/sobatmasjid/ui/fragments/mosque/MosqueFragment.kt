@@ -4,8 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
 import com.nazar.sobatmasjid.R
 import com.nazar.sobatmasjid.databinding.FragmentMosqueBinding
 import com.nazar.sobatmasjid.preference.Preferences
@@ -13,16 +11,16 @@ import com.nazar.sobatmasjid.ui.base.BaseBottomTabFragment
 import com.nazar.sobatmasjid.ui.fragments.location.LocationViewModel
 import com.nazar.sobatmasjid.ui.pager.MosquePager
 import com.nazar.sobatmasjid.utils.extensions.afterTextChanged
-import com.nazar.sobatmasjid.viewmodel.ViewModelFactory
+import org.koin.android.ext.android.inject
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MosqueFragment : BaseBottomTabFragment() {
 
     private lateinit var binding: FragmentMosqueBinding
-    private lateinit var mosqueViewModel: MosqueViewModel
-    private lateinit var locationViewModel: LocationViewModel
-    private val preferences: Preferences by lazy {
-        Preferences(requireActivity().applicationContext)
-    }
+    private val mosqueViewModel by sharedViewModel<MosqueViewModel>()
+    private val locationViewModel by sharedViewModel<LocationViewModel>()
+    private val preferences: Preferences by inject()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,10 +32,6 @@ class MosqueFragment : BaseBottomTabFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val factory = ViewModelFactory.getInstance(requireContext())
-        val viewModelStore = findNavController().currentBackStackEntry?.viewModelStore!!
-        mosqueViewModel = ViewModelProvider(viewModelStore, factory)[MosqueViewModel::class.java]
-        locationViewModel = ViewModelProvider(requireActivity(), factory)[LocationViewModel::class.java]
         locationViewModel.location.observe(viewLifecycleOwner, {
             preferences.setCity(it)
             binding.btnCurrentLocation.text = preferences.nameCity

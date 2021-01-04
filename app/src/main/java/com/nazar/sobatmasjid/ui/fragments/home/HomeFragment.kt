@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nazar.sobatmasjid.R
 import com.nazar.sobatmasjid.databinding.FragmentHomeBinding
@@ -15,22 +14,22 @@ import com.nazar.sobatmasjid.ui.base.BaseBottomTabFragment
 import com.nazar.sobatmasjid.ui.fragments.location.LocationViewModel
 import com.nazar.sobatmasjid.utils.extensions.setGone
 import com.nazar.sobatmasjid.utils.extensions.setVisible
-import com.nazar.sobatmasjid.viewmodel.ViewModelFactory
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import com.nazar.sobatmasjid.vo.Status
+import org.koin.android.ext.android.inject
 
 class HomeFragment : BaseBottomTabFragment() {
 
     private lateinit var binding: FragmentHomeBinding
-    private lateinit var viewModel: HomeViewModel
-    private lateinit var locationViewModel: LocationViewModel
+    private val viewModel: HomeViewModel by viewModel()
+    private val locationViewModel by sharedViewModel<LocationViewModel>()
     private lateinit var mosqueFitAdapter: MosqueFitAdapter
     private lateinit var mosqueRecommendationAdapter: MosqueRecommendationAdapter
     private lateinit var researchAdapter: ResearchAdapter
     private lateinit var announcementAdapter: AnnouncementAdapter
     private lateinit var fridayPrayerAdapter: FridayPrayerAdapter
-    private val preferences: Preferences by lazy {
-        Preferences(requireActivity().applicationContext)
-    }
+    private val preferences: Preferences by inject()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,11 +41,6 @@ class HomeFragment : BaseBottomTabFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val factory = ViewModelFactory.getInstance(requireContext())
-        viewModel = ViewModelProvider(this, factory)[HomeViewModel::class.java]
-        locationViewModel =
-            ViewModelProvider(requireActivity(), factory)[LocationViewModel::class.java]
 
         if (preferences.numberFollow == 0)
             setupDataByRecommendation()
@@ -121,6 +115,7 @@ class HomeFragment : BaseBottomTabFragment() {
             if (mosques != null) {
                 when (mosques.status) {
                     Status.LOADING -> {
+
                     }
                     Status.SUCCESS -> {
                         mosqueRecommendationAdapter.submitList(mosques.data)
@@ -148,6 +143,7 @@ class HomeFragment : BaseBottomTabFragment() {
             if (mosques != null) {
                 when (mosques.status) {
                     Status.LOADING -> {
+
                     }
                     Status.SUCCESS -> {
                         mosqueFitAdapter.submitList(mosques.data)
@@ -170,6 +166,7 @@ class HomeFragment : BaseBottomTabFragment() {
             if (researches != null) {
                 when (researches.status) {
                     Status.LOADING -> {
+
                     }
                     Status.SUCCESS -> {
                         researchAdapter.submitList(researches.data)

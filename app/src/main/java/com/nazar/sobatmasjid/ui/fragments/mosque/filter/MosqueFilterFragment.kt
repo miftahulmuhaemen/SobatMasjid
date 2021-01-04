@@ -7,8 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
-import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
@@ -17,12 +15,12 @@ import com.nazar.sobatmasjid.databinding.FragmentMosqueFilterBinding
 import com.nazar.sobatmasjid.ui.adapters.MosqueFilterAdapter
 import com.nazar.sobatmasjid.ui.base.BaseBottomSheetFragment
 import com.nazar.sobatmasjid.ui.fragments.mosque.MosqueViewModel
-import com.nazar.sobatmasjid.viewmodel.ViewModelFactory
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class MosqueFilterFragment: BaseBottomSheetFragment() {
 
     private lateinit var binding: FragmentMosqueFilterBinding
-    private lateinit var mosqueViewModel: MosqueViewModel
+    private val mosqueViewModel by sharedViewModel<MosqueViewModel>()
     private var items: MutableList<String> = mutableListOf()
     private val statuses: MutableList<Boolean> = mutableListOf()
     private var classifications: MutableList<String> = mutableListOf()
@@ -50,11 +48,6 @@ class MosqueFilterFragment: BaseBottomSheetFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val factory = ViewModelFactory.getInstance(requireContext())
-        val viewModelStore = findNavController().previousBackStackEntry?.viewModelStore!!
-        mosqueViewModel = ViewModelProvider(viewModelStore, factory)[MosqueViewModel::class.java]
-
         classifications = resources.getStringArray(R.array.mosque_classification).toMutableList()
         mosqueViewModel.classification.observe(viewLifecycleOwner, {
             if(!it.isNullOrEmpty()){

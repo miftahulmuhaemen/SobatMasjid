@@ -7,23 +7,20 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
 import com.firebase.ui.auth.AuthUI
 import com.nazar.sobatmasjid.databinding.FragmentProfileBinding
 import com.nazar.sobatmasjid.preference.Preferences
 import com.nazar.sobatmasjid.ui.activities.authentication.AuthenticationActivity
 import com.nazar.sobatmasjid.ui.base.BaseBottomTabFragment
 import com.nazar.sobatmasjid.utils.extensions.setImageFromUrl
-import com.nazar.sobatmasjid.viewmodel.ViewModelFactory
+import org.koin.android.ext.android.inject
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ProfileFragment : BaseBottomTabFragment(), View.OnClickListener {
 
     private lateinit var binding : FragmentProfileBinding
-    private lateinit var profileViewModel: ProfileViewModel
-    private val preferences: Preferences by lazy {
-        Preferences(requireActivity().applicationContext)
-    }
+    private val profileViewModel by viewModel<ProfileViewModel>()
+    private val preferences: Preferences by inject()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,12 +32,6 @@ class ProfileFragment : BaseBottomTabFragment(), View.OnClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val factory = ViewModelFactory.getInstance(requireContext())
-        val viewModelStore =
-            findNavController().currentBackStackEntry?.viewModelStore!!
-        profileViewModel =
-            ViewModelProvider(viewModelStore, factory)[ProfileViewModel::class.java]
         profileViewModel.changedUser.observe(viewLifecycleOwner, {
             Log.d("LOG", it.toString())
             preferences.setPreferenceUserOnly(it)

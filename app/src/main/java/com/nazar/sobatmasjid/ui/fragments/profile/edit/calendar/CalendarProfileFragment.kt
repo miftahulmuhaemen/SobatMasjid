@@ -8,14 +8,15 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.nazar.sobatmasjid.databinding.FragmentCalendarBinding
+import com.nazar.sobatmasjid.ui.fragments.location.LocationViewModel
 import com.nazar.sobatmasjid.ui.fragments.profile.ProfileViewModel
-import com.nazar.sobatmasjid.viewmodel.ViewModelFactory
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 
 class CalendarProfileFragment : BottomSheetDialogFragment() {
 
     private lateinit var binding: FragmentCalendarBinding
-    private lateinit var profileViewModel: ProfileViewModel
+    private val profileViewModel by sharedViewModel<ProfileViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,10 +29,6 @@ class CalendarProfileFragment : BottomSheetDialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val factory = ViewModelFactory.getInstance(requireContext())
-        val viewModelStore = findNavController().previousBackStackEntry?.viewModelStore!!
-        profileViewModel = ViewModelProvider(viewModelStore, factory)[ProfileViewModel::class.java]
         binding.btnClose.setOnClickListener { dismiss() }
         binding.btnActionChange.setOnClickListener {
             val year = binding.datePicker.year

@@ -13,14 +13,14 @@ import com.nazar.sobatmasjid.data.local.entity.ResearchDetailEntity
 import com.nazar.sobatmasjid.databinding.FragmentResearchDetailBinding
 import com.nazar.sobatmasjid.preference.Preferences
 import com.nazar.sobatmasjid.utils.extensions.setImageFromUrl
-import com.nazar.sobatmasjid.viewmodel.ViewModelFactory
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import com.nazar.sobatmasjid.vo.Status
 
 class ResearchDetailFragment : Fragment() {
 
     private lateinit var binding: FragmentResearchDetailBinding
-    private lateinit var researchDetailViewModel: ResearchDetailViewModel
     private lateinit var id: String
+    private val researchDetailViewModel: ResearchDetailViewModel by viewModel()
     private val args: ResearchDetailFragmentArgs by navArgs()
     private val preferences: Preferences by lazy {
         Preferences(requireActivity().applicationContext)
@@ -36,10 +36,6 @@ class ResearchDetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val factory = ViewModelFactory.getInstance(requireContext())
-        researchDetailViewModel =
-            ViewModelProvider(this, factory)[ResearchDetailViewModel::class.java]
         id = args.id.toString()
         if (id.isNotBlank()) {
             researchDetailViewModel.getResearchDetail(

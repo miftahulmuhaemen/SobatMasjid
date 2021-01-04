@@ -20,20 +20,21 @@ import com.nazar.sobatmasjid.data.local.entity.MosqueDetailEntity
 import com.nazar.sobatmasjid.databinding.FragmentMosqueDetailBinding
 import com.nazar.sobatmasjid.preference.Preferences
 import com.nazar.sobatmasjid.ui.adapters.ImageSliderAdapter
+import com.nazar.sobatmasjid.ui.fragments.announcement.AnnouncementViewModel
 import com.nazar.sobatmasjid.ui.pager.MosqueDetailPager
 import com.nazar.sobatmasjid.utils.getListFromString
-import com.nazar.sobatmasjid.viewmodel.ViewModelFactory
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import com.nazar.sobatmasjid.vo.Status
+import org.koin.android.ext.android.inject
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class MosqueDetailFragment : Fragment() {
 
-    private lateinit var binding: FragmentMosqueDetailBinding
-    private lateinit var mosqueDetailViewModel: MosqueDetailViewModel
     private lateinit var id: String
+    private lateinit var binding: FragmentMosqueDetailBinding
+    private val mosqueDetailViewModel by sharedViewModel<MosqueDetailViewModel>()
     private val args: MosqueDetailFragmentArgs by navArgs()
-    private val preferences: Preferences by lazy {
-        Preferences(requireActivity().applicationContext)
-    }
+    private val preferences: Preferences by inject()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -45,10 +46,6 @@ class MosqueDetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val factory = ViewModelFactory.getInstance(requireContext())
-        val viewModelStore = findNavController().currentBackStackEntry?.viewModelStore!!
-        mosqueDetailViewModel = ViewModelProvider(viewModelStore, factory)[MosqueDetailViewModel::class.java]
         id = args.id.toString()
         if (id.isNotBlank()) {
             mosqueDetailViewModel.getMosqueDetail(

@@ -5,18 +5,7 @@ import androidx.paging.DataSource
 import com.nazar.sobatmasjid.data.local.entity.*
 import com.nazar.sobatmasjid.data.local.room.LocalDao
 
-class LocalDataSource private constructor(private val mLocalDao: LocalDao){
-
-    companion object {
-        private var INSTANCE: LocalDataSource? = null
-
-        fun getInstance(localDao: LocalDao): LocalDataSource {
-            if (INSTANCE == null) {
-                INSTANCE = LocalDataSource(localDao)
-            }
-            return INSTANCE as LocalDataSource
-        }
-    }
+class LocalDataSource (private val mLocalDao: LocalDao){
 
     /** MOSQUE **/
 

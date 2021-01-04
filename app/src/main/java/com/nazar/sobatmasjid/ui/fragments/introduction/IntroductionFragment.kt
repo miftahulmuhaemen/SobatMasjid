@@ -10,13 +10,12 @@ import androidx.navigation.fragment.findNavController
 import com.nazar.sobatmasjid.databinding.FragmentIntroBinding
 import com.nazar.sobatmasjid.preference.Preferences
 import kotlinx.android.synthetic.main.fragment_intro.*
+import org.koin.android.ext.android.inject
 
 class IntroductionFragment : Fragment() {
 
     private lateinit var binding: FragmentIntroBinding
-    private val preferences: Preferences by lazy {
-        Preferences(requireActivity().applicationContext)
-    }
+    private val preferences: Preferences by inject()
 
     override fun onAttach(context: Context) {
         super.onAttach(context)

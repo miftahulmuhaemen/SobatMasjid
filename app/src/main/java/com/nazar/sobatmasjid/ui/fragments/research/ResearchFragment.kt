@@ -8,16 +8,18 @@ import androidx.lifecycle.ViewModelProvider
 import com.nazar.sobatmasjid.databinding.FragmentResearchBinding
 import com.nazar.sobatmasjid.preference.Preferences
 import com.nazar.sobatmasjid.ui.base.BaseBottomTabFragment
+import com.nazar.sobatmasjid.ui.fragments.announcement.AnnouncementViewModel
 import com.nazar.sobatmasjid.ui.fragments.location.LocationViewModel
 import com.nazar.sobatmasjid.ui.pager.ResearchPager
 import com.nazar.sobatmasjid.utils.extensions.afterTextChanged
-import com.nazar.sobatmasjid.viewmodel.ViewModelFactory
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ResearchFragment : BaseBottomTabFragment() {
 
     private lateinit var binding: FragmentResearchBinding
-    private lateinit var researchViewModel: ResearchViewModel
-    private lateinit var locationViewModel: LocationViewModel
+    private val researchViewModel by sharedViewModel<ResearchViewModel>()
+    private val locationViewModel by sharedViewModel<LocationViewModel>()
     private val preferences: Preferences by lazy {
         Preferences(requireActivity().applicationContext)
     }
@@ -32,10 +34,6 @@ class ResearchFragment : BaseBottomTabFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val factory = ViewModelFactory.getInstance(requireContext())
-        researchViewModel = ViewModelProvider(this, factory)[ResearchViewModel::class.java]
-        locationViewModel = ViewModelProvider(requireActivity(), factory)[LocationViewModel::class.java]
         locationViewModel.location.observe(viewLifecycleOwner, {
             preferences.setCity(it)
             binding.btnCurrentLocation.text = preferences.nameCity

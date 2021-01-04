@@ -4,7 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.nazar.sobatmasjid.data.DataRepository
 
-class AnnouncementViewModel (private val dataRepository: DataRepository) : ViewModel() {
+class AnnouncementViewModel () : ViewModel() {
     var query: MutableLiveData<String> = MutableLiveData()
 
     fun setQuery(query: String){

@@ -17,15 +17,16 @@ import com.nazar.sobatmasjid.ui.fragments.location.LocationViewModel
 import com.nazar.sobatmasjid.ui.fragments.research.ResearchFragmentDirections
 import com.nazar.sobatmasjid.ui.fragments.research.ResearchViewModel
 import com.nazar.sobatmasjid.ui.pager.ResearchPager.Companion.KEY_TYPE
-import com.nazar.sobatmasjid.viewmodel.ViewModelFactory
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import com.nazar.sobatmasjid.vo.Status
 
 class ResearchListFragment : Fragment() {
 
     private lateinit var binding: FragmentRecyclerviewBinding
-    private lateinit var researchListViewModel: ResearchListViewModel
-    private lateinit var researchViewModel: ResearchViewModel
-    private lateinit var locationViewModel: LocationViewModel
+    private val researchListViewModel: ResearchListViewModel by viewModel()
+    private val researchViewModel by sharedViewModel<ResearchViewModel>()
+    private val locationViewModel by sharedViewModel<LocationViewModel>()
     private lateinit var researchAdapter: ResearchAdapter
     private val preferences: Preferences by lazy {
         Preferences(requireActivity().applicationContext)
@@ -43,14 +44,6 @@ class ResearchListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val factory = ViewModelFactory.getInstance(requireContext())
-        researchListViewModel = ViewModelProvider(this, factory)[ResearchListViewModel::class.java]
-        researchViewModel =
-            ViewModelProvider(requireParentFragment(), factory)[ResearchViewModel::class.java]
-        locationViewModel =
-            ViewModelProvider(requireActivity(), factory)[LocationViewModel::class.java]
-
         val type = requireArguments().getString(KEY_TYPE)
         if (!type.isNullOrBlank())
             researchType = when (type) {

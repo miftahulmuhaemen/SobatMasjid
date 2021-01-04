@@ -23,24 +23,25 @@ import com.nazar.sobatmasjid.data.remote.StatusResponse
 import com.nazar.sobatmasjid.databinding.FragmentProfileEditBinding
 import com.nazar.sobatmasjid.preference.Preferences
 import com.nazar.sobatmasjid.ui.base.BaseBottomSheetFragment
+import com.nazar.sobatmasjid.ui.fragments.location.LocationViewModel
 import com.nazar.sobatmasjid.ui.fragments.profile.ProfileViewModel
 import com.nazar.sobatmasjid.utils.extensions.setImageFromUri
 import com.nazar.sobatmasjid.utils.extensions.setImageFromUrl
 import com.nazar.sobatmasjid.utils.setLeftDrawable
-import com.nazar.sobatmasjid.viewmodel.ViewModelFactory
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import kotlinx.android.synthetic.main.fragment_profile_edit.*
+import org.koin.android.ext.android.inject
 import java.io.File
 
 
 class ProfileEditFragment : BaseBottomSheetFragment(), View.OnClickListener {
 
     private lateinit var binding: FragmentProfileEditBinding
-    private lateinit var profileViewModel: ProfileViewModel
+    private val profileViewModel by sharedViewModel<ProfileViewModel>()
     private var isEditing: Boolean = false
     private var imageFile: File? = null
-    private val preferences: Preferences by lazy {
-        Preferences(requireActivity().applicationContext)
-    }
+    private val preferences: Preferences by inject()
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val dialog = super.onCreateDialog(savedInstanceState) as BottomSheetDialog
@@ -64,11 +65,6 @@ class ProfileEditFragment : BaseBottomSheetFragment(), View.OnClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val factory = ViewModelFactory.getInstance(requireContext())
-        val viewModelStore = findNavController().previousBackStackEntry?.viewModelStore!!
-        profileViewModel =
-            ViewModelProvider(viewModelStore, factory)[ProfileViewModel::class.java]
 
         init()
 

@@ -16,13 +16,13 @@ import com.nazar.sobatmasjid.databinding.FragmentLocationBinding
 import com.nazar.sobatmasjid.ui.adapters.LocationAdapter
 import com.nazar.sobatmasjid.ui.base.BaseBottomSheetFragment
 import com.nazar.sobatmasjid.utils.extensions.afterTextChanged
-import com.nazar.sobatmasjid.viewmodel.ViewModelFactory
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import com.nazar.sobatmasjid.vo.Status
 
 class LocationFragment : BaseBottomSheetFragment() {
 
     private lateinit var binding: FragmentLocationBinding
-    private lateinit var locationViewModel: LocationViewModel
+    private val locationViewModel by sharedViewModel<LocationViewModel>()
     private lateinit var locationAdapter: LocationAdapter
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
@@ -47,9 +47,6 @@ class LocationFragment : BaseBottomSheetFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val factory = ViewModelFactory.getInstance(requireContext())
-        locationViewModel = ViewModelProvider(requireActivity(), factory)[LocationViewModel::class.java]
 
         locationAdapter = LocationAdapter {
             locationViewModel.location.value = it

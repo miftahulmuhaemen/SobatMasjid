@@ -1,5 +1,6 @@
 package com.nazar.sobatmasjid.data
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
@@ -14,25 +15,11 @@ import okhttp3.RequestBody
 import java.util.*
 import kotlin.collections.ArrayList
 
-class DataRepository private constructor(
+class DataRepository(
     private val remoteDataSource: RemoteDataSource,
     private val localDataSource: LocalDataSource,
     private val appExecutors: AppExecutors
 ) : DataSource {
-
-    companion object {
-        @Volatile
-        private var instance: DataRepository? = null
-
-        fun getInstance(
-            remoteData: RemoteDataSource,
-            localDataSource: LocalDataSource,
-            appExecutors: AppExecutors
-        ): DataRepository =
-            instance ?: synchronized(this) {
-                instance ?: DataRepository(remoteData, localDataSource, appExecutors)
-            }
-    }
 
     /** USER **/
 
@@ -156,6 +143,7 @@ class DataRepository private constructor(
                     .setInitialLoadSizeHint(4)
                     .setPageSize(4)
                     .build()
+
                 return LivePagedListBuilder(
                     localDataSource.getMosques(
                         idCity,

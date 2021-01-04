@@ -3,6 +3,7 @@ buildscript {
     ext.kotlin_version = "1.4.10"
     ext.nav_version = '2.3.1'
     ext.gms_services_version = '4.3.4'
+    ext.koin_version = '2.2.2'
     repositories {
         google()
         jcenter()
@@ -12,6 +13,7 @@ buildscript {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "com.google.gms:google-services:$gms_services_version"
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
+        classpath "org.koin:koin-gradle-plugin:$koin_version"
     }
 }
 
@@ -72,4 +74,5 @@ ext {
     inlineActivityResult = '1.0.4'
     legacySupport = '1.0.0'
     imagePicker = '1.7.5'
+
 }

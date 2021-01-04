@@ -18,19 +18,19 @@ import com.nazar.sobatmasjid.ui.fragments.announcement.AnnouncementFragmentDirec
 import com.nazar.sobatmasjid.ui.fragments.announcement.AnnouncementViewModel
 import com.nazar.sobatmasjid.ui.fragments.location.LocationViewModel
 import com.nazar.sobatmasjid.ui.pager.AnnouncementPager.Companion.KEY_TYPE
-import com.nazar.sobatmasjid.viewmodel.ViewModelFactory
+import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import com.nazar.sobatmasjid.vo.Status
+import org.koin.android.ext.android.inject
 
 class AnnouncementListFragment : Fragment() {
 
     private lateinit var binding: FragmentRecyclerviewBinding
-    private lateinit var announcementListViewModel: AnnouncementListViewModel
-    private lateinit var announcementViewModel: AnnouncementViewModel
-    private lateinit var locationViewModel: LocationViewModel
+    private val announcementListViewModel: AnnouncementListViewModel by viewModel()
+    private val announcementViewModel by sharedViewModel<AnnouncementViewModel>()
+    private val locationViewModel by sharedViewModel<LocationViewModel>()
     private lateinit var announcementAdapter: AnnouncementAdapter
-    private val preferences: Preferences by lazy {
-        Preferences(requireActivity().applicationContext)
-    }
+    private val preferences: Preferences by inject()
     private var query: String = ""
     private var announcementCategory: List<String> = listOf()
 
@@ -44,14 +44,6 @@ class AnnouncementListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val factory = ViewModelFactory.getInstance(requireContext())
-        announcementListViewModel =
-            ViewModelProvider(this, factory)[AnnouncementListViewModel::class.java]
-        announcementViewModel =
-            ViewModelProvider(requireParentFragment(), factory)[AnnouncementViewModel::class.java]
-        locationViewModel =
-            ViewModelProvider(requireActivity(), factory)[LocationViewModel::class.java]
 
         val type = requireArguments().getString(KEY_TYPE)
         if (!type.isNullOrBlank())

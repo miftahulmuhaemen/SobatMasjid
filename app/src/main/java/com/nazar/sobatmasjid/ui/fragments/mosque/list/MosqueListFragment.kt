@@ -1,34 +1,34 @@
 package com.nazar.sobatmasjid.ui.fragments.mosque.list
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nazar.sobatmasjid.R
 import com.nazar.sobatmasjid.databinding.FragmentRecyclerviewBinding
 import com.nazar.sobatmasjid.preference.Preferences
 import com.nazar.sobatmasjid.ui.adapters.MosqueWideAdapter
+import com.nazar.sobatmasjid.ui.fragments.announcement.AnnouncementViewModel
 import com.nazar.sobatmasjid.ui.fragments.location.LocationViewModel
 import com.nazar.sobatmasjid.ui.fragments.mosque.MosqueViewModel
 import com.nazar.sobatmasjid.ui.pager.MosquePager.Companion.KEY_TYPE
-import com.nazar.sobatmasjid.viewmodel.ViewModelFactory
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import com.nazar.sobatmasjid.vo.Status
+import org.koin.android.ext.android.inject
 
 class MosqueListFragment : Fragment() {
 
     private lateinit var binding: FragmentRecyclerviewBinding
-    private lateinit var mosqueListViewModel: MosqueListViewModel
-    private lateinit var mosqueViewModel: MosqueViewModel
-    private lateinit var locationViewModel: LocationViewModel
+    private val mosqueListViewModel by viewModel<MosqueListViewModel>()
+    private val mosqueViewModel by sharedViewModel<MosqueViewModel>()
+    private val locationViewModel by sharedViewModel<LocationViewModel>()
     private lateinit var mosqueAdapter: MosqueWideAdapter
-    private val preferences: Preferences by lazy {
-        Preferences(requireActivity().applicationContext)
-    }
+    private val preferences: Preferences by inject()
     private var query: String = ""
     private var mosqueType: List<String> = listOf()
     private var mosqueClassification: List<String> = listOf()
@@ -43,13 +43,6 @@ class MosqueListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val factory = ViewModelFactory.getInstance(requireContext())
-        val viewModelStore = findNavController().currentBackStackEntry?.viewModelStore!!
-        mosqueListViewModel = ViewModelProvider(this, factory)[MosqueListViewModel::class.java]
-        mosqueViewModel = ViewModelProvider(viewModelStore, factory)[MosqueViewModel::class.java]
-        locationViewModel =
-            ViewModelProvider(requireActivity(), factory)[LocationViewModel::class.java]
 
         val type = requireArguments().getString(KEY_TYPE)
         if (!type.isNullOrBlank())
@@ -104,6 +97,7 @@ class MosqueListFragment : Fragment() {
             if (mosques != null) {
                 when (mosques.status) {
                     Status.LOADING -> {
+
                     }
                     Status.SUCCESS -> {
                         mosqueAdapter.submitList(mosques.data)

@@ -1,13 +1,13 @@
 package com.nazar.sobatmasjid.ui.fragments.adhan
 
 import android.app.Dialog
+import android.location.Location
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import android.widget.Toast
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
@@ -16,19 +16,19 @@ import com.nazar.sobatmasjid.databinding.FragmentAdhanBinding
 import com.nazar.sobatmasjid.preference.Preferences
 import com.nazar.sobatmasjid.ui.base.BaseBottomSheetFragment
 import com.nazar.sobatmasjid.ui.fragments.location.LocationViewModel
-import com.nazar.sobatmasjid.viewmodel.ViewModelFactory
 import com.nazar.sobatmasjid.vo.Status
+import org.koin.android.ext.android.inject
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.sql.Date
 import java.time.LocalDate
 
 class AdhanFragment : BaseBottomSheetFragment() {
 
     private lateinit var binding: FragmentAdhanBinding
-    private lateinit var adhanViewModel: AdhanViewModel
-    private lateinit var locationViewModel: LocationViewModel
-    private val preferences: Preferences by lazy {
-        Preferences(requireActivity().applicationContext)
-    }
+    private val adhanViewModel: AdhanViewModel by viewModel()
+    private val locationViewModel by sharedViewModel<LocationViewModel>()
+    private val preferences: Preferences by inject()
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val dialog = super.onCreateDialog(savedInstanceState) as BottomSheetDialog
@@ -52,12 +52,6 @@ class AdhanFragment : BaseBottomSheetFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val factory = ViewModelFactory.getInstance(requireContext())
-        adhanViewModel =
-            ViewModelProvider(this, factory)[AdhanViewModel::class.java]
-        locationViewModel =
-            ViewModelProvider(requireActivity(), factory)[LocationViewModel::class.java]
 
         locationViewModel.location.observe(viewLifecycleOwner, {
             loadData()

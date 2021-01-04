@@ -9,28 +9,24 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
 import com.nazar.sobatmasjid.databinding.FragmentAnnouncementDetailBinding
 import com.nazar.sobatmasjid.utils.extensions.setImageFromUrl
-import com.nazar.sobatmasjid.viewmodel.ViewModelFactory
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class AnnouncementDetailFragment : Fragment() {
 
     private lateinit var binding : FragmentAnnouncementDetailBinding
-    private lateinit var announcementDetailViewModel: AnnouncementDetailViewModel
     private lateinit var id: String
+    private val announcementDetailViewModel: AnnouncementDetailViewModel by viewModel()
     private val args: AnnouncementDetailFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentAnnouncementDetailBinding.inflate(inflater, container, false)
         return binding.root
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val factory = ViewModelFactory.getInstance(requireContext())
-        announcementDetailViewModel =
-            ViewModelProvider(this, factory)[AnnouncementDetailViewModel::class.java]
         id = args.id.toString()
         if (id.isNotBlank()) {
             announcementDetailViewModel.getAnnouncementByIdAnnouncement(id)
@@ -45,5 +41,4 @@ class AnnouncementDetailFragment : Fragment() {
             })
         }
     }
-
 }

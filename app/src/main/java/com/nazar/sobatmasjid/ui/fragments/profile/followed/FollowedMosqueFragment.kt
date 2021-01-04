@@ -17,14 +17,14 @@ import com.nazar.sobatmasjid.preference.Preferences
 import com.nazar.sobatmasjid.ui.adapters.FollowedMosqueAdapter
 import com.nazar.sobatmasjid.ui.base.BaseBottomSheetFragment
 import com.nazar.sobatmasjid.utils.extensions.afterTextChanged
-import com.nazar.sobatmasjid.viewmodel.ViewModelFactory
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import com.nazar.sobatmasjid.vo.Status
 
 class FollowedMosqueFragment : BaseBottomSheetFragment() {
 
     private lateinit var binding : FragmentFollowedMosqueBinding
     private lateinit var followedMosqueAdapter: FollowedMosqueAdapter
-    private lateinit var followedMosqueViewMosqueBinding: FollowedMosqueViewModel
+    private val followedMosqueViewModel: FollowedMosqueViewModel by viewModel()
     private val preferences: Preferences by lazy {
         Preferences(requireActivity().applicationContext)
     }
@@ -52,10 +52,6 @@ class FollowedMosqueFragment : BaseBottomSheetFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val factory = ViewModelFactory.getInstance(requireContext())
-        followedMosqueViewMosqueBinding = ViewModelProvider(requireActivity(), factory)[FollowedMosqueViewModel::class.java]
-
         followedMosqueAdapter = FollowedMosqueAdapter()
         with(binding.rvFollow) {
             layoutManager = LinearLayoutManager(context)
@@ -72,7 +68,7 @@ class FollowedMosqueFragment : BaseBottomSheetFragment() {
     }
 
     private fun loadData(query: String){
-        followedMosqueViewMosqueBinding
+        followedMosqueViewModel
             .getFollowedMosques(
                 preferences.idUser,
                 query

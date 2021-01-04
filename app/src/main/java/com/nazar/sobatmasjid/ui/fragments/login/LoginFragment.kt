@@ -10,7 +10,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import com.firebase.ui.auth.AuthUI
 import com.google.firebase.auth.FirebaseAuth
 import com.nazar.sobatmasjid.R
@@ -23,19 +22,18 @@ import com.nazar.sobatmasjid.ui.fragments.login.LoginFragment.Login.GOOGLE_PROVI
 import com.nazar.sobatmasjid.ui.fragments.login.LoginFragment.Login.PERMISSION
 import com.nazar.sobatmasjid.ui.fragments.login.LoginFragment.Login.RC_SIGN_IN
 import com.nazar.sobatmasjid.utils.hasPermissions
-import com.nazar.sobatmasjid.viewmodel.ViewModelFactory
+import org.koin.android.ext.android.inject
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.sql.Date
 import java.time.LocalDate
 
 class LoginFragment : Fragment(), View.OnClickListener, FirebaseAuth.AuthStateListener {
 
     private lateinit var binding: FragmentLoginBinding
-    private lateinit var viewModel: LoginViewModel
+    private val viewModel : LoginViewModel by viewModel()
     private var location: Location = Location("currentPosition")
     private var isLocationAvailable: Boolean = false
-    private val preferences: Preferences by lazy {
-        Preferences(requireActivity().applicationContext)
-    }
+    private val preferences: Preferences by inject()
 
     object Login {
         const val RC_SIGN_IN: Int = 1
@@ -55,8 +53,6 @@ class LoginFragment : Fragment(), View.OnClickListener, FirebaseAuth.AuthStateLi
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val factory = ViewModelFactory.getInstance(requireContext())
-        viewModel = ViewModelProvider(this, factory)[LoginViewModel::class.java]
         val permissions = arrayOf(
             Manifest.permission.INTERNET,
             Manifest.permission.ACCESS_FINE_LOCATION,

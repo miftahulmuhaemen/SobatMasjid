@@ -9,12 +9,12 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.nazar.sobatmasjid.databinding.FragmentMosqueDetailProfileBinding
 import com.nazar.sobatmasjid.ui.fragments.mosque.detail.MosqueDetailViewModel
-import com.nazar.sobatmasjid.viewmodel.ViewModelFactory
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class MosqueDetailProfileFragment : Fragment() {
 
     private lateinit var binding : FragmentMosqueDetailProfileBinding
-    private lateinit var mosqueDetailViewModel: MosqueDetailViewModel
+    private val mosqueDetailViewModel by sharedViewModel<MosqueDetailViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,9 +26,6 @@ class MosqueDetailProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val factory = ViewModelFactory.getInstance(requireContext())
-        val viewModelStore = findNavController().currentBackStackEntry?.viewModelStore!!
-        mosqueDetailViewModel = ViewModelProvider(viewModelStore, factory)[MosqueDetailViewModel::class.java]
         mosqueDetailViewModel.mosque.observe(viewLifecycleOwner, {
             binding.tvMosqueName.text = it.name
             binding.tvAddress.text = it.address

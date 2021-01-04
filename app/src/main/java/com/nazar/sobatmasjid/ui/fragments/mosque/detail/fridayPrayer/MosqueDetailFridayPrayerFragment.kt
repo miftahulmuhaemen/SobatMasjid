@@ -12,12 +12,12 @@ import com.nazar.sobatmasjid.databinding.FragmentMosqueDetailFridayPrayerBinding
 import com.nazar.sobatmasjid.ui.adapters.FinanceAdapter
 import com.nazar.sobatmasjid.ui.adapters.OfficerAdapter
 import com.nazar.sobatmasjid.ui.fragments.mosque.detail.MosqueDetailViewModel
-import com.nazar.sobatmasjid.viewmodel.ViewModelFactory
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class MosqueDetailFridayPrayerFragment : Fragment() {
 
     private lateinit var binding : FragmentMosqueDetailFridayPrayerBinding
-    private lateinit var mosqueDetailViewModel: MosqueDetailViewModel
+    private val mosqueDetailViewModel by sharedViewModel<MosqueDetailViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,9 +30,6 @@ class MosqueDetailFridayPrayerFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val factory = ViewModelFactory.getInstance(requireContext())
-        val viewModelStore = findNavController().currentBackStackEntry?.viewModelStore!!
-        mosqueDetailViewModel = ViewModelProvider(viewModelStore, factory)[MosqueDetailViewModel::class.java]
         mosqueDetailViewModel.mosque.observe(viewLifecycleOwner, {
             init(it.id)
         })

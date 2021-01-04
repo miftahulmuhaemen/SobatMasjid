@@ -10,17 +10,7 @@ import kotlinx.coroutines.launch
 import okhttp3.RequestBody
 import java.util.*
 
-class RemoteDataSource private constructor(private val service: RetrofitService) {
-
-    companion object {
-        @Volatile
-        private var instance: RemoteDataSource? = null
-
-        fun getInstance(service: RetrofitService): RemoteDataSource =
-            instance ?: synchronized(this) {
-                instance ?: RemoteDataSource(service)
-            }
-    }
+class RemoteDataSource (private val service: RetrofitService) {
 
     /** USER **/
 

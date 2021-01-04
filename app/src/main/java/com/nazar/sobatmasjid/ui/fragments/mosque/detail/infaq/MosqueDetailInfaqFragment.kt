@@ -12,12 +12,12 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.nazar.sobatmasjid.databinding.FragmentInfaqBinding
 import com.nazar.sobatmasjid.ui.fragments.mosque.detail.MosqueDetailViewModel
 import com.nazar.sobatmasjid.utils.extensions.setImageFromUrl
-import com.nazar.sobatmasjid.viewmodel.ViewModelFactory
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class MosqueDetailInfaqFragment : BottomSheetDialogFragment() {
 
     private lateinit var binding: FragmentInfaqBinding
-    private lateinit var mosqueDetailViewModel: MosqueDetailViewModel
+    private val mosqueDetailViewModel by sharedViewModel<MosqueDetailViewModel>()
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         return super.onCreateDialog(savedInstanceState) as BottomSheetDialog
@@ -34,10 +34,6 @@ class MosqueDetailInfaqFragment : BottomSheetDialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val factory = ViewModelFactory.getInstance(requireContext())
-        val viewModelStore = findNavController().previousBackStackEntry?.viewModelStore!!
-        mosqueDetailViewModel = ViewModelProvider(viewModelStore, factory)[MosqueDetailViewModel::class.java]
         mosqueDetailViewModel.mosque.observe(viewLifecycleOwner, {
             binding.tvAccount.text = it.accountNumber
             binding.tvOwner.text = it.accountName
