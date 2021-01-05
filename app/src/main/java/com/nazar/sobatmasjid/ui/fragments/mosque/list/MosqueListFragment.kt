@@ -1,7 +1,6 @@
 package com.nazar.sobatmasjid.ui.fragments.mosque.list
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,14 +11,13 @@ import com.nazar.sobatmasjid.R
 import com.nazar.sobatmasjid.databinding.FragmentRecyclerviewBinding
 import com.nazar.sobatmasjid.preference.Preferences
 import com.nazar.sobatmasjid.ui.adapters.MosqueWideAdapter
-import com.nazar.sobatmasjid.ui.fragments.announcement.AnnouncementViewModel
 import com.nazar.sobatmasjid.ui.fragments.location.LocationViewModel
 import com.nazar.sobatmasjid.ui.fragments.mosque.MosqueViewModel
 import com.nazar.sobatmasjid.ui.pager.MosquePager.Companion.KEY_TYPE
-import org.koin.androidx.viewmodel.ext.android.sharedViewModel
-import org.koin.androidx.viewmodel.ext.android.viewModel
 import com.nazar.sobatmasjid.vo.Status
 import org.koin.android.ext.android.inject
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MosqueListFragment : Fragment() {
 

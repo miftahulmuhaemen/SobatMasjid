@@ -12,7 +12,6 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.google.firebase.messaging.FirebaseMessaging
@@ -21,10 +20,8 @@ import com.nazar.sobatmasjid.data.local.entity.MosqueDetailEntity
 import com.nazar.sobatmasjid.databinding.FragmentMosqueDetailBinding
 import com.nazar.sobatmasjid.preference.Preferences
 import com.nazar.sobatmasjid.ui.adapters.ImageSliderAdapter
-import com.nazar.sobatmasjid.ui.fragments.announcement.AnnouncementViewModel
 import com.nazar.sobatmasjid.ui.pager.MosqueDetailPager
 import com.nazar.sobatmasjid.utils.getListFromString
-import org.koin.androidx.viewmodel.ext.android.viewModel
 import com.nazar.sobatmasjid.vo.Status
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel

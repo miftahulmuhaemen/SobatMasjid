@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import android.widget.Toast
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
@@ -16,8 +15,8 @@ import com.nazar.sobatmasjid.databinding.FragmentLocationBinding
 import com.nazar.sobatmasjid.ui.adapters.LocationAdapter
 import com.nazar.sobatmasjid.ui.base.BaseBottomSheetFragment
 import com.nazar.sobatmasjid.utils.extensions.afterTextChanged
-import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import com.nazar.sobatmasjid.vo.Status
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class LocationFragment : BaseBottomSheetFragment() {
 

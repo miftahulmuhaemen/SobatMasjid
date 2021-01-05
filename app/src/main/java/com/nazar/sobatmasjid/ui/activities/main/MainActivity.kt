@@ -4,11 +4,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
-import com.google.firebase.messaging.FirebaseMessaging
 import com.nazar.sobatmasjid.R
 import com.nazar.sobatmasjid.databinding.ActivityMainBinding
-import com.nazar.sobatmasjid.ui.fragments.location.LocationViewModel
-import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding

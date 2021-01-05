@@ -14,10 +14,10 @@ import com.nazar.sobatmasjid.ui.base.BaseBottomTabFragment
 import com.nazar.sobatmasjid.ui.fragments.location.LocationViewModel
 import com.nazar.sobatmasjid.utils.extensions.setGone
 import com.nazar.sobatmasjid.utils.extensions.setVisible
-import org.koin.androidx.viewmodel.ext.android.sharedViewModel
-import org.koin.androidx.viewmodel.ext.android.viewModel
 import com.nazar.sobatmasjid.vo.Status
 import org.koin.android.ext.android.inject
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeFragment : BaseBottomTabFragment() {
 

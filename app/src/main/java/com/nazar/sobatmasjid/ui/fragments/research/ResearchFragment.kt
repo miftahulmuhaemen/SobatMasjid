@@ -4,16 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModelProvider
 import com.nazar.sobatmasjid.databinding.FragmentResearchBinding
 import com.nazar.sobatmasjid.preference.Preferences
 import com.nazar.sobatmasjid.ui.base.BaseBottomTabFragment
-import com.nazar.sobatmasjid.ui.fragments.announcement.AnnouncementViewModel
 import com.nazar.sobatmasjid.ui.fragments.location.LocationViewModel
 import com.nazar.sobatmasjid.ui.pager.ResearchPager
 import com.nazar.sobatmasjid.utils.extensions.afterTextChanged
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
-import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ResearchFragment : BaseBottomTabFragment() {
 

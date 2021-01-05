@@ -1,13 +1,11 @@
 package com.nazar.sobatmasjid.ui.fragments.announcement.list
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nazar.sobatmasjid.R
@@ -18,10 +16,10 @@ import com.nazar.sobatmasjid.ui.fragments.announcement.AnnouncementFragmentDirec
 import com.nazar.sobatmasjid.ui.fragments.announcement.AnnouncementViewModel
 import com.nazar.sobatmasjid.ui.fragments.location.LocationViewModel
 import com.nazar.sobatmasjid.ui.pager.AnnouncementPager.Companion.KEY_TYPE
-import org.koin.androidx.viewmodel.ext.android.viewModel
-import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import com.nazar.sobatmasjid.vo.Status
 import org.koin.android.ext.android.inject
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class AnnouncementListFragment : Fragment() {
 

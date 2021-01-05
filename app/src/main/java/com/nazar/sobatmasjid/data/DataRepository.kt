@@ -1,6 +1,5 @@
 package com.nazar.sobatmasjid.data
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList

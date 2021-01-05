@@ -3,7 +3,6 @@ package com.nazar.sobatmasjid.ui.fragments.profile.edit
 import android.annotation.SuppressLint
 import android.app.Activity.RESULT_OK
 import android.app.Dialog
-import android.location.Location
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,7 +12,6 @@ import android.widget.FrameLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.res.ResourcesCompat
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.github.dhaval2404.imagepicker.ImagePicker
 import com.google.android.material.bottomsheet.BottomSheetBehavior
@@ -23,15 +21,13 @@ import com.nazar.sobatmasjid.data.remote.StatusResponse
 import com.nazar.sobatmasjid.databinding.FragmentProfileEditBinding
 import com.nazar.sobatmasjid.preference.Preferences
 import com.nazar.sobatmasjid.ui.base.BaseBottomSheetFragment
-import com.nazar.sobatmasjid.ui.fragments.location.LocationViewModel
 import com.nazar.sobatmasjid.ui.fragments.profile.ProfileViewModel
 import com.nazar.sobatmasjid.utils.extensions.setImageFromUri
 import com.nazar.sobatmasjid.utils.extensions.setImageFromUrl
 import com.nazar.sobatmasjid.utils.setLeftDrawable
-import org.koin.androidx.viewmodel.ext.android.sharedViewModel
-import org.koin.androidx.viewmodel.ext.android.viewModel
 import kotlinx.android.synthetic.main.fragment_profile_edit.*
 import org.koin.android.ext.android.inject
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import java.io.File
 
 

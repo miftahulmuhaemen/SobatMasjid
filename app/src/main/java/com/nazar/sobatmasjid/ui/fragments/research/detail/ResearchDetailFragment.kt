@@ -6,15 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
 import com.nazar.sobatmasjid.R
 import com.nazar.sobatmasjid.data.local.entity.ResearchDetailEntity
 import com.nazar.sobatmasjid.databinding.FragmentResearchDetailBinding
 import com.nazar.sobatmasjid.preference.Preferences
 import com.nazar.sobatmasjid.utils.extensions.setImageFromUrl
-import org.koin.androidx.viewmodel.ext.android.viewModel
 import com.nazar.sobatmasjid.vo.Status
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ResearchDetailFragment : Fragment() {
 

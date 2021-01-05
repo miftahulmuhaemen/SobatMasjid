@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
 import com.nazar.sobatmasjid.databinding.FragmentAnnouncementDetailBinding
 import com.nazar.sobatmasjid.utils.extensions.setImageFromUrl

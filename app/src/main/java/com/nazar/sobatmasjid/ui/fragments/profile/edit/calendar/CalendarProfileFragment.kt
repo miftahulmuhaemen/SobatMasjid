@@ -4,11 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.nazar.sobatmasjid.databinding.FragmentCalendarBinding
-import com.nazar.sobatmasjid.ui.fragments.location.LocationViewModel
 import com.nazar.sobatmasjid.ui.fragments.profile.ProfileViewModel
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 

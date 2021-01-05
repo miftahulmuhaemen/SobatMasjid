@@ -13,7 +13,6 @@ import com.nazar.sobatmasjid.ui.pager.AnnouncementPager
 import com.nazar.sobatmasjid.utils.extensions.afterTextChanged
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
-import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class AnnouncementFragment : BaseBottomTabFragment() {
 

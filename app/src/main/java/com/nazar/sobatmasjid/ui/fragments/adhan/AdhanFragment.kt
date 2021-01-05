@@ -1,7 +1,6 @@
 package com.nazar.sobatmasjid.ui.fragments.adhan
 
 import android.app.Dialog
-import android.location.Location
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View

@@ -5,8 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
 import com.nazar.sobatmasjid.databinding.FragmentMosqueDetailProfileBinding
 import com.nazar.sobatmasjid.ui.fragments.mosque.detail.MosqueDetailViewModel
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel

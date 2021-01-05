@@ -1,14 +1,8 @@
 package com.nazar.sobatmasjid.service.fcm
 
-import android.app.NotificationChannel
-import android.app.NotificationManager
-import android.app.PendingIntent
-import android.content.Context
-import android.content.Intent
-import android.media.RingtoneManager
-import android.os.Build
+import android.os.Bundle
 import android.util.Log
-import androidx.core.app.NotificationCompat
+import androidx.navigation.NavDeepLinkBuilder
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 import com.nazar.sobatmasjid.R
@@ -29,18 +23,22 @@ class FirebaseCloudMessaging : FirebaseMessagingService() {
     override fun onMessageReceived(remoteMessage: RemoteMessage) {
         super.onMessageReceived(remoteMessage)
         remoteMessage.notification?.let {
-            sendNotification(it.title, it.body)
+            sendNotification(it.title, it.body, it.channelId)
         }
     }
 
-    private fun sendNotification(messageTitle: String?, messageBody: String?) {
+    private fun sendNotification(messageTitle: String?, messageBody: String?, channelId: String?) {
         Notify
             .with(applicationContext)
             .meta {
-                clickIntent = PendingIntent.getActivity(applicationContext,
-                    0,
-                    Intent(applicationContext, MainActivity::class.java),
-                    0)
+                clickIntent = NavDeepLinkBuilder(applicationContext)
+                    .setComponentName(MainActivity::class.java)
+                    .setGraph(R.navigation.nav_graph_main)
+                    .setDestination(R.id.mosqueDetail)
+                    .setArguments(Bundle().apply {
+                        putString("id", channelId)
+                    })
+                    .createPendingIntent()
             }
             .content {
                 title = messageTitle

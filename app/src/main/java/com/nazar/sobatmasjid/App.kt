@@ -1,10 +1,10 @@
 package com.nazar.sobatmasjid
 
 import android.app.Application
-import com.nazar.sobatmasjid.di.viewModelModule
 import com.nazar.sobatmasjid.di.networkModule
 import com.nazar.sobatmasjid.di.preferenceModule
 import com.nazar.sobatmasjid.di.repositoryModule
+import com.nazar.sobatmasjid.di.viewModelModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
