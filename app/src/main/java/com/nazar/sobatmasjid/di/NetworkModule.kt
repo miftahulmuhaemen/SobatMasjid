@@ -1,5 +1,6 @@
 package com.nazar.sobatmasjid.di
 
+import com.google.firebase.messaging.FirebaseMessaging
 import com.nazar.sobatmasjid.BuildConfig
 import com.nazar.sobatmasjid.api.BasicAuthInterceptor
 import com.nazar.sobatmasjid.api.RetrofitService
@@ -14,6 +15,7 @@ val networkModule = module {
     single { makeRetrofitService() }
     single { makeOkHttpClient() }
     single { makeLoggingInterceptor() }
+    single { FirebaseMessaging.getInstance() }
 }
 
 private fun makeRetrofitService(): RetrofitService {

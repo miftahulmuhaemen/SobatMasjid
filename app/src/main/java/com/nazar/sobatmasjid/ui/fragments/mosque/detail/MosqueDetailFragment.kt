@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.google.firebase.messaging.FirebaseMessaging
 import com.nazar.sobatmasjid.R
 import com.nazar.sobatmasjid.data.local.entity.MosqueDetailEntity
 import com.nazar.sobatmasjid.databinding.FragmentMosqueDetailBinding
@@ -35,6 +36,7 @@ class MosqueDetailFragment : Fragment() {
     private val mosqueDetailViewModel by sharedViewModel<MosqueDetailViewModel>()
     private val args: MosqueDetailFragmentArgs by navArgs()
     private val preferences: Preferences by inject()
+    private val firebaseMessage : FirebaseMessaging by inject()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -85,18 +87,28 @@ class MosqueDetailFragment : Fragment() {
         binding.tvMosqueUsername.text = mosque.username
         binding.btnFollow.setOnClickListener {
             if (id.isNotBlank())
-                if (mosque.followed)
-                    mosqueDetailViewModel.unFollowMosque(preferences.idUser, id)
-                        .observe(viewLifecycleOwner, {
-                            mosqueDetailViewModel.setFollowMosque(mosque, it)
-                            setFollow(it)
-                        })
-                else
-                    mosqueDetailViewModel.followMosque(preferences.idUser, id)
-                        .observe(viewLifecycleOwner, {
-                            mosqueDetailViewModel.setFollowMosque(mosque, it)
-                            setFollow(it)
-                        })
+                if (mosque.followed){
+                    firebaseMessage.unsubscribeFromTopic(mosque.id).addOnCompleteListener {
+                        if(it.isSuccessful){
+                            mosqueDetailViewModel.unFollowMosque(preferences.idUser, id)
+                                .observe(viewLifecycleOwner, { status ->
+                                    mosqueDetailViewModel.setFollowMosque(mosque, status)
+                                    setFollow(status)
+                                })
+                        }
+                    }
+                }
+                else{
+                    firebaseMessage.subscribeToTopic(mosque.id).addOnCompleteListener {
+                        if(it.isSuccessful){
+                            mosqueDetailViewModel.followMosque(preferences.idUser, id)
+                                .observe(viewLifecycleOwner, { status ->
+                                    mosqueDetailViewModel.setFollowMosque(mosque, status)
+                                    setFollow(status)
+                                })
+                        }
+                    }
+                }
         }
         binding.btnInfaq.setOnClickListener {
             findNavController().navigate(MosqueDetailFragmentDirections.actionMosqueDetailToMosqueDetailInfaqFragment())

@@ -61,6 +61,7 @@ dependencies {
     implementation "androidx.navigation:navigation-dynamic-features-fragment:$nav_version"
     implementation "androidx.legacy:legacy-support-v4:$legacySupport"
     implementation "com.github.florent37:inline-activity-result-kotlin:$inlineActivityResult"
+    implementation "androidx.multidex:multidex:$multidex_version"
 
     //ui
     implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
@@ -95,9 +96,10 @@ dependencies {
     kapt "androidx.room:room-compiler:$roomVersion"
 
     //firebase
-    implementation "com.google.firebase:firebase-analytics:$firebaseAnalytics"
-    implementation "com.google.firebase:firebase-auth:$firebaseAuth"
-    implementation "androidx.multidex:multidex:$multidex_version"
+    implementation platform("com.google.firebase:firebase-bom:$firebaseBom")
+    implementation "com.google.firebase:firebase-analytics"
+    implementation "com.google.firebase:firebase-auth"
+    implementation "com.google.firebase:firebase-messaging"
     implementation "com.firebaseui:firebase-ui-auth:$firebaseUiAuth"
     implementation "com.facebook.android:facebook-login:$facebookLogin"
 
@@ -110,4 +112,7 @@ dependencies {
     testImplementation "org.koin:koin-test:$koin_version"
     implementation "org.koin:koin-androidx-scope:$koin_version"
     implementation "org.koin:koin-androidx-viewmodel:$koin_version"
+
+    //notification
+    implementation "io.karn:notify:$notify"
 }

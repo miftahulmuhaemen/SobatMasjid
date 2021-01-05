@@ -1,4 +1,4 @@
-package com.nazar.sobatmasjid.data.service.model
+package com.nazar.sobatmasjid.service.location.model
 
 data class LocationModel (
         val latitude: Double,

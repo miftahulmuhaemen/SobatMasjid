@@ -1,4 +1,4 @@
-package com.nazar.sobatmasjid.data.service
+package com.nazar.sobatmasjid.service.location
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -8,7 +8,7 @@ import com.google.android.gms.location.LocationCallback
 import com.google.android.gms.location.LocationRequest
 import com.google.android.gms.location.LocationResult
 import com.google.android.gms.location.LocationServices
-import com.nazar.sobatmasjid.data.service.model.LocationModel
+import com.nazar.sobatmasjid.service.location.model.LocationModel
 
 class LocationService(context: Context) : LiveData<LocationModel>() {
 

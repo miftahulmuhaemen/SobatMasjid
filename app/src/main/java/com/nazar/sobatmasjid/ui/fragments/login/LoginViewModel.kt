@@ -2,13 +2,12 @@ package com.nazar.sobatmasjid.ui.fragments.login
 
 import android.content.Context
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import com.nazar.sobatmasjid.data.DataRepository
 import com.nazar.sobatmasjid.data.remote.ApiResponse
 import com.nazar.sobatmasjid.data.remote.response.UserResponse
-import com.nazar.sobatmasjid.data.service.LocationService
-import com.nazar.sobatmasjid.data.service.model.LocationModel
+import com.nazar.sobatmasjid.service.location.LocationService
+import com.nazar.sobatmasjid.service.location.model.LocationModel
 import java.util.*
 
 class LoginViewModel (private val dataRepository: DataRepository) : ViewModel() {
