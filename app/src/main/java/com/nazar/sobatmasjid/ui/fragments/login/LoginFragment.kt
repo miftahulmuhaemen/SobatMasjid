@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -100,6 +101,7 @@ class LoginFragment : Fragment(), View.OnClickListener, FirebaseAuth.AuthStateLi
                     when (it.status) {
                         StatusResponse.SUCCESS -> {
                             val userResponse = it.body!!
+
                             preferences.setPreference(userResponse, location)
                             state.removeAuthStateListener(this)
 

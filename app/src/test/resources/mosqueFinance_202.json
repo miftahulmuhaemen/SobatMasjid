@@ -1,0 +1,41 @@
+{
+    "status": true,
+    "finance": [
+        {
+            "no": 1,
+            "date": "16 Oktober 2020",
+            "credit-in": "0",
+            "credit-out": "0",
+            "credit-text": "16.033.000",
+            "id-city": "6372",
+            "id-mosque": "66"
+        },
+        {
+            "no": 2,
+            "date": "23 Oktober 2020",
+            "credit-in": "0",
+            "credit-out": "0",
+            "credit-text": "16.033.000",
+            "id-city": "6372",
+            "id-mosque": "66"
+        },
+        {
+            "no": 3,
+            "date": "30 Oktober 2020",
+            "credit-in": "690.179.008",
+            "credit-out": "0",
+            "credit-text": "706.212.008",
+            "id-city": "6372",
+            "id-mosque": "66"
+        },
+        {
+            "no": 4,
+            "date": "06 November 2020",
+            "credit-in": "0",
+            "credit-out": "0",
+            "credit-text": "706.212.008",
+            "id-city": "6372",
+            "id-mosque": "66"
+        }
+    ]
+}

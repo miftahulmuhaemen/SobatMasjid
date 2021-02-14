@@ -1,0 +1,17 @@
+{
+    "status": true,
+    "friday-prayer": [
+        {
+            "id-mosque": "66",
+            "mosque-name": "Agung Al-Munawwarah Banjarbaru",
+            "mosque-type": "Masjid",
+            "credit-in": "0",
+            "credit-out": "0",
+            "credit-text": "706.212.008",
+            "date": "06 November 2020",
+            "khatib": "Kasful Anwar",
+            "muadzin": "Misran F",
+            "id-city": "6372"
+        }
+    ]
+}

@@ -1,0 +1,46 @@
+{
+    "status": true,
+    "location": [
+        {
+            "id-city": "6372",
+            "name": "KOTA BANJARBARU",
+            "latitude": "-3.4495383",
+            "longitude": "114.8775202",
+            "distance": "2.58 KM",
+            "api-code": "865",
+            "date-now": "2021-01-14"
+        }
+    ],
+    "data": [
+        {
+            "id-mosque": "99",
+            "mosque-name": "Al-Baythar Universitas Lambung Mangkurat",
+            "photo": "https://pengurus.sobatmasjid.com/assets/foto/albaytharulm_5f067e652ba64.jpg",
+            "latitude": "-3.44602",
+            "longitude": "114.84187",
+            "username": "albaytharulm",
+            "distance": "0.39 KM",
+            "id-city": "6372"
+        },
+        {
+            "id-mosque": "67",
+            "mosque-name": "Al-Istiqomah Banjarbaru",
+            "photo": "https://pengurus.sobatmasjid.com/assets/foto/istiqomahbjb_5eeddbc38b7a1.jpg",
+            "latitude": "-3.44297",
+            "longitude": "114.82337",
+            "username": "istiqomahbjb",
+            "distance": "1.98 KM",
+            "id-city": "6372"
+        },
+        {
+            "id-mosque": "66",
+            "mosque-name": "Agung Al-Munawwarah Banjarbaru",
+            "photo": "https://pengurus.sobatmasjid.com/assets/foto/almunawwarahbjb_5f07d2bb9547a.jpg",
+            "latitude": "-3.46408",
+            "longitude": "114.82678",
+            "username": "almunawwarahbjb",
+            "distance": "2.24 KM",
+            "id-city": "6372"
+        }
+    ]
+}

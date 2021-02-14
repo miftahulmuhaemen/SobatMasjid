@@ -1,0 +1,19 @@
+{
+    "status": true,
+    "data": [
+        {
+            "id-user": "15",
+            "name": "Miftahul Muhaemen",
+            "born-date": "2020-11-19",
+            "email": "miftahulmuhaemen@gmail.com",
+            "gender": "L",
+            "motto": "le",
+            "number-follow": "5",
+            "photo": "https://api-2.sobatmasjid.com/assets/fotouser/15_5fde05d434c1b.jpg",
+            "id-city": "6371",
+            "name-city": "KOTA BANJARMASIN",
+            "api-code": "864"
+        }
+    ],
+    "message": "Created"
+}

@@ -1,0 +1,3603 @@
+{
+    "status": true,
+    "data": [
+        {
+            "id-city": "1105",
+            "name": "KAB. ACEH BARAT",
+            "latitude": "4.45132",
+            "longitude": "95.9055894",
+            "api-code": "512"
+        },
+        {
+            "id-city": "1112",
+            "name": "KAB. ACEH BARAT DAYA",
+            "latitude": "3.8354523",
+            "longitude": "96.5870459",
+            "api-code": "513"
+        },
+        {
+            "id-city": "1106",
+            "name": "KAB. ACEH BESAR",
+            "latitude": "5.4041708",
+            "longitude": "95.1452155",
+            "api-code": "514"
+        },
+        {
+            "id-city": "1114",
+            "name": "KAB. ACEH JAYA",
+            "latitude": "4.8109168",
+            "longitude": "95.1058026",
+            "api-code": "515"
+        },
+        {
+            "id-city": "1101",
+            "name": "KAB. ACEH SELATAN",
+            "latitude": "3.0700274",
+            "longitude": "96.8644005",
+            "api-code": "516"
+        },
+        {
+            "id-city": "1110",
+            "name": "KAB. ACEH SINGKIL",
+            "latitude": "2.307239",
+            "longitude": "97.3520203",
+            "api-code": "517"
+        },
+        {
+            "id-city": "1116",
+            "name": "KAB. ACEH TAMIANG",
+            "latitude": "4.2184441",
+            "longitude": "97.7212418",
+            "api-code": "518"
+        },
+        {
+            "id-city": "1104",
+            "name": "KAB. ACEH TENGAH",
+            "latitude": "4.5622921",
+            "longitude": "96.25432",
+            "api-code": "519"
+        },
+        {
+            "id-city": "1102",
+            "name": "KAB. ACEH TENGGARA",
+            "latitude": "4.0377707",
+            "longitude": "94.4033901",
+            "api-code": "520"
+        },
+        {
+            "id-city": "1103",
+            "name": "KAB. ACEH TIMUR",
+            "latitude": "4.7025774",
+            "longitude": "97.0786866",
+            "api-code": "521"
+        },
+        {
+            "id-city": "1108",
+            "name": "KAB. ACEH UTARA",
+            "latitude": "4.993586",
+            "longitude": "96.8704775",
+            "api-code": "522"
+        },
+        {
+            "id-city": "3101",
+            "name": "KAB. ADM. KEP. SERIBU",
+            "latitude": "-5.6106064",
+            "longitude": "106.0564715",
+            "api-code": null
+        },
+        {
+            "id-city": "1306",
+            "name": "KAB. AGAM",
+            "latitude": "-0.2524928",
+            "longitude": "99.873529",
+            "api-code": "568"
+        },
+        {
+            "id-city": "5305",
+            "name": "KAB. ALOR",
+            "latitude": "-8.3316526",
+            "longitude": "123.9146527",
+            "api-code": "803"
+        },
+        {
+            "id-city": "1209",
+            "name": "KAB. ASAHAN",
+            "latitude": "2.846843",
+            "longitude": "99.2531283",
+            "api-code": "535"
+        },
+        {
+            "id-city": "9118",
+            "name": "KAB. ASMAT",
+            "latitude": "-5.5785912",
+            "longitude": "137.4757869",
+            "api-code": "980"
+        },
+        {
+            "id-city": "5103",
+            "name": "KAB. BADUNG",
+            "latitude": "-8.5448056",
+            "longitude": "114.8873382",
+            "api-code": "784"
+        },
+        {
+            "id-city": "6311",
+            "name": "KAB. BALANGAN",
+            "latitude": "-2.2886019",
+            "longitude": "115.3038703",
+            "api-code": "835"
+        },
+        {
+            "id-city": "3204",
+            "name": "KAB. BANDUNG",
+            "latitude": "-6.9032739",
+            "longitude": "107.5731164",
+            "api-code": "679"
+        },
+        {
+            "id-city": "3217",
+            "name": "KAB. BANDUNG BARAT",
+            "latitude": "-6.9045005",
+            "longitude": "107.1740284",
+            "api-code": "680"
+        },
+        {
+            "id-city": "7201",
+            "name": "KAB. BANGGAI",
+            "latitude": "-1.1146639",
+            "longitude": "122.0904798",
+            "api-code": "896"
+        },
+        {
+            "id-city": "7207",
+            "name": "KAB. BANGGAI KEPULAUAN",
+            "latitude": "-1.3990757",
+            "longitude": "122.8672977",
+            "api-code": "897"
+        },
+        {
+            "id-city": "7211",
+            "name": "KAB. BANGGAI LAUT",
+            "latitude": "-1.8470785",
+            "longitude": "123.031501",
+            "api-code": "898"
+        },
+        {
+            "id-city": "1901",
+            "name": "KAB. BANGKA",
+            "latitude": "-2.3071827",
+            "longitude": "105.4181013",
+            "api-code": "651"
+        },
+        {
+            "id-city": "1905",
+            "name": "KAB. BANGKA BARAT",
+            "latitude": "-1.8395965",
+            "longitude": "105.1669232",
+            "api-code": "652"
+        },
+        {
+            "id-city": "1903",
+            "name": "KAB. BANGKA SELATAN",
+            "latitude": "-2.8056383",
+            "longitude": "105.9484719",
+            "api-code": "653"
+        },
+        {
+            "id-city": "1904",
+            "name": "KAB. BANGKA TENGAH",
+            "latitude": "-2.4321163",
+            "longitude": "106.0185247",
+            "api-code": "654"
+        },
+        {
+            "id-city": "3526",
+            "name": "KAB. BANGKALAN",
+            "latitude": "-7.0458654",
+            "longitude": "112.7698059",
+            "api-code": "741"
+        },
+        {
+            "id-city": "5106",
+            "name": "KAB. BANGLI",
+            "latitude": "-8.3336208",
+            "longitude": "115.2049049",
+            "api-code": "785"
+        },
+        {
+            "id-city": "6303",
+            "name": "KAB. BANJAR",
+            "latitude": "-3.2750455",
+            "longitude": "114.4943857",
+            "api-code": "854"
+        },
+        {
+            "id-city": "3304",
+            "name": "KAB. BANJARNEGARA",
+            "latitude": "-7.3555947",
+            "longitude": "109.4994834",
+            "api-code": "706"
+        },
+        {
+            "id-city": "7303",
+            "name": "KAB. BANTAENG",
+            "latitude": "-5.4711555",
+            "longitude": "119.8376269",
+            "api-code": "910"
+        },
+        {
+            "id-city": "3402",
+            "name": "KAB. BANTUL",
+            "latitude": "-7.8978265",
+            "longitude": "110.2226675",
+            "api-code": "779"
+        },
+        {
+            "id-city": "1607",
+            "name": "KAB. BANYUASIN",
+            "latitude": "-2.3972032",
+            "longitude": "104.2561427",
+            "api-code": "610"
+        },
+        {
+            "id-city": "3302",
+            "name": "KAB. BANYUMAS",
+            "latitude": "-7.4542324",
+            "longitude": "108.8883675",
+            "api-code": "707"
+        },
+        {
+            "id-city": "3510",
+            "name": "KAB. BANYUWANGI",
+            "latitude": "-8.2168385",
+            "longitude": "114.3311311",
+            "api-code": "742"
+        },
+        {
+            "id-city": "6304",
+            "name": "KAB. BARITO KUALA",
+            "latitude": "-3.0344471",
+            "longitude": "114.043219",
+            "api-code": "855"
+        },
+        {
+            "id-city": "6204",
+            "name": "KAB. BARITO SELATAN",
+            "latitude": "-1.962561",
+            "longitude": "114.454377",
+            "api-code": "839"
+        },
+        {
+            "id-city": "6213",
+            "name": "KAB. BARITO TIMUR",
+            "latitude": "-2.0141171",
+            "longitude": "114.9001537",
+            "api-code": "840"
+        },
+        {
+            "id-city": "6205",
+            "name": "KAB. BARITO UTARA",
+            "latitude": "-0.7230706",
+            "longitude": "114.5915632",
+            "api-code": "841"
+        },
+        {
+            "id-city": "7311",
+            "name": "KAB. BARRU",
+            "latitude": "-4.4329784",
+            "longitude": "119.4165015",
+            "api-code": "911"
+        },
+        {
+            "id-city": "3325",
+            "name": "KAB. BATANG",
+            "latitude": "-7.0316399",
+            "longitude": "109.7232954",
+            "api-code": "708"
+        },
+        {
+            "id-city": "1504",
+            "name": "KAB. BATANGHARI",
+            "latitude": "-1.8516593",
+            "longitude": "102.427852",
+            "api-code": "599"
+        },
+        {
+            "id-city": "1219",
+            "name": "KAB. BATU BARA",
+            "latitude": "3.2304195",
+            "longitude": "99.1997923",
+            "api-code": "536"
+        },
+        {
+            "id-city": "3216",
+            "name": "KAB. BEKASI",
+            "latitude": "-6.2841796",
+            "longitude": "106.8332878",
+            "api-code": "681"
+        },
+        {
+            "id-city": "1902",
+            "name": "KAB. BELITUNG",
+            "latitude": "-2.9280135",
+            "longitude": "107.1423584",
+            "api-code": "655"
+        },
+        {
+            "id-city": "1906",
+            "name": "KAB. BELITUNG TIMUR",
+            "latitude": "-2.9532524",
+            "longitude": "107.7388056",
+            "api-code": "656"
+        },
+        {
+            "id-city": "5304",
+            "name": "KAB. BELU",
+            "latitude": "-9.1750795",
+            "longitude": "124.7122803",
+            "api-code": "804"
+        },
+        {
+            "id-city": "1117",
+            "name": "KAB. BENER MERIAH",
+            "latitude": "4.7747372",
+            "longitude": "96.7121824",
+            "api-code": "523"
+        },
+        {
+            "id-city": "1403",
+            "name": "KAB. BENGKALIS",
+            "latitude": "1.5265269",
+            "longitude": "101.1600661",
+            "api-code": "587"
+        },
+        {
+            "id-city": "6107",
+            "name": "KAB. BENGKAYANG",
+            "latitude": "1.035234",
+            "longitude": "108.9264758",
+            "api-code": "825"
+        },
+        {
+            "id-city": "1701",
+            "name": "KAB. BENGKULU SELATAN",
+            "latitude": "-4.3585857",
+            "longitude": "102.9043487",
+            "api-code": "626"
+        },
+        {
+            "id-city": "1709",
+            "name": "KAB. BENGKULU TENGAH",
+            "latitude": "-3.6774433",
+            "longitude": "102.2698212",
+            "api-code": "627"
+        },
+        {
+            "id-city": "1703",
+            "name": "KAB. BENGKULU UTARA",
+            "latitude": "-4.1120197",
+            "longitude": "100.8768943",
+            "api-code": "628"
+        },
+        {
+            "id-city": "6403",
+            "name": "KAB. BERAU",
+            "latitude": "1.8076082",
+            "longitude": "116.4786501",
+            "api-code": "866"
+        },
+        {
+            "id-city": "9106",
+            "name": "KAB. BIAK NUMFOR",
+            "latitude": "-1.0113694",
+            "longitude": "135.1850492",
+            "api-code": "981"
+        },
+        {
+            "id-city": "5206",
+            "name": "KAB. BIMA",
+            "latitude": "-8.4628026",
+            "longitude": "118.7096959",
+            "api-code": "793"
+        },
+        {
+            "id-city": "2101",
+            "name": "KAB. BINTAN",
+            "latitude": "0.9096121",
+            "longitude": "105.0799845",
+            "api-code": "659"
+        },
+        {
+            "id-city": "1111",
+            "name": "KAB. BIREUEN",
+            "latitude": "5.198731",
+            "longitude": "96.6571422",
+            "api-code": "524"
+        },
+        {
+            "id-city": "3505",
+            "name": "KAB. BLITAR",
+            "latitude": "-8.0947389",
+            "longitude": "-8.0947389",
+            "api-code": "743"
+        },
+        {
+            "id-city": "3316",
+            "name": "KAB. BLORA",
+            "latitude": "-7.1097873",
+            "longitude": "111.088004",
+            "api-code": "709"
+        },
+        {
+            "id-city": "7502",
+            "name": "KAB. BOALEMO",
+            "latitude": "0.6671123",
+            "longitude": "122.087932",
+            "api-code": "947"
+        },
+        {
+            "id-city": "3201",
+            "name": "KAB. BOGOR",
+            "latitude": "-6.5950181",
+            "longitude": "106.7218508",
+            "api-code": "682"
+        },
+        {
+            "id-city": "3522",
+            "name": "KAB. BOJONEGORO",
+            "latitude": "-7.1560458",
+            "longitude": "111.8785383",
+            "api-code": "744"
+        },
+        {
+            "id-city": "7101",
+            "name": "KAB. BOLAANG MONGONDOW",
+            "latitude": "0.7217876",
+            "longitude": "123.7547384",
+            "api-code": "881"
+        },
+        {
+            "id-city": "7111",
+            "name": "KAB. BOLAANG MONGONDOW SELATAN",
+            "latitude": "0.4551418",
+            "longitude": "123.699056",
+            "api-code": "882"
+        },
+        {
+            "id-city": "7110",
+            "name": "KAB. BOLAANG MONGONDOW TIMUR",
+            "latitude": "0.7122142",
+            "longitude": "124.2368355",
+            "api-code": "883"
+        },
+        {
+            "id-city": "7108",
+            "name": "KAB. BOLAANG MONGONDOW UTARA",
+            "latitude": "0.7612706",
+            "longitude": "0.7612706",
+            "api-code": "884"
+        },
+        {
+            "id-city": "7406",
+            "name": "KAB. BOMBANA",
+            "latitude": "-4.9232232",
+            "longitude": "121.247255",
+            "api-code": "933"
+        },
+        {
+            "id-city": "3511",
+            "name": "KAB. BONDOWOSO",
+            "latitude": "-7.944511",
+            "longitude": "113.6558217",
+            "api-code": "745"
+        },
+        {
+            "id-city": "7308",
+            "name": "KAB. BONE",
+            "latitude": "-4.6784363",
+            "longitude": "119.5284934",
+            "api-code": "912"
+        },
+        {
+            "id-city": "7503",
+            "name": "KAB. BONE BOLANGO",
+            "latitude": "0.5569142",
+            "longitude": "123.014228",
+            "api-code": "948"
+        },
+        {
+            "id-city": "9116",
+            "name": "KAB. BOVEN DIGOEL",
+            "latitude": "-6.1496812",
+            "longitude": "139.2006884",
+            "api-code": "982"
+        },
+        {
+            "id-city": "3309",
+            "name": "KAB. BOYOLALI",
+            "latitude": "-7.3863231",
+            "longitude": "110.3264335",
+            "api-code": "710"
+        },
+        {
+            "id-city": "3329",
+            "name": "KAB. BREBES",
+            "latitude": "-7.040174",
+            "longitude": "108.6540244",
+            "api-code": "711"
+        },
+        {
+            "id-city": "5108",
+            "name": "KAB. BULELENG",
+            "latitude": "-8.2216938",
+            "longitude": "114.6644472",
+            "api-code": "786"
+        },
+        {
+            "id-city": "7302",
+            "name": "KAB. BULUKUMBA",
+            "latitude": "-5.4837659",
+            "longitude": "120.0771858",
+            "api-code": "913"
+        },
+        {
+            "id-city": "6501",
+            "name": "KAB. BULUNGAN",
+            "latitude": "2.8459602",
+            "longitude": "116.4273327",
+            "api-code": "867"
+        },
+        {
+            "id-city": "1508",
+            "name": "KAB. BUNGO",
+            "latitude": "-1.5150473",
+            "longitude": "101.6981326",
+            "api-code": "600"
+        },
+        {
+            "id-city": "7205",
+            "name": "KAB. BUOL",
+            "latitude": "0.9997114",
+            "longitude": "120.9733533",
+            "api-code": "899"
+        },
+        {
+            "id-city": "8104",
+            "name": "KAB. BURU",
+            "latitude": "-3.4574823",
+            "longitude": "126.0717023",
+            "api-code": "959"
+        },
+        {
+            "id-city": "8109",
+            "name": "KAB. BURU SELATAN",
+            "latitude": "-3.5689224",
+            "longitude": "126.1272188",
+            "api-code": "960"
+        },
+        {
+            "id-city": "7404",
+            "name": "KAB. BUTON",
+            "latitude": "-5.285424",
+            "longitude": "121.4582042",
+            "api-code": "934"
+        },
+        {
+            "id-city": "7415",
+            "name": "KAB. BUTON SELATAN",
+            "latitude": "-5.6424475",
+            "longitude": "122.0192101",
+            "api-code": null
+        },
+        {
+            "id-city": "7414",
+            "name": "KAB. BUTON TENGAH",
+            "latitude": "-5.3319047",
+            "longitude": "122.0103887",
+            "api-code": null
+        },
+        {
+            "id-city": "7410",
+            "name": "KAB. BUTON UTARA",
+            "latitude": "-4.7568084",
+            "longitude": "122.7405636",
+            "api-code": "935"
+        },
+        {
+            "id-city": "3207",
+            "name": "KAB. CIAMIS",
+            "latitude": "-7.3105368",
+            "longitude": "108.1664189",
+            "api-code": "683"
+        },
+        {
+            "id-city": "3203",
+            "name": "KAB. CIANJUR",
+            "latitude": "-6.8222799",
+            "longitude": "107.1201758",
+            "api-code": "684"
+        },
+        {
+            "id-city": "3301",
+            "name": "KAB. CILACAP",
+            "latitude": "-7.7064276",
+            "longitude": "108.9974751",
+            "api-code": "712"
+        },
+        {
+            "id-city": "3209",
+            "name": "KAB. CIREBON",
+            "latitude": "-6.7426871",
+            "longitude": "108.4839978",
+            "api-code": "685"
+        },
+        {
+            "id-city": "1211",
+            "name": "KAB. DAIRI",
+            "latitude": "2.83535",
+            "longitude": "97.9753142",
+            "api-code": "537"
+        },
+        {
+            "id-city": "9128",
+            "name": "KAB. DEIYAI",
+            "latitude": "-4.154975",
+            "longitude": "136.127953",
+            "api-code": "1004"
+        },
+        {
+            "id-city": "1207",
+            "name": "KAB. DELI SERDANG",
+            "latitude": "3.4798124",
+            "longitude": "98.1465555",
+            "api-code": "538"
+        },
+        {
+            "id-city": "3321",
+            "name": "KAB. DEMAK",
+            "latitude": "-6.8909549",
+            "longitude": "110.6221487",
+            "api-code": "713"
+        },
+        {
+            "id-city": "1310",
+            "name": "KAB. DHARMASRAYA",
+            "latitude": "-1.2492102",
+            "longitude": "100.9587979",
+            "api-code": "569"
+        },
+        {
+            "id-city": "9126",
+            "name": "KAB. DOGIYAI",
+            "latitude": "-3.9978363",
+            "longitude": "135.076764",
+            "api-code": "1005"
+        },
+        {
+            "id-city": "5205",
+            "name": "KAB. DOMPU",
+            "latitude": "-8.4929332",
+            "longitude": "117.8364812",
+            "api-code": "794"
+        },
+        {
+            "id-city": "7203",
+            "name": "KAB. DONGGALA",
+            "latitude": "-0.3482576",
+            "longitude": "118.7034916",
+            "api-code": "900"
+        },
+        {
+            "id-city": "1611",
+            "name": "KAB. EMPAT LAWANG",
+            "latitude": "-3.7163154",
+            "longitude": "102.6264419",
+            "api-code": "612"
+        },
+        {
+            "id-city": "5308",
+            "name": "KAB. ENDE",
+            "latitude": "-8.8540315",
+            "longitude": "121.6454432",
+            "api-code": "805"
+        },
+        {
+            "id-city": "7316",
+            "name": "KAB. ENREKANG",
+            "latitude": "-3.5313654",
+            "longitude": "119.6120689",
+            "api-code": "914"
+        },
+        {
+            "id-city": "9203",
+            "name": "KAB. FAK FAK",
+            "latitude": "-3.1991935",
+            "longitude": "132.0722661",
+            "api-code": "1010"
+        },
+        {
+            "id-city": "5306",
+            "name": "KAB. FLORES TIMUR",
+            "latitude": "-8.3495371",
+            "longitude": "122.7138217",
+            "api-code": "806"
+        },
+        {
+            "id-city": "3205",
+            "name": "KAB. GARUT",
+            "latitude": "-7.3425596",
+            "longitude": "107.4979479",
+            "api-code": "686"
+        },
+        {
+            "id-city": "1113",
+            "name": "KAB. GAYO LUES",
+            "latitude": "3.9808591",
+            "longitude": "96.7629847",
+            "api-code": "525"
+        },
+        {
+            "id-city": "5104",
+            "name": "KAB. GIANYAR",
+            "latitude": "-8.4815674",
+            "longitude": "115.1581625",
+            "api-code": "787"
+        },
+        {
+            "id-city": "7501",
+            "name": "KAB. GORONTALO",
+            "latitude": "0.676363",
+            "longitude": "121.2352277",
+            "api-code": "949"
+        },
+        {
+            "id-city": "7505",
+            "name": "KAB. GORONTALO UTARA",
+            "latitude": "0.8663798",
+            "longitude": "122.0679317",
+            "api-code": "950"
+        },
+        {
+            "id-city": "7306",
+            "name": "KAB. GOWA",
+            "latitude": "-5.3293718",
+            "longitude": "119.4176906",
+            "api-code": "915"
+        },
+        {
+            "id-city": "3525",
+            "name": "KAB. GRESIK",
+            "latitude": "-6.5572608",
+            "longitude": "111.4499818",
+            "api-code": "746"
+        },
+        {
+            "id-city": "3315",
+            "name": "KAB. GROBOGAN",
+            "latitude": "-7.1279001",
+            "longitude": "110.6139951",
+            "api-code": "714"
+        },
+        {
+            "id-city": "3403",
+            "name": "KAB. GUNUNG KIDUL",
+            "latitude": "-7.9924106",
+            "longitude": "110.301729",
+            "api-code": "780"
+        },
+        {
+            "id-city": "6210",
+            "name": "KAB. GUNUNG MAS",
+            "latitude": "-0.9854981",
+            "longitude": "112.9525327",
+            "api-code": "842"
+        },
+        {
+            "id-city": "8201",
+            "name": "KAB. HALMAHERA BARAT",
+            "latitude": "1.3644117",
+            "longitude": "127.0324607",
+            "api-code": "970"
+        },
+        {
+            "id-city": "8204",
+            "name": "KAB. HALMAHERA SELATAN",
+            "latitude": "-0.7427458",
+            "longitude": "126.69149",
+            "api-code": "971"
+        },
+        {
+            "id-city": "8202",
+            "name": "KAB. HALMAHERA TENGAH",
+            "latitude": "0.2224892",
+            "longitude": "128.1525165",
+            "api-code": "972"
+        },
+        {
+            "id-city": "8206",
+            "name": "KAB. HALMAHERA TIMUR",
+            "latitude": "1.0042331",
+            "longitude": "127.6641932",
+            "api-code": "973"
+        },
+        {
+            "id-city": "8203",
+            "name": "KAB. HALMAHERA UTARA",
+            "latitude": "1.5608042",
+            "longitude": "127.2743717",
+            "api-code": "974"
+        },
+        {
+            "id-city": "6306",
+            "name": "KAB. HULU SUNGAI SELATAN",
+            "latitude": "-2.717523",
+            "longitude": "114.9527148",
+            "api-code": "856"
+        },
+        {
+            "id-city": "6307",
+            "name": "KAB. HULU SUNGAI TENGAH",
+            "latitude": "-2.6108767",
+            "longitude": "115.2448973",
+            "api-code": "857"
+        },
+        {
+            "id-city": "6308",
+            "name": "KAB. HULU SUNGAI UTARA",
+            "latitude": "-2.4246817",
+            "longitude": "114.9921187",
+            "api-code": "858"
+        },
+        {
+            "id-city": "1216",
+            "name": "KAB. HUMBANG HASUNDUTAN",
+            "latitude": "2.247815",
+            "longitude": "98.3269183",
+            "api-code": "539"
+        },
+        {
+            "id-city": "1404",
+            "name": "KAB. INDRAGIRI HILIR",
+            "latitude": "-0.2904692",
+            "longitude": "102.062612",
+            "api-code": "588"
+        },
+        {
+            "id-city": "1402",
+            "name": "KAB. INDRAGIRI HULU",
+            "latitude": "-0.4911617",
+            "longitude": "101.687939",
+            "api-code": "589"
+        },
+        {
+            "id-city": "3212",
+            "name": "KAB. INDRAMAYU",
+            "latitude": "-6.451024",
+            "longitude": "107.9145623",
+            "api-code": "687"
+        },
+        {
+            "id-city": "9127",
+            "name": "KAB. INTAN JAYA",
+            "latitude": "-3.4070749",
+            "longitude": "136.1820027",
+            "api-code": "1006"
+        },
+        {
+            "id-city": "9103",
+            "name": "KAB. JAYAPURA",
+            "latitude": "-2.5649646",
+            "longitude": "140.6109865",
+            "api-code": "983"
+        },
+        {
+            "id-city": "9102",
+            "name": "KAB. JAYAWIJAYA",
+            "latitude": "-4.3499785",
+            "longitude": "139.4079122",
+            "api-code": "1007"
+        },
+        {
+            "id-city": "3509",
+            "name": "KAB. JEMBER",
+            "latitude": "-8.2648559",
+            "longitude": "113.3732586",
+            "api-code": "747"
+        },
+        {
+            "id-city": "5101",
+            "name": "KAB. JEMBRANA",
+            "latitude": "-8.3128142",
+            "longitude": "114.5427695",
+            "api-code": "788"
+        },
+        {
+            "id-city": "7304",
+            "name": "KAB. JENEPONTO",
+            "latitude": "-5.5443428",
+            "longitude": "119.5719318",
+            "api-code": "916"
+        },
+        {
+            "id-city": "3320",
+            "name": "KAB. JEPARA",
+            "latitude": "-6.2593657",
+            "longitude": "110.0092121",
+            "api-code": "715"
+        },
+        {
+            "id-city": "3517",
+            "name": "KAB. JOMBANG",
+            "latitude": "-7.5607088",
+            "longitude": "111.979026",
+            "api-code": "748"
+        },
+        {
+            "id-city": "9208",
+            "name": "KAB. KAIMANA",
+            "latitude": "-3.5812457",
+            "longitude": "132.9083316",
+            "api-code": "1011"
+        },
+        {
+            "id-city": "1401",
+            "name": "KAB. KAMPAR",
+            "latitude": "0.3216995",
+            "longitude": "100.5008359",
+            "api-code": "590"
+        },
+        {
+            "id-city": "6203",
+            "name": "KAB. KAPUAS",
+            "latitude": "-1.9133085",
+            "longitude": "-1.9133085",
+            "api-code": "843"
+        },
+        {
+            "id-city": "6106",
+            "name": "KAB. KAPUAS HULU",
+            "latitude": "0.8371625,",
+            "longitude": "111.7441505",
+            "api-code": "826"
+        },
+        {
+            "id-city": "3313",
+            "name": "KAB. KARANGANYAR",
+            "latitude": "-7.6192357",
+            "longitude": "110.8113364",
+            "api-code": "716"
+        },
+        {
+            "id-city": "5107",
+            "name": "KAB. KARANGASEM",
+            "latitude": "-8.3582356",
+            "longitude": "115.4106706",
+            "api-code": "789"
+        },
+        {
+            "id-city": "3215",
+            "name": "KAB. KARAWANG",
+            "latitude": "-6.2640495",
+            "longitude": "107.0835242",
+            "api-code": "688"
+        },
+        {
+            "id-city": "2102",
+            "name": "KAB. KARIMUN",
+            "latitude": "0.8217669",
+            "longitude": "103.3516605",
+            "api-code": "658"
+        },
+        {
+            "id-city": "1206",
+            "name": "KAB. KARO",
+            "latitude": "3.0997941",
+            "longitude": "97.9914723",
+            "api-code": "540"
+        },
+        {
+            "id-city": "6206",
+            "name": "KAB. KATINGAN",
+            "latitude": "-1.9518402",
+            "longitude": "111.8116278",
+            "api-code": "844"
+        },
+        {
+            "id-city": "1704",
+            "name": "KAB. KAUR",
+            "latitude": "-4.1454255",
+            "longitude": "102.4429631",
+            "api-code": "629"
+        },
+        {
+            "id-city": "6111",
+            "name": "KAB. KAYONG UTARA",
+            "latitude": "-1.2462244",
+            "longitude": "109.0147678",
+            "api-code": "828"
+        },
+        {
+            "id-city": "3305",
+            "name": "KAB. KEBUMEN",
+            "latitude": "-7.6435781",
+            "longitude": "109.4692359",
+            "api-code": "717"
+        },
+        {
+            "id-city": "3506",
+            "name": "KAB. KEDIRI",
+            "latitude": "-7.8422462",
+            "longitude": "111.9461464",
+            "api-code": "749"
+        },
+        {
+            "id-city": "9111",
+            "name": "KAB. KEEROM",
+            "latitude": "-3.3252156",
+            "longitude": "140.0924775",
+            "api-code": "984"
+        },
+        {
+            "id-city": "3324",
+            "name": "KAB. KENDAL",
+            "latitude": "-7.0200449",
+            "longitude": "109.9993114",
+            "api-code": "718"
+        },
+        {
+            "id-city": "7109",
+            "name": "KAB. KEP. SIAU TAGULANDANG BIARO",
+            "latitude": "2.441361",
+            "longitude": "125.0492394",
+            "api-code": "891"
+        },
+        {
+            "id-city": "1708",
+            "name": "KAB. KEPAHIANG",
+            "latitude": "-3.647182",
+            "longitude": "102.4876848",
+            "api-code": "630"
+        },
+        {
+            "id-city": "2105",
+            "name": "KAB. KEPULAUAN ANAMBAS",
+            "latitude": "3.0975761",
+            "longitude": "105.5899988",
+            "api-code": "662"
+        },
+        {
+            "id-city": "8107",
+            "name": "KAB. KEPULAUAN ARU",
+            "latitude": "-6.2028171",
+            "longitude": "133.3503115",
+            "api-code": "961"
+        },
+        {
+            "id-city": "1309",
+            "name": "KAB. KEPULAUAN MENTAWAI",
+            "latitude": "-2.408939",
+            "longitude": "99.1113217",
+            "api-code": "571"
+        },
+        {
+            "id-city": "1410",
+            "name": "KAB. KEPULAUAN MERANTI",
+            "latitude": "1.0568851",
+            "longitude": "102.4414405",
+            "api-code": "596"
+        },
+        {
+            "id-city": "7103",
+            "name": "KAB. KEPULAUAN SANGIHE",
+            "latitude": "3.9052269",
+            "longitude": "124.4053526",
+            "api-code": "889"
+        },
+        {
+            "id-city": "7301",
+            "name": "KAB. KEPULAUAN SELAYAR",
+            "latitude": "-6.6231623",
+            "longitude": "119.9333415",
+            "api-code": "909"
+        },
+        {
+            "id-city": "8205",
+            "name": "KAB. KEPULAUAN SULA",
+            "latitude": "-2.1138469",
+            "longitude": "125.6272487",
+            "api-code": "975"
+        },
+        {
+            "id-city": "7104",
+            "name": "KAB. KEPULAUAN TALAUD",
+            "latitude": "4.657027",
+            "longitude": "125.8929137",
+            "api-code": "890"
+        },
+        {
+            "id-city": "9105",
+            "name": "KAB. KEPULAUAN YAPEN",
+            "latitude": "-1.718689",
+            "longitude": "135.4712445",
+            "api-code": "1009"
+        },
+        {
+            "id-city": "1501",
+            "name": "KAB. KERINCI",
+            "latitude": "-2.0605225",
+            "longitude": "101.2027476",
+            "api-code": "601"
+        },
+        {
+            "id-city": "6104",
+            "name": "KAB. KETAPANG",
+            "latitude": "-1.6793054",
+            "longitude": "109.4631184",
+            "api-code": "827"
+        },
+        {
+            "id-city": "3310",
+            "name": "KAB. KLATEN",
+            "latitude": "-7.6744381",
+            "longitude": "110.4828234",
+            "api-code": "719"
+        },
+        {
+            "id-city": "5105",
+            "name": "KAB. KLUNGKUNG",
+            "latitude": "-8.6370556",
+            "longitude": "115.3518766",
+            "api-code": "790"
+        },
+        {
+            "id-city": "7401",
+            "name": "KAB. KOLAKA",
+            "latitude": "-4.1006351",
+            "longitude": "120.8945877",
+            "api-code": "936"
+        },
+        {
+            "id-city": "7411",
+            "name": "KAB. KOLAKA TIMUR",
+            "latitude": "-3.8188724",
+            "longitude": "121.0067519",
+            "api-code": "937"
+        },
+        {
+            "id-city": "7408",
+            "name": "KAB. KOLAKA UTARA",
+            "latitude": "-3.2615851",
+            "longitude": "120.6000806",
+            "api-code": "938"
+        },
+        {
+            "id-city": "7402",
+            "name": "KAB. KONAWE",
+            "latitude": "-3.5113716",
+            "longitude": "121.4816373",
+            "api-code": "939"
+        },
+        {
+            "id-city": "7412",
+            "name": "KAB. KONAWE KEPULAUAN",
+            "latitude": "-4.1189977",
+            "longitude": "122.9572053",
+            "api-code": "946"
+        },
+        {
+            "id-city": "7405",
+            "name": "KAB. KONAWE SELATAN",
+            "latitude": "-4.250462",
+            "longitude": "122.1291625",
+            "api-code": "940"
+        },
+        {
+            "id-city": "7409",
+            "name": "KAB. KONAWE UTARA",
+            "latitude": "-3.4180699",
+            "longitude": "121.7432982",
+            "api-code": "941"
+        },
+        {
+            "id-city": "6302",
+            "name": "KAB. KOTABARU",
+            "latitude": "-3.6704536",
+            "longitude": "116.1716303",
+            "api-code": "859"
+        },
+        {
+            "id-city": "6201",
+            "name": "KAB. KOTAWARINGIN BARAT",
+            "latitude": "-2.553003",
+            "longitude": "110.5561159",
+            "api-code": "845"
+        },
+        {
+            "id-city": "6202",
+            "name": "KAB. KOTAWARINGIN TIMUR",
+            "latitude": "-2.2271355",
+            "longitude": "111.5560962",
+            "api-code": "846"
+        },
+        {
+            "id-city": "1409",
+            "name": "KAB. KUANTAN SINGINGI",
+            "latitude": "-0.4924201",
+            "longitude": "100.916054",
+            "api-code": "591"
+        },
+        {
+            "id-city": "6112",
+            "name": "KAB. KUBU RAYA",
+            "latitude": "-0.3771286",
+            "longitude": "108.9500401",
+            "api-code": "829"
+        },
+        {
+            "id-city": "3319",
+            "name": "KAB. KUDUS",
+            "latitude": "-6.8009597",
+            "longitude": "110.8229023",
+            "api-code": "720"
+        },
+        {
+            "id-city": "3401",
+            "name": "KAB. KULON PROGO",
+            "latitude": "-7.8121307",
+            "longitude": "110.00405",
+            "api-code": "781"
+        },
+        {
+            "id-city": "3208",
+            "name": "KAB. KUNINGAN",
+            "latitude": "-6.9867956",
+            "longitude": "108.3066964",
+            "api-code": "689"
+        },
+        {
+            "id-city": "5301",
+            "name": "KAB. KUPANG",
+            "latitude": "-10.1748647",
+            "longitude": "123.5796987",
+            "api-code": "807"
+        },
+        {
+            "id-city": "6407",
+            "name": "KAB. KUTAI BARAT",
+            "latitude": "-0.4698467",
+            "longitude": "-0.4698467",
+            "api-code": "868"
+        },
+        {
+            "id-city": "6402",
+            "name": "KAB. KUTAI KARTANEGARA",
+            "latitude": "0.1993331",
+            "longitude": "115.4501471",
+            "api-code": "869"
+        },
+        {
+            "id-city": "6408",
+            "name": "KAB. KUTAI TIMUR",
+            "latitude": "0.9331565",
+            "longitude": "116.3771655",
+            "api-code": "870"
+        },
+        {
+            "id-city": "1210",
+            "name": "KAB. LABUHANBATU",
+            "latitude": "2.2697955",
+            "longitude": "99.4526837",
+            "api-code": "541"
+        },
+        {
+            "id-city": "1222",
+            "name": "KAB. LABUHANBATU SELATAN",
+            "latitude": "1.8336873",
+            "longitude": "99.4999503",
+            "api-code": "542"
+        },
+        {
+            "id-city": "1223",
+            "name": "KAB. LABUHANBATU UTARA",
+            "latitude": "2.4255101",
+            "longitude": "99.1736823",
+            "api-code": "543"
+        },
+        {
+            "id-city": "1604",
+            "name": "KAB. LAHAT",
+            "latitude": "-3.8762831",
+            "longitude": "103.0633745",
+            "api-code": "611"
+        },
+        {
+            "id-city": "6209",
+            "name": "KAB. LAMANDAU",
+            "latitude": "110.7785486",
+            "longitude": "110.7785486",
+            "api-code": "847"
+        },
+        {
+            "id-city": "3524",
+            "name": "KAB. LAMONGAN",
+            "latitude": "-7.1222712",
+            "longitude": "112.0322685",
+            "api-code": "750"
+        },
+        {
+            "id-city": "1804",
+            "name": "KAB. LAMPUNG BARAT",
+            "latitude": "-5.3562628",
+            "longitude": "103.5558479",
+            "api-code": "636"
+        },
+        {
+            "id-city": "1801",
+            "name": "KAB. LAMPUNG SELATAN",
+            "latitude": "-5.6682243",
+            "longitude": "104.9080741",
+            "api-code": "637"
+        },
+        {
+            "id-city": "1802",
+            "name": "KAB. LAMPUNG TENGAH",
+            "latitude": "-4.8725306",
+            "longitude": "104.6217546",
+            "api-code": "638"
+        },
+        {
+            "id-city": "1807",
+            "name": "KAB. LAMPUNG TIMUR",
+            "latitude": "-5.1189038",
+            "longitude": "105.1832237",
+            "api-code": "639"
+        },
+        {
+            "id-city": "1803",
+            "name": "KAB. LAMPUNG UTARA",
+            "latitude": "-4.8076474",
+            "longitude": "104.5305781",
+            "api-code": "640"
+        },
+        {
+            "id-city": "6108",
+            "name": "KAB. LANDAK",
+            "latitude": "0.5122284",
+            "longitude": "0.5122284",
+            "api-code": "830"
+        },
+        {
+            "id-city": "1205",
+            "name": "KAB. LANGKAT",
+            "latitude": "3.7599596",
+            "longitude": "97.6712072",
+            "api-code": "544"
+        },
+        {
+            "id-city": "9123",
+            "name": "KAB. LANNY JAYA",
+            "latitude": "-3.9565407",
+            "longitude": "137.9229944",
+            "api-code": "1002"
+        },
+        {
+            "id-city": "3602",
+            "name": "KAB. LEBAK",
+            "latitude": "-6.6425931",
+            "longitude": "105.9143859",
+            "api-code": "671"
+        },
+        {
+            "id-city": "1707",
+            "name": "KAB. LEBONG",
+            "latitude": "-3.0518562",
+            "longitude": "101.9335673",
+            "api-code": "631"
+        },
+        {
+            "id-city": "5313",
+            "name": "KAB. LEMBATA",
+            "latitude": "-8.3772607",
+            "longitude": "123.2847568",
+            "api-code": "808"
+        },
+        {
+            "id-city": "1307",
+            "name": "KAB. LIMA PULUH KOTA",
+            "latitude": "0.0297564",
+            "longitude": "100.275721",
+            "api-code": "670"
+        },
+        {
+            "id-city": "2104",
+            "name": "KAB. LINGGA",
+            "latitude": "-0.1757432",
+            "longitude": "103.9492005",
+            "api-code": "660"
+        },
+        {
+            "id-city": "5201",
+            "name": "KAB. LOMBOK BARAT",
+            "latitude": "-8.6655796",
+            "longitude": "115.7998038",
+            "api-code": "795"
+        },
+        {
+            "id-city": "5202",
+            "name": "KAB. LOMBOK TENGAH",
+            "latitude": "-8.6815173",
+            "longitude": "115.9888643",
+            "api-code": "796"
+        },
+        {
+            "id-city": "5203",
+            "name": "KAB. LOMBOK TIMUR",
+            "latitude": "-8.5908187",
+            "longitude": "116.2857348",
+            "api-code": "797"
+        },
+        {
+            "id-city": "5208",
+            "name": "KAB. LOMBOK UTARA",
+            "latitude": "-8.3450657",
+            "longitude": "116.1209304",
+            "api-code": "798"
+        },
+        {
+            "id-city": "3508",
+            "name": "KAB. LUMAJANG",
+            "latitude": "-8.1232669",
+            "longitude": "112.8592916",
+            "api-code": "751"
+        },
+        {
+            "id-city": "7317",
+            "name": "KAB. LUWU",
+            "latitude": "-3.1651156",
+            "longitude": "119.5855211",
+            "api-code": "917"
+        },
+        {
+            "id-city": "7324",
+            "name": "KAB. LUWU TIMUR",
+            "latitude": "-2.5306015",
+            "longitude": "120.5704853",
+            "api-code": "918"
+        },
+        {
+            "id-city": "7322",
+            "name": "KAB. LUWU UTARA",
+            "latitude": "-2.4050839",
+            "longitude": "119.5816157",
+            "api-code": "919"
+        },
+        {
+            "id-city": "3519",
+            "name": "KAB. MADIUN",
+            "latitude": "-7.6299754",
+            "longitude": "111.4930316",
+            "api-code": "752"
+        },
+        {
+            "id-city": "3308",
+            "name": "KAB. MAGELANG",
+            "latitude": "-7.4729674",
+            "longitude": "110.1825047",
+            "api-code": "721"
+        },
+        {
+            "id-city": "3520",
+            "name": "KAB. MAGETAN",
+            "latitude": "-7.6529886",
+            "longitude": "111.207303",
+            "api-code": "753"
+        },
+        {
+            "id-city": "6411",
+            "name": "KAB. MAHAKAM ULU",
+            "latitude": "0.6672502",
+            "longitude": "0.6672502",
+            "api-code": "873"
+        },
+        {
+            "id-city": "3210",
+            "name": "KAB. MAJALENGKA",
+            "latitude": "-6.8068974",
+            "longitude": "107.9475224",
+            "api-code": "690"
+        },
+        {
+            "id-city": "7605",
+            "name": "KAB. MAJENE",
+            "latitude": "-3.2416027",
+            "longitude": "118.6558169",
+            "api-code": "956"
+        },
+        {
+            "id-city": "5321",
+            "name": "KAB. MALAKA",
+            "latitude": "2.273993",
+            "longitude": "102.0019048",
+            "api-code": "823"
+        },
+        {
+            "id-city": "3507",
+            "name": "KAB. MALANG",
+            "latitude": "-7.9784695",
+            "longitude": "112.5617418",
+            "api-code": "754"
+        },
+        {
+            "id-city": "6502",
+            "name": "KAB. MALINAU",
+            "latitude": "3.5842423",
+            "longitude": "116.6390422",
+            "api-code": "878"
+        },
+        {
+            "id-city": "8108",
+            "name": "KAB. MALUKU BARAT DAYA",
+            "latitude": "-6.8072481",
+            "longitude": "126.7861427",
+            "api-code": "964"
+        },
+        {
+            "id-city": "8101",
+            "name": "KAB. MALUKU TENGAH",
+            "latitude": "-3.6619296",
+            "longitude": "-3.6619296",
+            "api-code": "965"
+        },
+        {
+            "id-city": "8102",
+            "name": "KAB. MALUKU TENGGARA",
+            "latitude": "-4.8361237",
+            "longitude": "125.8149581",
+            "api-code": "966"
+        },
+        {
+            "id-city": "8103",
+            "name": "KAB. MALUKU TENGGARA BARAT",
+            "latitude": "-7.4952555",
+            "longitude": "130.2605537",
+            "api-code": "967"
+        },
+        {
+            "id-city": "7603",
+            "name": "KAB. MAMASA",
+            "latitude": "-2.9956889",
+            "longitude": "-2.9956889",
+            "api-code": "957"
+        },
+        {
+            "id-city": "9120",
+            "name": "KAB. MAMBERAMO RAYA",
+            "latitude": "-2.4400058",
+            "longitude": "136.8556927",
+            "api-code": "993"
+        },
+        {
+            "id-city": "9121",
+            "name": "KAB. MAMBERAMO TENGAH",
+            "latitude": "-2.3588901",
+            "longitude": "138.0120123",
+            "api-code": "994"
+        },
+        {
+            "id-city": "7602",
+            "name": "KAB. MAMUJU",
+            "latitude": "-2.5502461",
+            "longitude": "-2.5502461",
+            "api-code": "953"
+        },
+        {
+            "id-city": "7606",
+            "name": "KAB. MAMUJU TENGAH",
+            "latitude": "-2.0202535",
+            "longitude": "-2.0202535",
+            "api-code": "954"
+        },
+        {
+            "id-city": "7601",
+            "name": "KAB. MAMUJU UTARA",
+            "latitude": "-1.3422762",
+            "longitude": "119.0155584",
+            "api-code": "955"
+        },
+        {
+            "id-city": "1213",
+            "name": "KAB. MANDAILING NATAL",
+            "latitude": "0.7795677",
+            "longitude": "98.828233",
+            "api-code": "545"
+        },
+        {
+            "id-city": "5310",
+            "name": "KAB. MANGGARAI",
+            "latitude": "-8.5775449",
+            "longitude": "120.1070883",
+            "api-code": "809"
+        },
+        {
+            "id-city": "5315",
+            "name": "KAB. MANGGARAI BARAT",
+            "latitude": "-8.5733839",
+            "longitude": "119.5911482",
+            "api-code": "810"
+        },
+        {
+            "id-city": "5319",
+            "name": "KAB. MANGGARAI TIMUR",
+            "latitude": "-8.5732708",
+            "longitude": "-8.5732708",
+            "api-code": "811"
+        },
+        {
+            "id-city": "9202",
+            "name": "KAB. MANOKWARI",
+            "latitude": "-0.8641952",
+            "longitude": "134.0040573",
+            "api-code": "1013"
+        },
+        {
+            "id-city": "9211",
+            "name": "KAB. MANOKWARI SELATAN",
+            "latitude": "-0.9979052",
+            "longitude": "133.8622372",
+            "api-code": "1014"
+        },
+        {
+            "id-city": "9117",
+            "name": "KAB. MAPPI",
+            "latitude": "-6.2435612",
+            "longitude": "138.1951002",
+            "api-code": "985"
+        },
+        {
+            "id-city": "7309",
+            "name": "KAB. MAROS",
+            "latitude": "-4.9644018",
+            "longitude": "119.4394346",
+            "api-code": "920"
+        },
+        {
+            "id-city": "9210",
+            "name": "KAB. MAYBRAT",
+            "latitude": "-1.4234934",
+            "longitude": "132.0877827",
+            "api-code": "1020"
+        },
+        {
+            "id-city": "6110",
+            "name": "KAB. MELAWI",
+            "latitude": "-0.7283313",
+            "longitude": "-0.7283313",
+            "api-code": "831"
+        },
+        {
+            "id-city": "6102",
+            "name": "KAB. MEMPAWAH",
+            "latitude": "0.3642814",
+            "longitude": "108.9461482",
+            "api-code": null
+        },
+        {
+            "id-city": "1502",
+            "name": "KAB. MERANGIN",
+            "latitude": "-2.2055817",
+            "longitude": "101.5256482",
+            "api-code": "602"
+        },
+        {
+            "id-city": "9101",
+            "name": "KAB. MERAUKE",
+            "latitude": "-8.5003146",
+            "longitude": "-8.5003146",
+            "api-code": "986"
+        },
+        {
+            "id-city": "1811",
+            "name": "KAB. MESUJI",
+            "latitude": "-3.9733415",
+            "longitude": "105.123573",
+            "api-code": "647"
+        },
+        {
+            "id-city": "9109",
+            "name": "KAB. MIMIKA",
+            "latitude": "-4.6263246",
+            "longitude": "135.2209523",
+            "api-code": "987"
+        },
+        {
+            "id-city": "7102",
+            "name": "KAB. MINAHASA",
+            "latitude": "1.2418433",
+            "longitude": "1.2418433",
+            "api-code": "885"
+        },
+        {
+            "id-city": "7105",
+            "name": "KAB. MINAHASA SELATAN",
+            "latitude": "1.0716499",
+            "longitude": "124.248123",
+            "api-code": "886"
+        },
+        {
+            "id-city": "7107",
+            "name": "KAB. MINAHASA TENGGARA",
+            "latitude": "0.9828493",
+            "longitude": "124.6103097",
+            "api-code": "887"
+        },
+        {
+            "id-city": "7106",
+            "name": "KAB. MINAHASA UTARA",
+            "latitude": "1.5790572",
+            "longitude": "124.6782384",
+            "api-code": "888"
+        },
+        {
+            "id-city": "3516",
+            "name": "KAB. MOJOKERTO",
+            "latitude": "-7.4714461",
+            "longitude": "112.4217213",
+            "api-code": "755"
+        },
+        {
+            "id-city": "7206",
+            "name": "KAB. MOROWALI",
+            "latitude": "-2.8933876",
+            "longitude": "121.7496531",
+            "api-code": "901"
+        },
+        {
+            "id-city": "7212",
+            "name": "KAB. MOROWALI UTARA",
+            "latitude": "-1.8452551",
+            "longitude": "120.886416",
+            "api-code": "902"
+        },
+        {
+            "id-city": "1603",
+            "name": "KAB. MUARA ENIM",
+            "latitude": "-3.6954852",
+            "longitude": "103.4372328",
+            "api-code": "613"
+        },
+        {
+            "id-city": "1505",
+            "name": "KAB. MUARO JAMBI",
+            "latitude": "-1.7034877",
+            "longitude": "103.2220769",
+            "api-code": "603"
+        },
+        {
+            "id-city": "1706",
+            "name": "KAB. MUKO MUKO",
+            "latitude": "-2.7293423",
+            "longitude": "100.8837943",
+            "api-code": "632"
+        },
+        {
+            "id-city": "7403",
+            "name": "KAB. MUNA",
+            "latitude": "-4.8714567",
+            "longitude": "122.2681881",
+            "api-code": "942"
+        },
+        {
+            "id-city": "7413",
+            "name": "KAB. MUNA BARAT",
+            "latitude": "-4.1170763",
+            "longitude": "122.5367678",
+            "api-code": null
+        },
+        {
+            "id-city": "6212",
+            "name": "KAB. MURUNG RAYA",
+            "latitude": "-0.0339313",
+            "longitude": "113.0500232",
+            "api-code": "848"
+        },
+        {
+            "id-city": "1606",
+            "name": "KAB. MUSI BANYUASIN",
+            "latitude": "-2.4943396",
+            "longitude": "103.2699042",
+            "api-code": "614"
+        },
+        {
+            "id-city": "1605",
+            "name": "KAB. MUSI RAWAS",
+            "latitude": "-3.1736737",
+            "longitude": "102.5073727",
+            "api-code": "615"
+        },
+        {
+            "id-city": "1613",
+            "name": "KAB. MUSI RAWAS UTARA",
+            "latitude": "-2.7047004",
+            "longitude": "102.1564718",
+            "api-code": null
+        },
+        {
+            "id-city": "9104",
+            "name": "KAB. NABIRE",
+            "latitude": "-3.2048842",
+            "longitude": "134.9359416",
+            "api-code": "1000"
+        },
+        {
+            "id-city": "1115",
+            "name": "KAB. NAGAN RAYA",
+            "latitude": "4.1763108",
+            "longitude": "95.9452289",
+            "api-code": "526"
+        },
+        {
+            "id-city": "5316",
+            "name": "KAB. NAGEKEO",
+            "latitude": "-8.6736979",
+            "longitude": "121.0215968",
+            "api-code": "812"
+        },
+        {
+            "id-city": "2103",
+            "name": "KAB. NATUNA",
+            "latitude": "4.0000213",
+            "longitude": "108.2412452",
+            "api-code": "661"
+        },
+        {
+            "id-city": "9124",
+            "name": "KAB. NDUGA",
+            "latitude": "-4.4345739",
+            "longitude": "137.6582737",
+            "api-code": "1003"
+        },
+        {
+            "id-city": "5309",
+            "name": "KAB. NGADA",
+            "latitude": "-8.6493062",
+            "longitude": "120.7171147",
+            "api-code": "813"
+        },
+        {
+            "id-city": "3518",
+            "name": "KAB. NGANJUK",
+            "latitude": "-7.6143713",
+            "longitude": "111.667064",
+            "api-code": "756"
+        },
+        {
+            "id-city": "3521",
+            "name": "KAB. NGAWI",
+            "latitude": "-7.4321286",
+            "longitude": "111.2547399",
+            "api-code": "757"
+        },
+        {
+            "id-city": "1204",
+            "name": "KAB. NIAS",
+            "latitude": "1.0422564",
+            "longitude": "96.9425732",
+            "api-code": "546"
+        },
+        {
+            "id-city": "1225",
+            "name": "KAB. NIAS BARAT",
+            "latitude": "0.9823136",
+            "longitude": "97.3173465",
+            "api-code": "547"
+        },
+        {
+            "id-city": "1214",
+            "name": "KAB. NIAS SELATAN",
+            "latitude": "0.1979571",
+            "longitude": "97.111996",
+            "api-code": "548"
+        },
+        {
+            "id-city": "1224",
+            "name": "KAB. NIAS UTARA",
+            "latitude": "1.3101518",
+            "longitude": "97.0091967",
+            "api-code": "549"
+        },
+        {
+            "id-city": "6503",
+            "name": "KAB. NUNUKAN",
+            "latitude": "3.907228",
+            "longitude": "3.907228",
+            "api-code": "879"
+        },
+        {
+            "id-city": "1610",
+            "name": "KAB. OGAN ILIR",
+            "latitude": "-3.4189346",
+            "longitude": "104.2798434",
+            "api-code": "616"
+        },
+        {
+            "id-city": "1602",
+            "name": "KAB. OGAN KOMERING ILIR",
+            "latitude": "-3.3243943",
+            "longitude": "104.2934125",
+            "api-code": "617"
+        },
+        {
+            "id-city": "1601",
+            "name": "KAB. OGAN KOMERING ULU",
+            "latitude": "-4.1097795",
+            "longitude": "103.8070599",
+            "api-code": "618"
+        },
+        {
+            "id-city": "1609",
+            "name": "KAB. OGAN KOMERING ULU SELATAN",
+            "latitude": "-4.566962",
+            "longitude": "103.604419",
+            "api-code": "619"
+        },
+        {
+            "id-city": "1608",
+            "name": "KAB. OGAN KOMERING ULU TIMUR",
+            "latitude": "-4.1047694",
+            "longitude": "103.9809111",
+            "api-code": "620"
+        },
+        {
+            "id-city": "3501",
+            "name": "KAB. PACITAN",
+            "latitude": "-8.1015432",
+            "longitude": "111.0225619",
+            "api-code": "758"
+        },
+        {
+            "id-city": "1221",
+            "name": "KAB. PADANG LAWAS",
+            "latitude": "1.1564866",
+            "longitude": "99.240928",
+            "api-code": "558"
+        },
+        {
+            "id-city": "1220",
+            "name": "KAB. PADANG LAWAS UTARA",
+            "latitude": "1.6363307",
+            "longitude": "99.2849962",
+            "api-code": "559"
+        },
+        {
+            "id-city": "1305",
+            "name": "KAB. PADANG PARIAMAN",
+            "latitude": "-0.565328",
+            "longitude": "99.9297271",
+            "api-code": "572"
+        },
+        {
+            "id-city": "7504",
+            "name": "KAB. PAHUWATO",
+            "latitude": "0.6672663",
+            "longitude": "121.3676855",
+            "api-code": "951"
+        },
+        {
+            "id-city": "1215",
+            "name": "KAB. PAKPAK BHARAT",
+            "latitude": "2.5305432",
+            "longitude": "97.9883219",
+            "api-code": "550"
+        },
+        {
+            "id-city": "3528",
+            "name": "KAB. PAMEKASAN",
+            "latitude": "-7.0707568",
+            "longitude": "113.3634469",
+            "api-code": "759"
+        },
+        {
+            "id-city": "3601",
+            "name": "KAB. PANDEGLANG",
+            "latitude": "-6.6181859",
+            "longitude": "105.3577393",
+            "api-code": "672"
+        },
+        {
+            "id-city": "3218",
+            "name": "KAB. PANGANDARAN",
+            "latitude": "-7.6400957",
+            "longitude": "108.4166035,",
+            "api-code": "696"
+        },
+        {
+            "id-city": "7310",
+            "name": "KAB. PANGKAJENE KEPULAUAN",
+            "latitude": "-6.1140091",
+            "longitude": "116.1792677",
+            "api-code": "921"
+        },
+        {
+            "id-city": "9108",
+            "name": "KAB. PANIAI",
+            "latitude": "-3.7562468",
+            "longitude": "136.0217864",
+            "api-code": "988"
+        },
+        {
+            "id-city": "7208",
+            "name": "KAB. PARIGI MOUTONG",
+            "latitude": "-0.2374633",
+            "longitude": "119.504187",
+            "api-code": "903"
+        },
+        {
+            "id-city": "1308",
+            "name": "KAB. PASAMAN",
+            "latitude": "0.4012432",
+            "longitude": "99.4869263",
+            "api-code": "573"
+        },
+        {
+            "id-city": "1312",
+            "name": "KAB. PASAMAN BARAT",
+            "latitude": "0.188646",
+            "longitude": "99.3275355",
+            "api-code": "574"
+        },
+        {
+            "id-city": "6401",
+            "name": "KAB. PASER",
+            "latitude": "-1.688319",
+            "longitude": "115.5519739",
+            "api-code": "872"
+        },
+        {
+            "id-city": "3514",
+            "name": "KAB. PASURUAN",
+            "latitude": "-7.6513924",
+            "longitude": "112.8875851",
+            "api-code": "760"
+        },
+        {
+            "id-city": "3318",
+            "name": "KAB. PATI",
+            "latitude": "-6.7033155",
+            "longitude": "110.7568579",
+            "api-code": "722"
+        },
+        {
+            "id-city": "9212",
+            "name": "KAB. PEGUNUNGAN ARFAK",
+            "latitude": "-1.1879207",
+            "longitude": "133.4406396",
+            "api-code": "1021"
+        },
+        {
+            "id-city": "9112",
+            "name": "KAB. PEGUNUNGAN BINTANG",
+            "latitude": "-4.4932314",
+            "longitude": "139.9179409",
+            "api-code": "989"
+        },
+        {
+            "id-city": "3326",
+            "name": "KAB. PEKALONGAN",
+            "latitude": "-6.8958555",
+            "longitude": "109.6394837",
+            "api-code": "723"
+        },
+        {
+            "id-city": "1405",
+            "name": "KAB. PELALAWAN",
+            "latitude": "0.1638831",
+            "longitude": "101.8751214",
+            "api-code": "592"
+        },
+        {
+            "id-city": "3327",
+            "name": "KAB. PEMALANG",
+            "latitude": "-6.918893",
+            "longitude": "109.3035564",
+            "api-code": "724"
+        },
+        {
+            "id-city": "6409",
+            "name": "KAB. PENAJAM PASER UTARA",
+            "latitude": "-1.1994746",
+            "longitude": "116.3650582",
+            "api-code": "871"
+        },
+        {
+            "id-city": "1612",
+            "name": "KAB. PENUKAL ABAB LEMATANG ILIR",
+            "latitude": "-3.207678",
+            "longitude": "103.6474698",
+            "api-code": "621"
+        },
+        {
+            "id-city": "1809",
+            "name": "KAB. PESAWARAN",
+            "latitude": "-5.4813767",
+            "longitude": "104.8583246",
+            "api-code": "645"
+        },
+        {
+            "id-city": "1813",
+            "name": "KAB. PESISIR BARAT",
+            "latitude": "-5.3322408",
+            "longitude": "103.5162613",
+            "api-code": "648"
+        },
+        {
+            "id-city": "1301",
+            "name": "KAB. PESISIR SELATAN",
+            "latitude": "-1.7163096",
+            "longitude": "100.229969",
+            "api-code": "575"
+        },
+        {
+            "id-city": "1107",
+            "name": "KAB. PIDIE",
+            "latitude": "5.1131251",
+            "longitude": "95.5262348",
+            "api-code": "527"
+        },
+        {
+            "id-city": "1118",
+            "name": "KAB. PIDIE JAYA",
+            "latitude": "5.1047218",
+            "longitude": "95.915004",
+            "api-code": "528"
+        },
+        {
+            "id-city": "7315",
+            "name": "KAB. PINRANG",
+            "latitude": "-3.6480606",
+            "longitude": "119.3274779",
+            "api-code": "922"
+        },
+        {
+            "id-city": "7604",
+            "name": "KAB. POLEWALI MANDAR",
+            "latitude": "-3.3019199",
+            "longitude": "118.9159074",
+            "api-code": "958"
+        },
+        {
+            "id-city": "3502",
+            "name": "KAB. PONOROGO",
+            "latitude": "-7.9704573",
+            "longitude": "111.2492096",
+            "api-code": "761"
+        },
+        {
+            "id-city": "7202",
+            "name": "KAB. POSO",
+            "latitude": "-1.3949761",
+            "longitude": "120.7450172",
+            "api-code": "904"
+        },
+        {
+            "id-city": "1810",
+            "name": "KAB. PRINGSEWU",
+            "latitude": "-5.4432381",
+            "longitude": "104.7221232",
+            "api-code": "646"
+        },
+        {
+            "id-city": "3513",
+            "name": "KAB. PROBOLINGGO",
+            "latitude": "-7.7722255",
+            "longitude": "113.1664559",
+            "api-code": "762"
+        },
+        {
+            "id-city": "6211",
+            "name": "KAB. PULANG PISAU",
+            "latitude": "-2.5010853",
+            "longitude": "112.8333693",
+            "api-code": "849"
+        },
+        {
+            "id-city": "8207",
+            "name": "KAB. PULAU MOROTAI",
+            "latitude": "2.3044517",
+            "longitude": "128.1293205",
+            "api-code": "976"
+        },
+        {
+            "id-city": "8208",
+            "name": "KAB. PULAU TALIABU",
+            "latitude": "-1.8309667",
+            "longitude": "124.5515512",
+            "api-code": "977"
+        },
+        {
+            "id-city": "9125",
+            "name": "KAB. PUNCAK",
+            "latitude": "-6.7027973",
+            "longitude": "106.9902667",
+            "api-code": "990"
+        },
+        {
+            "id-city": "9107",
+            "name": "KAB. PUNCAK JAYA",
+            "latitude": "-4.0845771",
+            "longitude": "137.1778631",
+            "api-code": "991"
+        },
+        {
+            "id-city": "3303",
+            "name": "KAB. PURBALINGGA",
+            "latitude": "-7.3269778",
+            "longitude": "109.2640055",
+            "api-code": "725"
+        },
+        {
+            "id-city": "3214",
+            "name": "KAB. PURWAKARTA",
+            "latitude": "-6.5920369",
+            "longitude": "107.2711848",
+            "api-code": "691"
+        },
+        {
+            "id-city": "3306",
+            "name": "KAB. PURWOREJO",
+            "latitude": "-7.7076465",
+            "longitude": "109.8298754",
+            "api-code": "726"
+        },
+        {
+            "id-city": "9205",
+            "name": "KAB. RAJA AMPAT",
+            "latitude": "-1.0291008",
+            "longitude": "129.3836774",
+            "api-code": "1012"
+        },
+        {
+            "id-city": "1702",
+            "name": "KAB. REJANG LEBONG",
+            "latitude": "-3.4374344",
+            "longitude": "102.4028948",
+            "api-code": "633"
+        },
+        {
+            "id-city": "3317",
+            "name": "KAB. REMBANG",
+            "latitude": "-6.7694925",
+            "longitude": "111.3223038",
+            "api-code": "727"
+        },
+        {
+            "id-city": "1407",
+            "name": "KAB. ROKAN HILIR",
+            "latitude": "2.073239",
+            "longitude": "99.6838131",
+            "api-code": "593"
+        },
+        {
+            "id-city": "1406",
+            "name": "KAB. ROKAN HULU",
+            "latitude": "0.8945909",
+            "longitude": "99.9300187",
+            "api-code": "594"
+        },
+        {
+            "id-city": "5314",
+            "name": "KAB. ROTE NDAO",
+            "latitude": "-10.7185054",
+            "longitude": "122.7620598",
+            "api-code": "814"
+        },
+        {
+            "id-city": "5320",
+            "name": "KAB. SABU RAIJUA",
+            "latitude": "-10.6232862",
+            "longitude": "121.3585762",
+            "api-code": "820"
+        },
+        {
+            "id-city": "6101",
+            "name": "KAB. SAMBAS",
+            "latitude": "1.4890357",
+            "longitude": "108.7686037",
+            "api-code": "833"
+        },
+        {
+            "id-city": "1217",
+            "name": "KAB. SAMOSIR",
+            "latitude": "2.556193",
+            "longitude": "98.4160018",
+            "api-code": "551"
+        },
+        {
+            "id-city": "3527",
+            "name": "KAB. SAMPANG",
+            "latitude": "-7.0999704",
+            "longitude": "112.9816573",
+            "api-code": "763"
+        },
+        {
+            "id-city": "6103",
+            "name": "KAB. SANGGAU",
+            "latitude": "0.3537054",
+            "longitude": "109.3227419",
+            "api-code": "834"
+        },
+        {
+            "id-city": "9110",
+            "name": "KAB. SARMI",
+            "latitude": "-2.5293749",
+            "longitude": "137.9450064",
+            "api-code": "992"
+        },
+        {
+            "id-city": "1503",
+            "name": "KAB. SAROLANGUN",
+            "latitude": "-2.3308214",
+            "longitude": "102.0821123",
+            "api-code": "604"
+        },
+        {
+            "id-city": "6109",
+            "name": "KAB. SEKADAU",
+            "latitude": "0.0551058",
+            "longitude": "110.3646849",
+            "api-code": "836"
+        },
+        {
+            "id-city": "1705",
+            "name": "KAB. SELUMA",
+            "latitude": "-4.0795888",
+            "longitude": "102.3561199",
+            "api-code": "634"
+        },
+        {
+            "id-city": "3322",
+            "name": "KAB. SEMARANG",
+            "latitude": "-7.0245542",
+            "longitude": "110.347024",
+            "api-code": "728"
+        },
+        {
+            "id-city": "8106",
+            "name": "KAB. SERAM BAGIAN BARAT",
+            "latitude": "-2.4327762",
+            "longitude": "127.0821346",
+            "api-code": "962"
+        },
+        {
+            "id-city": "8105",
+            "name": "KAB. SERAM BAGIAN TIMUR",
+            "latitude": "-3.8705087",
+            "longitude": "126.9085667",
+            "api-code": "963"
+        },
+        {
+            "id-city": "3604",
+            "name": "KAB. SERANG",
+            "latitude": "-6.1105671",
+            "longitude": "106.1240002",
+            "api-code": "673"
+        },
+        {
+            "id-city": "1218",
+            "name": "KAB. SERDANG BEDAGAI",
+            "latitude": "3.3459036",
+            "longitude": "98.7516692",
+            "api-code": "553"
+        },
+        {
+            "id-city": "6207",
+            "name": "KAB. SERUYAN",
+            "latitude": "-2.1276258",
+            "longitude": "111.0000415",
+            "api-code": "850"
+        },
+        {
+            "id-city": "1408",
+            "name": "KAB. SIAK",
+            "latitude": "0.8293671",
+            "longitude": "101.3443168",
+            "api-code": "595"
+        },
+        {
+            "id-city": "7314",
+            "name": "KAB. SIDENRENG RAPPANG",
+            "latitude": "-3.8073628",
+            "longitude": "119.7176857",
+            "api-code": "923"
+        },
+        {
+            "id-city": "3515",
+            "name": "KAB. SIDOARJO",
+            "latitude": "-7.454546",
+            "longitude": "112.5252464",
+            "api-code": "764"
+        },
+        {
+            "id-city": "7210",
+            "name": "KAB. SIGI",
+            "latitude": "-1.4601472",
+            "longitude": "119.4422288",
+            "api-code": "907"
+        },
+        {
+            "id-city": "1303",
+            "name": "KAB. SIJUNJUNG",
+            "latitude": "-0.6480415",
+            "longitude": "100.8627111",
+            "api-code": "576"
+        },
+        {
+            "id-city": "5307",
+            "name": "KAB. SIKKA",
+            "latitude": "-8.4556829",
+            "longitude": "121.9009827",
+            "api-code": "815"
+        },
+        {
+            "id-city": "1208",
+            "name": "KAB. SIMALUNGUN",
+            "latitude": "2.9505773",
+            "longitude": "98.7690439",
+            "api-code": "554"
+        },
+        {
+            "id-city": "1109",
+            "name": "KAB. SIMEULUE",
+            "latitude": "2.5383871",
+            "longitude": "95.4785368",
+            "api-code": "529"
+        },
+        {
+            "id-city": "7307",
+            "name": "KAB. SINJAI",
+            "latitude": "-5.196906",
+            "longitude": "120.0383294",
+            "api-code": "924"
+        },
+        {
+            "id-city": "6105",
+            "name": "KAB. SINTANG",
+            "latitude": "0.0611313",
+            "longitude": "111.4513803",
+            "api-code": "835"
+        },
+        {
+            "id-city": "3512",
+            "name": "KAB. SITUBONDO",
+            "latitude": "-7.797822",
+            "longitude": "113.7396976",
+            "api-code": "765"
+        },
+        {
+            "id-city": "3404",
+            "name": "KAB. SLEMAN",
+            "latitude": "-7.689355",
+            "longitude": "-7.689355",
+            "api-code": "782"
+        },
+        {
+            "id-city": "1302",
+            "name": "KAB. SOLOK",
+            "latitude": "-0.7898969",
+            "longitude": "100.6358087",
+            "api-code": "577"
+        },
+        {
+            "id-city": "1311",
+            "name": "KAB. SOLOK SELATAN",
+            "latitude": "-1.3637681",
+            "longitude": "100.9933763",
+            "api-code": "578"
+        },
+        {
+            "id-city": "7312",
+            "name": "KAB. SOPPENG",
+            "latitude": "-4.3178522",
+            "longitude": "119.6209805",
+            "api-code": "925"
+        },
+        {
+            "id-city": "9201",
+            "name": "KAB. SORONG",
+            "latitude": "-0.8927348",
+            "longitude": "131.1943545",
+            "api-code": "1015"
+        },
+        {
+            "id-city": "9204",
+            "name": "KAB. SORONG SELATAN",
+            "latitude": "-1.6660945",
+            "longitude": "131.5578835",
+            "api-code": "1016"
+        },
+        {
+            "id-city": "3314",
+            "name": "KAB. SRAGEN",
+            "latitude": "-7.3919141",
+            "longitude": "110.8220514",
+            "api-code": "729"
+        },
+        {
+            "id-city": "3213",
+            "name": "KAB. SUBANG",
+            "latitude": "-6.4945321",
+            "longitude": "107.4543738",
+            "api-code": "692"
+        },
+        {
+            "id-city": "3202",
+            "name": "KAB. SUKABUMI",
+            "latitude": "-6.9369274",
+            "longitude": "106.8822902",
+            "api-code": "693"
+        },
+        {
+            "id-city": "6208",
+            "name": "KAB. SUKAMARA",
+            "latitude": "-2.5594817",
+            "longitude": "110.5063868",
+            "api-code": "851"
+        },
+        {
+            "id-city": "3311",
+            "name": "KAB. SUKOHARJO",
+            "latitude": "-7.6824846",
+            "longitude": "110.6913449",
+            "api-code": "730"
+        },
+        {
+            "id-city": "5312",
+            "name": "KAB. SUMBA BARAT",
+            "latitude": "-9.5845593",
+            "longitude": "-9.5845593",
+            "api-code": "816"
+        },
+        {
+            "id-city": "5318",
+            "name": "KAB. SUMBA BARAT DAYA",
+            "latitude": "-9.5436424",
+            "longitude": "119.030235",
+            "api-code": "817"
+        },
+        {
+            "id-city": "5317",
+            "name": "KAB. SUMBA TENGAH",
+            "latitude": "-9.5930127",
+            "longitude": "119.3907714",
+            "api-code": "818"
+        },
+        {
+            "id-city": "5311",
+            "name": "KAB. SUMBA TIMUR",
+            "latitude": "-9.8035242",
+            "longitude": "119.6995911",
+            "api-code": "819"
+        },
+        {
+            "id-city": "5204",
+            "name": "KAB. SUMBAWA",
+            "latitude": "-8.5904964",
+            "longitude": "116.8323252",
+            "api-code": "799"
+        },
+        {
+            "id-city": "5207",
+            "name": "KAB. SUMBAWA BARAT",
+            "latitude": "-8.7994437",
+            "longitude": "116.6030094",
+            "api-code": "800"
+        },
+        {
+            "id-city": "3211",
+            "name": "KAB. SUMEDANG",
+            "latitude": "-6.8094279",
+            "longitude": "107.7001943",
+            "api-code": "694"
+        },
+        {
+            "id-city": "3529",
+            "name": "KAB. SUMENEP",
+            "latitude": "-7.0095355",
+            "longitude": "113.8495442",
+            "api-code": "766"
+        },
+        {
+            "id-city": "9119",
+            "name": "KAB. SUPIORI",
+            "latitude": "-0.0121564",
+            "longitude": "133.9280767",
+            "api-code": "995"
+        },
+        {
+            "id-city": "6309",
+            "name": "KAB. TABALONG",
+            "latitude": "-1.835742",
+            "longitude": "114.8801275",
+            "api-code": "860"
+        },
+        {
+            "id-city": "5102",
+            "name": "KAB. TABANAN",
+            "latitude": "-8.4388641",
+            "longitude": "114.9259625",
+            "api-code": "791"
+        },
+        {
+            "id-city": "7305",
+            "name": "KAB. TAKALAR",
+            "latitude": "-5.4108381",
+            "longitude": "119.2783703",
+            "api-code": "926"
+        },
+        {
+            "id-city": "9209",
+            "name": "KAB. TAMBRAUW",
+            "latitude": "-0.7200682",
+            "longitude": "132.1968117",
+            "api-code": "1019"
+        },
+        {
+            "id-city": "6504",
+            "name": "KAB. TANA TIDUNG",
+            "latitude": "3.5499526",
+            "longitude": "116.9818309",
+            "api-code": "880"
+        },
+        {
+            "id-city": "7318",
+            "name": "KAB. TANA TORAJA",
+            "latitude": "-3.0561797",
+            "longitude": "119.4269258",
+            "api-code": "927"
+        },
+        {
+            "id-city": "6310",
+            "name": "KAB. TANAH BUMBU",
+            "latitude": "-3.4441057",
+            "longitude": "115.1070742",
+            "api-code": "861"
+        },
+        {
+            "id-city": "1304",
+            "name": "KAB. TANAH DATAR",
+            "latitude": "-0.4694738",
+            "longitude": "100.4427042",
+            "api-code": "579"
+        },
+        {
+            "id-city": "6301",
+            "name": "KAB. TANAH LAUT",
+            "latitude": "-3.8426949",
+            "longitude": "114.6620304",
+            "api-code": "862"
+        },
+        {
+            "id-city": "3603",
+            "name": "KAB. TANGERANG",
+            "latitude": "-6.1765123",
+            "longitude": "106.5799928",
+            "api-code": "674"
+        },
+        {
+            "id-city": "1806",
+            "name": "KAB. TANGGAMUS",
+            "latitude": "-5.4747495",
+            "longitude": "104.144141",
+            "api-code": "641"
+        },
+        {
+            "id-city": "1506",
+            "name": "KAB. TANJUNG JABUNG BARAT",
+            "latitude": "-1.0932628",
+            "longitude": "102.8299301",
+            "api-code": "605"
+        },
+        {
+            "id-city": "1507",
+            "name": "KAB. TANJUNG JABUNG TIMUR",
+            "latitude": "-1.2569694",
+            "longitude": "103.6216438",
+            "api-code": "606"
+        },
+        {
+            "id-city": "1203",
+            "name": "KAB. TAPANULI SELATAN",
+            "latitude": "1.5509943",
+            "longitude": "98.6187656",
+            "api-code": "555"
+        },
+        {
+            "id-city": "1201",
+            "name": "KAB. TAPANULI TENGAH",
+            "latitude": "1.8692451",
+            "longitude": "98.0356132",
+            "api-code": "556"
+        },
+        {
+            "id-city": "1202",
+            "name": "KAB. TAPANULI UTARA",
+            "latitude": "2.0150268",
+            "longitude": "98.7892423",
+            "api-code": "557"
+        },
+        {
+            "id-city": "6305",
+            "name": "KAB. TAPIN",
+            "latitude": "-2.8661723",
+            "longitude": "114.8746968",
+            "api-code": "863"
+        },
+        {
+            "id-city": "3206",
+            "name": "KAB. TASIKMALAYA",
+            "latitude": "-7.3598063",
+            "longitude": "108.1627118",
+            "api-code": "695"
+        },
+        {
+            "id-city": "1509",
+            "name": "KAB. TEBO",
+            "latitude": "-1.3937973",
+            "longitude": "101.7626824",
+            "api-code": "607"
+        },
+        {
+            "id-city": "3328",
+            "name": "KAB. TEGAL",
+            "latitude": "-6.8704842",
+            "longitude": "109.0822198",
+            "api-code": "731"
+        },
+        {
+            "id-city": "9206",
+            "name": "KAB. TELUK BINTUNI",
+            "latitude": "-2.0838892",
+            "longitude": "132.2008645",
+            "api-code": "1017"
+        },
+        {
+            "id-city": "9207",
+            "name": "KAB. TELUK WONDAMA",
+            "latitude": "-2.6331079",
+            "longitude": "133.361149",
+            "api-code": "1018"
+        },
+        {
+            "id-city": "3323",
+            "name": "KAB. TEMANGGUNG",
+            "latitude": "-7.239537",
+            "longitude": "109.9914289",
+            "api-code": "732"
+        },
+        {
+            "id-city": "5302",
+            "name": "KAB. TIMOR TENGAH SELATAN",
+            "latitude": "-10.1748647",
+            "longitude": "-10.1748647",
+            "api-code": "821"
+        },
+        {
+            "id-city": "5303",
+            "name": "KAB. TIMOR TENGAH UTARA",
+            "latitude": "-9.3397656",
+            "longitude": "124.1934775",
+            "api-code": "822"
+        },
+        {
+            "id-city": "1212",
+            "name": "KAB. TOBA SAMOSIR",
+            "latitude": "2.385554",
+            "longitude": "98.9681662",
+            "api-code": "552"
+        },
+        {
+            "id-city": "7209",
+            "name": "KAB. TOJO UNA UNA",
+            "latitude": "-0.8718026",
+            "longitude": "121.0819556",
+            "api-code": "905"
+        },
+        {
+            "id-city": "7204",
+            "name": "KAB. TOLI TOLI",
+            "latitude": "0.9818254",
+            "longitude": "120.3767415",
+            "api-code": "906"
+        },
+        {
+            "id-city": "9114",
+            "name": "KAB. TOLIKARA",
+            "latitude": "-3.4880469",
+            "longitude": "138.1232904",
+            "api-code": "996"
+        },
+        {
+            "id-city": "7326",
+            "name": "KAB. TORAJA UTARA",
+            "latitude": "-2.898361",
+            "longitude": "119.6001393",
+            "api-code": "928"
+        },
+        {
+            "id-city": "3503",
+            "name": "KAB. TRENGGALEK",
+            "latitude": "-8.1353861",
+            "longitude": "111.3387368",
+            "api-code": "767"
+        },
+        {
+            "id-city": "3523",
+            "name": "KAB. TUBAN",
+            "latitude": "-6.8933657",
+            "longitude": "112.0078472",
+            "api-code": "769"
+        },
+        {
+            "id-city": "1805",
+            "name": "KAB. TULANG BAWANG",
+            "latitude": "-4.3971729",
+            "longitude": "105.2572351",
+            "api-code": "642"
+        },
+        {
+            "id-city": "1812",
+            "name": "KAB. TULANG BAWANG BARAT",
+            "latitude": "-4.432188",
+            "longitude": "104.8175955",
+            "api-code": "643"
+        },
+        {
+            "id-city": "3504",
+            "name": "KAB. TULUNGAGUNG",
+            "latitude": "-8.1483087",
+            "longitude": "111.818738",
+            "api-code": "768"
+        },
+        {
+            "id-city": "7313",
+            "name": "KAB. WAJO",
+            "latitude": "-3.9675036",
+            "longitude": "119.8836069",
+            "api-code": "929"
+        },
+        {
+            "id-city": "7407",
+            "name": "KAB. WAKATOBI",
+            "latitude": "-5.6688299",
+            "longitude": "123.2334207",
+            "api-code": "943"
+        },
+        {
+            "id-city": "9115",
+            "name": "KAB. WAROPEN",
+            "latitude": "-2.7280303",
+            "longitude": "136.1363564",
+            "api-code": "999"
+        },
+        {
+            "id-city": "1808",
+            "name": "KAB. WAY KANAN",
+            "latitude": "-4.5725585",
+            "longitude": "104.3972234",
+            "api-code": "644"
+        },
+        {
+            "id-city": "3312",
+            "name": "KAB. WONOGIRI",
+            "latitude": "-7.9611354",
+            "longitude": "110.7565321",
+            "api-code": "733"
+        },
+        {
+            "id-city": "3307",
+            "name": "KAB. WONOSOBO",
+            "latitude": "-7.399028",
+            "longitude": "109.6254745",
+            "api-code": "734"
+        },
+        {
+            "id-city": "9113",
+            "name": "KAB. YAHUKIMO",
+            "latitude": "-4.3875275",
+            "longitude": "138.9828018",
+            "api-code": "997"
+        },
+        {
+            "id-city": "9122",
+            "name": "KAB. YALIMO",
+            "latitude": "-3.7843965",
+            "longitude": "139.1556084",
+            "api-code": "1001"
+        },
+        {
+            "id-city": "3173",
+            "name": "KOTA ADM. JAKARTA BARAT",
+            "latitude": "-6.1599934",
+            "longitude": "106.6872183",
+            "api-code": "667"
+        },
+        {
+            "id-city": "3171",
+            "name": "KOTA ADM. JAKARTA PUSAT",
+            "latitude": "-6.1822265",
+            "longitude": "106.8014449",
+            "api-code": "667"
+        },
+        {
+            "id-city": "3174",
+            "name": "KOTA ADM. JAKARTA SELATAN",
+            "latitude": "-6.2839313",
+            "longitude": "106.7320383",
+            "api-code": "667"
+        },
+        {
+            "id-city": "3175",
+            "name": "KOTA ADM. JAKARTA TIMUR",
+            "latitude": "-6.2607882",
+            "longitude": "106.764931",
+            "api-code": "667"
+        },
+        {
+            "id-city": "3172",
+            "name": "KOTA ADM. JAKARTA UTARA",
+            "latitude": "-6.1357107",
+            "longitude": "106.7718593",
+            "api-code": "667"
+        },
+        {
+            "id-city": "8171",
+            "name": "KOTA AMBON",
+            "latitude": "-3.6810619",
+            "longitude": "128.0299197",
+            "api-code": "968"
+        },
+        {
+            "id-city": "6471",
+            "name": "KOTA BALIKPAPAN",
+            "latitude": "-1.1742562",
+            "longitude": "-1.1742562",
+            "api-code": "875"
+        },
+        {
+            "id-city": "1171",
+            "name": "KOTA BANDA ACEH",
+            "latitude": "5.5611009",
+            "longitude": "95.2936827",
+            "api-code": "530"
+        },
+        {
+            "id-city": "1871",
+            "name": "KOTA BANDAR LAMPUNG",
+            "latitude": "-5.4284972",
+            "longitude": "105.2006969",
+            "api-code": "649"
+        },
+        {
+            "id-city": "3273",
+            "name": "KOTA BANDUNG",
+            "latitude": "-6.9032739",
+            "longitude": "107.5731164",
+            "api-code": "697"
+        },
+        {
+            "id-city": "3279",
+            "name": "KOTA BANJAR",
+            "latitude": "-7.3723961",
+            "longitude": "108.5011845",
+            "api-code": "698"
+        },
+        {
+            "id-city": "6372",
+            "name": "KOTA BANJARBARU",
+            "latitude": "-3.4495383",
+            "longitude": "114.8775202",
+            "api-code": "865"
+        },
+        {
+            "id-city": "6371",
+            "name": "KOTA BANJARMASIN",
+            "latitude": "-3.3171351",
+            "longitude": "114.5591928",
+            "api-code": "864"
+        },
+        {
+            "id-city": "2171",
+            "name": "KOTA BATAM",
+            "latitude": "0.8378426",
+            "longitude": "103.7729086",
+            "api-code": "664"
+        },
+        {
+            "id-city": "3579",
+            "name": "KOTA BATU",
+            "latitude": "-7.8806559",
+            "longitude": "112.5047944",
+            "api-code": "771"
+        },
+        {
+            "id-city": "7472",
+            "name": "KOTA BAU BAU",
+            "latitude": "-5.5070565",
+            "longitude": "122.5881462",
+            "api-code": "945"
+        },
+        {
+            "id-city": "3275",
+            "name": "KOTA BEKASI",
+            "latitude": "-6.2841796",
+            "longitude": "106.8332878",
+            "api-code": "699"
+        },
+        {
+            "id-city": "1771",
+            "name": "KOTA BENGKULU",
+            "latitude": "-3.8920011",
+            "longitude": "101.2714903",
+            "api-code": "635"
+        },
+        {
+            "id-city": "5272",
+            "name": "KOTA BIMA",
+            "latitude": "-8.4628026",
+            "longitude": "118.7096959",
+            "api-code": "802"
+        },
+        {
+            "id-city": "1275",
+            "name": "KOTA BINJAI",
+            "latitude": "3.6223218",
+            "longitude": "98.4311624",
+            "api-code": "561"
+        },
+        {
+            "id-city": "7172",
+            "name": "KOTA BITUNG",
+            "latitude": "1.4662935",
+            "longitude": "1120887",
+            "api-code": "894"
+        },
+        {
+            "id-city": "3572",
+            "name": "KOTA BLITAR",
+            "latitude": "-8.0947389",
+            "longitude": "112.1302362",
+            "api-code": "772"
+        },
+        {
+            "id-city": "3271",
+            "name": "KOTA BOGOR",
+            "latitude": "-6.5950181",
+            "longitude": "106.7218508",
+            "api-code": "700"
+        },
+        {
+            "id-city": "6474",
+            "name": "KOTA BONTANG",
+            "latitude": "0.1369281",
+            "longitude": "117.4354374",
+            "api-code": "876"
+        },
+        {
+            "id-city": "1375",
+            "name": "KOTA BUKITTINGGI",
+            "latitude": "-0.3027177",
+            "longitude": "100.3544704",
+            "api-code": "582"
+        },
+        {
+            "id-city": "3672",
+            "name": "KOTA CILEGON",
+            "latitude": "-5.9685002",
+            "longitude": "105.9337853",
+            "api-code": "675"
+        },
+        {
+            "id-city": "3277",
+            "name": "KOTA CIMAHI",
+            "latitude": "-6.8862146",
+            "longitude": "107.5236119",
+            "api-code": "701"
+        },
+        {
+            "id-city": "3274",
+            "name": "KOTA CIREBON",
+            "latitude": "-6.7426871",
+            "longitude": "108.4839978",
+            "api-code": "702"
+        },
+        {
+            "id-city": "5171",
+            "name": "KOTA DENPASAR",
+            "latitude": "-8.6725072",
+            "longitude": "115.1542321",
+            "api-code": "792"
+        },
+        {
+            "id-city": "3276",
+            "name": "KOTA DEPOK",
+            "latitude": "-6.3876732",
+            "longitude": "106.7477563",
+            "api-code": "703"
+        },
+        {
+            "id-city": "1472",
+            "name": "KOTA DUMAI",
+            "latitude": "1.6677462",
+            "longitude": "101.3414178",
+            "api-code": "598"
+        },
+        {
+            "id-city": "7571",
+            "name": "KOTA GORONTALO",
+            "latitude": "0.676363",
+            "longitude": "121.2352277",
+            "api-code": "952"
+        },
+        {
+            "id-city": "1278",
+            "name": "KOTA GUNUNGSITOLI",
+            "latitude": "1.299096",
+            "longitude": "97.5728853",
+            "api-code": "567"
+        },
+        {
+            "id-city": "1571",
+            "name": "KOTA JAMBI",
+            "latitude": "-1.7498198",
+            "longitude": "101.6714788",
+            "api-code": "608"
+        },
+        {
+            "id-city": "9171",
+            "name": "KOTA JAYAPURA",
+            "latitude": "-2.5649646",
+            "longitude": "140.6109865",
+            "api-code": "1008"
+        },
+        {
+            "id-city": "3571",
+            "name": "KOTA KEDIRI",
+            "latitude": "-7.8422462",
+            "longitude": "111.9461464",
+            "api-code": "773"
+        },
+        {
+            "id-city": "7471",
+            "name": "KOTA KENDARI",
+            "latitude": "-3.9848755",
+            "longitude": "-3.9848755",
+            "api-code": "944"
+        },
+        {
+            "id-city": "7174",
+            "name": "KOTA KOTAMOBAGU",
+            "latitude": "0.7351323",
+            "longitude": "124.2819701",
+            "api-code": "893"
+        },
+        {
+            "id-city": "5371",
+            "name": "KOTA KUPANG",
+            "latitude": "-10.1748647",
+            "longitude": "123.5796987",
+            "api-code": "824"
+        },
+        {
+            "id-city": "1174",
+            "name": "KOTA LANGSA",
+            "latitude": "4.5064156",
+            "longitude": "97.9302925",
+            "api-code": "532"
+        },
+        {
+            "id-city": "1173",
+            "name": "KOTA LHOKSEUMAWE",
+            "latitude": "5.1718862",
+            "longitude": "97.0375944",
+            "api-code": "533"
+        },
+        {
+            "id-city": "1673",
+            "name": "KOTA LUBUK LINGGAU",
+            "latitude": "-3.2995563",
+            "longitude": "102.8429571",
+            "api-code": "623"
+        },
+        {
+            "id-city": "3577",
+            "name": "KOTA MADIUN",
+            "latitude": "-7.6299754",
+            "longitude": "111.4930316",
+            "api-code": "774"
+        },
+        {
+            "id-city": "3371",
+            "name": "KOTA MAGELANG",
+            "latitude": "-7.4729674",
+            "longitude": "110.1825047",
+            "api-code": "736"
+        },
+        {
+            "id-city": "7371",
+            "name": "KOTA MAKASSAR",
+            "latitude": "-5.1111323",
+            "longitude": "-5.1111323",
+            "api-code": "930"
+        },
+        {
+            "id-city": "3573",
+            "name": "KOTA MALANG",
+            "latitude": "-7.9784695",
+            "longitude": "-7.9784695",
+            "api-code": "775"
+        },
+        {
+            "id-city": "7171",
+            "name": "KOTA MANADO",
+            "latitude": "1.5411542",
+            "longitude": "124.6443972",
+            "api-code": "892"
+        },
+        {
+            "id-city": "5271",
+            "name": "KOTA MATARAM",
+            "latitude": "-8.5886595",
+            "longitude": "116.0852098",
+            "api-code": "801"
+        },
+        {
+            "id-city": "1271",
+            "name": "KOTA MEDAN",
+            "latitude": "3.6422756",
+            "longitude": "98.529403",
+            "api-code": "560"
+        },
+        {
+            "id-city": "1872",
+            "name": "KOTA METRO",
+            "latitude": "-5.1209978",
+            "longitude": "105.2720469",
+            "api-code": "650"
+        },
+        {
+            "id-city": "3576",
+            "name": "KOTA MOJOKERTO",
+            "latitude": "-7.4714461",
+            "longitude": "112.4217213",
+            "api-code": "776"
+        },
+        {
+            "id-city": "1371",
+            "name": "KOTA PADANG",
+            "latitude": "-0.9342375",
+            "longitude": "100.2511806",
+            "api-code": "580"
+        },
+        {
+            "id-city": "1374",
+            "name": "KOTA PADANG PANJANG",
+            "latitude": "-0.4694881",
+            "longitude": "100.3838278",
+            "api-code": "581"
+        },
+        {
+            "id-city": "1277",
+            "name": "KOTA PADANGSIDIMPUAN",
+            "latitude": "1.3870706",
+            "longitude": "99.2158143",
+            "api-code": "562"
+        },
+        {
+            "id-city": "1672",
+            "name": "KOTA PAGAR ALAM",
+            "latitude": "-4.0433909",
+            "longitude": "103.1493593",
+            "api-code": "624"
+        },
+        {
+            "id-city": "6271",
+            "name": "KOTA PALANGKARAYA",
+            "latitude": "-2.2096162",
+            "longitude": "113.8666453",
+            "api-code": "852"
+        },
+        {
+            "id-city": "1671",
+            "name": "KOTA PALEMBANG",
+            "latitude": "-2.9547949",
+            "longitude": "104.6929233",
+            "api-code": "622"
+        },
+        {
+            "id-city": "7373",
+            "name": "KOTA PALOPO",
+            "latitude": "-3.0148949",
+            "longitude": "120.1649644",
+            "api-code": "931"
+        },
+        {
+            "id-city": "7271",
+            "name": "KOTA PALU",
+            "latitude": "-0.7892164",
+            "longitude": "119.7591847",
+            "api-code": "908"
+        },
+        {
+            "id-city": "1971",
+            "name": "KOTA PANGKAL PINANG",
+            "latitude": "-2.1159086",
+            "longitude": "106.0855071",
+            "api-code": "657"
+        },
+        {
+            "id-city": "7372",
+            "name": "KOTA PARE PARE",
+            "latitude": "-4.0127077",
+            "longitude": "119.6031279",
+            "api-code": "932"
+        },
+        {
+            "id-city": "1377",
+            "name": "KOTA PARIAMAN",
+            "latitude": "-0.6095502",
+            "longitude": "100.0577713",
+            "api-code": "583"
+        },
+        {
+            "id-city": "3575",
+            "name": "KOTA PASURUAN",
+            "latitude": "-7.6513924",
+            "longitude": "112.8875851",
+            "api-code": "777"
+        },
+        {
+            "id-city": "1376",
+            "name": "KOTA PAYAKUMBUH",
+            "latitude": "-0.2294096",
+            "longitude": "100.5977331",
+            "api-code": "584"
+        },
+        {
+            "id-city": "3375",
+            "name": "KOTA PEKALONGAN",
+            "latitude": "-6.8958555",
+            "longitude": "109.6394837",
+            "api-code": "737"
+        },
+        {
+            "id-city": "1471",
+            "name": "KOTA PEKANBARU",
+            "latitude": "0.5139625",
+            "longitude": "101.3711348",
+            "api-code": "597"
+        },
+        {
+            "id-city": "1272",
+            "name": "KOTA PEMATANG SIANTAR",
+            "latitude": "2.9537912",
+            "longitude": "98.9934524",
+            "api-code": "563"
+        },
+        {
+            "id-city": "6171",
+            "name": "KOTA PONTIANAK",
+            "latitude": "-0.0352232",
+            "longitude": "109.2615093",
+            "api-code": "837"
+        },
+        {
+            "id-city": "1674",
+            "name": "KOTA PRABUMULIH",
+            "latitude": "-3.4163851",
+            "longitude": "104.2102468",
+            "api-code": "625"
+        },
+        {
+            "id-city": "3574",
+            "name": "KOTA PROBOLINGGO",
+            "latitude": "-7.7722255",
+            "longitude": "113.1664559",
+            "api-code": "778"
+        },
+        {
+            "id-city": "1172",
+            "name": "KOTA SABANG",
+            "latitude": "5.9666796",
+            "longitude": "95.0957699",
+            "api-code": "534"
+        },
+        {
+            "id-city": "3373",
+            "name": "KOTA SALATIGA",
+            "latitude": "-7.3261671",
+            "longitude": "-7.3261671",
+            "api-code": "738"
+        },
+        {
+            "id-city": "6472",
+            "name": "KOTA SAMARINDA",
+            "latitude": "-0.5093411",
+            "longitude": "-0.5093411",
+            "api-code": "874"
+        },
+        {
+            "id-city": "1373",
+            "name": "KOTA SAWAHLUNTO",
+            "latitude": "-0.6611257",
+            "longitude": "100.6165412",
+            "api-code": "585"
+        },
+        {
+            "id-city": "3374",
+            "name": "KOTA SEMARANG",
+            "latitude": "-7.0245542",
+            "longitude": "110.347024",
+            "api-code": "735"
+        },
+        {
+            "id-city": "3673",
+            "name": "KOTA SERANG",
+            "latitude": "-6.1105671",
+            "longitude": "106.1240002",
+            "api-code": "676"
+        },
+        {
+            "id-city": "1273",
+            "name": "KOTA SIBOLGA",
+            "latitude": "1.7308217",
+            "longitude": "98.7490406",
+            "api-code": "564"
+        },
+        {
+            "id-city": "6172",
+            "name": "KOTA SINGKAWANG",
+            "latitude": "0.8838518",
+            "longitude": "108.8223063",
+            "api-code": "838"
+        },
+        {
+            "id-city": "1372",
+            "name": "KOTA SOLOK",
+            "latitude": "-0.7898969",
+            "longitude": "100.6358087",
+            "api-code": "586"
+        },
+        {
+            "id-city": "9271",
+            "name": "KOTA SORONG",
+            "latitude": "-0.8927348",
+            "longitude": "131.1943545",
+            "api-code": "1022"
+        },
+        {
+            "id-city": "1175",
+            "name": "KOTA SUBULUSSALAM",
+            "latitude": "2.7571931",
+            "longitude": "97.6614579",
+            "api-code": "531"
+        },
+        {
+            "id-city": "3272",
+            "name": "KOTA SUKABUMI",
+            "latitude": "-6.9369274",
+            "longitude": "106.8822902",
+            "api-code": "704"
+        },
+        {
+            "id-city": "1572",
+            "name": "KOTA SUNGAI PENUH",
+            "latitude": "-2.0669663",
+            "longitude": "101.3765496",
+            "api-code": "609"
+        },
+        {
+            "id-city": "3578",
+            "name": "KOTA SURABAYA",
+            "latitude": "-7.2754438",
+            "longitude": "112.6426426",
+            "api-code": "770"
+        },
+        {
+            "id-city": "3372",
+            "name": "KOTA SURAKARTA",
+            "latitude": "-7.5591225",
+            "longitude": "110.7837923",
+            "api-code": "739"
+        },
+        {
+            "id-city": "3671",
+            "name": "KOTA TANGERANG",
+            "latitude": "-6.1765123",
+            "longitude": "106.5799928",
+            "api-code": "677"
+        },
+        {
+            "id-city": "3674",
+            "name": "KOTA TANGERANG SELATAN",
+            "latitude": "-6.2953277",
+            "longitude": "106.6382713",
+            "api-code": "678"
+        },
+        {
+            "id-city": "1274",
+            "name": "KOTA TANJUNG BALAI",
+            "latitude": "2.9672569",
+            "longitude": "99.752988",
+            "api-code": "565"
+        },
+        {
+            "id-city": "2172",
+            "name": "KOTA TANJUNG PINANG",
+            "latitude": "0.9171477",
+            "longitude": "104.4495776",
+            "api-code": "663"
+        },
+        {
+            "id-city": "6571",
+            "name": "KOTA TARAKAN",
+            "latitude": "3.3553269",
+            "longitude": "117.5076686",
+            "api-code": "877"
+        },
+        {
+            "id-city": "3278",
+            "name": "KOTA TASIKMALAYA",
+            "latitude": "-7.3598063",
+            "longitude": "108.1627118",
+            "api-code": "705"
+        },
+        {
+            "id-city": "1276",
+            "name": "KOTA TEBING TINGGI",
+            "latitude": "3.3280645",
+            "longitude": "99.084085",
+            "api-code": "566"
+        },
+        {
+            "id-city": "3376",
+            "name": "KOTA TEGAL",
+            "latitude": "-6.8704842",
+            "longitude": "109.0822198",
+            "api-code": "740"
+        },
+        {
+            "id-city": "8271",
+            "name": "KOTA TERNATE",
+            "latitude": "0.8106508",
+            "longitude": "127.2720245",
+            "api-code": "978"
+        },
+        {
+            "id-city": "8272",
+            "name": "KOTA TIDORE KEPULAUAN",
+            "latitude": "0.6904641",
+            "longitude": "127.3413164",
+            "api-code": "979"
+        },
+        {
+            "id-city": "7173",
+            "name": "KOTA TOMOHON",
+            "latitude": "1.3306419",
+            "longitude": "124.8013252",
+            "api-code": "895"
+        },
+        {
+            "id-city": "8172",
+            "name": "KOTA TUAL",
+            "latitude": "-5.449085",
+            "longitude": "132.058861",
+            "api-code": "969"
+        },
+        {
+            "id-city": "3471",
+            "name": "KOTA YOGYAKARTA",
+            "latitude": "-7.803164",
+            "longitude": "110.3398252",
+            "api-code": "783"
+        }
+    ]
+}

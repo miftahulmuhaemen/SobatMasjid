@@ -1,0 +1,156 @@
+{
+    "status": true,
+    "location": [
+        {
+            "id-city": "6372",
+            "name": "KOTA BANJARBARU",
+            "latitude": "-3.4495383",
+            "longitude": "114.8775202",
+            "distance": "2.58 KM",
+            "api-code": "865",
+            "date-now": "2021-01-14"
+        }
+    ],
+    "mosque": [
+        {
+            "id-mosque": "66",
+            "mosque-name": "Agung Al-Munawwarah Banjarbaru",
+            "photo": [
+                "https://pengurus.sobatmasjid.com/assets/foto/almunawwarahbjb_5f07d2bb9547a.jpg",
+                "https://pengurus.sobatmasjid.com/assets/foto/almunawwarahbjb_5f07d2bb9547a.jpg"
+            ],
+            "email": "j1f115043@gmail.com",
+            "description": "Masjid Ikonik Kota Banjarbaru yang memiliki bangunan megah nan indah. Ruang induk Masjid, di kelilingi oleh pintu-pintu yang tinggi dan besar. Ruangan di dalamnya tampak luas menjulang tinggi tanpa ada tiang-tiang penyangganya.  Warna Masjid ini didominasi hijau dan cream. Fasilitas  masjid lengkap dan memiliki ruang terbuka hijau. Jika anda mampir ke sini jangan takut tidak kebagian parkir, karena halamannya yang luas. Masjid ini berkapasitas 5ribuan jamaah.",
+            "username": "almunawwarahbjb",
+            "mosque-type": "Masjid",
+            "standing-date": "01 Juli 2010",
+            "address": "Jl. Trikora No.9",
+            "account-number": "4040994040",
+            "account-name": "BADAN PENGELOLA MASJID AGUNG AL MUNAWWAR",
+            "qris": "https://pengurus.sobatmasjid.com/assets/qris/qris.jpg",
+            "bank-name": "BANK BNI SYARIAH",
+            "urban-village": "Kemuning",
+            "sub-district": "Banjarbaru Selatan",
+            "city": "KOTA BANJARBARU",
+            "province": "Kalimantan Selatan",
+            "latitude": "-3.46408",
+            "longitude": "114.82678",
+            "id-city": "6372",
+            "followed": 1,
+            "research": [
+                {
+                    "id-research": "94",
+                    "title": "Kajian  Hadist dan Kitab",
+                    "research-type": "Umum",
+                    "date": "Rabu, 29 Juli 2020",
+                    "start-time": "19:00",
+                    "end-time": "20:00",
+                    "research-category": "umum",
+                    "ustadz-name": "DR. Habib Alwi Bin Hameed Bin Syihab",
+                    "photo": "https://pengurus.sobatmasjid.com/assets/ustadz/nofoto.jpg",
+                    "mosque-name": "Agung Al-Munawwarah Banjarbaru",
+                    "mosque-type": "Masjid",
+                    "id-city": "6372",
+                    "id-mosque": "66"
+                },
+                {
+                    "id-research": "77",
+                    "title": "Belajar Tilawah Al-Qur'an",
+                    "research-type": "Umum",
+                    "date": "Sabtu, 25 Juli 2020",
+                    "start-time": "14:30",
+                    "end-time": "15:30",
+                    "research-category": "Latihan",
+                    "ustadz-name": "Ustadz Syahruddin",
+                    "photo": "https://pengurus.sobatmasjid.com/assets/ustadz/nofoto.jpg",
+                    "mosque-name": "Agung Al-Munawwarah Banjarbaru",
+                    "mosque-type": "Masjid",
+                    "id-city": "6372",
+                    "id-mosque": "66"
+                },
+                {
+                    "id-research": "79",
+                    "title": "Belajar Mengaji Metode Nursyifa 57 Menit",
+                    "research-type": "Umum",
+                    "date": "Jumat, 24 Juli 2020",
+                    "start-time": "15:45",
+                    "end-time": "18:00",
+                    "research-category": "Latihan",
+                    "ustadz-name": "Ustadz Muslim",
+                    "photo": "https://pengurus.sobatmasjid.com/assets/ustadz/nofoto.jpg",
+                    "mosque-name": "Agung Al-Munawwarah Banjarbaru",
+                    "mosque-type": "Masjid",
+                    "id-city": "6372",
+                    "id-mosque": "66"
+                },
+                {
+                    "id-research": "78",
+                    "title": "Pengajian Kitab Manhajul Abidin Karya Imam Al-Ghaz",
+                    "research-type": "Umum",
+                    "date": "Senin, 20 Juli 2020",
+                    "start-time": "18:45",
+                    "end-time": "20:00",
+                    "research-category": "umum",
+                    "ustadz-name": "K.H. Abul Hasan",
+                    "photo": "https://pengurus.sobatmasjid.com/assets/ustadz/nofoto.jpg",
+                    "mosque-name": "Agung Al-Munawwarah Banjarbaru",
+                    "mosque-type": "Masjid",
+                    "id-city": "6372",
+                    "id-mosque": "66"
+                }
+            ],
+            "announcement": [
+                {
+                    "id-announcement": "65",
+                    "title": "Protokol Kesehatan Masjid",
+                    "date": "Senin, 05 Oktober 2020",
+                    "announcement-category": "Kegiatan",
+                    "file": "https://pengurus.sobatmasjid.com/assets/pengumuman/no_pamflet.jpg",
+                    "mosque-name": "Agung Al-Munawwarah Banjarbaru",
+                    "mosque-type": "Masjid",
+                    "id-city": "6372",
+                    "id-mosque": "66"
+                }
+            ],
+            "officer": null,
+            "finance": [
+                {
+                    "no": 1,
+                    "date": "18 Desember 2020",
+                    "credit-in": "0",
+                    "credit-out": "0",
+                    "credit-text": "707.212.008",
+                    "id-city": "6372",
+                    "id-mosque": "66"
+                },
+                {
+                    "no": 2,
+                    "date": "25 Desember 2020",
+                    "credit-in": "0",
+                    "credit-out": "0",
+                    "credit-text": "707.212.008",
+                    "id-city": "6372",
+                    "id-mosque": "66"
+                },
+                {
+                    "no": 3,
+                    "date": "01 Januari 2021",
+                    "credit-in": "0",
+                    "credit-out": "0",
+                    "credit-text": "707.212.008",
+                    "id-city": "6372",
+                    "id-mosque": "66"
+                },
+                {
+                    "no": 4,
+                    "date": "08 Januari 2021",
+                    "credit-in": "0",
+                    "credit-out": "0",
+                    "credit-text": "707.212.008",
+                    "id-city": "6372",
+                    "id-mosque": "66"
+                }
+            ]
+        }
+    ]
+}

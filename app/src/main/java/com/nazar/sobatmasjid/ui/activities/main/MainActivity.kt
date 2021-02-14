@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNavigation.setOnNavigationItemReselectedListener {
             "Reselect blocked."
         }
+
     }
 
     override fun onBackPressed() {

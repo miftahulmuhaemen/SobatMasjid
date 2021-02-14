@@ -1,0 +1,49 @@
+{
+    "status": true,
+    "location": [
+        {
+            "id-city": "6372",
+            "name": "KOTA BANJARBARU",
+            "latitude": "-3.4495383",
+            "longitude": "114.8775202",
+            "distance": "2.58 KM",
+            "api-code": "865",
+            "date-now": "2021-01-15"
+        }
+    ],
+    "announcement": [
+        {
+            "id-announcement": "48",
+            "title": "Pelaksanaan ibadah berjamaah selama wabah COVID 19",
+            "date": "20 Juni 2020",
+            "announcement-category": "Kegiatan",
+            "file": "https://pengurus.sobatmasjid.com/assets/pengumuman/no_pamflet.jpg",
+            "mosque-name": "Al-Istiqomah Banjarbaru",
+            "mosque-type": "Masjid",
+            "id-city": "6372",
+            "id-mosque": "67"
+        },
+        {
+            "id-announcement": "54",
+            "title": "Qurban Untuk Ketahanan Pangan",
+            "date": "30 Juni 2020",
+            "announcement-category": "Kegiatan",
+            "file": "https://pengurus.sobatmasjid.com/assets/pengumuman/no_pamflet.jpg",
+            "mosque-name": "Al-Istiqomah Banjarbaru",
+            "mosque-type": "Masjid",
+            "id-city": "6372",
+            "id-mosque": "67"
+        },
+        {
+            "id-announcement": "55",
+            "title": "Hewan Qurban Berjumlah 8 ekor",
+            "date": "24 Juli 2020",
+            "announcement-category": "Kegiatan",
+            "file": "https://pengurus.sobatmasjid.com/assets/pengumuman/no_pamflet.jpg",
+            "mosque-name": "Agung Al-Munawwarah Banjarbaru",
+            "mosque-type": "Masjid",
+            "id-city": "6372",
+            "id-mosque": "66"
+        }
+    ]
+}

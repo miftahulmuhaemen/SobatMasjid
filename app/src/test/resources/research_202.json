@@ -1,0 +1,76 @@
+{
+    "status": true,
+    "location": [
+        {
+            "id-city": "6372",
+            "name": "KOTA BANJARBARU",
+            "latitude": "-3.4495383",
+            "longitude": "114.8775202",
+            "distance": "2.58 KM",
+            "api-code": "865",
+            "date-now": "2021-01-15"
+        }
+    ],
+    "research": [
+        {
+            "id-research": "79",
+            "title": "Belajar Mengaji Metode Nursyifa 57 Menit",
+            "research-type": "Umum",
+            "date": "24 Juli 2020",
+            "start-time-": "15:45",
+            "end-time": "18:00",
+            "research-category": "Latihan",
+            "ustadz-name": "Ustadz Muslim",
+            "photo": "https://pengurus.sobatmasjid.com/assets/ustadz/nofoto.jpg",
+            "mosque-name": "Agung Al-Munawwarah Banjarbaru",
+            "mosque-type": "Masjid",
+            "id-city": "6372",
+            "id-mosque": "66"
+        },
+        {
+            "id-research": "78",
+            "title": "Pengajian Kitab Manhajul Abidin Karya Imam Al-Ghaz",
+            "research-type": "Umum",
+            "date": "20 Juli 2020",
+            "start-time-": "18:45",
+            "end-time": "20:00",
+            "research-category": "umum",
+            "ustadz-name": "K.H. Abul Hasan",
+            "photo": "https://pengurus.sobatmasjid.com/assets/ustadz/nofoto.jpg",
+            "mosque-name": "Agung Al-Munawwarah Banjarbaru",
+            "mosque-type": "Masjid",
+            "id-city": "6372",
+            "id-mosque": "66"
+        },
+        {
+            "id-research": "77",
+            "title": "Belajar Tilawah Al-Qur'an",
+            "research-type": "Umum",
+            "date": "25 Juli 2020",
+            "start-time-": "14:30",
+            "end-time": "15:30",
+            "research-category": "Latihan",
+            "ustadz-name": "Ustadz Syahruddin",
+            "photo": "https://pengurus.sobatmasjid.com/assets/ustadz/nofoto.jpg",
+            "mosque-name": "Agung Al-Munawwarah Banjarbaru",
+            "mosque-type": "Masjid",
+            "id-city": "6372",
+            "id-mosque": "66"
+        },
+        {
+            "id-research": "94",
+            "title": "Kajian  Hadist dan Kitab",
+            "research-type": "Umum",
+            "date": "29 Juli 2020",
+            "start-time-": "19:00",
+            "end-time": "20:00",
+            "research-category": "umum",
+            "ustadz-name": "DR. Habib Alwi Bin Hameed Bin Syihab",
+            "photo": "https://pengurus.sobatmasjid.com/assets/ustadz/nofoto.jpg",
+            "mosque-name": "Agung Al-Munawwarah Banjarbaru",
+            "mosque-type": "Masjid",
+            "id-city": "6372",
+            "id-mosque": "66"
+        }
+    ]
+}

@@ -1,0 +1,76 @@
+{
+    "status": true,
+    "location": [
+        {
+            "id-city": "6372",
+            "name": "KOTA BANJARBARU",
+            "latitude": "-3.4495383",
+            "longitude": "114.8775202",
+            "distance": "2.58 KM",
+            "api-code": "865",
+            "date-now": "2021-01-14"
+        }
+    ],
+    "mosque": [
+        {
+            "id-mosque": "99",
+            "mosque-name": "Al-Baythar Universitas Lambung Mangkurat",
+            "photo": "https://pengurus.sobatmasjid.com/assets/foto/albaytharulm_5f067e652ba64.jpg",
+            "latitude": "-3.44602",
+            "longitude": "114.84187",
+            "username": "albaytharulm",
+            "distance": "0.39 KM",
+            "mosque-type": "Masjid",
+            "mosque-classification": "Biasa",
+            "id-city": "6372"
+        },
+        {
+            "id-mosque": "67",
+            "mosque-name": "Al-Istiqomah Banjarbaru",
+            "photo": "https://pengurus.sobatmasjid.com/assets/foto/istiqomahbjb_5eeddbc38b7a1.jpg",
+            "latitude": "-3.44297",
+            "longitude": "114.82337",
+            "username": "istiqomahbjb",
+            "distance": "1.98 KM",
+            "mosque-type": "Masjid",
+            "mosque-classification": "Jami'",
+            "id-city": "6372"
+        },
+        {
+            "id-mosque": "66",
+            "mosque-name": "Agung Al-Munawwarah Banjarbaru",
+            "photo": "https://pengurus.sobatmasjid.com/assets/foto/almunawwarahbjb_5f07d2bb9547a.jpg",
+            "latitude": "-3.46408",
+            "longitude": "114.82678",
+            "username": "almunawwarahbjb",
+            "distance": "2.24 KM",
+            "mosque-type": "Masjid",
+            "mosque-classification": "Agung",
+            "id-city": "6372"
+        },
+        {
+            "id-mosque": "91",
+            "mosque-name": "At-Taqwa Banjarbaru",
+            "photo": "https://pengurus.sobatmasjid.com/assets/foto/attaqwabanjarbaru_5f01525c12113.jpg",
+            "latitude": "-3.42742",
+            "longitude": "114.81851",
+            "username": "attaqwabanjarbaru",
+            "distance": "3.4 KM",
+            "mosque-type": "Masjid",
+            "mosque-classification": "Biasa",
+            "id-city": "6372"
+        },
+        {
+            "id-mosque": "98",
+            "mosque-name": "Muhammadiyah Hajjah Nuriyah",
+            "photo": "https://pengurus.sobatmasjid.com/assets/foto/masjidmuhhjnuriyah_5f3f5aaf66577.jpg",
+            "latitude": "-3.43255",
+            "longitude": "115.53566",
+            "username": "masjidmuhhjnuriyah",
+            "distance": "77.22 KM",
+            "mosque-type": "Masjid",
+            "mosque-classification": "Biasa",
+            "id-city": "6372"
+        }
+    ]
+}

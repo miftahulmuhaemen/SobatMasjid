@@ -1,0 +1,41 @@
+{
+    "status": true,
+    "data": [
+        {
+            "id-mosque": "66",
+            "username": "almunawwarahbjb",
+            "mosque-name": "Agung Al-Munawwarah Banjarbaru",
+            "photo": "https://pengurus.sobatmasjid.com/assets/foto/almunawwarahbjb_5f07d2bb9547a.jpg"
+        },
+        {
+            "id-mosque": "66",
+            "username": "almunawwarahbjb",
+            "mosque-name": "Agung Al-Munawwarah Banjarbaru",
+            "photo": "https://pengurus.sobatmasjid.com/assets/foto/almunawwarahbjb_5f07d2bb9547a.jpg"
+        },
+        {
+            "id-mosque": "67",
+            "username": "istiqomahbjb",
+            "mosque-name": "Al-Istiqomah Banjarbaru",
+            "photo": "https://pengurus.sobatmasjid.com/assets/foto/istiqomahbjb_5eeddbc38b7a1.jpg"
+        },
+        {
+            "id-mosque": "71",
+            "username": "asysyuhada",
+            "mosque-name": "Asy Syuhada",
+            "photo": "https://pengurus.sobatmasjid.com/assets/foto/asysyuhada_5f06b5e06f53d.jpg"
+        },
+        {
+            "id-mosque": "71",
+            "username": "asysyuhada",
+            "mosque-name": "Asy Syuhada",
+            "photo": "https://pengurus.sobatmasjid.com/assets/foto/asysyuhada_5ef432af665bc.jpg"
+        },
+        {
+            "id-mosque": "70",
+            "username": "masjidbaitulhikmah",
+            "mosque-name": "Baitul Hikmah Universitas Lambung Mangkurat",
+            "photo": "https://pengurus.sobatmasjid.com/assets/foto/masjidbaitulhikmah_5efdc4db7699c.jpg"
+        }
+    ]
+}

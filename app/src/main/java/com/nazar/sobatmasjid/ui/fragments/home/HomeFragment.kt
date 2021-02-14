@@ -1,6 +1,7 @@
 package com.nazar.sobatmasjid.ui.fragments.home
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -42,8 +43,9 @@ class HomeFragment : BaseBottomTabFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        if (preferences.numberFollow == 0)
+        if (preferences.numberFollow == 0){
             setupDataByRecommendation()
+        }
         else {
             binding.layoutMosqueRecommendation.setGone()
             binding.layoutHome.setVisible()
